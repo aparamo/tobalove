@@ -248,7 +248,6 @@
         "date": null
       },
       "relatedConferences": [
-        "babilonia",
         "babilonia-neobabilonico"
       ]
     },
@@ -291,9 +290,8 @@
         "date": null
       },
       "relatedConferences": [
-        "hititas",
-        "egipto-imperio-nuevo-ramses-ii",
-        "imperio-hitita-i"
+        "imperio-hitita-i",
+        "egipto-imperio-nuevo-ramses-ii"
       ]
     },
     {
@@ -378,7 +376,7 @@
         "date": null
       },
       "relatedConferences": [
-        "hititas",
+        "imperio-hitita-i",
         "egipto-imperio-nuevo-ramses-ii"
       ]
     },
@@ -418,7 +416,7 @@
         "date": null
       },
       "relatedConferences": [
-        "hititas",
+        "imperio-hitita-i",
         "pueblos-estepa-hunos",
         "egipto-pueblos-del-mar-faraones-griegos"
       ]
@@ -707,7 +705,6 @@
         "date": null
       },
       "relatedConferences": [
-        "babilonia",
         "babilonia-neobabilonico"
       ]
     },
@@ -863,7 +860,7 @@
         "date": null
       },
       "relatedConferences": [
-        "babilonia"
+        "babilonia-neobabilonico"
       ]
     },
     {
@@ -1306,7 +1303,6 @@
         "entrevista-librujula",
         "ruta-de-la-seda-encuentro-unab",
         "ruta-de-la-seda-america-unab",
-        "ruta-seda-america-unab-2025",
         "ruta-seda-geografia-paisajes-2025",
         "ruta-de-la-seda-aventura-valencia",
         "ruta-seda-ateneo-valencia-2025",
@@ -1323,8 +1319,7 @@
         "entrevista-nits-de-radio",
         "entrevista-un-buen-dia-para-viajar-rtpa",
         "alejandria-ruta-seda-reyes-magos",
-        "ruta-seda-fascinante",
-        "cena-cultura-raices-ruta-seda"
+        "ruta-seda-fascinante"
       ]
     },
     {
@@ -1488,7 +1483,6 @@
       },
       "relatedConferences": [
         "augusto-familia-imperial",
-        "livia-emperatriz",
         "livia-mujer-augusto"
       ]
     },
@@ -1818,8 +1812,7 @@
       },
       "relatedConferences": [
         "pueblos-estepa-hunos",
-        "curso-pueblos-estepa-2025",
-        "pueblos-estepa-hunos-atila-ivoox"
+        "curso-pueblos-estepa-2025"
       ]
     },
     {

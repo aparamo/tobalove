@@ -550,64 +550,6 @@
       "info_adicional": null
     },
     {
-      "id": "ruta-seda-america-unab-2025",
-      "title": "La Ruta de la Seda y América",
-      "type": "conferencia",
-      "date": "2025-08-21",
-      "year": 2025,
-      "organization": "Universidad Andrés Bello (Campus Casona Las Condes)",
-      "url": "https://www.youtube.com/watch?v=QPP8fxKJx_8",
-      "description": "Conferencia sobre el papel del continente americano en la red comercial global de la Ruta de la Seda, desde la explotación de la plata hasta el comercio transpacífico con Asia.",
-      "summary": "Tobalina aborda el rol del continente americano en la Ruta de la Seda, analizando la explotación de la plata, el comercio transpacífico con Asia y el papel de América en el declive de la ruta tradicional.",
-      "topics": [
-        "Ruta de la Seda",
-        "América",
-        "plata americana",
-        "comercio transpacífico",
-        "globalización"
-      ],
-      "characters": [],
-      "civilizations": [
-        "China",
-        "Imperio Español",
-        "América virreinal"
-      ],
-      "duration": null,
-      "language": "es",
-      "source": "https://agenda.unab.cl",
-      "mediaType": "video",
-      "youtube_url": "https://www.youtube.com/watch?v=QPP8fxKJx_8",
-      "info_adicional": null
-    },
-    {
-      "id": "cena-cultura-raices-ruta-seda",
-      "title": "La Ruta de la Seda. Pasado y presente de unos caminos milenarios",
-      "type": "conferencia",
-      "date": "2025-05-23",
-      "year": 2025,
-      "organization": "Raíces de Europa / Cloud Coachers, Madrid",
-      "url": "https://www.youtube.com/watch?v=M3-dN5Mn5NE",
-      "description": "Cena cultural con conferencia y coloquio sobre el pasado y presente de la Ruta de la Seda.",
-      "summary": "Acto de Raíces de Europa en Madrid con conferencia de Eva Tobalina y cóctel posterior.",
-      "topics": [
-        "Ruta de la Seda",
-        "pasado y presente",
-        "Asia Central"
-      ],
-      "characters": [],
-      "civilizations": [
-        "China",
-        "Asia Central",
-        "Imperio Mongol"
-      ],
-      "duration": null,
-      "language": "es",
-      "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": "video",
-      "youtube_url": "https://www.youtube.com/watch?v=M3-dN5Mn5NE",
-      "info_adicional": null
-    },
-    {
       "id": "ruta-de-la-seda-encuentro-unab",
       "title": "La Ruta de la Seda: el encuentro entre dos mundos",
       "type": "conferencia",
@@ -887,35 +829,6 @@
       "source": "https://evatobalina.com/proximas-actividades/",
       "mediaType": "video",
       "youtube_url": "https://www.youtube.com/watch?v=_EEfazh-Mx8",
-      "info_adicional": null
-    },
-    {
-      "id": "pueblos-estepa-hunos-atila-ivoox",
-      "title": "Los pueblos de la estepa: Los Hunos y la muerte de Atila",
-      "type": "conferencia",
-      "date": "2025-01-01",
-      "year": 2025,
-      "organization": "Raíces de Europa",
-      "url": "https://www.youtube.com/watch?v=7Fqya9hIt3E",
-      "description": "Conferencia sobre los hunos, su vida cotidiana, creencias, organización social y la figura de Atila.",
-      "summary": "La charla incluye detalles sobre la vida cotidiana, creencias, organización social y el legado de los hunos en la historia de Eurasia.",
-      "topics": [
-        "Hunos",
-        "Atila",
-        "estepa",
-        "pueblos nómadas"
-      ],
-      "characters": [
-        "Atila"
-      ],
-      "civilizations": [
-        "Hunos"
-      ],
-      "duration": null,
-      "language": "es",
-      "source": "https://www.ivoox.com",
-      "mediaType": "video",
-      "youtube_url": "https://www.youtube.com/watch?v=7Fqya9hIt3E",
       "info_adicional": null
     },
     {
@@ -1508,7 +1421,7 @@
       "date": null,
       "year": 2023,
       "organization": "Raíces de Europa",
-      "url": "https://www.youtube.com/watch?v=4qHAYtcd5IU",
+      "url": null,
       "description": "Tercera entrega del ciclo. Conquista de Fenicia, el asedio de Tiro, la entrada en Egipto y la fundación de Alejandría.",
       "summary": "Tobalina explica cómo Alejandro se convirtió en faraón y fundó la ciudad que sería el gran centro cultural del helenismo.",
       "topics": [
@@ -1530,8 +1443,8 @@
       "duration": null,
       "language": "es",
       "source": "https://www.academia.edu/127789080/HISTORIA_DE_GRECIA",
-      "mediaType": "video",
-      "youtube_url": "https://www.youtube.com/watch?v=4qHAYtcd5IU",
+      "mediaType": null,
+      "youtube_url": null,
       "info_adicional": null
     },
     {
@@ -2153,41 +2066,6 @@
       "info_adicional": null
     },
     {
-      "id": "babilonia",
-      "title": "Babilonia y sus imperios",
-      "type": "conferencia",
-      "date": null,
-      "year": null,
-      "organization": "Raíces de Europa",
-      "url": "https://www.youtube.com/watch?v=ALiwM44-Krw",
-      "description": "Cuarta sesión del ciclo mesopotámico. Recorrido por la historia de Babilonia desde Hammurabi hasta Nabucodonosor y la caída ante Ciro el Grande.",
-      "summary": "Tobalina presenta la historia de una de las ciudades más míticas de la Antigüedad, desde el Código de Hammurabi hasta los Jardines Colgantes y el cautiverio babilónico.",
-      "topics": [
-        "Babilonia",
-        "Hammurabi",
-        "Nabucodonosor II",
-        "Jardines Colgantes",
-        "Torre de Babel",
-        "cautiverio babilónico"
-      ],
-      "characters": [
-        "Hammurabi",
-        "Nabucodonosor II",
-        "Nabopolasar",
-        "Ciro el Grande"
-      ],
-      "civilizations": [
-        "Babilonia",
-        "Imperio Neobabilónico"
-      ],
-      "duration": null,
-      "language": "es",
-      "source": "https://evatobalina.com/conferencias/",
-      "mediaType": "video",
-      "youtube_url": "https://www.youtube.com/watch?v=ALiwM44-Krw",
-      "info_adicional": null
-    },
-    {
       "id": "caligula",
       "title": "Calígula, paradigma del tirano loco",
       "type": "conferencia",
@@ -2713,39 +2591,6 @@
       "info_adicional": null
     },
     {
-      "id": "livia-emperatriz",
-      "title": "Livia, la primera emperatriz de Roma: vida y poder",
-      "type": "conferencia",
-      "date": null,
-      "year": null,
-      "organization": "Raíces de Europa",
-      "url": "https://www.youtube.com/watch?v=2uMc8uHFQCs",
-      "description": "Conferencia dedicada a Livia Drusila, su matrimonio con Augusto, su influencia política y la imagen historiográfica transmitida por Tácito y Robert Graves.",
-      "summary": "Tobalina desmonta los tópicos sobre Livia como envenenadora serial y revela a una mujer inteligente y poderosa en un mundo de hombres.",
-      "topics": [
-        "Livia Drusila",
-        "emperatrices romanas",
-        "mujer en Roma",
-        "dinastía julio-claudia",
-        "propaganda imperial"
-      ],
-      "characters": [
-        "Livia Drusila",
-        "Augusto",
-        "Tiberio",
-        "Druso el Mayor"
-      ],
-      "civilizations": [
-        "Roma Imperial"
-      ],
-      "duration": null,
-      "language": "es",
-      "source": "https://www.diaridetarragona.com/cultura/227785/livia-drusila-la-mas-poderosa-de-roma-jc23561549.html",
-      "mediaType": "video",
-      "youtube_url": "https://www.youtube.com/watch?v=2uMc8uHFQCs",
-      "info_adicional": null
-    },
-    {
       "id": "livia-mujer-augusto",
       "title": "Livia, mujer de Augusto y emperatriz de Roma: vida y poder (versión completa)",
       "type": "conferencia",
@@ -2878,39 +2723,6 @@
       "source": "https://evatobalina.com/conferencias/",
       "mediaType": "video",
       "youtube_url": "https://www.youtube.com/watch?v=6gt5WtcGbN8",
-      "info_adicional": null
-    },
-    {
-      "id": "hititas",
-      "title": "Los hititas",
-      "type": "conferencia",
-      "date": null,
-      "year": null,
-      "organization": "Raíces de Europa",
-      "url": "https://www.youtube.com/watch?v=aKEIo1fea0c",
-      "description": "Sesión del ciclo mesopotámico dedicada al Imperio Hitita, su descubrimiento moderno, la batalla de Qadesh y el uso del hierro.",
-      "summary": "Tobalina aborda la historia de uno de los grandes imperios de Anatolia, desde Hattusa hasta su colapso durante las invasiones de los Pueblos del Mar.",
-      "topics": [
-        "Imperio Hitita",
-        "Hattusa",
-        "batalla de Qadesh",
-        "hierro",
-        "Pueblos del Mar"
-      ],
-      "characters": [
-        "Mursili I",
-        "Suppiluliuma I",
-        "Muwatalli II",
-        "Ramsés II"
-      ],
-      "civilizations": [
-        "Hitita"
-      ],
-      "duration": null,
-      "language": "es",
-      "source": "https://evatobalina.com/conferencias/",
-      "mediaType": "video",
-      "youtube_url": "https://www.youtube.com/watch?v=aKEIo1fea0c",
       "info_adicional": null
     },
     {

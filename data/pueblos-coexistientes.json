@@ -3,7 +3,7 @@
     "autor_contenido": "Eva Tobalina Oraá",
     "enfoque": "Visualización de pueblos y civilizaciones que coexistieron a lo largo de la historia antigua, con franjas de población aproximada.",
     "cobertura_cronologica": "desde c. 3500 a.C. hasta 1500 d.C.",
-    "total_pueblos": 28,
+    "total_pueblos": 29,
     "unidad_poblacion": "habitantes (aproximados)",
     "fuentes_principales": [
       "Estimaciones demográficas históricas generales",
@@ -29,59 +29,6 @@
         "sumer-rIlh-EYWgoQ",
         "sumer-zcmh",
         "tumbas-reales-ur"
-      ]
-    },
-    {
-      "id": "acadia",
-      "name": "Acadia",
-      "startYear": -2334,
-      "endYear": -2154,
-      "peakYear": -2250,
-      "peakPopulation": 1500000,
-      "color": "#A78BFA",
-      "region": "Mesopotamia central",
-      "description": "Primer imperio de la historia, fundado por Sargón de Acad y unificado bajo una sola corona.",
-      "civilizations": [
-        "Acadia"
-      ],
-      "relatedConferences": [
-        "sumer-zcmh"
-      ]
-    },
-    {
-      "id": "babilonia",
-      "name": "Babilonia",
-      "startYear": -1894,
-      "endYear": -539,
-      "peakYear": -600,
-      "peakPopulation": 2500000,
-      "color": "#EC4899",
-      "region": "Mesopotamia central",
-      "description": "Ciudad-estado que llegó a ser capital de imperios paleo y neobabilónicos, cuna del Código de Hammurabi.",
-      "civilizations": [
-        "Babilonia",
-        "Imperio Neobabilónico"
-      ],
-      "relatedConferences": [
-        "babilonia",
-        "babilonia-neobabilonico"
-      ]
-    },
-    {
-      "id": "asiria",
-      "name": "Asiria",
-      "startYear": -2500,
-      "endYear": -609,
-      "peakYear": -700,
-      "peakPopulation": 3000000,
-      "color": "#F43F5E",
-      "region": "Mesopotamia del norte",
-      "description": "Imperio mesopotámico que dominó el Creciente Fértil mediante el ejército y una sofisticada administración.",
-      "civilizations": [
-        "Asiria"
-      ],
-      "relatedConferences": [
-        "asirios"
       ]
     },
     {
@@ -111,6 +58,41 @@
       ]
     },
     {
+      "id": "acadia",
+      "name": "Acadia",
+      "startYear": -2334,
+      "endYear": -2154,
+      "peakYear": -2250,
+      "peakPopulation": 1500000,
+      "color": "#A78BFA",
+      "region": "Mesopotamia central",
+      "description": "Primer imperio de la historia, fundado por Sargón de Acad y unificado bajo una sola corona.",
+      "civilizations": [
+        "Acadia"
+      ],
+      "relatedConferences": [
+        "sumer-zcmh"
+      ]
+    },
+    {
+      "id": "babilonia",
+      "name": "Babilonia",
+      "startYear": -1894,
+      "endYear": -539,
+      "peakYear": -600,
+      "peakPopulation": 2500000,
+      "color": "#EC4899",
+      "region": "Mesopotamia central",
+      "description": "Ciudad-estado que llegó a ser capital de imperios paleobabilónico, casita y neobabilónico; cuna del Código de Hammurabi y del mito de la Torre de Babel.",
+      "civilizations": [
+        "Babilonia",
+        "Imperio Neobabilónico"
+      ],
+      "relatedConferences": [
+        "babilonia-neobabilonico"
+      ]
+    },
+    {
       "id": "hititas",
       "name": "Hititas",
       "startYear": -1650,
@@ -124,19 +106,19 @@
         "Hitita"
       ],
       "relatedConferences": [
-        "hititas"
+        "imperio-hitita-i"
       ]
     },
     {
       "id": "fenicia",
       "name": "Fenicia",
       "startYear": -1200,
-      "endYear": -800,
+      "endYear": -539,
       "peakYear": -1000,
       "peakPopulation": 600000,
       "color": "#06B6D4",
       "region": "Levante mediterráneo",
-      "description": "Civilización de ciudades-estado navegantes que difundieron el alfabeto por el Mediterráneo.",
+      "description": "Civilización de ciudades-estado navegantes que difundieron el alfabeto por el Mediterráneo. Su independencia política termina con la conquista de Tiro por Nabucodonosor II y, culturalmente, perdura hasta la época helenística.",
       "civilizations": [
         "Fenicia"
       ],
@@ -145,39 +127,70 @@
       ]
     },
     {
-      "id": "persia-aquemenida",
-      "name": "Imperio Persa Aqueménida",
-      "startYear": -550,
-      "endYear": -330,
-      "peakYear": -480,
-      "peakPopulation": 15000000,
-      "color": "#6366F1",
-      "region": "Oriente Próximo, Egipto, Asia Central",
-      "description": "Primer imperio 'mundial' de la historia, multicultural y articulado mediante sátrapías y caminos reales.",
+      "id": "tartessos",
+      "name": "Tartessos",
+      "startYear": -1000,
+      "endYear": -500,
+      "peakYear": -700,
+      "peakPopulation": 500000,
+      "color": "#B45309",
+      "region": "Sur de la Península Ibérica",
+      "description": "Cultura prerromana del sur de Iberia, vinculada al comercio del estaño y al contacto con fenicios y griegos.",
       "civilizations": [
-        "Imperio Persa Aqueménida"
+        "Tartessos"
       ],
       "relatedConferences": [
-        "imperio-persa"
+        "cancho-roano-2026"
       ]
     },
     {
-      "id": "grecia-clasica",
-      "name": "Grecia clásica",
-      "startYear": -800,
-      "endYear": -323,
-      "peakYear": -450,
-      "peakPopulation": 3000000,
-      "color": "#3B82F6",
-      "region": "Grecia y colonias",
-      "description": "Conjunto de polis griegas que desarrollaron la democracia, la filosofía y el arte clásico.",
+      "id": "tracios",
+      "name": "Tracios",
+      "startYear": -1000,
+      "endYear": 46,
+      "peakYear": -400,
+      "peakPopulation": 1200000,
+      "color": "#FBBF24",
+      "region": "Balcanes orientales",
+      "description": "Civilización de los Balcanes, absorbida finalmente por el Imperio Romano.",
       "civilizations": [
-        "Grecia clásica"
+        "Tracia"
       ],
       "relatedConferences": [
-        "imperio-persa",
-        "odiseo"
+        "tracios"
       ]
+    },
+    {
+      "id": "asiria",
+      "name": "Asiria",
+      "startYear": -911,
+      "endYear": -609,
+      "peakYear": -700,
+      "peakPopulation": 3000000,
+      "color": "#F43F5E",
+      "region": "Mesopotamia del norte",
+      "description": "Imperio mesopotámico que dominó el Creciente Fértil mediante el ejército y una sofisticada administración, especialmente durante el período neoasirio.",
+      "civilizations": [
+        "Asiria"
+      ],
+      "relatedConferences": [
+        "asirios"
+      ]
+    },
+    {
+      "id": "cartago",
+      "name": "Cartago",
+      "startYear": -814,
+      "endYear": -146,
+      "peakYear": -300,
+      "peakPopulation": 400000,
+      "color": "#F97316",
+      "region": "Cuenca del Mediterráneo occidental",
+      "description": "Ciudad-estado fenicia que dominó el comercio mediterráneo occidental hasta las Guerras Púnicas contra Roma.",
+      "civilizations": [
+        "Cartago"
+      ],
+      "relatedConferences": []
     },
     {
       "id": "macedonia",
@@ -200,6 +213,148 @@
       ]
     },
     {
+      "id": "grecia-clasica",
+      "name": "Grecia antigua",
+      "startYear": -800,
+      "endYear": -323,
+      "peakYear": -450,
+      "peakPopulation": 3000000,
+      "color": "#3B82F6",
+      "region": "Grecia y colonias",
+      "description": "Conjunto de polis griegas que, desde la Época Arcaica hasta la muerte de Alejandro Magno, desarrollaron la democracia, la filosofía y el arte clásico.",
+      "civilizations": [
+        "Grecia clásica"
+      ],
+      "relatedConferences": [
+        "imperio-persa",
+        "odiseo"
+      ]
+    },
+    {
+      "id": "atenas",
+      "name": "Atenas",
+      "startYear": -800,
+      "endYear": -322,
+      "peakYear": -450,
+      "peakPopulation": 250000,
+      "color": "#3B82F6",
+      "region": "Ática, Grecia",
+      "description": "Polis griega que lideró la Liga de Delos y desarrolló la democracia, la filosofía y el teatro clásico.",
+      "civilizations": [
+        "Grecia clásica",
+        "Atenas"
+      ],
+      "relatedConferences": [
+        "atenas-fidias-pericles",
+        "tragedia-griega-i",
+        "tragedia-griega-ii",
+        "tragedia-griega-iii",
+        "tragedia-griega-iv",
+        "tragedia-griega-v",
+        "anabasis-jenofonte"
+      ]
+    },
+    {
+      "id": "escitas",
+      "name": "Escitas",
+      "startYear": -700,
+      "endYear": -200,
+      "peakYear": -500,
+      "peakPopulation": 1000000,
+      "color": "#84CC16",
+      "region": "Estepa póntico-cáspica",
+      "description": "Pueblo nómada dominador del caballo, mediador entre estepa, Persia y Grecia.",
+      "civilizations": [
+        "Escitas"
+      ],
+      "relatedConferences": [
+        "escitas"
+      ]
+    },
+    {
+      "id": "persia-aquemenida",
+      "name": "Imperio Persa Aqueménida",
+      "startYear": -550,
+      "endYear": -330,
+      "peakYear": -480,
+      "peakPopulation": 15000000,
+      "color": "#6366F1",
+      "region": "Oriente Próximo, Egipto, Asia Central",
+      "description": "Primer imperio 'mundial' de la historia, multicultural y articulado mediante sátrapías y caminos reales.",
+      "civilizations": [
+        "Imperio Persa Aqueménida"
+      ],
+      "relatedConferences": [
+        "imperio-persa"
+      ]
+    },
+    {
+      "id": "partos",
+      "name": "Partos",
+      "startYear": -247,
+      "endYear": 224,
+      "peakYear": -100,
+      "peakPopulation": 2500000,
+      "color": "#0891B2",
+      "region": "Irán y Mesopotamia",
+      "description": "Imperio iranio que medió entre Oriente y Occidente y fue rival de Roma durante siglos.",
+      "civilizations": [
+        "Partos"
+      ],
+      "relatedConferences": [
+        "curso-pueblos-estepa-2025"
+      ]
+    },
+    {
+      "id": "china-qin",
+      "name": "Imperio Qin",
+      "startYear": -221,
+      "endYear": -206,
+      "peakYear": -210,
+      "peakPopulation": 20000000,
+      "color": "#7F1D1D",
+      "region": "China oriental",
+      "description": "Primer imperio unificado de China, fundado por Qin Shi Huang. Breve pero decisivo para la historia china.",
+      "civilizations": [
+        "China Qin"
+      ],
+      "relatedConferences": [
+        "tumba-primer-emperador-china"
+      ]
+    },
+    {
+      "id": "xiongnu",
+      "name": "Xiongnu",
+      "startYear": -209,
+      "endYear": 93,
+      "peakYear": -150,
+      "peakPopulation": 1000000,
+      "color": "#9CA3AF",
+      "region": "Mongolia y Asia Central oriental",
+      "description": "Confederación nómada de Asia Oriental, precedente lejano y no equivalente a los hunos europeos. Rival de la dinastía Han por el control de la estepa.",
+      "civilizations": [
+        "Xiongnu"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "china-han",
+      "name": "China Han",
+      "startYear": -202,
+      "endYear": 220,
+      "peakYear": 1,
+      "peakPopulation": 60000000,
+      "color": "#EF4444",
+      "region": "China oriental",
+      "description": "Dinastía que unificó gran parte de China y abrió oficialmente la Ruta de la Seda hacia Asia Central.",
+      "civilizations": [
+        "China Han"
+      ],
+      "relatedConferences": [
+        "ruta-de-la-seda-origen"
+      ]
+    },
+    {
       "id": "roma-imperial",
       "name": "Imperio Romano",
       "startYear": -27,
@@ -216,7 +371,7 @@
       "relatedConferences": [
         "augusto-emperador",
         "augusto-familia-imperial",
-        "livia-emperatriz",
+        "livia-mujer-augusto",
         "tiberio",
         "caligula",
         "claudio",
@@ -261,71 +416,20 @@
       ]
     },
     {
-      "id": "califato-abasi",
-      "name": "Califato Abasí",
-      "startYear": 750,
-      "endYear": 1258,
-      "peakYear": 850,
-      "peakPopulation": 25000000,
-      "color": "#14B8A6",
-      "region": "Oriente Próximo y Mesopotamia",
-      "description": "Califato con capital en Bagdad que se convirtió en centro cultural y comercial de la Ruta de la Seda.",
+      "id": "hunos-europeos",
+      "name": "Hunos europeos",
+      "startYear": 370,
+      "endYear": 469,
+      "peakYear": 450,
+      "peakPopulation": 600000,
+      "color": "#6B7280",
+      "region": "Estepa póntica y Europa central",
+      "description": "Pueblo nómada que irrumpió en Europa en el siglo V d.C. bajo Atila y aceleró las migraciones de pueblos germánicos. Entidad política distinta de los Xiongnu de Asia Oriental.",
       "civilizations": [
-        "Califato Abasí"
+        "Hunos"
       ],
       "relatedConferences": [
-        "ruta-de-la-seda-califatos"
-      ]
-    },
-    {
-      "id": "china-han",
-      "name": "China Han",
-      "startYear": -202,
-      "endYear": 220,
-      "peakYear": 1,
-      "peakPopulation": 60000000,
-      "color": "#EF4444",
-      "region": "China oriental",
-      "description": "Dinastía que unificó gran parte de China y abrió oficialmente la Ruta de la Seda hacia Asia Central.",
-      "civilizations": [
-        "China Han"
-      ],
-      "relatedConferences": [
-        "ruta-de-la-seda-origen"
-      ]
-    },
-    {
-      "id": "china-tang",
-      "name": "China Tang",
-      "startYear": 618,
-      "endYear": 907,
-      "peakYear": 750,
-      "peakPopulation": 70000000,
-      "color": "#B91C1C",
-      "region": "China oriental",
-      "description": "Edad de oro de la cultura china, con expansión comercial por la Ruta de la Seda.",
-      "civilizations": [
-        "China Tang"
-      ],
-      "relatedConferences": [
-        "ruta-de-la-seda-califatos",
-        "presentacion-libro-palma-xuanzang"
-      ]
-    },
-    {
-      "id": "partos",
-      "name": "Partos",
-      "startYear": -247,
-      "endYear": 224,
-      "peakYear": -100,
-      "peakPopulation": 2500000,
-      "color": "#0891B2",
-      "region": "Irán y Mesopotamia",
-      "description": "Imperio iranio que medió entre Oriente y Occidente y fue rival de Roma durante siglos.",
-      "civilizations": [
-        "Partos"
-      ],
-      "relatedConferences": [
+        "pueblos-estepa-hunos",
         "curso-pueblos-estepa-2025"
       ]
     },
@@ -349,6 +453,41 @@
       ]
     },
     {
+      "id": "china-tang",
+      "name": "China Tang",
+      "startYear": 618,
+      "endYear": 907,
+      "peakYear": 750,
+      "peakPopulation": 70000000,
+      "color": "#B91C1C",
+      "region": "China oriental",
+      "description": "Edad de oro de la cultura china, con expansión comercial por la Ruta de la Seda.",
+      "civilizations": [
+        "China Tang"
+      ],
+      "relatedConferences": [
+        "ruta-de-la-seda-califatos",
+        "presentacion-libro-palma-xuanzang"
+      ]
+    },
+    {
+      "id": "califato-abasi",
+      "name": "Califato Abasí",
+      "startYear": 750,
+      "endYear": 1258,
+      "peakYear": 850,
+      "peakPopulation": 25000000,
+      "color": "#14B8A6",
+      "region": "Oriente Próximo y Mesopotamia",
+      "description": "Califato con capital en Bagdad que se convirtió en centro cultural y comercial de la Ruta de la Seda.",
+      "civilizations": [
+        "Califato Abasí"
+      ],
+      "relatedConferences": [
+        "ruta-de-la-seda-califatos"
+      ]
+    },
+    {
       "id": "imperio-jemer",
       "name": "Imperio Jemer",
       "startYear": 802,
@@ -366,32 +505,15 @@
       ]
     },
     {
-      "id": "tartessos",
-      "name": "Tartessos",
-      "startYear": -1000,
-      "endYear": -500,
-      "peakYear": -700,
-      "peakPopulation": 500000,
-      "color": "#B45309",
-      "region": "Sur de la Península Ibérica",
-      "description": "Cultura prerromana del sur de Iberia, vinculada al comercio del estaño y al contacto con fenicios y griegos.",
-      "civilizations": [
-        "Tartessos"
-      ],
-      "relatedConferences": [
-        "cancho-roano-2026"
-      ]
-    },
-    {
       "id": "imperio-mongol",
       "name": "Imperio Mongol",
       "startYear": 1206,
-      "endYear": 1368,
+      "endYear": 1260,
       "peakYear": 1279,
       "peakPopulation": 110000000,
       "color": "#65A30D",
       "region": "Eurasia",
-      "description": "Mayor imperio territorial continuo de la historia, que garantizó la Pax Mongolica y revitalizó el comercio euroasiático.",
+      "description": "Mayor imperio territorial continuo de la historia en su fase unificada (1206-1260), que garantizó la Pax Mongolica y revitalizó el comercio euroasiático. Tras 1260 se fragmentó en kanatos independientes.",
       "civilizations": [
         "Imperio Mongol"
       ],
@@ -417,115 +539,6 @@
       ],
       "relatedConferences": [
         "ruta-de-la-seda-tamerlan"
-      ]
-    },
-    {
-      "id": "escitas",
-      "name": "Escitas",
-      "startYear": -700,
-      "endYear": -200,
-      "peakYear": -500,
-      "peakPopulation": 1000000,
-      "color": "#84CC16",
-      "region": "Estepa póntico-cáspica",
-      "description": "Pueblo nómada dominador del caballo, mediador entre estepa, Persia y Grecia.",
-      "civilizations": [
-        "Escitas"
-      ],
-      "relatedConferences": [
-        "escitas"
-      ]
-    },
-    {
-      "id": "tracios",
-      "name": "Tracios",
-      "startYear": -1000,
-      "endYear": 46,
-      "peakYear": -400,
-      "peakPopulation": 1200000,
-      "color": "#FBBF24",
-      "region": "Balcanes orientales",
-      "description": "Civilización de los Balcanes, absorbida finalmente por el Imperio Romano.",
-      "civilizations": [
-        "Tracia"
-      ],
-      "relatedConferences": [
-        "tracios"
-      ]
-    },
-    {
-      "id": "hunos",
-      "name": "Hunos",
-      "startYear": -220,
-      "endYear": 469,
-      "peakYear": 450,
-      "peakPopulation": 600000,
-      "color": "#9CA3AF",
-      "region": "Estepa euroasiática",
-      "description": "Pueblo nómada que irrumpió en Europa y aceleró las migraciones de pueblos germánicos.",
-      "civilizations": [
-        "Hunos"
-      ],
-      "relatedConferences": [
-        "pueblos-estepa-hunos",
-        "curso-pueblos-estepa-2025",
-        "pueblos-estepa-hunos-atila-ivoox"
-      ]
-    },
-    {
-      "id": "cartago",
-      "name": "Cartago",
-      "startYear": -814,
-      "endYear": -146,
-      "peakYear": -300,
-      "peakPopulation": 400000,
-      "color": "#F97316",
-      "region": "Cuenca del Mediterráneo occidental",
-      "description": "Ciudad-estado fenicia que dominó el comercio mediterráneo occidental hasta las Guerras Púnicas contra Roma.",
-      "civilizations": [
-        "Cartago"
-      ],
-      "relatedConferences": []
-    },
-    {
-      "id": "china-qin",
-      "name": "Imperio Qin",
-      "startYear": -221,
-      "endYear": -206,
-      "peakYear": -210,
-      "peakPopulation": 20000000,
-      "color": "#7F1D1D",
-      "region": "China oriental",
-      "description": "Primer imperio unificado de China, fundado por Qin Shi Huang. Breve pero decisivo para la historia china.",
-      "civilizations": [
-        "China Qin"
-      ],
-      "relatedConferences": [
-        "tumba-primer-emperador-china"
-      ]
-    },
-    {
-      "id": "atenas",
-      "name": "Atenas",
-      "startYear": -800,
-      "endYear": -322,
-      "peakYear": -450,
-      "peakPopulation": 250000,
-      "color": "#3B82F6",
-      "region": "Ática, Grecia",
-      "description": "Polis griega que lideró la Liga de Delos y desarrolló la democracia, la filosofía y el teatro clásico.",
-      "civilizations": [
-        "Grecia clásica",
-        "Atenas"
-      ],
-      "relatedConferences": [
-        "atenas-fidias-pericles",
-        "tragedia-griega-i",
-        "tragedia-griega-ii",
-        "tragedia-griega-iii",
-        "tragedia-griega-iv",
-        "tragedia-griega-v",
-        "anabasis-jenofonte"
       ]
     }
   ]
