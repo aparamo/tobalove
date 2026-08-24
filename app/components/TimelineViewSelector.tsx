@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CalendarDays, Users } from "lucide-react";
+import { CalendarDays, Users, PlaySquare, Database } from "lucide-react";
 import { Timeline } from "./Timeline";
 import { PopulationTimeline } from "./PopulationTimeline";
 import { cn } from "@/lib/utils";
@@ -81,6 +81,24 @@ export function TimelineViewSelector({
               Pueblos coexistientes
             </span>
           </button>
+          <a
+            href="/videos"
+            className="relative inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            <span className="relative z-10 inline-flex items-center gap-2">
+              <PlaySquare className="h-4 w-4" />
+              Videos
+            </span>
+          </a>
+          <a
+            href="/database"
+            className="relative inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            <span className="relative z-10 inline-flex items-center gap-2">
+              <Database className="h-4 w-4" />
+              Base de datos
+            </span>
+          </a>
         </div>
       </div>
 

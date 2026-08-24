@@ -15,6 +15,8 @@ export interface ConferenceItem {
   year: number | null;
   organization: string;
   url: string | null;
+  youtube_url: string | null;
+  info_adicional: string | null;
   description: string;
   summary: string;
   topics: string[];

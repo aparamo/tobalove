@@ -16,7 +16,7 @@ import {
   ChevronUp,
   Video,
 } from "lucide-react";
-import { getYouTubeId, getMediaType, MediaIcon } from "@/lib/media";
+import { getYouTubeId, getMediaType, MediaIcon, getYouTubeUrl } from "@/lib/media";
 import type {
   TimelineEvent as TimelineEventType,
   SourceConference,
@@ -63,8 +63,15 @@ function RelatedVideoCard({
 }: {
   conference: ConferenceItem | SourceConference;
 }) {
-  const videoId = getYouTubeId(conference.url ?? null);
-  const mediaType = getMediaType(conference.url ?? null);
+  const isConfItem = "id" in conference;
+  const youtubeUrl = isConfItem
+    ? getYouTubeUrl(conference as ConferenceItem)
+    : getYouTubeId(conference.url)
+    ? conference.url
+    : null;
+  const resourceUrl = youtubeUrl ?? conference.url;
+  const videoId = getYouTubeId(youtubeUrl);
+  const mediaType = getMediaType(resourceUrl ?? null);
 
   return (
     <div className="flex items-start gap-3 rounded-lg border border-border/60 bg-card/50 p-3 transition-colors hover:bg-card">
@@ -79,14 +86,14 @@ function RelatedVideoCard({
           {(conference as ConferenceItem).organization ?? (conference as SourceConference).organization}
           {conference.date ? ` · ${conference.date}` : null}
         </p>
-        {conference.url && (
+        {resourceUrl && (
           <a
-            href={conference.url}
+            href={resourceUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
           >
-            {mediaType === "video" ? "Ver en YouTube" : "Ver recurso"}
+            {videoId ? "Ver en YouTube" : "Ver recurso"}
             <ExternalLink className="h-3 w-3" />
           </a>
         )}
@@ -124,7 +131,19 @@ export function TimelineEvent({
   const [expanded, setExpanded] = useState(false);
   const isLeft = side === "left";
 
-  const sourceVideoId = getYouTubeId(event.sourceConference.url);
+  const sourceConfItem = useMemo(() => {
+    if (!conferencesMap) return null;
+    for (const conf of conferencesMap.values()) {
+      if (conf.title === event.sourceConference.title) return conf;
+    }
+    return null;
+  }, [event.sourceConference.title, conferencesMap]);
+
+  const sourceVideoId = getYouTubeId(
+    sourceConfItem
+      ? getYouTubeUrl(sourceConfItem)
+      : event.sourceConference.url
+  );
 
   const relatedVideos = useMemo(() => {
     const list: ConferenceItem[] = [];
@@ -147,6 +166,12 @@ export function TimelineEvent({
         title: event.sourceConference.title,
         organization: event.sourceConference.organization,
         url: event.sourceConference.url,
+        youtube_url:
+          sourceConfItem?.youtube_url ??
+          (getYouTubeId(event.sourceConference.url)
+            ? event.sourceConference.url
+            : null),
+        info_adicional: sourceConfItem?.info_adicional ?? null,
         date: event.sourceConference.date,
         type: "conferencia",
         description: "",
@@ -162,9 +187,11 @@ export function TimelineEvent({
       });
     }
     return list;
-  }, [event, conferencesMap]);
+  }, [event, conferencesMap, sourceConfItem, sourceVideoId]);
 
-  const videoCount = relatedVideos.filter((c) => c.mediaType === "video").length;
+  const videoCount = relatedVideos.filter(
+    (c) => getYouTubeUrl(c) !== null
+  ).length;
   const hasAnyMedia = relatedVideos.length > 0;
 
   return (
@@ -193,9 +220,9 @@ export function TimelineEvent({
               videoId={sourceVideoId}
               title={event.sourceConference.title}
             />
-          ) : hasAnyMedia && relatedVideos[0].mediaType === "video" ? (
+          ) : hasAnyMedia && getYouTubeUrl(relatedVideos[0]) ? (
             <VideoEmbed
-              videoId={getYouTubeId(relatedVideos[0].url) ?? ""}
+              videoId={getYouTubeId(getYouTubeUrl(relatedVideos[0])) ?? ""}
               title={relatedVideos[0].title}
             />
           ) : (

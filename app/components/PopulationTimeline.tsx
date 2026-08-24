@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/tooltip";
 import { Badge } from "@/components/ui/badge";
 import { Users, Calendar, MapPin, ExternalLink, Video } from "lucide-react";
-import { getYouTubeId, getMediaType, MediaIcon } from "@/lib/media";
+import { getYouTubeId, getMediaType, MediaIcon, getYouTubeUrl } from "@/lib/media";
 import type { PeopleGroup, ConferenceItem } from "@/app/types/timeline";
 
 interface PopulationTimelineProps {
@@ -84,12 +84,14 @@ function RelatedConferenceLinks({
       </p>
       <div className="space-y-1">
         {conferences.slice(0, 4).map((conf) => {
-          const mediaType = getMediaType(conf.url);
-          const videoId = getYouTubeId(conf.url);
+          const youtubeUrl = getYouTubeUrl(conf);
+          const resourceUrl = youtubeUrl ?? conf.url;
+          const mediaType = getMediaType(resourceUrl);
+          const videoId = getYouTubeId(youtubeUrl);
           return (
             <a
               key={conf.id}
-              href={conf.url ?? undefined}
+              href={resourceUrl ?? undefined}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 rounded px-1.5 py-1 text-xs text-background/90 transition-colors hover:bg-background/10"

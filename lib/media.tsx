@@ -3,13 +3,7 @@
 import { Video, Headphones, Globe } from "lucide-react";
 import type { MediaType } from "@/app/types/timeline";
 
-export function getYouTubeId(url: string | null): string | null {
-  if (!url) return null;
-  const match = url.match(
-    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/
-  );
-  return match?.[1] ?? null;
-}
+export { getYouTubeId, getYouTubeUrl, isYouTubeUrl } from "@/lib/youtube";
 
 export function getMediaType(url: string | null): MediaType {
   if (!url) return null;
