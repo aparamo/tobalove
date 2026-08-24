@@ -507,3 +507,76 @@ Se añadieron eventos históricos y se enlazaron las conferencias huérfanas:
 
 ### Commit
 - Commiteado en `tobalina/tob-app` con el mensaje descriptivo correspondiente.
+
+
+## 2026-08-24 (continuación) — Nueva vista "Gráfica vertical" de pueblos coexistientes
+
+### Contexto
+El usuario pidió una segunda opción de línea de tiempo en `/timeline` que mantuviera
+el legacy existente (eventos históricos y pueblos horizontales) pero añadiera una
+nueva visualización tipo "gráfica animada hacia abajo". Los requisitos fueron:
+- Franjas de color cuya anchura represente la población aproximada.
+- Click para abrir un dialog con detalles y todos los videos relacionados.
+- Enfoque primordial en conferencias con contenido de YouTube válido.
+- Por defecto mostrar solo pueblos con videos de YouTube con enlace correcto.
+- Similar a la línea de tiempo legacy, con medida temporal y línea central.
+- Paginación de 10 en 10, infinite scroll, botón "Mostrar más" y navegación flotante.
+- En la línea de tiempo actual, aumentar el tamaño de fechas e info de badges en
+  desktop, evitando `text-xs` e incluso `text-sm`.
+
+### UI / UX
+- Se creó `/tob-app/components/ui/dialog.tsx` basado en `@base-ui/react/dialog`,
+  siguiendo el mismo patrón que `sheet.tsx`.
+- Se creó `/tob-app/app/components/VerticalPopulationTimeline.tsx`:
+  - Vista "Gráfica vertical" accesible desde `TimelineViewSelector`.
+  - Layout estilo legacy: línea vertical central, tarjetas a izquierda y derecha
+    alternadas, posicionadas según el año de apogeo de cada pueblo.
+  - Cada tarjeta incluye nombre, fechas, región, población, descripción y una
+    franja de color cuyo ancho representa la población aproximada (escala de raíz
+    cuadrada).
+  - La línea central muestra el período de cada pueblo como franjas verticales de
+    color en carriles paralelos, de modo que cuando varias civilizaciones coexisten
+    en el mismo tiempo se ven múltiples colores simultáneamente.
+  - Tanto las tarjetas como las franjas de la línea central son clicables y abren
+    el mismo dialog con detalles del pueblo y todos los videos de YouTube
+    relacionados.
+  - Por defecto se filtran solo los pueblos que tienen al menos un video de YouTube
+    relacionado; hay un toggle para mostrar todos.
+  - Paginación de 10 en 10 con infinite scroll (IntersectionObserver) y botón
+    "Mostrar más".
+  - Botones flotantes abajo a la izquierda para navegar al punto anterior/siguiente
+    de la línea del tiempo.
+  - Animaciones de entrada con `framer-motion`.
+- Se actualizó `/tob-app/app/components/TimelineViewSelector.tsx`:
+  - Se añadió la pestaña "Gráfica vertical" junto a "Eventos históricos" y
+    "Pueblos".
+  - Se acortó la etiqueta "Pueblos coexistientes" a "Pueblos" para mejorar el
+    espacio disponible.
+- Se actualizó `/tob-app/app/components/TimelineEvent.tsx`:
+  - Aumento de tamaño de texto en desktop para badges de fecha/ubicación/videos,
+    descripción, secciones expandidas, listas, badges internos y botón de acción.
+  - Se mantuvo el tamaño más pequeño en móvil siguiendo el enfoque mobile-first.
+  - Mejoras en la tarjeta de video relacionado (`RelatedVideoCard`) para tamaños
+    mayores en desktop.
+
+### Tipos y helpers
+- No se modificaron los tipos de `app/types/timeline.ts`; se reutilizaron
+  `PeopleGroup` y `ConferenceItem`.
+- Se reutilizaron `getYouTubeUrl` de `@/lib/youtube` y `getMediaType` / `MediaIcon`
+  de `@/lib/media`.
+
+### Datos
+- No se modificaron los JSON maestros. El filtro por videos se aplica en tiempo de
+  ejecución sobre `pueblos-coexistientes.json` y `conferencias-eva-tobalina.json`.
+- Actualmente 25 de 29 pueblos tienen al menos un video de YouTube relacionado.
+
+### Verificación
+- `bun run lint` ✅ — sin errores (warnings preexistentes no relacionados).
+- `bun run build` ✅ — prerenderizado estático correcto.
+
+### Pendientes posibles
+- Añadir conectores visuales entre las tarjetas y sus franjas en el eje central.
+- Permitir que el usuario cambie la métrica de anchura de la franja de población
+  (lineal vs raíz cuadrada).
+- Evaluar si el filtro "solo con videos" debe aplicarse también a la vista
+  horizontal de pueblos existente.
