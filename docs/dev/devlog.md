@@ -410,3 +410,53 @@ validar existencia y coincidencia de título. Resultados:
   de los 2 placeholders del canal de Raíces de Europa.
 - Revisar si alguna de las nuevas conferencias verificadas debe vincularse a un
   evento histórico existente o a uno nuevo.
+
+
+## 2026-08-24 (continuación) — Búsqueda de URLs exactas para conferencias pendientes
+
+### Contexto
+Tras integrar `docs/fb/2.md`, quedaron 6 conferencias con URL no verificada y 2 con
+enlaces placeholder del canal de Raíces de Europa. El usuario pidió buscar las URLs
+exactas de esos 8 videos.
+
+### Metodología
+- Se usó el endpoint de búsqueda de YouTube (`/results?search_query=...`) y se
+  parseó la variable `ytInitialData` para extraer los resultados de video.
+- Para cada candidato se verificó autor y título mediante el endpoint oEmbed de
+  YouTube.
+- Se descartaron videos de otros canales (por ejemplo, el resultado para el Éxodo
+  pertenecía al canal "Homo Narrans", no a Raíces de Europa).
+
+### Resultados
+
+| ID | Título | URL encontrada | Estado |
+|---|---|---|---|
+| `petra-nabateos` | Petra y los Nabateos | `JaeqZPIaTEM` | ✅ Verificado |
+| `libano-helenistico-romano` | El Líbano en la época helenística y romana | `k7_2DASLg3g` | ✅ Verificado |
+| `puerta-mileto-berlin` | La Puerta Monumental del Mercado de Mileto... | `C4N-5f8O_D0` | ✅ Verificado |
+| `origen-mundo-creacion-hombre` | Mesopotamia y sus leyendas: el origen del mundo... | `pn63MQYAJyU` | ✅ Verificado |
+| `jordania-omeyas` | Jordania y los Omeyas | `XPVKQCV-SfI` | ✅ Verificado |
+| `griegos-asia-alejandro` | Los Griegos de Asia | `ynflGu7FPfA` | ✅ Verificado |
+| `exodo-egipto` | Conferencia ¿Existió el Éxodo de Egipto? | — | ❌ No localizado |
+| `oraculo-dioses-antiguedad` | El fenómeno del oráculo | — | Eliminado (duplicado) |
+
+### Duplicado detectado y eliminado
+- `oraculo-dioses-antiguedad` resultó ser el mismo video que `fenomeno-oraculos`
+  (`L_i8zHiUG4A`: "EL FENÓMENO DE LOS ORÁCULOS por EVA TOBALINA"), por lo que se
+  eliminó del catálogo para evitar duplicidad de URL.
+
+### Conferencia no localizada
+- `exodo-egipto` no se encontró en el canal de Raíces de Europa con el título
+  "¿Existió el Éxodo de Egipto?". Se mantiene en el catálogo con `url`/`youtube_url`
+  a `null` y una nota en `info_adicional` indicando que la URL exacta no fue
+  localizada.
+
+### Sincronización y verificación
+- JSONs copiados de `/data/` a `/tob-app/data/`.
+- `bun run lint` ✅ — sin errores (warnings preexistentes).
+- `bun run build` ✅ — prerenderizado estático correcto.
+- Total de conferencias: de 105 a **104** (por eliminación del duplicado).
+- Videos de YouTube verificados: de 65 a **71**.
+
+### Commit
+- Commiteado en `tobalina/tob-app` con el mensaje descriptivo correspondiente.

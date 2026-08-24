@@ -2,7 +2,7 @@
   "meta": {
     "autor": "Eva Tobalina Oraá",
     "biografia_corta": "Doctora en Historia Antigua, profesora universitaria y divulgadora especializada en la Antigüedad mediterránea y oriental. Combina su labor académica en la Universidad Internacional de La Rioja con conferencias para asociaciones como Raíces de Europa.",
-    "total_conferencias_estimadas": 105,
+    "total_conferencias_estimadas": 104,
     "fuentes_principales": [
       "https://espacio-tiempo.es",
       "https://www.youtube.com/@raicesdeeuropa",
@@ -3085,7 +3085,7 @@
       "source": "https://www.youtube.com/@raicesdeeuropa",
       "mediaType": null,
       "youtube_url": null,
-      "info_adicional": "Más de 1.4M de visualizaciones; URL sugerida no verificada: https://www.youtube.com/watch?v=3w6KvE9_1s0"
+      "info_adicional": "Más de 1.4M de visualizaciones; URL sugerida no verificada: https://www.youtube.com/watch?v=3w6KvE9_1s0; URL exacta no localizada en búsqueda en canal de Raíces de Europa"
     },
     {
       "id": "petra-nabateos",
@@ -3094,7 +3094,7 @@
       "date": null,
       "year": null,
       "organization": "Raíces de Europa",
-      "url": null,
+      "url": "https://www.youtube.com/watch?v=JaeqZPIaTEM",
       "description": "Conferencia sobre la ciudad nabatea de Petra, uno de los lugares más impresionantes del mundo antiguo.",
       "summary": "Tobalina nos acerca a la civilización nabatea y su espectacular ciudad esculpida en la roca, Petra, explicando su historia, su arquitectura y su papel como centro comercial en la Antigüedad.",
       "topics": [
@@ -3114,9 +3114,9 @@
       "duration": null,
       "language": "es",
       "source": "https://raicesdeeuropa.com",
-      "mediaType": null,
-      "youtube_url": null,
-      "info_adicional": "URL sugerida no verificada: https://www.youtube.com/watch?v=2XY6KqE3B6g"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=JaeqZPIaTEM",
+      "info_adicional": null
     },
     {
       "id": "libano-helenistico-romano",
@@ -3125,7 +3125,7 @@
       "date": null,
       "year": null,
       "organization": "Raíces de Europa",
-      "url": null,
+      "url": "https://www.youtube.com/watch?v=k7_2DASLg3g",
       "description": "Conferencia sobre la historia del Líbano durante los periodos helenístico y romano.",
       "summary": "Tobalina aborda la historia del Líbano en la Antigüedad, desde la influencia helenística hasta la dominación romana, destacando su riqueza cultural y su papel en el Mediterráneo oriental.",
       "topics": [
@@ -3146,9 +3146,9 @@
       "duration": "1:09:50",
       "language": "es",
       "source": "https://www.youtube.com/@raicesdeeuropa",
-      "mediaType": null,
-      "youtube_url": null,
-      "info_adicional": "URL sugerida no verificada: https://www.youtube.com/watch?v=YkGpYtN4kzM"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=k7_2DASLg3g",
+      "info_adicional": null
     },
     {
       "id": "puerta-mileto-berlin",
@@ -3157,7 +3157,7 @@
       "date": null,
       "year": null,
       "organization": "Raíces de Europa",
-      "url": null,
+      "url": "https://www.youtube.com/watch?v=C4N-5f8O_D0",
       "description": "Conferencia sobre la Puerta Monumental del Mercado de Mileto y su traslado a Berlín.",
       "summary": "Tobalina narra la fascinante historia de la Puerta del Mercado de Mileto, un monumento de la Asia Menor romana que fue desmontado y reconstruido en el Museo de Pérgamo de Berlín.",
       "topics": [
@@ -3177,42 +3177,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.youtube.com/@raicesdeeuropa",
-      "mediaType": null,
-      "youtube_url": null,
-      "info_adicional": "URL sugerida no verificada: https://www.youtube.com/watch?v=8z0R2s7nJEY"
-    },
-    {
-      "id": "oraculo-dioses-antiguedad",
-      "title": "El fenómeno del oráculo. La voz de los dioses en la Antigüedad",
-      "type": "conferencia",
-      "date": null,
-      "year": null,
-      "organization": "Raíces de Europa",
-      "url": null,
-      "description": "Conferencia sobre el fenómeno de los oráculos en la Antigüedad, su significado y su influencia.",
-      "summary": "Tobalina analiza el fascinante mundo de los oráculos en Grecia y Roma, desde Delfos hasta los oráculos de Asia Menor, explicando su funcionamiento y su papel en la toma de decisiones políticas y personales.",
-      "topics": [
-        "oráculos",
-        "Delfos",
-        "religión griega",
-        "religión romana",
-        "adivinación"
-      ],
-      "characters": [
-        "Pitía",
-        "Alejandro Magno",
-        "Augusto"
-      ],
-      "civilizations": [
-        "Grecia",
-        "Roma"
-      ],
-      "duration": null,
-      "language": "es",
-      "source": "https://www.youtube.com/@raicesdeeuropa",
-      "mediaType": null,
-      "youtube_url": null,
-      "info_adicional": "URL sugerida no verificada: https://www.youtube.com/watch?v=-Z5T8oE6FSA"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=C4N-5f8O_D0",
+      "info_adicional": null
     },
     {
       "id": "origen-mundo-creacion-hombre",
@@ -3221,7 +3188,7 @@
       "date": "2025-08-25",
       "year": 2025,
       "organization": "Raíces de Europa",
-      "url": null,
+      "url": "https://www.youtube.com/watch?v=pn63MQYAJyU",
       "description": "Primera conferencia de un ciclo sobre el origen del mundo y la creación del hombre en las distintas culturas antiguas.",
       "summary": "Tobalina inaugura un ciclo dedicado a los mitos de creación en las civilizaciones antiguas, explorando cómo diferentes culturas han explicado el origen del universo y de la humanidad.",
       "topics": [
@@ -3242,9 +3209,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.youtube.com/@raicesdeeuropa",
-      "mediaType": null,
-      "youtube_url": null,
-      "info_adicional": "URL sugerida no verificada: https://www.youtube.com/watch?v=rHees24LhSM"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=pn63MQYAJyU",
+      "info_adicional": null
     },
     {
       "id": "historia-roma-i-fundacion",
@@ -3314,7 +3281,7 @@
       "date": null,
       "year": null,
       "organization": "Raíces de Europa",
-      "url": null,
+      "url": "https://www.youtube.com/watch?v=XPVKQCV-SfI",
       "description": "Conferencia sobre la historia y cultura de Jordania durante el periodo Omeya.",
       "summary": "Tobalina explora la historia de Jordania y su papel durante el Califato Omeya, analizando su legado cultural y arquitectónico.",
       "topics": [
@@ -3335,8 +3302,8 @@
       "duration": "1:09:50",
       "language": "es",
       "source": "https://www.youtube.com/@raicesdeeuropa",
-      "mediaType": null,
-      "youtube_url": null,
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=XPVKQCV-SfI",
       "info_adicional": "Enlace genérico al canal de Raíces de Europa; video exacto pendiente de identificación"
     },
     {
@@ -3346,7 +3313,7 @@
       "date": "2026-04-25",
       "year": 2026,
       "organization": "Raíces de Europa",
-      "url": null,
+      "url": "https://www.youtube.com/watch?v=ynflGu7FPfA",
       "description": "Segunda conferencia del ciclo 'Las ciudades de Alejandro Magno', dedicada a las ciudades fundadas por Alejandro en Asia.",
       "summary": "Tobalina continúa el ciclo sobre las ciudades de Alejandro Magno, explorando las fundaciones del conquistador en Asia y su legado en el mundo helenístico.",
       "topics": [
@@ -3367,8 +3334,8 @@
       "duration": null,
       "language": "es",
       "source": "https://www.youtube.com/@raicesdeeuropa",
-      "mediaType": null,
-      "youtube_url": null,
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=ynflGu7FPfA",
       "info_adicional": "Enlace genérico al canal de Raíces de Europa; video exacto pendiente de identificación"
     }
   ]
