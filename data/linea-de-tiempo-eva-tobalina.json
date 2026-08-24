@@ -3,7 +3,7 @@
     "autor_contenido": "Eva Tobalina Oraá",
     "enfoque": "Línea de tiempo histórica de los hechos, civilizaciones y personajes tratados en las conferencias y entrevistas de Eva Tobalina.",
     "cobertura_cronologica": "desde c. 3500 a.C. hasta 1453 d.C.",
-    "total_eventos": 48,
+    "total_eventos": 54,
     "fuentes_principales": [
       "https://evatobalina.com/conferencias/",
       "https://www.youtube.com/@raicesdeeuropa",
@@ -51,6 +51,47 @@
       "relatedConferences": [
         "sumer-rIlh-EYWgoQ",
         "sumer-zcmh"
+      ]
+    },
+    {
+      "id": "mitos-creacion-evento",
+      "title": "Mitos de creación: del mundo y del hombre",
+      "dateLabel": "c. 3000 a.C. - 500 d.C.",
+      "startYear": -3000,
+      "endYear": 500,
+      "period": "Edad Antigua",
+      "location": "Mesopotamia, Egipto, Grecia y Roma",
+      "description": "Las civilizaciones antiguas elaboraron narraciones sobre el origen del cosmos y de la humanidad. Mesopotamia, Egipto, Grecia y Roma ofrecen versiones diversas pero interconectadas de estos mitos fundacionales.",
+      "summary": "Los mitos de creación reflejan cómo las culturas antiguas entendían el orden del mundo, la relación entre dioses y humanos y los límites del conocimiento.",
+      "consequences": [
+        "Configuración de sistemas religiosos y cosmológicos duraderos.",
+        "Influencia recíproca entre tradiciones mesopotámicas, egipcias y grecorromanas.",
+        "Supervivencia de temas mitológicos en filosofía, arte y literatura posteriores."
+      ],
+      "characters": [],
+      "civilizations": [
+        "Mesopotamia",
+        "Egipto Antiguo",
+        "Grecia",
+        "Roma"
+      ],
+      "topics": [
+        "mitos de creación",
+        "cosmogonía",
+        "religión antigua",
+        "Mesopotamia",
+        "Egipto",
+        "Grecia",
+        "Roma"
+      ],
+      "sourceConference": {
+        "title": "El origen del mundo y la creación del hombre",
+        "organization": "Raíces de Europa",
+        "url": "https://www.youtube.com/watch?v=pn63MQYAJyU",
+        "date": "2025-08-25"
+      },
+      "relatedConferences": [
+        "origen-mundo-creacion-hombre"
       ]
     },
     {
@@ -588,6 +629,48 @@
       ]
     },
     {
+      "id": "oraculos-antiguedad-evento",
+      "title": "Los oráculos en la Antigüedad: la voz de los dioses",
+      "dateLabel": "c. 800 a.C. - 393 d.C.",
+      "startYear": -800,
+      "endYear": 393,
+      "period": "Edad Antigua",
+      "location": "Delfos y otros santuarios del mundo grecorromano",
+      "description": "Desde los primeros oráculos griegos hasta su cierre oficial bajo el emperador Teodosio, los oráculos fueron un instrumento decisivo de consulta política, religiosa y personal en la Antigüedad.",
+      "summary": "El fenómeno oracular recorre toda la historia grecorromana, desde Delfos hasta los oráculos de Asia Menor, modelando decisiones de Estados y particulares.",
+      "consequences": [
+        "Consolidación de santuarios como centros de poder religioso y político.",
+        "Influencia de las respuestas oraculares en colonizaciones, guerras y alianzas.",
+        "Supervivencia de la tradición adivinatoria hasta su prohibición cristiana."
+      ],
+      "characters": [
+        "Pitía",
+        "Apolo",
+        "Alejandro Magno",
+        "Creso"
+      ],
+      "civilizations": [
+        "Grecia",
+        "Roma"
+      ],
+      "topics": [
+        "oráculos",
+        "Delfos",
+        "religión griega",
+        "religión romana",
+        "adivinación"
+      ],
+      "sourceConference": {
+        "title": "EL FENÓMENO DE LOS ORÁCULOS por EVA TOBALINA. La voz de los dioses en la Antigua Grecia.",
+        "organization": "Raíces de Europa",
+        "url": "https://youtu.be/L_i8zHiUG4A",
+        "date": "2026-05-16"
+      },
+      "relatedConferences": [
+        "fenomeno-oraculos"
+      ]
+    },
+    {
       "id": "roma-ciudad-eterna",
       "title": "Roma: de aldea latina a capital del mundo antiguo",
       "dateLabel": "c. 753 a.C. - 476 d.C.",
@@ -624,7 +707,8 @@
         "date": null
       },
       "relatedConferences": [
-        "roma-la-urbe"
+        "roma-la-urbe",
+        "historia-roma-i-fundacion"
       ]
     },
     {
@@ -1037,6 +1121,46 @@
       ]
     },
     {
+      "id": "nabateos-petra-evento",
+      "title": "Los nabateos y la ciudad rosada de Petra",
+      "dateLabel": "c. 400 a.C. - 106 d.C.",
+      "startYear": -400,
+      "endYear": 106,
+      "period": "Edad Antigua",
+      "location": "Petra, Arabia",
+      "description": "Los nabateos levantaron en Petra una de las ciudades más espectaculares del mundo antiguo, controlando rutas comerciales entre Arabia, Egipto y el Mediterráneo hasta su anexión por Roma.",
+      "summary": "Petra fue la capital de un reino caravanero que combinó arquitectura rupestre, ingeniería hidráulica y una posición estratégica entre Oriente y Occidente.",
+      "consequences": [
+        "Control nabateo de las rutas de incienso, mirra y especias.",
+        "Desarrollo de una arquitectura monumental tallada en la roca.",
+        "Anexión romana en 106 d.C. y conversión en provincia de Arabia Petraea."
+      ],
+      "characters": [
+        "Aretas IV",
+        "Obodas III"
+      ],
+      "civilizations": [
+        "Nabateos",
+        "Imperio Romano"
+      ],
+      "topics": [
+        "Petra",
+        "Nabateos",
+        "Arabia",
+        "arquitectura rupestre",
+        "comercio antiguo"
+      ],
+      "sourceConference": {
+        "title": "Petra y los Nabateos",
+        "organization": "Raíces de Europa",
+        "url": "https://www.youtube.com/watch?v=JaeqZPIaTEM",
+        "date": null
+      },
+      "relatedConferences": [
+        "petra-nabateos"
+      ]
+    },
+    {
       "id": "alejandro-magno",
       "title": "Vida y conquistas de Alejandro Magno",
       "dateLabel": "356-323 a.C.",
@@ -1081,7 +1205,49 @@
         "alejandro-magno-i",
         "alejandro-magno-ii",
         "alejandro-magno-iii",
-        "alejandro-magno-iv"
+        "alejandro-magno-iv",
+        "griegos-asia-alejandro"
+      ]
+    },
+    {
+      "id": "libano-helenistico-romano-evento",
+      "title": "El Líbano en la época helenística y romana",
+      "dateLabel": "333 a.C. - 395 d.C.",
+      "startYear": -333,
+      "endYear": 395,
+      "period": "Edad Antigua",
+      "location": "Líbano, costa fenicia",
+      "description": "Tras la conquista de Alejandro Magno, las ciudades fenicias del Líbano vivieron una profunda transformación bajo influencia helenística y, posteriormente, romana, conservando su papel comercial y cultural.",
+      "summary": "El Líbano antiguo fue una encrucijada entre oriente y occidente, donde Fenicia, Grecia y Roma dejaron capas superpuestas de cultura, religión y urbanismo.",
+      "consequences": [
+        "Helenización de las ciudades fenicias y fundación de nuevas poleis.",
+        "Integración del Líbano en las redes comerciales del Imperio Romano.",
+        "Construcción de monumentos como Baalbek bajo dominio romano."
+      ],
+      "characters": [
+        "Herodes el Grande",
+        "Alejandro Magno"
+      ],
+      "civilizations": [
+        "Fenicia",
+        "Grecia",
+        "Roma"
+      ],
+      "topics": [
+        "Líbano",
+        "helenismo",
+        "Roma",
+        "Fenicia",
+        "Mediterráneo oriental"
+      ],
+      "sourceConference": {
+        "title": "El Líbano en la época helenística y romana",
+        "organization": "Raíces de Europa",
+        "url": "https://www.youtube.com/watch?v=k7_2DASLg3g",
+        "date": null
+      },
+      "relatedConferences": [
+        "libano-helenistico-romano"
       ]
     },
     {
@@ -1127,7 +1293,8 @@
       "relatedConferences": [
         "egipto-ptolemaico-cleopatra",
         "cleopatra-ultimo-faraon-unab",
-        "alejandria-sueno-alejandro"
+        "alejandria-sueno-alejandro",
+        "biblioteca-alejandria-2014"
       ]
     },
     {
@@ -1650,6 +1817,45 @@
       ]
     },
     {
+      "id": "puerta-mileto-berlin-evento",
+      "title": "Mileto en la Asia Menor romana: la Puerta del Mercado",
+      "dateLabel": "c. 120-200 d.C.",
+      "startYear": 120,
+      "endYear": 200,
+      "period": "Edad Antigua",
+      "location": "Mileto, Asia Menor / Berlín",
+      "description": "La Puerta Monumental del Mercado de Mileto es uno de los grandes testimonios de la arquitectura urbana romana en Asia Menor, desmontada y reconstruida en el Museo de Pérgamo de Berlín.",
+      "summary": "Mileto fue una de las principales ciudades griegas de Asia Menor; su puerta del mercado, erigida en época de Augusto y ampliada bajo los Antoninos, ilustra el esplendor urbanístico del Imperio Romano.",
+      "consequences": [
+        "Ejemplo emblemático de arquitectura pública romana en provincias orientales.",
+        "Traslado a Berlín como pieza central de los museos arqueológicos del siglo XX.",
+        "Testimonio del diálogo entre Grecia, Roma y las culturas de Asia Menor."
+      ],
+      "characters": [
+        "Augusto"
+      ],
+      "civilizations": [
+        "Roma",
+        "Grecia"
+      ],
+      "topics": [
+        "Mileto",
+        "Asia Menor",
+        "arquitectura romana",
+        "Pérgamo",
+        "Berlín"
+      ],
+      "sourceConference": {
+        "title": "La Puerta Monumental del Mercado de Mileto. De Asia Menor a Berlín",
+        "organization": "Raíces de Europa",
+        "url": "https://www.youtube.com/watch?v=C4N-5f8O_D0",
+        "date": null
+      },
+      "relatedConferences": [
+        "puerta-mileto-berlin"
+      ]
+    },
+    {
       "id": "heliogabalo-emperador",
       "title": "Heliogábalo: el poder como provocación",
       "dateLabel": "218-222 d.C.",
@@ -1892,6 +2098,47 @@
       },
       "relatedConferences": [
         "ruta-de-la-seda-califatos"
+      ]
+    },
+    {
+      "id": "jordania-omeyas-evento",
+      "title": "El Califato Omeya: Jordania y el arte islámico temprano",
+      "dateLabel": "661-750 d.C.",
+      "startYear": 661,
+      "endYear": 750,
+      "period": "Edad Media",
+      "location": "Damasco, Jordania",
+      "description": "Los omeyas establecieron la primera gran dinastía califal tras la muerte de Ali, promoviendo una expansión militar y una cultura material que dejó huellas indelebles en Jordania y el mundo islámico.",
+      "summary": "El Califato Omeya representa la primera síntesis imperial del Islam, con Damasco como capital y Jordania como eje de poder, comercio y arte.",
+      "consequences": [
+        "Expansión del Islam desde el Atlántico hasta el Indo.",
+        "Desarrollo de una arquitectura palacial y religiosa propia.",
+        "Legado cultural y administrativo para el Islam medieval posterior."
+      ],
+      "characters": [
+        "Muawiya I",
+        "Abd al-Malik",
+        "Al-Walid I"
+      ],
+      "civilizations": [
+        "Califato Omeya",
+        "Imperio Bizantino"
+      ],
+      "topics": [
+        "Jordania",
+        "Omeyas",
+        "Califato Omeya",
+        "Islam medieval",
+        "Oriente Próximo"
+      ],
+      "sourceConference": {
+        "title": "Jordania y los Omeyas. Historia y cultura",
+        "organization": "Raíces de Europa",
+        "url": "https://www.youtube.com/watch?v=XPVKQCV-SfI",
+        "date": null
+      },
+      "relatedConferences": [
+        "jordania-omeyas"
       ]
     },
     {

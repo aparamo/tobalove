@@ -460,3 +460,50 @@ exactas de esos 8 videos.
 
 ### Commit
 - Commiteado en `tobalina/tob-app` con el mensaje descriptivo correspondiente.
+
+
+## 2026-08-24 (continuación) — Completar fecha histórica y período de nuevas conferencias
+
+### Contexto
+El usuario reportó que varias conferencias recién integradas (Biblioteca de
+Alejandría, Historia de Roma I, Fenómeno de los oráculos) mostraban "—" en las
+columnas de fecha histórica y período de `/database`. Esto ocurría porque no
+estaban vinculadas a ningún evento de la línea de tiempo.
+
+### Solución
+Se añadieron eventos históricos y se enlazaron las conferencias huérfanas:
+
+#### Enlaces a eventos existentes
+- `biblioteca-alejandria-2014` → `egipto-ptolemaico-evento` (332-30 a.C.)
+- `historia-roma-i-fundacion` → `roma-ciudad-eterna` (c. 753 a.C. - 476 d.C.)
+- `griegos-asia-alejandro` → `alejandro-magno` (356-323 a.C.)
+
+#### Nuevos eventos creados
+- **Los oráculos en la Antigüedad: la voz de los dioses** (c. 800 a.C. - 393 d.C.)
+  - Vinculado a `fenomeno-oraculos`.
+- **Los nabateos y la ciudad rosada de Petra** (c. 400 a.C. - 106 d.C.)
+  - Vinculado a `petra-nabateos`.
+- **El Líbano en la época helenística y romana** (333 a.C. - 395 d.C.)
+  - Vinculado a `libano-helenistico-romano`.
+- **Mileto en la Asia Menor romana: la Puerta del Mercado** (c. 120-200 d.C.)
+  - Vinculado a `puerta-mileto-berlin`.
+- **Mitos de creación: del mundo y del hombre** (c. 3000 a.C. - 500 d.C.)
+  - Vinculado a `origen-mundo-creacion-hombre`.
+- **El Califato Omeya: Jordania y el arte islámico temprano** (661-750 d.C.)
+  - Vinculado a `jordania-omeyas`.
+
+### Resultado
+- Eventos históricos: de 48 a **54**.
+- Conferencias huérfanas: de 20 a **11** (las restantes son entrevistas,
+  presentaciones de libro, `exodo-egipto` sin URL verificada y una conferencia
+  próxima sin fecha concreta).
+- Las conferencias reportadas ahora muestran fecha histórica y período en
+  `/database`.
+
+### Verificación
+- `bun run lint` ✅ — sin errores.
+- `bun run build` ✅ — prerenderizado estático correcto.
+- 0 referencias rotas, 0 URLs de YouTube duplicadas.
+
+### Commit
+- Commiteado en `tobalina/tob-app` con el mensaje descriptivo correspondiente.
