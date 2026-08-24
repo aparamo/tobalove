@@ -3,7 +3,7 @@
     "autor_contenido": "Eva Tobalina Oraá",
     "enfoque": "Línea de tiempo histórica de los hechos, civilizaciones y personajes tratados en las conferencias y entrevistas de Eva Tobalina.",
     "cobertura_cronologica": "desde c. 3500 a.C. hasta 1453 d.C.",
-    "total_eventos": 46,
+    "total_eventos": 48,
     "fuentes_principales": [
       "https://evatobalina.com/conferencias/",
       "https://www.youtube.com/@raicesdeeuropa",
@@ -171,6 +171,46 @@
       },
       "relatedConferences": [
         "sumer-zcmh"
+      ]
+    },
+    {
+      "id": "egipto-imperio-medio-evento",
+      "title": "El Imperio Medio de Egipto: reunificación y esplendor",
+      "dateLabel": "2040-1786 a.C.",
+      "startYear": -2040,
+      "endYear": -1786,
+      "period": true,
+      "location": "Egipto",
+      "description": "Tras el Primer Período Intermedio, Mentuhotep II reunifica Egipto y da comienzo al Imperio Medio, una época de renovación artística, literaria y territorial que culmina con la dinastía XII.",
+      "summary": "El Imperio Medio representa una etapa de estabilidad y esplendor cultural entre dos períodos de fragmentación del poder faraónico.",
+      "consequences": [
+        "Reunificación de Egipto bajo el poder tebano.",
+        "Florecimiento de la literatura sapiential y de la narrativa.",
+        "Expansión militar y comercial hacia Nubia y el Sinaí."
+      ],
+      "characters": [
+        "Mentuhotep II",
+        "Sesostris III",
+        "Amenemhat III"
+      ],
+      "civilizations": [
+        "Egipto Antiguo"
+      ],
+      "topics": [
+        "Egipto",
+        "Imperio Medio",
+        "Mentuhotep II",
+        "literatura sapiential",
+        "Nubia"
+      ],
+      "sourceConference": {
+        "title": "Egipto. Imperio Medio (2040-1786 a.C.). Tan fascinante como desconocido",
+        "organization": "Raíces de Europa",
+        "url": "https://www.youtube.com/watch?v=LgWCPva4Pm0",
+        "date": null
+      },
+      "relatedConferences": [
+        "egipto-imperio-medio"
       ]
     },
     {
@@ -1780,6 +1820,44 @@
         "pueblos-estepa-hunos",
         "curso-pueblos-estepa-2025",
         "pueblos-estepa-hunos-atila-ivoox"
+      ]
+    },
+    {
+      "id": "kanato-turco-evento",
+      "title": "El Kanato Turco: pueblos nómadas de la estepa",
+      "dateLabel": "552-744 d.C.",
+      "startYear": 552,
+      "endYear": 744,
+      "period": true,
+      "location": "Asia Central",
+      "description": "Los turcos göktürks fundan un poderoso kanato en las estepas de Asia Central, controlando rutas comerciales y estableciendo contactos con imperios vecinos como China y Bizancio.",
+      "summary": "El Kanato Turco marca la irrupción de los pueblos turcos como actor político decisivo en la estepa euroasiática.",
+      "consequences": [
+        "Unificación de tribus turcas bajo el kanato.",
+        "Control de porciones clave de la Ruta de la Seda.",
+        "Legado lingüístico y cultural de los pueblos turcos."
+      ],
+      "characters": [
+        "Bumin",
+        "Istämi"
+      ],
+      "civilizations": [
+        "Kanato Turco"
+      ],
+      "topics": [
+        "Turcos",
+        "estepa",
+        "pueblos nómadas",
+        "Asia Central"
+      ],
+      "sourceConference": {
+        "title": "Pueblos de la Estepa (III): Los Turcos",
+        "organization": "Raíces de Europa",
+        "url": "https://www.youtube.com/watch?v=mSoY3_TcDlY",
+        "date": "2025-01-01"
+      },
+      "relatedConferences": [
+        "pueblos-estepa-turcos-ivoox"
       ]
     },
     {

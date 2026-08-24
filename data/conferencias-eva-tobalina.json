@@ -46,7 +46,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": null
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "alejandria-sueno-alejandro",
@@ -77,7 +79,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.youtube.com/@raicesdeeuropa",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=q15zX5VeQxw",
+      "info_adicional": null
     },
     {
       "id": "value-tree-china-plata-galeon-manila",
@@ -109,7 +113,9 @@
       "duration": null,
       "language": "es",
       "source": "https://valuetree.es",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=vpqXWGaEJHA",
+      "info_adicional": null
     },
     {
       "id": "proxima-race-viernes",
@@ -127,7 +133,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": null
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "cancho-roano-2026",
@@ -151,7 +159,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": null
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "ruta-seda-escorial-2026",
@@ -174,7 +184,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": null
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "oiasso-imperio-romano-seda-china",
@@ -201,7 +213,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.diariovasco.com",
-      "mediaType": "web"
+      "mediaType": "web",
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "akhenaton-faraon-hereje-unab",
@@ -233,7 +247,9 @@
       "duration": null,
       "language": "es",
       "source": "https://noticias.unab.cl/reconocida-historiadora-mundial-derriba-mitos-las-piramides-no-fueron-construidas-por-aliens-ni-esclavos-sino-por-trabajadores-asalariados/",
-      "mediaType": null
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "alejandria-ruta-seda-reyes-magos",
@@ -264,7 +280,9 @@
       "duration": null,
       "language": "es",
       "source": "https://egiptologia.com/alejandria-la-ruta-de-la-seda-y-los-reyes-magos-con-eva-tobalina/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=KuwAbcw95cg",
+      "info_adicional": null
     },
     {
       "id": "cleopatra-ultimo-faraon-unab",
@@ -296,7 +314,9 @@
       "duration": null,
       "language": "es",
       "source": "https://cultura.unab.cl/evento/encuentro-cultural-con-eva-tobalina-cleopatra-el-ultimo-faraon-de-egipto/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=b_tZhMbjsfE",
+      "info_adicional": null
     },
     {
       "id": "entrevista-ser-viajeros",
@@ -324,7 +344,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": null
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "entrevista-un-buen-dia-para-viajar-rtpa",
@@ -349,7 +371,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": null
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "entrevista-isaac-moreno-gallo",
@@ -374,7 +398,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": null
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "entrevista-nits-de-radio",
@@ -401,7 +427,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": null
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "entrevista-cultura-en-la-tierra",
@@ -427,7 +455,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": null
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "entrevista-bellumartis",
@@ -455,7 +485,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": null
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "entrevista-biblioteca-alejandria-ivan-blanquer",
@@ -483,7 +515,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": null
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "ruta-de-la-seda-america-unab",
@@ -511,7 +545,9 @@
       "duration": null,
       "language": "es",
       "source": "https://cultura.unab.cl/evento/conferencias-eva-tobalina/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=QPP8fxKJx_8",
+      "info_adicional": null
     },
     {
       "id": "ruta-seda-america-unab-2025",
@@ -539,7 +575,9 @@
       "duration": null,
       "language": "es",
       "source": "https://agenda.unab.cl",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=QPP8fxKJx_8",
+      "info_adicional": null
     },
     {
       "id": "cena-cultura-raices-ruta-seda",
@@ -565,7 +603,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=M3-dN5Mn5NE",
+      "info_adicional": null
     },
     {
       "id": "ruta-de-la-seda-encuentro-unab",
@@ -597,7 +637,9 @@
       "duration": null,
       "language": "es",
       "source": "https://cultura.unab.cl/evento/conferencias-eva-tobalina/",
-      "mediaType": null
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "ruta-de-la-seda-aventura-valencia",
@@ -627,7 +669,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": null
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "ruta-seda-ateneo-valencia-2025",
@@ -656,7 +700,9 @@
       "duration": "01:07:09",
       "language": "es",
       "source": "https://ateneovalencia.es",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://youtu.be/_EtcJj7oVSA",
+      "info_adicional": null
     },
     {
       "id": "ruta-seda-fascinante",
@@ -687,7 +733,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.youtube.com/@raicesdeeuropa",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=M3-dN5Mn5NE",
+      "info_adicional": null
     },
     {
       "id": "entrevista-pedazos-de-historia",
@@ -714,7 +762,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": null
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "entrevista-desafio-viajero",
@@ -741,7 +791,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": null
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "curso-pueblos-estepa-2025",
@@ -775,7 +827,9 @@
       "duration": null,
       "language": "es",
       "source": "https://raicesdeeuropa.com",
-      "mediaType": "web"
+      "mediaType": "web",
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "entrevista-rtve-espacio-en-blanco",
@@ -802,7 +856,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.rtve.es/play/audios/espacio-en-blanco/caminos-seda-12-01-25/16403585/",
-      "mediaType": "audio"
+      "mediaType": "audio",
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "ruta-seda-geografia-paisajes-2025",
@@ -829,7 +885,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=_EEfazh-Mx8",
+      "info_adicional": null
     },
     {
       "id": "pueblos-estepa-hunos-atila-ivoox",
@@ -856,7 +914,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.ivoox.com",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=7Fqya9hIt3E",
+      "info_adicional": null
     },
     {
       "id": "entrevista-aladetres-secretos-mundo-antiguo",
@@ -882,7 +942,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": null
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "presentacion-libro-raices",
@@ -910,7 +972,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": null
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "presentacion-libro-ateneo-madrid",
@@ -943,7 +1007,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": null
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "presentacion-libro-biblioteca-central-militar",
@@ -969,7 +1035,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": null
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "pueblos-estepa-turcos-ivoox",
@@ -995,7 +1063,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.ivoox.com",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=mSoY3_TcDlY",
+      "info_adicional": null
     },
     {
       "id": "pueblos-estepa-genghis-kan-ivoox",
@@ -1022,7 +1092,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.ivoox.com",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=vNTSTnO78PQ",
+      "info_adicional": null
     },
     {
       "id": "pueblos-estepa-hijos-genghis-khan-ivoox",
@@ -1052,7 +1124,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.ivoox.com",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=8VlVz_OF85k",
+      "info_adicional": null
     },
     {
       "id": "entrevista-librujula",
@@ -1079,7 +1153,9 @@
       "duration": null,
       "language": "es",
       "source": "https://librujula.publico.es/viajar-a-la-ruta-de-la-seda-con-eva-tobalina/",
-      "mediaType": "web"
+      "mediaType": "web",
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "imperio-hitita-i",
@@ -1110,7 +1186,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.youtube.com/@raicesdeeuropa",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=aKEIo1fea0c",
+      "info_adicional": null
     },
     {
       "id": "educacion-ciudadano-grecia-roma-pucv",
@@ -1137,7 +1215,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.ucv.cl",
-      "mediaType": "web"
+      "mediaType": "web",
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "escitas",
@@ -1169,7 +1249,9 @@
       "duration": null,
       "language": "es",
       "source": "https://portalcioranbr.wordpress.com/2025/08/01/escitas-eva-tobalina/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=S739qWXZi60",
+      "info_adicional": null
     },
     {
       "id": "presentacion-libro-bilbao",
@@ -1195,7 +1277,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": null
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "presentacion-libro-palma-xuanzang",
@@ -1224,7 +1308,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": null
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "presentacion-libro-pamplona",
@@ -1250,7 +1336,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": null
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "presentacion-libro-vitoria",
@@ -1276,7 +1364,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/proximas-actividades/",
-      "mediaType": null
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "sumer-zcmh",
@@ -1305,7 +1395,9 @@
       "duration": "58:53",
       "language": "es",
       "source": "https://www.studocu.com",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=ZCmHGlLHpso",
+      "info_adicional": null
     },
     {
       "id": "ruta-seda-xuanzang-tang-2024",
@@ -1334,7 +1426,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com",
-      "mediaType": "web"
+      "mediaType": "web",
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "alejandro-magno-i",
@@ -1368,7 +1462,9 @@
       "duration": null,
       "language": "es",
       "source": "https://informacionmanu.es/2024/10/alejandro-magno/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=4qHAYtcd5IU",
+      "info_adicional": null
     },
     {
       "id": "alejandro-magno-ii",
@@ -1401,7 +1497,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/conferencias/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=bnSqyvJ4xlI",
+      "info_adicional": null
     },
     {
       "id": "alejandro-magno-iii",
@@ -1432,7 +1530,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.academia.edu/127789080/HISTORIA_DE_GRECIA",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=4qHAYtcd5IU",
+      "info_adicional": null
     },
     {
       "id": "alejandro-magno-iv",
@@ -1467,7 +1567,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/conferencias/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=n9IWq_W-bIQ",
+      "info_adicional": null
     },
     {
       "id": "angkor-wat-maravilla-sudeste-asiatico",
@@ -1492,7 +1594,9 @@
       "duration": null,
       "language": "es",
       "source": "https://salda.ws",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=NzijEzVUMhU",
+      "info_adicional": null
     },
     {
       "id": "egipto-imperio-antiguo",
@@ -1526,7 +1630,9 @@
       "duration": null,
       "language": "es",
       "source": "https://espacio-tiempo.es/egipto-el-imperio-antiguo-2686-2181-a-c-nacimiento-y-esplendor-eva-tobalina/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=XIe57--aiR8",
+      "info_adicional": null
     },
     {
       "id": "tumba-primer-emperador-china",
@@ -1554,7 +1660,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.youtube.com/@raicesdeeuropa",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=a2A427v5dX4",
+      "info_adicional": null
     },
     {
       "id": "imperio-persa",
@@ -1587,7 +1695,9 @@
       "duration": null,
       "language": "es",
       "source": "https://poz.unexpo.org/postgrado/repo/Memorias%20Jornadas%20de%20Investigaci%C3%B3n/MEMORIAS%20JORNADA%20DE%20INVESTIGACION%202022.pdf",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=r0iqgEKUbDE",
+      "info_adicional": null
     },
     {
       "id": "tragedia-griega-i",
@@ -1616,7 +1726,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.youtube.com/@raicesdeeuropa",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=V7jgkkKxMWo",
+      "info_adicional": null
     },
     {
       "id": "tragedia-griega-ii",
@@ -1645,7 +1757,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.youtube.com/@raicesdeeuropa",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=iNROAL_etcc",
+      "info_adicional": null
     },
     {
       "id": "tragedia-griega-iii",
@@ -1674,7 +1788,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.youtube.com/@raicesdeeuropa",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=opGL8JdevLo",
+      "info_adicional": null
     },
     {
       "id": "tragedia-griega-iv",
@@ -1703,7 +1819,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.youtube.com/@raicesdeeuropa",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=84pbCgFRQiE",
+      "info_adicional": null
     },
     {
       "id": "tragedia-griega-v",
@@ -1732,7 +1850,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.youtube.com/@raicesdeeuropa",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=DsZVIj8EkGg",
+      "info_adicional": null
     },
     {
       "id": "pueblos-estepa-hunos",
@@ -1766,7 +1886,9 @@
       "duration": null,
       "language": "es",
       "source": "https://portalcioranbr.wordpress.com/tag/eva-tobalina/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=7Fqya9hIt3E",
+      "info_adicional": null
     },
     {
       "id": "sumer-rIlh-EYWgoQ",
@@ -1798,7 +1920,9 @@
       "duration": "75:00",
       "language": "es",
       "source": "https://portalcioranbr.wordpress.com/tag/eva-tobalina/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=rIlh-EYWgoQ",
+      "info_adicional": null
     },
     {
       "id": "tumbas-reales-ur",
@@ -1827,7 +1951,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.youtube.com/@raicesdeeuropa",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=lxOlS4hVeHE",
+      "info_adicional": null
     },
     {
       "id": "persia-sasanida",
@@ -1861,7 +1987,9 @@
       "duration": null,
       "language": "es",
       "source": "https://informacionmanu.es/2024/12/imperio-sasanida-224-651-d-c-el-ultimo-gran-imperio-persa-preislamico/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=5AEEqC2tc0Y",
+      "info_adicional": null
     },
     {
       "id": "iran-aquemenida-sasanida-1000-anos",
@@ -1892,7 +2020,9 @@
       "duration": null,
       "language": "es",
       "source": "https://open.spotify.com",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=nwVS3JWMAU8",
+      "info_adicional": null
     },
     {
       "id": "entrevista-eitb",
@@ -1917,7 +2047,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.eitb.eus/es/radio/radio-euskadi/programas/boulevard/detalle/4183794/eva-tobalina-el-historiador-tiene-intentar-no-juzgar/",
-      "mediaType": "web"
+      "mediaType": "web",
+      "youtube_url": null,
+      "info_adicional": null
     },
     {
       "id": "tracios",
@@ -1949,7 +2081,9 @@
       "duration": null,
       "language": "es",
       "source": "https://portalcioranbr.wordpress.com/tag/eva-tobalina/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=RN-zpC1H31w",
+      "info_adicional": null
     },
     {
       "id": "augusto-emperador",
@@ -1982,7 +2116,9 @@
       "duration": null,
       "language": "es",
       "source": "https://rua.ua.es/server/api/core/bitstreams/a53cad9b-028e-4aec-a58d-66f8fb525ad1/content",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=MASXM67aQlw",
+      "info_adicional": null
     },
     {
       "id": "babilonia-neobabilonico",
@@ -2012,7 +2148,9 @@
       "duration": null,
       "language": "es",
       "source": "https://informacionmanu.es/2024/09/imperio-neobabilonico/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=ALiwM44-Krw",
+      "info_adicional": null
     },
     {
       "id": "babilonia",
@@ -2045,7 +2183,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/conferencias/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=ALiwM44-Krw",
+      "info_adicional": null
     },
     {
       "id": "caligula",
@@ -2077,7 +2217,9 @@
       "duration": null,
       "language": "es",
       "source": "https://creators.spotify.com/pod/profile/la-caja-de-pandora9",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=dBe13BFBVa8",
+      "info_adicional": null
     },
     {
       "id": "claudio",
@@ -2110,7 +2252,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/conferencias/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=hodOKW3yW3c",
+      "info_adicional": null
     },
     {
       "id": "augusto-familia-imperial",
@@ -2144,7 +2288,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.academia.edu/127789080/HISTORIA_DE_GRECIA",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=23ZQWhZsQKM",
+      "info_adicional": null
     },
     {
       "id": "egipto-ptolemaico-cleopatra",
@@ -2180,7 +2326,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.youtube.com/watch?v=XGld0Jo8GQo",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=XGld0Jo8GQo",
+      "info_adicional": null
     },
     {
       "id": "egipto-imperio-nuevo-dinastia-xviii",
@@ -2217,7 +2365,9 @@
       "duration": null,
       "language": "es",
       "source": "https://espacio-tiempo.es/egipto-faraonico-3-el-imperio-nuevo-1552-1069-a-c-la-dinastia-xviii-de-hatseput-a-tutankamon-eva-tobalina/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=KtxESt_TKa8",
+      "info_adicional": null
     },
     {
       "id": "egipto-imperio-nuevo-ramses-ii",
@@ -2250,7 +2400,9 @@
       "duration": null,
       "language": "es",
       "source": "https://espacio-tiempo.es/egipto-faraonico-4-el-imperio-nuevo-2-1552-1069-a-c-dinastia-xix-ramses-ii-esplendor-y-ocaso-eva-tobalina/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=DZ2lGkzCwIQ",
+      "info_adicional": null
     },
     {
       "id": "egipto-pueblos-del-mar-faraones-griegos",
@@ -2285,7 +2437,9 @@
       "duration": null,
       "language": "es",
       "source": "https://espacio-tiempo.es/egipto-faraonico-5-de-los-pueblos-del-mar-a-los-faraones-griegos-y-el-fin-del-imperio-eva-tobalina/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=k7Xx8_dKCi4",
+      "info_adicional": null
     },
     {
       "id": "egipto-imperio-medio",
@@ -2315,7 +2469,9 @@
       "duration": null,
       "language": "es",
       "source": "https://espacio-tiempo.es/el-egipto-faraonico-2040-1786-a-c-el-imperio-medio-tan-fascinante-como-desconocido-eva-tobalina/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=LgWCPva4Pm0",
+      "info_adicional": null
     },
     {
       "id": "egipto-hicsos-imperio-nuevo",
@@ -2346,7 +2502,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.youtube.com/watch?v=28T7qLrq00E",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=28T7qLrq00E",
+      "info_adicional": null
     },
     {
       "id": "ruta-de-la-seda-gengis",
@@ -2378,7 +2536,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/conferencias/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=q7Kt9Rh-M9o",
+      "info_adicional": null
     },
     {
       "id": "judea-samaria-galilea-jesus",
@@ -2412,7 +2572,9 @@
       "duration": null,
       "language": "es",
       "source": "https://espacio-tiempo.es/judea-samaria-y-galilea-en-tiempos-de-jesus-geografia-historia-y-cultura-eva-tobalina/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=A37HqEjTSu4",
+      "info_adicional": null
     },
     {
       "id": "juliano-apostata",
@@ -2444,7 +2606,9 @@
       "duration": null,
       "language": "es",
       "source": "https://portalcioranbr.wordpress.com/tag/eva-tobalina/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=k1IxMZPg-yw",
+      "info_adicional": null
     },
     {
       "id": "anabasis-jenofonte",
@@ -2477,7 +2641,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.youtube.com/watch?v=M-gxSQlSHgI",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=M-gxSQlSHgI",
+      "info_adicional": null
     },
     {
       "id": "atenas-fidias-pericles",
@@ -2508,7 +2674,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.youtube.com/@raicesdeeuropa",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=EhGsaPPWyyw",
+      "info_adicional": null
     },
     {
       "id": "ruta-de-la-seda-intro",
@@ -2540,7 +2708,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/conferencias/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=IVQj656FBpY",
+      "info_adicional": null
     },
     {
       "id": "livia-emperatriz",
@@ -2571,7 +2741,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.diaridetarragona.com/cultura/227785/livia-drusila-la-mas-poderosa-de-roma-jc23561549.html",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=2uMc8uHFQCs",
+      "info_adicional": null
     },
     {
       "id": "livia-mujer-augusto",
@@ -2601,7 +2773,9 @@
       "duration": "1:32:24",
       "language": "es",
       "source": "https://www.youtube.com/@raicesdeeuropa",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=2uMc8uHFQCs",
+      "info_adicional": null
     },
     {
       "id": "fenicios-origen-desarrollo",
@@ -2635,7 +2809,9 @@
       "duration": null,
       "language": "es",
       "source": "https://informacionmanu.es/2024/08/los-fenicios/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=Nyv9iQFw298",
+      "info_adicional": null
     },
     {
       "id": "asirios",
@@ -2666,7 +2842,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/conferencias/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=xtZ11aCXhsw",
+      "info_adicional": null
     },
     {
       "id": "ruta-de-la-seda-califatos",
@@ -2698,7 +2876,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/conferencias/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=6gt5WtcGbN8",
+      "info_adicional": null
     },
     {
       "id": "hititas",
@@ -2729,7 +2909,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/conferencias/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=aKEIo1fea0c",
+      "info_adicional": null
     },
     {
       "id": "ruta-de-la-seda-productos",
@@ -2758,7 +2940,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/conferencias/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=NY3BsoS_R3I",
+      "info_adicional": null
     },
     {
       "id": "neron",
@@ -2790,7 +2974,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/conferencias/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=b13BEWJ26v0",
+      "info_adicional": null
     },
     {
       "id": "odiseo",
@@ -2825,7 +3011,9 @@
       "duration": null,
       "language": "es",
       "source": "https://www.elespectadorimaginario.com/el-gran-mito-del-retorno-hacia-el-sentido-de-pertenencia/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=iUogdS0Rw9o",
+      "info_adicional": null
     },
     {
       "id": "roma-la-urbe",
@@ -2853,7 +3041,9 @@
       "duration": "1:22:21",
       "language": "es",
       "source": "https://www.youtube.com/@raicesdeeuropa",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=esQv0WshIGQ",
+      "info_adicional": null
     },
     {
       "id": "ruta-de-la-seda-origen",
@@ -2884,7 +3074,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/conferencias/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=xRuxuSuJXfM",
+      "info_adicional": null
     },
     {
       "id": "ruta-de-la-seda-tamerlan",
@@ -2915,7 +3107,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/conferencias/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=CQ07pjoMkJU",
+      "info_adicional": null
     },
     {
       "id": "tiberio-emperador",
@@ -2945,7 +3139,9 @@
       "duration": "1:28:05",
       "language": "es",
       "source": "https://www.youtube.com/@raicesdeeuropa",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=jsnVXsyoV-o",
+      "info_adicional": null
     },
     {
       "id": "tiberio",
@@ -2977,7 +3173,9 @@
       "duration": null,
       "language": "es",
       "source": "https://evatobalina.com/conferencias/",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=ohHSySTGNzg",
+      "info_adicional": null
     },
     {
       "id": "heligabalo-poder-provocacion",
@@ -3006,7 +3204,9 @@
       "duration": "1:08:22",
       "language": "es",
       "source": "https://www.youtube.com/@raicesdeeuropa",
-      "mediaType": "video"
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=VAaxMaRZ-RE",
+      "info_adicional": null
     }
   ]
 }
