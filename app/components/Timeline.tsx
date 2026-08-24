@@ -2,13 +2,17 @@
 
 import { motion } from "framer-motion";
 import { TimelineEvent } from "./TimelineEvent";
-import type { TimelineEvent as TimelineEventType } from "@/app/types/timeline";
+import type {
+  TimelineEvent as TimelineEventType,
+  ConferenceItem,
+} from "@/app/types/timeline";
 
 interface TimelineProps {
   events: TimelineEventType[];
+  conferencesMap?: Map<string, ConferenceItem>;
 }
 
-export function Timeline({ events }: TimelineProps) {
+export function Timeline({ events, conferencesMap }: TimelineProps) {
   return (
     <section className="relative py-12 md:py-20">
       {/* Vertical line */}
@@ -23,6 +27,7 @@ export function Timeline({ events }: TimelineProps) {
               event={event}
               index={index}
               side={side}
+              conferencesMap={conferencesMap}
             />
           );
         })}

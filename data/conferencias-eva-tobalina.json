@@ -1,0 +1,3012 @@
+{
+  "meta": {
+    "autor": "Eva Tobalina Oraá",
+    "biografia_corta": "Doctora en Historia Antigua, profesora universitaria y divulgadora especializada en la Antigüedad mediterránea y oriental. Combina su labor académica en la Universidad Internacional de La Rioja con conferencias para asociaciones como Raíces de Europa.",
+    "total_conferencias_estimadas": 100,
+    "fuentes_principales": [
+      "https://espacio-tiempo.es",
+      "https://www.youtube.com/@raicesdeeuropa",
+      "https://evatobalina.com/conferencias/",
+      "https://cultura.unab.cl",
+      "https://egiptologia.com",
+      "https://evatobalina.com/proximas-actividades/",
+      "https://portalcioranbr.wordpress.com/tag/eva-tobalina/",
+      "https://www.studocu.com",
+      "https://evatobalina.com/otras-colaboraciones/",
+      "https://informacionmanu.es",
+      "https://noticias.unab.cl",
+      "https://librujula.publico.es",
+      "https://rua.ua.es"
+    ],
+    "ultima_actualizacion": "2026-08-24"
+  },
+  "items": [
+    {
+      "id": "tumbas-reales-ur-man-2027",
+      "title": "Las tumbas reales de Ur",
+      "type": "conferencia",
+      "date": "2027-01-27",
+      "year": 2027,
+      "organization": "Museo Arqueológico Nacional",
+      "url": null,
+      "description": "Conferencia dentro del II Ciclo 'De dioses, tumbas y sabios… Diez descubrimientos arqueológicos en el siglo XX que removieron el mundo'.",
+      "summary": "Próxima conferencia sobre el descubrimiento de las tumbas reales de Ur.",
+      "topics": [
+        "Tumbas Reales de Ur",
+        "arqueología",
+        "Sumeria"
+      ],
+      "characters": [
+        "Leonard Woolley",
+        "Puabi"
+      ],
+      "civilizations": [
+        "Sumeria"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/proximas-actividades/",
+      "mediaType": null
+    },
+    {
+      "id": "alejandria-sueno-alejandro",
+      "title": "Alejandría: el sueño eterno de Alejandro Magno (Las ciudades de Alejandro I)",
+      "type": "conferencia",
+      "date": "2026-04-12",
+      "year": 2026,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=q15zX5VeQxw",
+      "description": "Conferencia dedicada a la mítica ciudad de Alejandría, fundada por Alejandro Magno, y su legado como centro cultural del mundo antiguo.",
+      "summary": "Eva Tobalina explora la historia de Alejandría, desde su fundación por Alejandro Magno hasta su esplendor como faro del conocimiento en la Antigüedad.",
+      "topics": [
+        "Alejandría",
+        "Alejandro Magno",
+        "Egipto Ptolemaico",
+        "helenismo"
+      ],
+      "characters": [
+        "Alejandro Magno",
+        "Ptolomeo I",
+        "Cleopatra VII"
+      ],
+      "civilizations": [
+        "Egipto Ptolemaico",
+        "Macedonia",
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video"
+    },
+    {
+      "id": "value-tree-china-plata-galeon-manila",
+      "title": "China, la plata americana y el Galeón de Manila: un intercambio que transformó el mundo",
+      "type": "conferencia",
+      "date": "2026-02-01",
+      "year": 2026,
+      "organization": "Value Tree Talks",
+      "url": "https://valuetree.es/evento-value-tree-talks-ii-monedas-y-la-primera-economia-global-junto-a-eva-tobalina/",
+      "description": "Conferencia magistral sobre los primeros grandes sistemas de globalización, analizando cómo los flujos comerciales entre Oriente y Occidente redefinieron economías, sociedades y estructuras de poder a escala mundial.",
+      "summary": "Tobalina ofrece un recorrido por los primeros grandes sistemas de globalización, analizando cómo los flujos comerciales entre Oriente y Occidente redefinieron economías, sociedades y estructuras de poder a escala mundial. Tras la conferencia, participó en un debate con el embajador de China en España, Yao Ying, y el embajador de México, Óscar Arturo Esparza Vargas.",
+      "topics": [
+        "China",
+        "plata americana",
+        "Galeón de Manila",
+        "globalización",
+        "comercio transpacífico",
+        "Oriente y Occidente"
+      ],
+      "characters": [
+        "Yao Ying",
+        "Óscar Arturo Esparza Vargas"
+      ],
+      "civilizations": [
+        "Imperio Español",
+        "China",
+        "México virreinal"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://valuetree.es",
+      "mediaType": "web"
+    },
+    {
+      "id": "proxima-race-viernes",
+      "title": "Conferencia en 'Los viernes del RACE'",
+      "type": "conferencia",
+      "date": "2026-02-26",
+      "year": 2026,
+      "organization": "Real Automóvil Club de España (RACE)",
+      "url": null,
+      "description": "Conferencia dentro del ciclo mensual 'Los viernes del RACE' para socios en Ciudalcampo, San Sebastián de los Reyes.",
+      "summary": "Próxima conferencia de Eva Tobalina en el ciclo cultural del RACE.",
+      "topics": [],
+      "characters": [],
+      "civilizations": [],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/proximas-actividades/",
+      "mediaType": null
+    },
+    {
+      "id": "cancho-roano-2026",
+      "title": "Conferencia en el yacimiento de Cancho Roano",
+      "type": "conferencia",
+      "date": "2026-11-07",
+      "year": 2026,
+      "organization": "Mancomunidad de la Serena / Asociación Edinamiza",
+      "url": null,
+      "description": "Conferencia en el yacimiento de Cancho Roano (Zalamea de la Serena) con motivo del XXV Aniversario de Cancho Roano.",
+      "summary": "Próxima conferencia de Eva Tobalina en el yacimiento tartésico de Cancho Roano.",
+      "topics": [
+        "Cancho Roano",
+        "Tartessos",
+        "arqueología"
+      ],
+      "characters": [],
+      "civilizations": [
+        "Tartessos"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/proximas-actividades/",
+      "mediaType": null
+    },
+    {
+      "id": "ruta-seda-escorial-2026",
+      "title": "Conferencia sobre la Ruta de la Seda",
+      "type": "conferencia",
+      "date": "2026-07-15",
+      "year": 2026,
+      "organization": "Universidad Complutense de Madrid / Cursos de verano de San Lorenzo de El Escorial",
+      "url": null,
+      "description": "Conferencia sobre la Ruta de la Seda dentro del ciclo de Conferencias extraordinarias de los Cursos de verano de San Lorenzo de El Escorial.",
+      "summary": "Próxima conferencia de Eva Tobalina en El Escorial.",
+      "topics": [
+        "Ruta de la Seda"
+      ],
+      "characters": [],
+      "civilizations": [
+        "China",
+        "Asia Central"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/proximas-actividades/",
+      "mediaType": null
+    },
+    {
+      "id": "oiasso-imperio-romano-seda-china",
+      "title": "El Imperio romano y la seda china",
+      "type": "conferencia",
+      "date": "2026-01-29",
+      "year": 2026,
+      "organization": "Museo Oiasso - Ciclo 'Los jueves a Oiasso'",
+      "url": "https://www.diariovasco.com/bidasoa/irun/ciclo-conferencias-jueves-oiasso-echa-andar-semana-20260127203749-nt.html",
+      "description": "Conferencia inaugural del ciclo 'Los jueves a Oiasso' en el Museo Oiasso de Irun, sobre el contacto de los romanos con la seda china y sus viajes por el Océano Índico.",
+      "summary": "Tobalina explica cómo los romanos tomaron contacto con la seda china en el siglo I a.C. y cómo este extraordinario tejido se convirtió en una de las mercancías de lujo más demandadas por el Imperio. Ese afán llevó a los romanos a recorrer el Océano Índico, establecerse en la India, explorar los mares del sur y llegar a las costas del Imperio Chino diez siglos antes que los mercaderes árabes o venecianos.",
+      "topics": [
+        "Imperio Romano",
+        "seda china",
+        "comercio antiguo",
+        "Océano Índico",
+        "Roma y China"
+      ],
+      "characters": [],
+      "civilizations": [
+        "Imperio Romano",
+        "China Han"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.diariovasco.com",
+      "mediaType": "web"
+    },
+    {
+      "id": "akhenaton-faraon-hereje-unab",
+      "title": "Akhenatón, el faraón hereje",
+      "type": "conferencia",
+      "date": "2025-08-18",
+      "year": 2025,
+      "organization": "Cultura UNAB - Universidad Andrés Bello (Sede Viña del Mar)",
+      "url": null,
+      "description": "Conferencia sobre la revolución religiosa impulsada por Akhenatón en el Egipto del siglo XIV a.C., sus conflictos con el clero de Amón y el arte amarniense.",
+      "summary": "Tobalina revisa la figura del faraón hereje y los mitos que rodean las grandes construcciones egipcias.",
+      "topics": [
+        "Akhenatón",
+        "Egipto",
+        "revolución de Amarna",
+        "monoteísmo",
+        "Nefertiti",
+        "arte amarniense"
+      ],
+      "characters": [
+        "Akhenatón",
+        "Nefertiti",
+        "Tutankamon",
+        "Amenhotep III"
+      ],
+      "civilizations": [
+        "Egipto Antiguo"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://noticias.unab.cl/reconocida-historiadora-mundial-derriba-mitos-las-piramides-no-fueron-construidas-por-aliens-ni-esclavos-sino-por-trabajadores-asalariados/",
+      "mediaType": null
+    },
+    {
+      "id": "alejandria-ruta-seda-reyes-magos",
+      "title": "Alejandría, la Ruta de la Seda y los Reyes Magos",
+      "type": "entrevista",
+      "date": "2025-01-17",
+      "year": 2025,
+      "organization": "Amigos de la Egiptología / Fábrica de la Ciencia",
+      "url": null,
+      "description": "Entrevista en la que se aborda la importancia de Alejandría como puerto entre Oriente y Europa, la Ruta de la Seda y la tradición de los Reyes Magos.",
+      "summary": "Tobalina conversa sobre el papel de Alejandría en las redes comerciales e intelectuales del mundo antiguo.",
+      "topics": [
+        "Alejandría",
+        "Ruta de la Seda",
+        "Reyes Magos",
+        "Egipto",
+        "comercio antiguo"
+      ],
+      "characters": [
+        "Alejandro Magno",
+        "Ptolomeo I",
+        "Cleopatra VII"
+      ],
+      "civilizations": [
+        "Egipto Ptolemaico",
+        "Imperio Romano"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://egiptologia.com/alejandria-la-ruta-de-la-seda-y-los-reyes-magos-con-eva-tobalina/",
+      "mediaType": null
+    },
+    {
+      "id": "cleopatra-ultimo-faraon-unab",
+      "title": "Cleopatra: el último faraón de Egipto",
+      "type": "conferencia",
+      "date": null,
+      "year": 2025,
+      "organization": "Cultura UNAB - Universidad Andrés Bello",
+      "url": null,
+      "description": "Encuentro cultural online sobre la figura de Cleopatra VII, su contexto político, su relación con Roma y los mitos que la rodean.",
+      "summary": "Tobalina aborda a la última soberana del Egipto ptolemaico más allá de los tópicos hollywoodienses.",
+      "topics": [
+        "Cleopatra",
+        "Egipto Ptolemaico",
+        "Roma",
+        "Julio César",
+        "Marco Antonio"
+      ],
+      "characters": [
+        "Cleopatra VII",
+        "Julio César",
+        "Marco Antonio",
+        "Octavio"
+      ],
+      "civilizations": [
+        "Egipto Ptolemaico",
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://cultura.unab.cl/evento/encuentro-cultural-con-eva-tobalina-cleopatra-el-ultimo-faraon-de-egipto/",
+      "mediaType": null
+    },
+    {
+      "id": "entrevista-ser-viajeros",
+      "title": "Entrevista con José Antonio Ponseti en Ser Viajeros",
+      "type": "entrevista",
+      "date": null,
+      "year": 2025,
+      "organization": "Ser Viajeros",
+      "url": null,
+      "description": "Entrevista en Ser Viajeros sobre el libro 'Los caminos de la seda' (apartir del minuto 34.40 del programa).",
+      "summary": "Tobalina habla de su libro en el programa de viajes de la Cadena SER.",
+      "topics": [
+        "Los caminos de la seda",
+        "libro",
+        "viajes"
+      ],
+      "characters": [
+        "José Antonio Ponseti"
+      ],
+      "civilizations": [
+        "China",
+        "Asia Central",
+        "Imperio Romano"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/proximas-actividades/",
+      "mediaType": null
+    },
+    {
+      "id": "entrevista-un-buen-dia-para-viajar-rtpa",
+      "title": "Entrevista en 'Un buen día para viajar'",
+      "type": "entrevista",
+      "date": null,
+      "year": 2025,
+      "organization": "Radiotelevisión del Principado de Asturias",
+      "url": null,
+      "description": "Entrevista en el programa 'Un buen día para viajar' de RTPA sobre la Ruta de la Seda.",
+      "summary": "Conversación sobre viajes y la historia de la Ruta de la Seda.",
+      "topics": [
+        "Ruta de la Seda",
+        "viajes",
+        "Asturias"
+      ],
+      "characters": [],
+      "civilizations": [
+        "China",
+        "Asia Central"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/proximas-actividades/",
+      "mediaType": null
+    },
+    {
+      "id": "entrevista-isaac-moreno-gallo",
+      "title": "Entrevista en el canal de Isaac Moreno Gallo",
+      "type": "entrevista",
+      "date": null,
+      "year": 2025,
+      "organization": "Isaac Moreno Gallo (YouTube)",
+      "url": null,
+      "description": "Entrevista con Isaac Moreno Gallo sobre 'Los caminos de la seda' y la divulgación histórica.",
+      "summary": "Conversación sobre el libro y el trabajo de divulgación de Eva Tobalina.",
+      "topics": [
+        "Los caminos de la seda",
+        "libro",
+        "divulgación histórica"
+      ],
+      "characters": [],
+      "civilizations": [
+        "China",
+        "Asia Central"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/proximas-actividades/",
+      "mediaType": null
+    },
+    {
+      "id": "entrevista-nits-de-radio",
+      "title": "Entrevista sobre 'Los caminos de la seda'",
+      "type": "entrevista",
+      "date": null,
+      "year": 2025,
+      "organization": "Nits de Ràdio - Onda Cero Catalunya",
+      "url": null,
+      "description": "Entrevista en Nits de Ràdio conducida por Óscar González Camaño sobre el libro 'Los caminos de la seda' (a partir del minuto 45.40).",
+      "summary": "Tobalina conversa sobre su libro en Onda Cero Catalunya.",
+      "topics": [
+        "Los caminos de la seda",
+        "libro",
+        "radio"
+      ],
+      "characters": [
+        "Óscar González Camaño"
+      ],
+      "civilizations": [
+        "China",
+        "Asia Central"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/proximas-actividades/",
+      "mediaType": null
+    },
+    {
+      "id": "entrevista-cultura-en-la-tierra",
+      "title": "Entrevista sobre la Ruta de la Seda",
+      "type": "entrevista",
+      "date": null,
+      "year": 2025,
+      "organization": "Cultura en la tierra - Francisco López",
+      "url": null,
+      "description": "Entrevista en Cultura en la tierra con Francisco López sobre la Ruta de la Seda.",
+      "summary": "Conversación divulgativa sobre la Ruta de la Seda y sus protagonistas.",
+      "topics": [
+        "Ruta de la Seda",
+        "divulgación"
+      ],
+      "characters": [
+        "Francisco López"
+      ],
+      "civilizations": [
+        "China",
+        "Asia Central"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/proximas-actividades/",
+      "mediaType": null
+    },
+    {
+      "id": "entrevista-bellumartis",
+      "title": "LOS CAMINOS DE LA SEDA: la historia del encuentro entre Oriente y Occidente",
+      "type": "entrevista",
+      "date": null,
+      "year": 2025,
+      "organization": "Bellumartis - Francisco García Campa (YouTube)",
+      "url": null,
+      "description": "Entrevista en el canal Bellumartis sobre el libro 'Los caminos de la seda' y la historia militar y cultural de la Ruta de la Seda.",
+      "summary": "Tobalina conversa con Francisco García Campa sobre Oriente, Occidente y la Ruta de la Seda.",
+      "topics": [
+        "Los caminos de la seda",
+        "Ruta de la Seda",
+        "historia militar"
+      ],
+      "characters": [
+        "Francisco García Campa"
+      ],
+      "civilizations": [
+        "China",
+        "Imperio Persa",
+        "Imperio Romano"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/proximas-actividades/",
+      "mediaType": null
+    },
+    {
+      "id": "entrevista-biblioteca-alejandria-ivan-blanquer",
+      "title": "La Ruta de la Seda",
+      "type": "entrevista",
+      "date": null,
+      "year": 2025,
+      "organization": "La biblioteca de Alejandría - Iván Blanquer (Podcast)",
+      "url": null,
+      "description": "Entrevista en el podcast La biblioteca de Alejandría con Iván Blanquer sobre la Ruta de la Seda.",
+      "summary": "Conversación en formato podcast sobre la historia de los caminos de la seda.",
+      "topics": [
+        "Ruta de la Seda",
+        "podcast",
+        "divulgación"
+      ],
+      "characters": [
+        "Iván Blanquer"
+      ],
+      "civilizations": [
+        "China",
+        "Asia Central",
+        "Imperio Romano"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/proximas-actividades/",
+      "mediaType": null
+    },
+    {
+      "id": "ruta-de-la-seda-america-unab",
+      "title": "La Ruta de la Seda y América",
+      "type": "conferencia",
+      "date": "2025-08-21",
+      "year": 2025,
+      "organization": "Cultura UNAB - Universidad Andrés Bello (Campus Casona Las Condes)",
+      "url": null,
+      "description": "Conferencia sobre el papel de América en la red comercial global de la Ruta de la Seda, desde la explotación de la plata americana hasta el comercio transpacífico con Asia.",
+      "summary": "Tobalina ofrece una perspectiva inédita sobre cómo el continente americano contribuyó al declive de la Ruta de la Seda tradicional.",
+      "topics": [
+        "Ruta de la Seda",
+        "América",
+        "plata americana",
+        "comercio transpacífico",
+        "globalización"
+      ],
+      "characters": [],
+      "civilizations": [
+        "China",
+        "España",
+        "Imperio Español"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://cultura.unab.cl/evento/conferencias-eva-tobalina/",
+      "mediaType": null
+    },
+    {
+      "id": "ruta-seda-america-unab-2025",
+      "title": "La Ruta de la Seda y América",
+      "type": "conferencia",
+      "date": "2025-08-21",
+      "year": 2025,
+      "organization": "Universidad Andrés Bello (Campus Casona Las Condes)",
+      "url": "https://agenda.unab.cl/evento/transmision-conferencia-la-ruta-de-la-seda-y-america/",
+      "description": "Conferencia sobre el papel del continente americano en la red comercial global de la Ruta de la Seda, desde la explotación de la plata hasta el comercio transpacífico con Asia.",
+      "summary": "Tobalina aborda el rol del continente americano en la Ruta de la Seda, analizando la explotación de la plata, el comercio transpacífico con Asia y el papel de América en el declive de la ruta tradicional.",
+      "topics": [
+        "Ruta de la Seda",
+        "América",
+        "plata americana",
+        "comercio transpacífico",
+        "globalización"
+      ],
+      "characters": [],
+      "civilizations": [
+        "China",
+        "Imperio Español",
+        "América virreinal"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://agenda.unab.cl",
+      "mediaType": "web"
+    },
+    {
+      "id": "cena-cultura-raices-ruta-seda",
+      "title": "La Ruta de la Seda. Pasado y presente de unos caminos milenarios",
+      "type": "conferencia",
+      "date": "2025-05-23",
+      "year": 2025,
+      "organization": "Raíces de Europa / Cloud Coachers, Madrid",
+      "url": null,
+      "description": "Cena cultural con conferencia y coloquio sobre el pasado y presente de la Ruta de la Seda.",
+      "summary": "Acto de Raíces de Europa en Madrid con conferencia de Eva Tobalina y cóctel posterior.",
+      "topics": [
+        "Ruta de la Seda",
+        "pasado y presente",
+        "Asia Central"
+      ],
+      "characters": [],
+      "civilizations": [
+        "China",
+        "Asia Central",
+        "Imperio Mongol"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/proximas-actividades/",
+      "mediaType": null
+    },
+    {
+      "id": "ruta-de-la-seda-encuentro-unab",
+      "title": "La Ruta de la Seda: el encuentro entre dos mundos",
+      "type": "conferencia",
+      "date": "2025-08-19",
+      "year": 2025,
+      "organization": "Cultura UNAB - Universidad Andrés Bello (Sede Concepción)",
+      "url": null,
+      "description": "Conferencia sobre la historia y legado de la Ruta de la Seda, sus trayectos, mercancías e influencia política, cultural y religiosa en Eurasia.",
+      "summary": "Tobalina explora la red de caminos que conectó Oriente y Occidente durante más de mil quinientos años.",
+      "topics": [
+        "Ruta de la Seda",
+        "China",
+        "Asia Central",
+        "comercio antiguo",
+        "Oriente y Occidente"
+      ],
+      "characters": [
+        "Zhang Qian",
+        "Marco Polo"
+      ],
+      "civilizations": [
+        "China",
+        "Imperio Persa",
+        "Imperio Romano",
+        "Imperio Mongol"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://cultura.unab.cl/evento/conferencias-eva-tobalina/",
+      "mediaType": null
+    },
+    {
+      "id": "ruta-de-la-seda-aventura-valencia",
+      "title": "La Ruta de la Seda: la aventura del encuentro entre Oriente y Occidente",
+      "type": "conferencia",
+      "date": "2025-02-13",
+      "year": 2025,
+      "organization": "Ateneo Mercantil de Valencia",
+      "url": null,
+      "description": "Conferencia en el Teatro Ateneo de Valencia sobre la aventura histórica del encuentro entre Oriente y Occidente a través de la Ruta de la Seda.",
+      "summary": "Tobalina presenta la Ruta de la Seda como red de intercambios culturales y económicos.",
+      "topics": [
+        "Ruta de la Seda",
+        "Oriente y Occidente",
+        "comercio antiguo",
+        "Valencia"
+      ],
+      "characters": [
+        "Zhang Qian",
+        "Marco Polo"
+      ],
+      "civilizations": [
+        "China",
+        "Imperio Persa",
+        "Imperio Romano"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/proximas-actividades/",
+      "mediaType": null
+    },
+    {
+      "id": "ruta-seda-ateneo-valencia-2025",
+      "title": "La Ruta de la Seda: la aventura del encuentro entre Oriente y Occidente",
+      "type": "conferencia",
+      "date": "2025-02-13",
+      "year": 2025,
+      "organization": "Ateneo Mercantil de Valencia",
+      "url": "https://youtu.be/_EtcJj7oVSA",
+      "description": "Conferencia en el Ateneo Mercantil de Valencia sobre la historia y el impacto cultural, económico y artístico de la Ruta de la Seda.",
+      "summary": "Tobalina analiza cómo los Caminos de la Seda no solo sirvieron para el intercambio de bienes como la seda, el papel y la caña de azúcar, sino también como vías para la difusión de ideas, religiones y corrientes artísticas, destacando la interdependencia histórica entre Oriente y Occidente.",
+      "topics": [
+        "Ruta de la Seda",
+        "Oriente y Occidente",
+        "comercio antiguo",
+        "seda",
+        "intercambio cultural"
+      ],
+      "characters": [],
+      "civilizations": [
+        "China",
+        "Imperio Persa",
+        "Imperio Romano",
+        "Imperio Mongol"
+      ],
+      "duration": "01:07:09",
+      "language": "es",
+      "source": "https://ateneovalencia.es",
+      "mediaType": "video"
+    },
+    {
+      "id": "ruta-seda-fascinante",
+      "title": "La fascinante Ruta de la Seda con Eva Tobalina. Su apasionante historia y actualidad",
+      "type": "conferencia",
+      "date": "2025-06-01",
+      "year": 2025,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=M3-dN5Mn5NE",
+      "description": "Conferencia sobre la historia y actualidad de la Ruta de la Seda, la red de caminos que conectó Oriente y Occidente durante más de mil años.",
+      "summary": "Tobalina realiza un recorrido completo por la Ruta de la Seda, desde sus orígenes en la dinastía Han hasta su relevancia en la actualidad, incluyendo la iniciativa china de la Nueva Ruta de la Seda.",
+      "topics": [
+        "Ruta de la Seda",
+        "China",
+        "comercio antiguo",
+        "Oriente y Occidente",
+        "globalización"
+      ],
+      "characters": [
+        "Zhang Qian",
+        "Marco Polo"
+      ],
+      "civilizations": [
+        "China Han",
+        "Imperio Mongol",
+        "Imperio Romano"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video"
+    },
+    {
+      "id": "entrevista-pedazos-de-historia",
+      "title": "La ruta de la seda, con Eva Tobalina",
+      "type": "entrevista",
+      "date": null,
+      "year": 2025,
+      "organization": "Pedazos de Historia - ViOne",
+      "url": null,
+      "description": "Entrevista en el programa Pedazos de Historia, conducido por Alberto Garín, sobre la Ruta de la Seda.",
+      "summary": "Conversación sobre la historia y el legado de los caminos de la seda.",
+      "topics": [
+        "Ruta de la Seda",
+        "divulgación histórica"
+      ],
+      "characters": [
+        "Alberto Garín"
+      ],
+      "civilizations": [
+        "China",
+        "Asia Central",
+        "Imperio Romano"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/proximas-actividades/",
+      "mediaType": null
+    },
+    {
+      "id": "entrevista-desafio-viajero",
+      "title": "La verdad tras la RUTA DE LA SEDA, con EVA TOBALINA",
+      "type": "entrevista",
+      "date": null,
+      "year": 2025,
+      "organization": "Desafío viajero - Luis Tobajas (YouTube)",
+      "url": null,
+      "description": "Entrevista en el canal Desafío viajero sobre la verdad histórica detrás de la Ruta de la Seda.",
+      "summary": "Tobalina desmonta mitos y acerca la realidad histórica de la Ruta de la Seda.",
+      "topics": [
+        "Ruta de la Seda",
+        "mitos",
+        "viajes"
+      ],
+      "characters": [
+        "Luis Tobajas"
+      ],
+      "civilizations": [
+        "China",
+        "Asia Central"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/proximas-actividades/",
+      "mediaType": null
+    },
+    {
+      "id": "curso-pueblos-estepa-2025",
+      "title": "Los Pueblos de la Estepa: Hunos, partos, turcos, mongoles…",
+      "type": "curso",
+      "date": "2025-01-08",
+      "year": 2025,
+      "organization": "Raíces de Europa",
+      "url": "https://raicesdeeuropa.com/curso-los-pueblos-de-la-estepa-enero-febrero-2025/",
+      "description": "Curso de seis sesiones sobre los pueblos nómadas de la estepa euroasiática, desde los hunos hasta los mongoles, impartido por Eva Tobalina entre el 8 de enero y el 13 de febrero de 2025.",
+      "summary": "Curso completo sobre la historia de los pueblos nómadas de la estepa, abarcando hunos, partos, turcos y mongoles, y su impacto en la historia de Eurasia.",
+      "topics": [
+        "pueblos de la estepa",
+        "hunos",
+        "partos",
+        "turcos",
+        "mongoles",
+        "nómadas",
+        "Eurasia"
+      ],
+      "characters": [
+        "Atila",
+        "Gengis Kan"
+      ],
+      "civilizations": [
+        "Hunos",
+        "Partos",
+        "Turcos",
+        "Imperio Mongol"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://raicesdeeuropa.com",
+      "mediaType": "web"
+    },
+    {
+      "id": "entrevista-rtve-espacio-en-blanco",
+      "title": "Los caminos de la seda",
+      "type": "entrevista",
+      "date": "2025-01-12",
+      "year": 2025,
+      "organization": "RTVE - Espacio en blanco",
+      "url": "https://www.rtve.es/play/audios/espacio-en-blanco/caminos-seda-12-01-25/16403585/",
+      "description": "Entrevista en el programa 'Espacio en blanco' con motivo de la publicación del libro 'Los caminos de la seda'.",
+      "summary": "Eva Tobalina descubre los orígenes de la Ruta de la Seda y explica cómo esta red de caminos cambió la historia de la humanidad.",
+      "topics": [
+        "Ruta de la Seda",
+        "libro",
+        "comercio antiguo",
+        "Oriente y Occidente"
+      ],
+      "characters": [],
+      "civilizations": [
+        "China",
+        "Imperio Persa",
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.rtve.es/play/audios/espacio-en-blanco/caminos-seda-12-01-25/16403585/",
+      "mediaType": "audio"
+    },
+    {
+      "id": "ruta-seda-geografia-paisajes-2025",
+      "title": "Los caminos de la seda: geografía, paisajes y gentes",
+      "type": "conferencia",
+      "date": "2025-02-03",
+      "year": 2025,
+      "organization": "Diputación Foral de Álava / Casa de Cultura Ignacio Aldecoa, Vitoria-Gasteiz",
+      "url": null,
+      "description": "Conferencia sobre la geografía, los paisajes y las gentes de la Ruta de la Seda.",
+      "summary": "Tobalina acerca los caminos de la seda desde una perspectiva geográfica y humana.",
+      "topics": [
+        "Ruta de la Seda",
+        "geografía",
+        "Asia Central",
+        "viajes"
+      ],
+      "characters": [],
+      "civilizations": [
+        "China",
+        "Asia Central",
+        "Imperio Mongol"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/proximas-actividades/",
+      "mediaType": null
+    },
+    {
+      "id": "pueblos-estepa-hunos-atila-ivoox",
+      "title": "Los pueblos de la estepa: Los Hunos y la muerte de Atila",
+      "type": "conferencia",
+      "date": "2025-01-01",
+      "year": 2025,
+      "organization": "Raíces de Europa",
+      "url": "https://www.ivoox.com/pueblos-estepa-hunos-muerte-atila-audios-mp3_rf_139957544_1.html",
+      "description": "Conferencia sobre los hunos, su vida cotidiana, creencias, organización social y la figura de Atila.",
+      "summary": "La charla incluye detalles sobre la vida cotidiana, creencias, organización social y el legado de los hunos en la historia de Eurasia.",
+      "topics": [
+        "Hunos",
+        "Atila",
+        "estepa",
+        "pueblos nómadas"
+      ],
+      "characters": [
+        "Atila"
+      ],
+      "civilizations": [
+        "Hunos"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.ivoox.com",
+      "mediaType": "audio"
+    },
+    {
+      "id": "entrevista-aladetres-secretos-mundo-antiguo",
+      "title": "Los secretos ocultos del mundo antiguo",
+      "type": "entrevista",
+      "date": null,
+      "year": 2025,
+      "organization": "Aladetres",
+      "url": null,
+      "description": "Entrevista en el podcast Aladetres sobre los secretos y curiosidades del mundo antiguo.",
+      "summary": "Tobalina conversa sobre aspectos sorprendentes de las civilizaciones antiguas.",
+      "topics": [
+        "mundo antiguo",
+        "curiosidades históricas",
+        "divulgación"
+      ],
+      "characters": [],
+      "civilizations": [
+        "Roma",
+        "Grecia",
+        "Egipto"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/proximas-actividades/",
+      "mediaType": null
+    },
+    {
+      "id": "presentacion-libro-raices",
+      "title": "Presentación del libro 'Los caminos de la seda' en Raíces de Europa",
+      "type": "conferencia",
+      "date": "2025-05-23",
+      "year": 2025,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Conferencia de presentación del libro 'Los caminos de la seda: la historia del encuentro entre Oriente y Occidente'.",
+      "summary": "Tobalina presenta su obra más reciente, un recorrido por la red de rutas que conectaron civilizaciones durante más de mil quinientos años.",
+      "topics": [
+        "Ruta de la Seda",
+        "libro",
+        "divulgación histórica",
+        "Oriente y Occidente"
+      ],
+      "characters": [],
+      "civilizations": [
+        "China",
+        "Imperio Persa",
+        "Roma",
+        "Imperio Mongol"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/proximas-actividades/",
+      "mediaType": null
+    },
+    {
+      "id": "presentacion-libro-ateneo-madrid",
+      "title": "Presentación del libro 'Los caminos de la seda' en el Ateneo de Madrid",
+      "type": "presentación",
+      "date": "2025-05-22",
+      "year": 2025,
+      "organization": "Agrupación del Aire Libre / Ateneo de Madrid",
+      "url": null,
+      "description": "Presentación del libro en la Sala Ramón y Cajal del Ateneo de Madrid con la participación de embajadores de Kazajistán, Uzbekistán y China.",
+      "summary": "Acto de presentación con embajadores de países de la Ruta de la Seda y moderación de Mayte González-Gil.",
+      "topics": [
+        "Los caminos de la seda",
+        "libro",
+        "diplomacia",
+        "Ruta de la Seda"
+      ],
+      "characters": [
+        "Danat Mussayev",
+        "Farrukh Tursunov",
+        "Yao Jing",
+        "Cristóbal Figueras",
+        "Mayte González-Gil"
+      ],
+      "civilizations": [
+        "China",
+        "Kazajistán",
+        "Uzbekistán"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/proximas-actividades/",
+      "mediaType": null
+    },
+    {
+      "id": "presentacion-libro-biblioteca-central-militar",
+      "title": "Presentación del libro 'Los caminos de la seda' en la Biblioteca Central Militar",
+      "type": "presentación",
+      "date": "2025-05-23",
+      "year": 2025,
+      "organization": "Instituto de Historia y Cultura Militar / Biblioteca Central Militar, Madrid",
+      "url": null,
+      "description": "Presentación del libro dentro de la programación cultural 'Un libro y un café' en la Biblioteca Central Militar de Madrid.",
+      "summary": "Tobalina presenta su obra en un acto organizado por el Instituto de Historia y Cultura Militar.",
+      "topics": [
+        "Los caminos de la seda",
+        "libro",
+        "historia militar"
+      ],
+      "characters": [],
+      "civilizations": [
+        "China",
+        "Asia Central",
+        "Imperio Romano"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/proximas-actividades/",
+      "mediaType": null
+    },
+    {
+      "id": "pueblos-estepa-turcos-ivoox",
+      "title": "Pueblos de la Estepa (III): Los Turcos",
+      "type": "conferencia",
+      "date": "2025-01-01",
+      "year": 2025,
+      "organization": "Raíces de Europa",
+      "url": "https://www.ivoox.com/pueblos-estepa-iii-turcos-audios-mp3_rf_141469144_1.html",
+      "description": "Conferencia sobre los pueblos turcos de la estepa, su historia y su legado.",
+      "summary": "Exposición de la profesora de historia antigua Eva Tobalina dedicada a los menos conocidos de los turcos.",
+      "topics": [
+        "Turcos",
+        "estepa",
+        "pueblos nómadas",
+        "Asia Central"
+      ],
+      "characters": [],
+      "civilizations": [
+        "Turcos",
+        "Kanato Turco"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.ivoox.com",
+      "mediaType": "audio"
+    },
+    {
+      "id": "pueblos-estepa-genghis-kan-ivoox",
+      "title": "Pueblos de la Estepa (IV): Genghis Kan, el constructor del Imperio Mongol",
+      "type": "conferencia",
+      "date": "2025-01-01",
+      "year": 2025,
+      "organization": "Raíces de Europa",
+      "url": "https://www.ivoox.com/pueblos-estepa-iv-genghis-kan-constructor-audios-mp3_rf_142093679_1.html",
+      "description": "Conferencia sobre Gengis Kan y la construcción del Imperio Mongol.",
+      "summary": "Exposición sobre la figura de Gengis Kan y cómo construyó el imperio mongol, el más extenso de la historia.",
+      "topics": [
+        "Gengis Kan",
+        "Imperio Mongol",
+        "estepa",
+        "Mongolia"
+      ],
+      "characters": [
+        "Gengis Kan"
+      ],
+      "civilizations": [
+        "Imperio Mongol"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.ivoox.com",
+      "mediaType": "audio"
+    },
+    {
+      "id": "pueblos-estepa-hijos-genghis-khan-ivoox",
+      "title": "Pueblos de la Estepa (V): los hijos de Genghis Khan y la expansión del Imperio Mongol",
+      "type": "conferencia",
+      "date": "2025-01-01",
+      "year": 2025,
+      "organization": "Raíces de Europa",
+      "url": "https://www.ivoox.com/pueblos-estepa-v-hijos-genghis-khan-audios-mp3_rf_142764685_1.html",
+      "description": "Conferencia sobre los hijos de Gengis Kan y la expansión del Imperio Mongol.",
+      "summary": "Exposición sobre la expansión del Imperio Mongol bajo los sucesores de Gengis Kan.",
+      "topics": [
+        "Imperio Mongol",
+        "Gengis Kan",
+        "estepa",
+        "expansión mongola"
+      ],
+      "characters": [
+        "Gengis Kan",
+        "Ögodei",
+        "Möngke",
+        "Kublai Kan"
+      ],
+      "civilizations": [
+        "Imperio Mongol"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.ivoox.com",
+      "mediaType": "audio"
+    },
+    {
+      "id": "entrevista-librujula",
+      "title": "Viajar a la Ruta de la Seda con Eva Tobalina",
+      "type": "entrevista",
+      "date": "2025-07-18",
+      "year": 2025,
+      "organization": "Librújula - Público",
+      "url": "https://librujula.publico.es/viajar-a-la-ruta-de-la-seda-con-eva-tobalina/",
+      "description": "Entrevista sobre el libro 'Los caminos de la seda', sus motivaciones y los viajes culturales organizados por Cultura y Viajes.",
+      "summary": "Tobalina habla de su faceta como divulgadora, los viajes que organiza para seguir los pasos de la Ruta de la Seda y su relación con Raíces de Europa.",
+      "topics": [
+        "Ruta de la Seda",
+        "libro",
+        "viajes culturales",
+        "divulgación"
+      ],
+      "characters": [],
+      "civilizations": [
+        "China",
+        "Asia Central",
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://librujula.publico.es/viajar-a-la-ruta-de-la-seda-con-eva-tobalina/",
+      "mediaType": "web"
+    },
+    {
+      "id": "imperio-hitita-i",
+      "title": "El Imperio Hitita (I). Los Señores de Anatolia (Mesopotamia y su entorno 2)",
+      "type": "conferencia",
+      "date": "2024-02-21",
+      "year": 2024,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=aKEIo1fea0c",
+      "description": "Primera sesión dedicada al Imperio Hitita, una de las civilizaciones más fascinantes de Anatolia, dentro del ciclo 'Mesopotamia y su entorno'.",
+      "summary": "Tobalina presenta a los hititas, su origen, su expansión por Anatolia y su importancia como gran imperio de la Edad del Bronce, rival de Egipto.",
+      "topics": [
+        "Imperio Hitita",
+        "Anatolia",
+        "Hattusa",
+        "Edad del Bronce",
+        "Pueblos del Mar"
+      ],
+      "characters": [
+        "Suppiluliuma I",
+        "Muwatalli II",
+        "Ramsés II"
+      ],
+      "civilizations": [
+        "Hitita",
+        "Egipto"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video"
+    },
+    {
+      "id": "educacion-ciudadano-grecia-roma-pucv",
+      "title": "La Educación del ciudadano en la Antigua Grecia y Roma",
+      "type": "conferencia",
+      "date": "2024-01-01",
+      "year": 2024,
+      "organization": "Pontificia Universidad Católica de Valparaíso - Escuela de Derecho",
+      "url": "https://www.ucv.cl/uuaa/en-pucv-santiago-la-dra-eva-tobalina-realizo-conferencia-sobre-la",
+      "description": "Conferencia sobre la formación del ciudadano en la Antigüedad grecorromana y su relevancia para la educación actual.",
+      "summary": "Tobalina aborda la educación del ciudadano en la Antigua Grecia y Roma, destacando que las preguntas y problemas que se plantearon entonces son los mismos que enfrentamos hoy. Somos herederos culturales de la civilización grecorromana, y conocerlos es conocernos a nosotros mismos.",
+      "topics": [
+        "educación",
+        "ciudadanía",
+        "Grecia clásica",
+        "Roma",
+        "humanismo"
+      ],
+      "characters": [],
+      "civilizations": [
+        "Grecia clásica",
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.ucv.cl",
+      "mediaType": "web"
+    },
+    {
+      "id": "escitas",
+      "title": "Los Escitas: Señores de la Estepa",
+      "type": "conferencia",
+      "date": "2024-11-10",
+      "year": 2024,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=S739qWXZi60",
+      "description": "Sesión dedicada a los Escitas, el gran pueblo nómada del Mundo Antiguo, su cultura material, su dominio del caballo y sus contactos con Grecia y Persia.",
+      "summary": "Tobalina presenta a los escitas como un pueblo nómada clave en la historia de Eurasia, conocido por su arte animalista y su relación con Heródoto.",
+      "topics": [
+        "Escitas",
+        "estepa",
+        "pueblos nómadas",
+        "caballo",
+        "kurganes",
+        "Heródoto"
+      ],
+      "characters": [
+        "Heródoto",
+        "Atrea"
+      ],
+      "civilizations": [
+        "Escitas",
+        "Imperio Persa Aqueménida",
+        "Grecia clásica"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://portalcioranbr.wordpress.com/2025/08/01/escitas-eva-tobalina/",
+      "mediaType": "video"
+    },
+    {
+      "id": "presentacion-libro-bilbao",
+      "title": "Presentación del libro 'Los caminos de la seda' en Bilbao",
+      "type": "presentación",
+      "date": "2024-12-02",
+      "year": 2024,
+      "organization": "Fnac Bilbao",
+      "url": null,
+      "description": "Presentación del libro en la librería Fnac de Bilbao.",
+      "summary": "Tobalina presenta su obra sobre la Ruta de la Seda en Bilbao.",
+      "topics": [
+        "Los caminos de la seda",
+        "libro",
+        "divulgación histórica"
+      ],
+      "characters": [],
+      "civilizations": [
+        "China",
+        "Asia Central",
+        "Imperio Romano"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/proximas-actividades/",
+      "mediaType": null
+    },
+    {
+      "id": "presentacion-libro-palma-xuanzang",
+      "title": "Presentación del libro 'Los caminos de la seda' en Palma de Mallorca",
+      "type": "presentación",
+      "date": "2024-12-12",
+      "year": 2024,
+      "organization": "Universitat de les Illes Balears",
+      "url": null,
+      "description": "Presentación del libro en Palma de Mallorca con conferencia sobre 'Xuanzang y viaje al Oeste durante la Gran Dinastía Tang'.",
+      "summary": "Tobalina presenta su libro y ofrece una conferencia sobre el monje viajero Xuanzang y su periplo durante la dinastía Tang.",
+      "topics": [
+        "Los caminos de la seda",
+        "Xuanzang",
+        "dinastía Tang",
+        "viaje al Oeste",
+        "Budismo"
+      ],
+      "characters": [
+        "Xuanzang"
+      ],
+      "civilizations": [
+        "China Tang",
+        "India"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/proximas-actividades/",
+      "mediaType": null
+    },
+    {
+      "id": "presentacion-libro-pamplona",
+      "title": "Presentación del libro 'Los caminos de la seda' en Pamplona",
+      "type": "presentación",
+      "date": "2024-11-14",
+      "year": 2024,
+      "organization": "CIVICAN, Pamplona",
+      "url": null,
+      "description": "Presentación del libro 'Los caminos de la seda: La historia del encuentro entre Oriente y Occidente' en el CIVICAN de Pamplona.",
+      "summary": "Tobalina presenta su obra acompañada por el doctor Íñigo Mugueta Moreno.",
+      "topics": [
+        "Los caminos de la seda",
+        "libro",
+        "divulgación histórica"
+      ],
+      "characters": [],
+      "civilizations": [
+        "China",
+        "Asia Central",
+        "Imperio Romano"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/proximas-actividades/",
+      "mediaType": null
+    },
+    {
+      "id": "presentacion-libro-vitoria",
+      "title": "Presentación del libro 'Los caminos de la seda' en Vitoria-Gasteiz",
+      "type": "presentación",
+      "date": "2024-11-27",
+      "year": 2024,
+      "organization": "Aula San Pablo, Vitoria-Gasteiz",
+      "url": null,
+      "description": "Presentación del libro en el Aula San Pablo de Vitoria-Gasteiz, a cargo de José Alipio Morejón, director de Raíces de Europa.",
+      "summary": "Acto de presentación de la obra en la ciudad natal de la autora.",
+      "topics": [
+        "Los caminos de la seda",
+        "libro",
+        "divulgación histórica"
+      ],
+      "characters": [],
+      "civilizations": [
+        "China",
+        "Asia Central",
+        "Imperio Romano"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/proximas-actividades/",
+      "mediaType": null
+    },
+    {
+      "id": "sumer-zcmh",
+      "title": "Sumer y Sumerios. Donde empezó la historia",
+      "type": "conferencia",
+      "date": "2024-03-08",
+      "year": 2024,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=ZCmHGlLHpso",
+      "description": "Versión actualizada de la conferencia sobre los orígenes de Sumer, incluyendo los últimos hallazgos arqueológicos y debates historiográficos.",
+      "summary": "Revisión de la primera civilización de la historia, poniendo énfasis en el contexto arqueológico de Uruk, Ur y la invención de la escritura.",
+      "topics": [
+        "Sumer",
+        "Uruk",
+        "Ur",
+        "escritura cuneiforme",
+        "arqueología mesopotámica"
+      ],
+      "characters": [
+        "Sargón de Acad",
+        "Gilgamesh"
+      ],
+      "civilizations": [
+        "Sumeria"
+      ],
+      "duration": "58:53",
+      "language": "es",
+      "source": "https://www.studocu.com",
+      "mediaType": "video"
+    },
+    {
+      "id": "ruta-seda-xuanzang-tang-2024",
+      "title": "Xuanzang y viaje al Oeste durante la Gran Dinastía Tang",
+      "type": "conferencia",
+      "date": "2024-12-12",
+      "year": 2024,
+      "organization": "Universitat de les Illes Balears",
+      "url": "https://evatobalina.com/proximas-actividades/",
+      "description": "Conferencia sobre el monje viajero Xuanzang y su periplo durante la dinastía Tang, en el marco de la presentación del libro 'Los caminos de la seda'.",
+      "summary": "Tobalina presenta su libro y ofrece una conferencia sobre el monje viajero Xuanzang y su periplo durante la dinastía Tang.",
+      "topics": [
+        "Xuanzang",
+        "dinastía Tang",
+        "viaje al Oeste",
+        "Budismo",
+        "Ruta de la Seda"
+      ],
+      "characters": [
+        "Xuanzang"
+      ],
+      "civilizations": [
+        "China Tang",
+        "India"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com",
+      "mediaType": "web"
+    },
+    {
+      "id": "alejandro-magno-i",
+      "title": "Alejandro Magno (I). Infancia y primera juventud, hasta la llegada al poder",
+      "type": "conferencia",
+      "date": "2023-03-26",
+      "year": 2023,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=4qHAYtcd5IU",
+      "description": "Primera entrega del ciclo sobre Alejandro Magno. Se aborda su nacimiento en Pela, la educación con Aristóteles, la relación con Filipo II y el inicio de su reinado.",
+      "summary": "Tobalina reconstruye los primeros años de Alejandro, su formación intelectual y militar, y las circunstancias que lo llevaron al trono de Macedonia.",
+      "topics": [
+        "Alejandro Magno",
+        "Macedonia",
+        "Filipo II",
+        "Aristóteles",
+        "Olimpia",
+        "Bucéfalo"
+      ],
+      "characters": [
+        "Alejandro Magno",
+        "Filipo II de Macedonia",
+        "Olimpia de Epiro",
+        "Aristóteles",
+        "Bucéfalo"
+      ],
+      "civilizations": [
+        "Macedonia",
+        "Grecia clásica"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://informacionmanu.es/2024/10/alejandro-magno/",
+      "mediaType": "video"
+    },
+    {
+      "id": "alejandro-magno-ii",
+      "title": "Alejandro Magno (II). La conquista del Imperio Aqueménida",
+      "type": "conferencia",
+      "date": null,
+      "year": 2023,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Segunda entrega del ciclo. Campañas del Gránico, Issos y Gaugamela; la caída de Persépolis y la persecución de Darío III.",
+      "summary": "Análisis de las campañas militares que derrocaron al Imperio persa y extendieron el poder de Alejandro hasta Asia Central.",
+      "topics": [
+        "Alejandro Magno",
+        "batalla del Gránico",
+        "batalla de Issos",
+        "batalla de Gaugamela",
+        "Persépolis",
+        "Darío III"
+      ],
+      "characters": [
+        "Alejandro Magno",
+        "Darío III",
+        "Parmenión",
+        "Hefestión"
+      ],
+      "civilizations": [
+        "Macedonia",
+        "Imperio Persa Aqueménida"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/conferencias/",
+      "mediaType": null
+    },
+    {
+      "id": "alejandro-magno-iii",
+      "title": "Alejandro Magno (III). La conquista de Tiro y Egipto: faraón y fundador de Alejandría",
+      "type": "conferencia",
+      "date": null,
+      "year": 2023,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Tercera entrega del ciclo. Conquista de Fenicia, el asedio de Tiro, la entrada en Egipto y la fundación de Alejandría.",
+      "summary": "Tobalina explica cómo Alejandro se convirtió en faraón y fundó la ciudad que sería el gran centro cultural del helenismo.",
+      "topics": [
+        "Alejandro Magno",
+        "Tiro",
+        "Egipto",
+        "Alejandría",
+        "oráculo de Siwa",
+        "faraón"
+      ],
+      "characters": [
+        "Alejandro Magno",
+        "Poro"
+      ],
+      "civilizations": [
+        "Macedonia",
+        "Egipto ptolemaico"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.academia.edu/127789080/HISTORIA_DE_GRECIA",
+      "mediaType": null
+    },
+    {
+      "id": "alejandro-magno-iv",
+      "title": "Alejandro Magno (IV). La India, el fin del mundo y la muerte en Babilonia",
+      "type": "conferencia",
+      "date": null,
+      "year": 2023,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Últimas etapas de la expedición de Alejandro, la batalla del Hidaspes contra Poro, el rechazo del ejército a seguir avanzando y la muerte del conquistador.",
+      "summary": "Cierre del ciclo con la campaña india, las tensiones con los macedonios y el enigma de la muerte de Alejandro en Babilonia.",
+      "topics": [
+        "Alejandro Magno",
+        "India",
+        "batalla del Hidaspes",
+        "Poro",
+        "Babilonia",
+        "diádocos"
+      ],
+      "characters": [
+        "Alejandro Magno",
+        "Poro",
+        "Hefestión",
+        "Seleuco",
+        "Ptolomeo"
+      ],
+      "civilizations": [
+        "Macedonia",
+        "Imperio Seléucida",
+        "Egipto Ptolemaico"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/conferencias/",
+      "mediaType": null
+    },
+    {
+      "id": "angkor-wat-maravilla-sudeste-asiatico",
+      "title": "Angkor Wat. Maravilla del Mundo Antiguo en el Sudeste Asiático",
+      "type": "conferencia",
+      "date": "2023-01-01",
+      "year": 2023,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Conferencia sobre Angkor Wat, uno de los tesoros arqueológicos más impresionantes del mundo, en el Sudeste Asiático.",
+      "summary": "Conferencia sobre Angkor Wat, uno de los tesoros arqueológicos más impresionantes del mundo, a cargo de Eva Tobalina.",
+      "topics": [
+        "Angkor Wat",
+        "Sudeste Asiático",
+        "Imperio Jemer",
+        "arqueología"
+      ],
+      "characters": [],
+      "civilizations": [
+        "Imperio Jemer"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://salda.ws",
+      "mediaType": null
+    },
+    {
+      "id": "egipto-imperio-antiguo",
+      "title": "Egipto. El Imperio Antiguo (2686-2181 a.C). Nacimiento y esplendor",
+      "type": "conferencia",
+      "date": "2023-02-16",
+      "year": 2023,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=XIe57--aiR8",
+      "description": "Primera conferencia del ciclo sobre Egipto Faraónico. Recorrido por el nacimiento y esplendor del Imperio Antiguo, la unificación, las pirámides de Guiza y la organización del Estado faraónico.",
+      "summary": "Tobalina explica cómo el Egipto del Imperio Antiguo sentó las bases políticas, religiosas y artísticas de una civilización milenaria.",
+      "topics": [
+        "Egipto",
+        "Imperio Antiguo",
+        "pirámides",
+        "Keops",
+        "Kefrén",
+        "Micerino",
+        "faraón"
+      ],
+      "characters": [
+        "Keops",
+        "Kefrén",
+        "Micerino",
+        "Imhotep",
+        "Dyeser"
+      ],
+      "civilizations": [
+        "Egipto Antiguo"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://espacio-tiempo.es/egipto-el-imperio-antiguo-2686-2181-a-c-nacimiento-y-esplendor-eva-tobalina/",
+      "mediaType": "video"
+    },
+    {
+      "id": "tumba-primer-emperador-china",
+      "title": "La Tumba nunca abierta del Primer Emperador de China",
+      "type": "conferencia",
+      "date": "2023-08-27",
+      "year": 2023,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=a2A427v5dX4",
+      "description": "Conferencia sobre uno de los conjuntos arqueológicos más impresionantes del mundo: la tumba del Primer Emperador de China, Qin Shi Huang.",
+      "summary": "Tobalina nos acerca al contexto de la civilización china y al yacimiento de la tumba nunca abierta del Primer Emperador, incluyendo el famoso ejército de terracota.",
+      "topics": [
+        "China",
+        "Qin Shi Huang",
+        "ejército de terracota",
+        "arqueología",
+        "Imperio Qin"
+      ],
+      "characters": [
+        "Qin Shi Huang"
+      ],
+      "civilizations": [
+        "China Qin"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video"
+    },
+    {
+      "id": "imperio-persa",
+      "title": "El Imperio Persa: el primer imperio 'mundial' de la historia",
+      "type": "conferencia",
+      "date": null,
+      "year": 2022,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=r0iqgEKUbDE",
+      "description": "Conferencia sobre el origen, expansión y organización del Imperio aqueménida, desde Ciro el Grande hasta Alejandro Magno.",
+      "summary": "Análisis de cómo los persas crearon el primer imperio multicultural de la historia, con administración, caminos reales y la aparición del zoroastrismo.",
+      "topics": [
+        "Imperio Persa",
+        "Aqueménidas",
+        "Ciro el Grande",
+        "Darío I",
+        "Persépolis",
+        "zoroastrismo"
+      ],
+      "characters": [
+        "Ciro el Grande",
+        "Cambises II",
+        "Darío I",
+        "Jerjes I",
+        "Alejandro Magno"
+      ],
+      "civilizations": [
+        "Imperio Persa Aqueménida"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://poz.unexpo.org/postgrado/repo/Memorias%20Jornadas%20de%20Investigaci%C3%B3n/MEMORIAS%20JORNADA%20DE%20INVESTIGACION%202022.pdf",
+      "mediaType": "video"
+    },
+    {
+      "id": "tragedia-griega-i",
+      "title": "La Tragedia Griega I. El nacimiento del teatro y la tragedia",
+      "type": "conferencia",
+      "date": "2022-07-08",
+      "year": 2022,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=V7jgkkKxMWo",
+      "description": "Conferencia 1 de cinco de la serie sobre la tragedia griega, publicada en el canal de Raíces de Europa.",
+      "summary": "Primera conferencia de la serie sobre tragedia griega: origen del teatro, ritual dionisíaco y nacimiento del género trágico.",
+      "topics": [
+        "tragedia griega",
+        "teatro griego",
+        "mitología",
+        "Grecia Clásica"
+      ],
+      "characters": [
+        "Esquilo",
+        "Sófocles",
+        "Eurípides"
+      ],
+      "civilizations": [
+        "Grecia clásica"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video"
+    },
+    {
+      "id": "tragedia-griega-ii",
+      "title": "La Tragedia Griega II. Los grandes ciclos temáticos: Micenas y Tebas",
+      "type": "conferencia",
+      "date": "2022-07-08",
+      "year": 2022,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=iNROAL_etcc",
+      "description": "Conferencia 2 de cinco de la serie sobre la tragedia griega, publicada en el canal de Raíces de Europa.",
+      "summary": "Segunda sesión dedicada a los grandes ciclos mitológicos de Micenas y Tebas en la tragedia griega.",
+      "topics": [
+        "tragedia griega",
+        "teatro griego",
+        "mitología",
+        "Grecia Clásica"
+      ],
+      "characters": [
+        "Esquilo",
+        "Sófocles",
+        "Eurípides"
+      ],
+      "civilizations": [
+        "Grecia clásica"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video"
+    },
+    {
+      "id": "tragedia-griega-iii",
+      "title": "La Tragedia Griega III. Esquilo: el primer y gran creador de la tragedia",
+      "type": "conferencia",
+      "date": "2022-07-08",
+      "year": 2022,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=opGL8JdevLo",
+      "description": "Conferencia 3 de cinco de la serie sobre la tragedia griega, publicada en el canal de Raíces de Europa.",
+      "summary": "Tercera conferencia centrada en Esquilo, padre de la tragedia clásica, y su legado.",
+      "topics": [
+        "tragedia griega",
+        "teatro griego",
+        "mitología",
+        "Grecia Clásica"
+      ],
+      "characters": [
+        "Esquilo",
+        "Sófocles",
+        "Eurípides"
+      ],
+      "civilizations": [
+        "Grecia clásica"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video"
+    },
+    {
+      "id": "tragedia-griega-iv",
+      "title": "La Tragedia Griega IV. Sófocles: 'Antígona', 'Edipo Rey', 'Electra'",
+      "type": "conferencia",
+      "date": "2022-07-08",
+      "year": 2022,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=84pbCgFRQiE",
+      "description": "Conferencia 4 de cinco de la serie sobre la tragedia griega, publicada en el canal de Raíces de Europa.",
+      "summary": "Cuarta sesión dedicada a Sófocles y sus obras más representativas: Antígona, Edipo Rey y Electra.",
+      "topics": [
+        "tragedia griega",
+        "teatro griego",
+        "mitología",
+        "Grecia Clásica"
+      ],
+      "characters": [
+        "Esquilo",
+        "Sófocles",
+        "Eurípides"
+      ],
+      "civilizations": [
+        "Grecia clásica"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video"
+    },
+    {
+      "id": "tragedia-griega-v",
+      "title": "La Tragedia Griega V. Eurípides: Medea, Jasón, Odiseo",
+      "type": "conferencia",
+      "date": "2022-07-08",
+      "year": 2022,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=DsZVIj8EkGg",
+      "description": "Conferencia 5 de cinco de la serie sobre la tragedia griega, publicada en el canal de Raíces de Europa.",
+      "summary": "Última conferencia de la serie, centrada en Eurípides y sus tragedias más célebres.",
+      "topics": [
+        "tragedia griega",
+        "teatro griego",
+        "mitología",
+        "Grecia Clásica"
+      ],
+      "characters": [
+        "Esquilo",
+        "Sófocles",
+        "Eurípides"
+      ],
+      "civilizations": [
+        "Grecia clásica"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video"
+    },
+    {
+      "id": "pueblos-estepa-hunos",
+      "title": "Los pueblos de la estepa: los Hunos, Atila, su muerte y el declive",
+      "type": "conferencia",
+      "date": "2021-04-23",
+      "year": 2021,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Primera sesión de un ciclo de siete conferencias sobre los pueblos de la estepa, desde los hunos hasta los mongoles.",
+      "summary": "Tobalina inaugura un ciclo sobre la historia de los pueblos nómadas de la estepa, comenzando con los hunos y la figura de Atila.",
+      "topics": [
+        "Hunos",
+        "Atila",
+        "estepa",
+        "pueblos nómadas",
+        "migraciones",
+        "Imperio Romano tardío"
+      ],
+      "characters": [
+        "Atila",
+        "Bleda",
+        "Valentiniano III",
+        "Teodosio II"
+      ],
+      "civilizations": [
+        "Hunos",
+        "Imperio Romano de Occidente",
+        "Imperio Romano de Oriente"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://portalcioranbr.wordpress.com/tag/eva-tobalina/",
+      "mediaType": null
+    },
+    {
+      "id": "sumer-rIlh-EYWgoQ",
+      "title": "Mesopotamia, Sumer y los sumerios: donde empezó la historia",
+      "type": "conferencia",
+      "date": "2021-04-23",
+      "year": 2021,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=rIlh-EYWgoQ",
+      "description": "Primera sesión del ciclo sobre Grandes Civilizaciones de Mesopotamia. Repaso a la geografía, los orígenes de la escritura cuneiforme, las primeras ciudades-estado y el legado sumerio.",
+      "summary": "Eva Tobalina explica cómo en el sur de Mesopotamia surgió la primera civilización urbana de la historia, con inventos como la escritura, la rueda y la división del tiempo que aún hoy usamos.",
+      "topics": [
+        "Sumer",
+        "Mesopotamia",
+        "escritura cuneiforme",
+        "ciudades-estado",
+        "religión sumeria",
+        " agricultura del Creciente Fértil"
+      ],
+      "characters": [
+        "Sargón de Acad",
+        "Gilgamesh",
+        "Enheduanna"
+      ],
+      "civilizations": [
+        "Sumeria",
+        "Acadia"
+      ],
+      "duration": "75:00",
+      "language": "es",
+      "source": "https://portalcioranbr.wordpress.com/tag/eva-tobalina/",
+      "mediaType": "video"
+    },
+    {
+      "id": "tumbas-reales-ur",
+      "title": "Sumer y las Tumbas Reales de Ur: historia y realidad fascinante",
+      "type": "conferencia",
+      "date": "2021",
+      "year": 2021,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=lxOlS4hVeHE",
+      "description": "Segunda sesión del ciclo mesopotámico. Análisis del descubrimiento de Woolley en Ur y lo que nos dicen las tumbas reales sobre la sociedad sumeria.",
+      "summary": "Tobalina reconstruye el contexto de las espectaculares tumbas reales de Ur, el ajuar funerario y el sacrificio humano como ritual de poder.",
+      "topics": [
+        "Tumbas Reales de Ur",
+        "arqueología",
+        "Leonard Woolley",
+        "orfebrería sumeria",
+        "ritual funerario"
+      ],
+      "characters": [
+        "Leonard Woolley",
+        "Puabi"
+      ],
+      "civilizations": [
+        "Sumeria"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video"
+    },
+    {
+      "id": "persia-sasanida",
+      "title": "El Imperio Persa Sasánida. De la lucha con Roma, a la derrota frente al Islam",
+      "type": "conferencia",
+      "date": "2017-03-22",
+      "year": 2017,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Conferencia sobre la historia de Irán, concretamente sobre la Persia Sasánida, desde sus constantes enfrentamientos al Imperio Romano hasta su caída frente al Islam.",
+      "summary": "Tobalina explica el último gran imperio persa preislámico, su religión zoroástrica, sus guerras con Bizancio y su papel como puente entre la Antigüedad y la Edad Media.",
+      "topics": [
+        "Imperio Sasánida",
+        "zoroastrismo",
+        "Roma",
+        "Bizancio",
+        "expansión islámica",
+        "Ctesifonte"
+      ],
+      "characters": [
+        "Ardashir I",
+        "Sapor I",
+        "Cosroes I",
+        "Yazdegerd III"
+      ],
+      "civilizations": [
+        "Imperio Sasánida",
+        "Imperio Romano",
+        "Imperio Bizantino"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://informacionmanu.es/2024/12/imperio-sasanida-224-651-d-c-el-ultimo-gran-imperio-persa-preislamico/",
+      "mediaType": null
+    },
+    {
+      "id": "iran-aquemenida-sasanida-1000-anos",
+      "title": "Irán. De la Persia Aqueménida a la Persia Sasánida. 1000 años de apasionante historia",
+      "type": "conferencia",
+      "date": "2017-03-22",
+      "year": 2017,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Conferencia sobre la historia de Irán desde la Persia Aqueménida hasta la Persia Sasánida, cubriendo mil años de historia.",
+      "summary": "Conferencia sobre la apasionante historia de Irán, centrándose en la Antigüedad, desde la Persia Aqueménida hasta la Persia Sasánida.",
+      "topics": [
+        "Irán",
+        "Persia Aqueménida",
+        "Persia Sasánida",
+        "Imperio Persa"
+      ],
+      "characters": [
+        "Ciro el Grande",
+        "Darío I",
+        "Ardashir I",
+        "Sapor I"
+      ],
+      "civilizations": [
+        "Imperio Persa Aqueménida",
+        "Imperio Sasánida"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://open.spotify.com",
+      "mediaType": null
+    },
+    {
+      "id": "entrevista-eitb",
+      "title": "Eva Tobalina: 'El historiador tiene que intentar no juzgar'",
+      "type": "entrevista",
+      "date": "2016-06-23",
+      "year": 2016,
+      "organization": "EITB Radio Euskadi",
+      "url": "https://www.eitb.eus/es/radio/radio-euskadi/programas/boulevard/detalle/4183794/eva-tobalina-el-historiador-tiene-intentar-no-juzgar/",
+      "description": "Entrevista radiofónica en la que Eva Tobalina reflexiona sobre la enseñanza de la Historia Antigua y el oficio del historiador.",
+      "summary": "Tobalina defiende que la historia puede contarse de forma amena y atractiva sin perder rigor, y que el historiador debe esforzarse en no juzgar el pasado con valores presentistas.",
+      "topics": [
+        "historiografía",
+        "enseñanza de la historia",
+        "Roma",
+        "Antigüedad"
+      ],
+      "characters": [],
+      "civilizations": [
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.eitb.eus/es/radio/radio-euskadi/programas/boulevard/detalle/4183794/eva-tobalina-el-historiador-tiene-intentar-no-juzgar/",
+      "mediaType": "web"
+    },
+    {
+      "id": "tracios",
+      "title": "Los Tracios: historia y mito de una civilización fascinante",
+      "type": "conferencia",
+      "date": "2014-02-17",
+      "year": 2014,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Conferencia sobre el pueblo tracio, su geografía en los Balcanes, su religión, su orfebrería y su relación con Grecia y Roma.",
+      "summary": "Tobalina acerca la historia de los tracios, un pueblo a menudo eclipsado por sus vecinos griegos y romanos pero de gran riqueza cultural.",
+      "topics": [
+        "Tracios",
+        "Balcanes",
+        "orfebrería tracia",
+        "culto de Dioniso",
+        "espartaco"
+      ],
+      "characters": [
+        "Espartaco",
+        "Orfeo",
+        "Resos"
+      ],
+      "civilizations": [
+        "Tracia",
+        "Grecia",
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://portalcioranbr.wordpress.com/tag/eva-tobalina/",
+      "mediaType": null
+    },
+    {
+      "id": "augusto-emperador",
+      "title": "Augusto emperador: la construcción del Imperio y mecenas de las artes",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=MASXM67aQlw",
+      "description": "Conferencia sobre la figura de Augusto, el fin de las guerras civiles, el principado y su papel como patrocinador de las artes.",
+      "summary": "Tobalina analiza el largo reinado de Augusto, su habilidad política para disimular la monarquía bajo la fachada republicana y su mecenazgo cultural.",
+      "topics": [
+        "Augusto",
+        "Imperio Romano",
+        "principado",
+        "guerras civiles romanas",
+        "mecenazgo",
+        "Pax Romana"
+      ],
+      "characters": [
+        "César Augusto",
+        "Livia",
+        "Marco Agripa",
+        "Virgilio",
+        "Horacio"
+      ],
+      "civilizations": [
+        "Roma Imperial"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://rua.ua.es/server/api/core/bitstreams/a53cad9b-028e-4aec-a58d-66f8fb525ad1/content",
+      "mediaType": "video"
+    },
+    {
+      "id": "babilonia-neobabilonico",
+      "title": "BABILONIA. De Hammurabi al esplendor Neobabilónico con Nabucodonosor (Mesopotamia 4)",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Conferencia monográfica sobre el esplendor babilónico, con especial atención a Nabucodonosor II y las obras monumentales de la ciudad.",
+      "summary": "Reconstrucción del Babilonia neobabilónica, la Puerta de Ishtar, el zigurat de Etemenanki y la memoria histórica de Nabucodonosor.",
+      "topics": [
+        "Babilonia",
+        "Nabucodonosor II",
+        "Nabopolasar",
+        "Puerta de Ishtar",
+        "Etemenanki"
+      ],
+      "characters": [
+        "Nabucodonosor II",
+        "Nabopolasar",
+        "Ciro el Grande"
+      ],
+      "civilizations": [
+        "Imperio Neobabilónico"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://informacionmanu.es/2024/09/imperio-neobabilonico/",
+      "mediaType": null
+    },
+    {
+      "id": "babilonia",
+      "title": "Babilonia y sus imperios",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Cuarta sesión del ciclo mesopotámico. Recorrido por la historia de Babilonia desde Hammurabi hasta Nabucodonosor y la caída ante Ciro el Grande.",
+      "summary": "Tobalina presenta la historia de una de las ciudades más míticas de la Antigüedad, desde el Código de Hammurabi hasta los Jardines Colgantes y el cautiverio babilónico.",
+      "topics": [
+        "Babilonia",
+        "Hammurabi",
+        "Nabucodonosor II",
+        "Jardines Colgantes",
+        "Torre de Babel",
+        "cautiverio babilónico"
+      ],
+      "characters": [
+        "Hammurabi",
+        "Nabucodonosor II",
+        "Nabopolasar",
+        "Ciro el Grande"
+      ],
+      "civilizations": [
+        "Babilonia",
+        "Imperio Neobabilónico"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/conferencias/",
+      "mediaType": null
+    },
+    {
+      "id": "caligula",
+      "title": "Calígula, paradigma del tirano loco",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=dBe13BFBVa8",
+      "description": "Conferencia sobre el tercer emperador romano, su breve reinado, las fuentes hostiles que lo describen y el contexto político de su asesinato.",
+      "summary": "Tobalina examina hasta qué punto la fama de Calígula como monstruo responde a la propaganda senatorial y cuánto hay de realidad histórica.",
+      "topics": [
+        "Calígula",
+        "Imperio Romano",
+        "tiranicidio",
+        "Praetorianus",
+        "dinastía julio-claudia"
+      ],
+      "characters": [
+        "Calígula",
+        "Tiberio",
+        "Germánico",
+        "Claudio",
+        "Cayo Silio"
+      ],
+      "civilizations": [
+        "Roma Imperial"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://creators.spotify.com/pod/profile/la-caja-de-pandora9",
+      "mediaType": "video"
+    },
+    {
+      "id": "claudio",
+      "title": "Claudio, la apasionante historia del monarca erudito",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Conferencia sobre el emperador Claudio, su ascenso inesperado, su labor administrativa, la conquista de Britania y su asesinato.",
+      "summary": "Tobalina rehabilita la figura de Claudio, mostrándolo como un erudito y un administrador eficaz más allá de las burlas de las fuentes antiguas.",
+      "topics": [
+        "Claudio",
+        "Imperio Romano",
+        "conquista de Britania",
+        "Mesalina",
+        "Agripina",
+        "dinastía julio-claudia"
+      ],
+      "characters": [
+        "Claudio",
+        "Mesalina",
+        "Agripina la Menor",
+        "Nerón",
+        "Británico"
+      ],
+      "civilizations": [
+        "Roma Imperial"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/conferencias/",
+      "mediaType": null
+    },
+    {
+      "id": "augusto-familia-imperial",
+      "title": "César Augusto y la familia imperial: Livia, Agripa, Tiberio, Germánico",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=23ZQWhZsQKM",
+      "description": "Conferencia centrada en las figuras que rodearon a Augusto y en la configuración de la primera familia imperial romana.",
+      "summary": "Análisis de las redes familiares, alianzas matrimoniales y sucesión que definieron la dinastía julio-claudia desde Augusto.",
+      "topics": [
+        "Augusto",
+        "familia imperial romana",
+        "sucesión",
+        "Livia",
+        "Marco Agripa",
+        "Tiberio"
+      ],
+      "characters": [
+        "César Augusto",
+        "Livia Drusila",
+        "Marco Agripa",
+        "Tiberio",
+        "Germánico",
+        "Julia la Mayor"
+      ],
+      "civilizations": [
+        "Roma Imperial"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.academia.edu/127789080/HISTORIA_DE_GRECIA",
+      "mediaType": "video"
+    },
+    {
+      "id": "egipto-ptolemaico-cleopatra",
+      "title": "De Alejandro Magno a Cleopatra. El Egipto Ptolemaico",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=XGld0Jo8GQo",
+      "description": "Conferencia monográfica sobre el Egipto helenístico y romano, desde la fundación de Alejandría hasta la figura de Cleopatra y la anexión romana.",
+      "summary": "Tobalina reconstruye los siglos del Egipto ptolemaico, un periodo de fusión cultural entre Oriente y Occidente.",
+      "topics": [
+        "Egipto Ptolemaico",
+        "Alejandro Magno",
+        "Cleopatra",
+        "Alejandría",
+        "helenismo",
+        "Roma"
+      ],
+      "characters": [
+        "Alejandro Magno",
+        "Ptolomeo I",
+        "Cleopatra VII",
+        "Julio César",
+        "Marco Antonio",
+        "Octavio"
+      ],
+      "civilizations": [
+        "Egipto Ptolemaico",
+        "Macedonia",
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/watch?v=XGld0Jo8GQo",
+      "mediaType": "video"
+    },
+    {
+      "id": "egipto-imperio-nuevo-dinastia-xviii",
+      "title": "Egipto Faraónico 3. El Imperio Nuevo (1552-1069 a.C.). La Dinastía XVIII: de Hatsepsut a Tutankamon",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=KtxESt_TKa8",
+      "description": "Tercera conferencia del ciclo. Recorrido por la brillante dinastía XVIII, desde Hatsepsut y Tutmosis III hasta la revolución amarniense de Akenatón, Nefertiti y Tutankamon.",
+      "summary": "Tobalina presenta el esplendor del Imperio Nuevo, la expansión territorial y el singular episodio religioso de Amarna.",
+      "topics": [
+        "Egipto",
+        "Imperio Nuevo",
+        "dinastía XVIII",
+        "Hatsepsut",
+        "Tutmosis III",
+        "Akenatón",
+        "Nefertiti",
+        "Tutankamon"
+      ],
+      "characters": [
+        "Hatsepsut",
+        "Tutmosis III",
+        "Akenatón",
+        "Nefertiti",
+        "Tutankamon",
+        "Ay",
+        "Horemheb"
+      ],
+      "civilizations": [
+        "Egipto Antiguo"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://espacio-tiempo.es/egipto-faraonico-3-el-imperio-nuevo-1552-1069-a-c-la-dinastia-xviii-de-hatseput-a-tutankamon-eva-tobalina/",
+      "mediaType": "video"
+    },
+    {
+      "id": "egipto-imperio-nuevo-ramses-ii",
+      "title": "Egipto Faraónico 4. El Imperio Nuevo 2 (1552-1069 a.C.): Dinastía XIX. Ramsés II: esplendor y ocaso",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=DZ2lGkzCwIQ",
+      "description": "Cuarta conferencia del ciclo. Análisis de la dinastía XIX, el largo reinado de Ramsés II, la batalla de Qadesh y el inicio de la decadencia del Imperio Nuevo.",
+      "summary": "Tobalina examina el momento de máximo esplendor militar y propagandístico de Egipto, personificado en Ramsés II.",
+      "topics": [
+        "Egipto",
+        "Imperio Nuevo",
+        "dinastía XIX",
+        "Ramsés II",
+        "batalla de Qadesh",
+        "Abu Simbel"
+      ],
+      "characters": [
+        "Ramsés II",
+        "Seti I",
+        "Merneptah",
+        "Muwatalli II"
+      ],
+      "civilizations": [
+        "Egipto Antiguo",
+        "Hitita"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://espacio-tiempo.es/egipto-faraonico-4-el-imperio-nuevo-2-1552-1069-a-c-dinastia-xix-ramses-ii-esplendor-y-ocaso-eva-tobalina/",
+      "mediaType": "video"
+    },
+    {
+      "id": "egipto-pueblos-del-mar-faraones-griegos",
+      "title": "Egipto Faraónico 5. De los Pueblos del Mar a los faraones griegos y el fin del Imperio",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=k7Xx8_dKCi4",
+      "description": "Última conferencia del ciclo. Desde las invasiones de los Pueblos del Mar y el fin del Imperio Nuevo hasta la llegada de Alejandro Magno, la dinastía ptolemaica y la muerte de Cleopatra.",
+      "summary": "Tobalina cierra el ciclo explicando la transformación del Egipto faraónico bajo dominaciones extranjeras hasta su fin con Cleopatra.",
+      "topics": [
+        "Egipto",
+        "Pueblos del Mar",
+        "Imperio Nuevo",
+        "Alejandro Magno",
+        "dinastía ptolemaica",
+        "Cleopatra"
+      ],
+      "characters": [
+        "Ramsés III",
+        "Alejandro Magno",
+        "Ptolomeo I",
+        "Cleopatra VII"
+      ],
+      "civilizations": [
+        "Egipto Antiguo",
+        "Egipto Ptolemaico",
+        "Macedonia",
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://espacio-tiempo.es/egipto-faraonico-5-de-los-pueblos-del-mar-a-los-faraones-griegos-y-el-fin-del-imperio-eva-tobalina/",
+      "mediaType": "video"
+    },
+    {
+      "id": "egipto-imperio-medio",
+      "title": "Egipto. Imperio Medio (2040-1786 a.C.). Tan fascinante como desconocido",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=LgWCPva4Pm0",
+      "description": "Segunda conferencia del ciclo sobre Egipto Faraónico. Análisis de la caída del Imperio Antiguo, el Primer Período Intermedio y el esplendor del Imperio Medio.",
+      "summary": "Tobalina aborda una época menos conocida del Egipto faraónico, clave para entender la continuidad y la transformación del poder real.",
+      "topics": [
+        "Egipto",
+        "Imperio Medio",
+        "Mentuhotep II",
+        "literatura sapiential",
+        "Nubia"
+      ],
+      "characters": [
+        "Mentuhotep II",
+        "Sesostris III",
+        "Amenemhat III"
+      ],
+      "civilizations": [
+        "Egipto Antiguo"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://espacio-tiempo.es/el-egipto-faraonico-2040-1786-a-c-el-imperio-medio-tan-fascinante-como-desconocido-eva-tobalina/",
+      "mediaType": "video"
+    },
+    {
+      "id": "egipto-hicsos-imperio-nuevo",
+      "title": "Egipto. Los Faraones Hicsos y el despertar del Imperio Nuevo",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=28T7qLrq00E",
+      "description": "Conferencia sobre la llegada de los hicsos, su influencia en Egipto y la posterior reunificación que da origen al Imperio Nuevo.",
+      "summary": "Tobalina analiza cómo la presencia foránea de los hicsos transformó militar y tecnológicamente a Egipto antes de su expulsión.",
+      "topics": [
+        "Egipto",
+        "Hicsos",
+        "Imperio Nuevo",
+        "carro de guerra",
+        "Ahmose I"
+      ],
+      "characters": [
+        "Ahmose I",
+        "Seqenenra Taa",
+        "Kamose"
+      ],
+      "civilizations": [
+        "Egipto Antiguo",
+        "Hicsos"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/watch?v=28T7qLrq00E",
+      "mediaType": "video"
+    },
+    {
+      "id": "ruta-de-la-seda-gengis",
+      "title": "El Imperio de Gengis Kan y la Ruta de la Seda",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Quinta sesión del ciclo. Cómo la Pax Mongolica facilitó el comercio y los viajes por la Ruta de la Seda en el siglo XIII.",
+      "summary": "Tobalina explica cómo el imperio mongol, a pesar de su reputación destructiva, creó condiciones de seguridad que revitalizaron el comercio euroasiático.",
+      "topics": [
+        "Ruta de la Seda",
+        "Gengis Kan",
+        "Imperio Mongol",
+        "Pax Mongolica",
+        "Asia Central"
+      ],
+      "characters": [
+        "Gengis Kan",
+        "Ögodei",
+        "Möngke"
+      ],
+      "civilizations": [
+        "Imperio Mongol",
+        "China Song",
+        "Imperio Jin"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/conferencias/",
+      "mediaType": null
+    },
+    {
+      "id": "judea-samaria-galilea-jesus",
+      "title": "Judea, Samaria y Galilea en tiempos de Jesús: geografía, historia y cultura",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=A37HqEjTSu4",
+      "description": "Conferencia sobre la realidad geográfica, histórica y cultural de Judea, Samaria y Galilea bajo dominación romana, desde el siglo I a.C. hasta la destrucción del Templo.",
+      "summary": "Tobalina contextualiza el mundo en el que vivió Jesús, explicando las tensiones entre identidades judías, samaritanas y la presencia romana.",
+      "topics": [
+        "Judea",
+        "Samaria",
+        "Galilea",
+        "Jesús",
+        "Palestina",
+        "Imperio Romano",
+        "Segundo Templo"
+      ],
+      "characters": [
+        "Jesús de Nazaret",
+        "Poncio Pilatos",
+        "Herodes el Grande",
+        "Adriano"
+      ],
+      "civilizations": [
+        "Imperio Romano",
+        "Judea"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://espacio-tiempo.es/judea-samaria-y-galilea-en-tiempos-de-jesus-geografia-historia-y-cultura-eva-tobalina/",
+      "mediaType": "video"
+    },
+    {
+      "id": "juliano-apostata",
+      "title": "Juliano el Apóstata: el último filósofo en el trono de los Césares",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Conferencia sobre el último emperador pagano romano, su intento de restauración de los cultos antiguos y su muerte en Persia.",
+      "summary": "Tobalina analiza la figura de Juliano, su formación neoplatónica, su reforma religiosa y el fracaso de su proyecto contra la expansión del cristianismo.",
+      "topics": [
+        "Juliano el Apóstata",
+        "neoplatonismo",
+        "cristianismo primitivo",
+        "Imperio Romano tardío",
+        "Persia"
+      ],
+      "characters": [
+        "Juliano",
+        "Constantino I",
+        "Constantio II",
+        "Libanio"
+      ],
+      "civilizations": [
+        "Imperio Romano tardío",
+        "Persia Sasánida"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://portalcioranbr.wordpress.com/tag/eva-tobalina/",
+      "mediaType": null
+    },
+    {
+      "id": "anabasis-jenofonte",
+      "title": "La Anábasis o Expedición de los Diez Mil de Jenofonte",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=M-gxSQlSHgI",
+      "description": "Conferencia sobre la expedición de los Diez Mil griegos al interior del Imperio Persa y la retirada narrada por Jenofonte en la Anábasis.",
+      "summary": "Tobalina analiza uno de los episodios militares más fascinantes de la Antigüedad, clave para entender el choque entre Grecia y Persia.",
+      "topics": [
+        "Anábasis",
+        "Jenofonte",
+        "Diez Mil",
+        "Persia",
+        "Grecia",
+        "Ciro el Joven"
+      ],
+      "characters": [
+        "Jenofonte",
+        "Ciro el Joven",
+        "Artajerjes II",
+        "Tisaphernes"
+      ],
+      "civilizations": [
+        "Grecia clásica",
+        "Imperio Persa Aqueménida"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/watch?v=M-gxSQlSHgI",
+      "mediaType": "video"
+    },
+    {
+      "id": "atenas-fidias-pericles",
+      "title": "La Atenas de Fidias y Pericles",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=EhGsaPPWyyw",
+      "description": "Conferencia sobre la Atenas del siglo V a.C., la ciudad de Pericles y Fidias, en el momento de máximo esplendor de la Grecia Clásica.",
+      "summary": "Tobalina nos transporta a la Atenas de Pericles y Fidias, explorando el Partenón, la Acrópolis y el contexto cultural y político de la Edad de Oro de Atenas.",
+      "topics": [
+        "Atenas",
+        "Pericles",
+        "Fidias",
+        "Partenón",
+        "Grecia Clásica",
+        "siglo V a.C."
+      ],
+      "characters": [
+        "Pericles",
+        "Fidias",
+        "Sócrates"
+      ],
+      "civilizations": [
+        "Grecia clásica"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video"
+    },
+    {
+      "id": "ruta-de-la-seda-intro",
+      "title": "La Ruta de la Seda: el recorrido",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Primera sesión del ciclo sobre la Ruta de la Seda. Presentación de la red de rutas que unieron Oriente y Occidente durante más de mil años.",
+      "summary": "Tobalina explica por qué hablar de 'caminos' es más exacto que de una única ruta, y cómo el comercio transformó civilizaciones a lo largo de Asia.",
+      "topics": [
+        "Ruta de la Seda",
+        "comercio antiguo",
+        "China",
+        "Asia Central",
+        "Occidente",
+        "seda"
+      ],
+      "characters": [
+        "Zhang Qian"
+      ],
+      "civilizations": [
+        "China Han",
+        "Imperio Kushán",
+        "Imperio Romano",
+        "Imperio Persa"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/conferencias/",
+      "mediaType": null
+    },
+    {
+      "id": "livia-emperatriz",
+      "title": "Livia, la primera emperatriz de Roma: vida y poder",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Conferencia dedicada a Livia Drusila, su matrimonio con Augusto, su influencia política y la imagen historiográfica transmitida por Tácito y Robert Graves.",
+      "summary": "Tobalina desmonta los tópicos sobre Livia como envenenadora serial y revela a una mujer inteligente y poderosa en un mundo de hombres.",
+      "topics": [
+        "Livia Drusila",
+        "emperatrices romanas",
+        "mujer en Roma",
+        "dinastía julio-claudia",
+        "propaganda imperial"
+      ],
+      "characters": [
+        "Livia Drusila",
+        "Augusto",
+        "Tiberio",
+        "Druso el Mayor"
+      ],
+      "civilizations": [
+        "Roma Imperial"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.diaridetarragona.com/cultura/227785/livia-drusila-la-mas-poderosa-de-roma-jc23561549.html",
+      "mediaType": null
+    },
+    {
+      "id": "livia-mujer-augusto",
+      "title": "Livia, mujer de Augusto y emperatriz de Roma: vida y poder (versión completa)",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=2uMc8uHFQCs",
+      "description": "Conferencia completa sobre Livia Drusila, esposa de Augusto y una de las mujeres más poderosas de la historia de Roma.",
+      "summary": "Tobalina desmonta los tópicos sobre Livia como envenenadora y revela a una mujer inteligente y poderosa, clave en la dinastía Julio-Claudia.",
+      "topics": [
+        "Livia Drusila",
+        "Augusto",
+        "emperatrices romanas",
+        "dinastía Julio-Claudia",
+        "mujer en Roma"
+      ],
+      "characters": [
+        "Livia Drusila",
+        "Augusto",
+        "Tiberio"
+      ],
+      "civilizations": [
+        "Roma Imperial"
+      ],
+      "duration": "1:32:24",
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video"
+    },
+    {
+      "id": "fenicios-origen-desarrollo",
+      "title": "Los Fenicios: origen, desarrollo y apogeo de una civilización fascinante",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=Nyv9iQFw298",
+      "description": "Conferencia sobre el pueblo fenicio, sus ciudades-estado, su dominio del comercio marítimo, el alfabeto y la expansión por el Mediterráneo hasta Cartago.",
+      "summary": "Tobalina presenta a los fenicios como los grandes mediadores culturales del Mediterráneo antiguo, cuyo alfabeto sentó las bases de la escritura occidental.",
+      "topics": [
+        "Fenicios",
+        "Fenicia",
+        "Cartago",
+        "alfabeto fenicio",
+        "comercio antiguo",
+        "navegación"
+      ],
+      "characters": [
+        "Hiram I de Tiro",
+        "Dido",
+        "Aníbal"
+      ],
+      "civilizations": [
+        "Fenicia",
+        "Cartago",
+        "Grecia",
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://informacionmanu.es/2024/08/los-fenicios/",
+      "mediaType": "video"
+    },
+    {
+      "id": "asirios",
+      "title": "Los asirios: poder, terror y fascinación",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Tercera sesión del ciclo mesopotámico. Estudio del Imperio Asirio, su maquinaria militar, la arquitectura palaciega y la biblioteca de Asurbanipal.",
+      "summary": "Conferencia dedicada al imperio que dominó el Creciente Fértil durante siglos, analizando tanto su imagen de terror como su sofisticación cultural.",
+      "topics": [
+        "Imperio Asirio",
+        "Nínive",
+        "Asurbanipal",
+        "ejército asirio",
+        "relieves palaciegos"
+      ],
+      "characters": [
+        "Asurbanipal",
+        "Asarhaddón",
+        "Sargón II",
+        "Tiglatpileser III"
+      ],
+      "civilizations": [
+        "Asiria"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/conferencias/",
+      "mediaType": null
+    },
+    {
+      "id": "ruta-de-la-seda-califatos",
+      "title": "Los califatos de Damasco y Bagdad y la Ruta de la Seda",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Cuarta sesión del ciclo. Transformación de la Ruta de la Seda durante la expansión árabe y los califatos omeya y abasí.",
+      "summary": "Análisis de cómo el mundo islámico se convirtió en el gran intermediario comercial entre Oriente y Occidente durante la Edad Media.",
+      "topics": [
+        "Ruta de la Seda",
+        "califato omeya",
+        "califato abasí",
+        "Damasco",
+        "Bagdad",
+        "Islam medieval"
+      ],
+      "characters": [
+        "Harún al-Rashid"
+      ],
+      "civilizations": [
+        "Califato Omeya",
+        "Califato Abasí",
+        "Imperio Bizantino",
+        "China Tang"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/conferencias/",
+      "mediaType": null
+    },
+    {
+      "id": "hititas",
+      "title": "Los hititas",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Sesión del ciclo mesopotámico dedicada al Imperio Hitita, su descubrimiento moderno, la batalla de Qadesh y el uso del hierro.",
+      "summary": "Tobalina aborda la historia de uno de los grandes imperios de Anatolia, desde Hattusa hasta su colapso durante las invasiones de los Pueblos del Mar.",
+      "topics": [
+        "Imperio Hitita",
+        "Hattusa",
+        "batalla de Qadesh",
+        "hierro",
+        "Pueblos del Mar"
+      ],
+      "characters": [
+        "Mursili I",
+        "Suppiluliuma I",
+        "Muwatalli II",
+        "Ramsés II"
+      ],
+      "civilizations": [
+        "Hitita"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/conferencias/",
+      "mediaType": null
+    },
+    {
+      "id": "ruta-de-la-seda-productos",
+      "title": "Los productos ansiados: seda, papel, porcelana y laca",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Segunda sesión del ciclo. Análisis de los bienes que circularon por la Ruta de la Seda y su impacto económico y cultural.",
+      "summary": "Conferencia dedicada a los productos de lujo que motivaron el comercio de larga distancia entre China y el Mediterráneo.",
+      "topics": [
+        "Ruta de la Seda",
+        "seda",
+        "papel",
+        "porcelana",
+        "laca",
+        "comercio antiguo"
+      ],
+      "characters": [],
+      "civilizations": [
+        "China",
+        "Roma",
+        "Persia"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/conferencias/",
+      "mediaType": null
+    },
+    {
+      "id": "neron",
+      "title": "Nerón, el emperador odiado",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Conferencia sobre el último emperador julio-claudio, su reinado, el gran incendio de Roma, las persecuciones y su caída.",
+      "summary": "Revisión de Nerón que separa los hechos de la leyenda negra, analizando su política, su mecenazgo artístico y las causas de su suicidio.",
+      "topics": [
+        "Nerón",
+        "Imperio Romano",
+        "gran incendio de Roma",
+        "persecución de cristianos",
+        "dinastía julio-claudia"
+      ],
+      "characters": [
+        "Nerón",
+        "Agripina la Menor",
+        "Séneca",
+        "Burro",
+        "Poppaea Sabina"
+      ],
+      "civilizations": [
+        "Roma Imperial"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/conferencias/",
+      "mediaType": null
+    },
+    {
+      "id": "odiseo",
+      "title": "Odiseo, el viaje infinito",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=iUogdS0Rw9o",
+      "description": "Conferencia sobre el héroe de la Odisea, su viaje de regreso a Ítaca y las lecturas simbólicas del mito a lo largo de la historia.",
+      "summary": "Tobalina explora el personaje de Odiseo como arquetipo del viajero, el estratega y el hombre que enfrenta pruebas para volver a casa.",
+      "topics": [
+        "Odiseo",
+        "Odisea",
+        "Homero",
+        "mitología griega",
+        "arquetipos",
+        "viaje del héroe"
+      ],
+      "characters": [
+        "Odiseo",
+        "Penélope",
+        "Telémaco",
+        "Circe",
+        "Calipso",
+        "Polifemo"
+      ],
+      "civilizations": [
+        "Grecia micénica",
+        "Grecia arcaica"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.elespectadorimaginario.com/el-gran-mito-del-retorno-hacia-el-sentido-de-pertenencia/",
+      "mediaType": "video"
+    },
+    {
+      "id": "roma-la-urbe",
+      "title": "Roma: la Urbe. Faro y modelo de las ciudades de la Antigüedad",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=esQv0WshIGQ",
+      "description": "Apasionante conferencia sobre Roma, su fundación, su desarrollo urbano y su influencia como modelo de ciudad en la Antigüedad.",
+      "summary": "Tobalina analiza la ciudad de Roma como faro y modelo urbanístico para las ciudades de la Antigüedad, desde su fundación hasta su máximo esplendor.",
+      "topics": [
+        "Roma",
+        "urbanismo romano",
+        "fundación de Roma",
+        "Imperio Romano"
+      ],
+      "characters": [
+        "Rómulo",
+        "Augusto"
+      ],
+      "civilizations": [
+        "Roma"
+      ],
+      "duration": "1:22:21",
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video"
+    },
+    {
+      "id": "ruta-de-la-seda-origen",
+      "title": "Su origen: China y los tres Imperios",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Tercera sesión del ciclo. Origen de la Ruta de la Seda en la dinastía Han y su relación con los imperios de Asia Central.",
+      "summary": "Tobalina sitúa los inicios de la Ruta de la Seda en la expansión china hacia Asia Central y el intercambio con pueblos nómadas y estados sedentarios.",
+      "topics": [
+        "Ruta de la Seda",
+        "dinastía Han",
+        "Asia Central",
+        "yuezhi",
+        "xiongnu"
+      ],
+      "characters": [
+        "Emperador Wu de Han",
+        "Zhang Qian"
+      ],
+      "civilizations": [
+        "China Han",
+        "Imperio Kushán",
+        "Imperio Parto"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/conferencias/",
+      "mediaType": null
+    },
+    {
+      "id": "ruta-de-la-seda-tamerlan",
+      "title": "Tamerlán: su vida e imperio. Su influencia en la Ruta de la Seda",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Sexta sesión del ciclo. Figura de Tamerlán, su imperio timúrida y el florecimiento cultural de Samarcanda.",
+      "summary": "Conferencia sobre el último gran conquistador nómada de Asia Central y su papel en la historia de la Ruta de la Seda.",
+      "topics": [
+        "Ruta de la Seda",
+        "Tamerlán",
+        "Imperio Timúrida",
+        "Samarcanda",
+        "Asia Central"
+      ],
+      "characters": [
+        "Tamerlán",
+        "Ulug Beg"
+      ],
+      "civilizations": [
+        "Imperio Timúrida",
+        "Imperio Otomano",
+        "Imperio Mameluco"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/conferencias/",
+      "mediaType": null
+    },
+    {
+      "id": "tiberio-emperador",
+      "title": "Tiberio, el emperador que sucedió a Augusto: una vida apasionante y desconocida",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=jsnVXsyoV-o",
+      "description": "Conferencia sobre Tiberio, el segundo emperador romano, su relación con Augusto, su retiro a Capri y la leyenda negra en torno a su figura.",
+      "summary": "Tobalina ofrece una revisión historiográfica de Tiberio, alejándose de la imagen de tirano depravado para comprender sus logros administrativos y su soledad en el poder.",
+      "topics": [
+        "Tiberio",
+        "Imperio Romano",
+        "dinastía Julio-Claudia",
+        "Capri"
+      ],
+      "characters": [
+        "Tiberio",
+        "Livia",
+        "Germánico",
+        "Sejano"
+      ],
+      "civilizations": [
+        "Roma Imperial"
+      ],
+      "duration": "1:28:05",
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video"
+    },
+    {
+      "id": "tiberio",
+      "title": "Tiberio, el precio amargo del poder",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Conferencia sobre el segundo emperador romano, su relación con Augusto, su retiro a Capri y la leyenda negra construida en torno a su figura.",
+      "summary": "Revisión historiográfica de Tiberio, alejándose de la imagen de tirano depravado para comprender sus logros administrativos y su soledad en el poder.",
+      "topics": [
+        "Tiberio",
+        "Imperio Romano",
+        "dinastía julio-claudia",
+        "Capri",
+        "Sejano"
+      ],
+      "characters": [
+        "Tiberio",
+        "Livia",
+        "Germánico",
+        "Sejano",
+        "Druso el Joven"
+      ],
+      "civilizations": [
+        "Roma Imperial"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://evatobalina.com/conferencias/",
+      "mediaType": null
+    },
+    {
+      "id": "heligabalo-poder-provocacion",
+      "title": "Tras la muerte de Caracalla. Heliogábalo o el poder como provocación",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=VAaxMaRZ-RE",
+      "description": "Conferencia sobre Heliogábalo, el controvertido emperador romano conocido por sus excentricidades y su corto reinado.",
+      "summary": "Tobalina analiza la figura de Heliogábalo, su ascenso al poder, sus reformas religiosas y el contexto político de su asesinato.",
+      "topics": [
+        "Heliogábalo",
+        "Imperio Romano",
+        "emperadores romanos",
+        "crisis del siglo III"
+      ],
+      "characters": [
+        "Heliogábalo",
+        "Caracalla",
+        "Julia Maesa"
+      ],
+      "civilizations": [
+        "Roma Imperial"
+      ],
+      "duration": "1:08:22",
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video"
+    }
+  ]
+}

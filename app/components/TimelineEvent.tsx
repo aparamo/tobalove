@@ -1,24 +1,33 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useMemo, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { MapPin, Calendar, BookOpen, ExternalLink, Play } from "lucide-react";
-import type { TimelineEvent as TimelineEventType } from "@/app/types/timeline";
+import { Button } from "@/components/ui/button";
+import {
+  MapPin,
+  Calendar,
+  BookOpen,
+  ExternalLink,
+  Play,
+  ChevronDown,
+  ChevronUp,
+  Video,
+} from "lucide-react";
+import { getYouTubeId, getMediaType, MediaIcon } from "@/lib/media";
+import type {
+  TimelineEvent as TimelineEventType,
+  SourceConference,
+  ConferenceItem,
+} from "@/app/types/timeline";
 
 interface TimelineEventProps {
   event: TimelineEventType;
   index: number;
   side: "left" | "right";
-}
-
-function getYouTubeId(url: string | null): string | null {
-  if (!url) return null;
-  const match = url.match(
-    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/
-  );
-  return match?.[1] ?? null;
+  conferencesMap?: Map<string, ConferenceItem>;
 }
 
 function VideoEmbed({ videoId, title }: { videoId: string; title: string }) {
@@ -27,7 +36,7 @@ function VideoEmbed({ videoId, title }: { videoId: string; title: string }) {
       initial={{ opacity: 0, scale: 0.96 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.5, delay: 0.25 }}
+      transition={{ duration: 0.5, delay: 0.15 }}
       className="w-full overflow-hidden rounded-xl border border-border/60 bg-card shadow-sm"
     >
       <div className="relative aspect-video w-full">
@@ -42,16 +51,121 @@ function VideoEmbed({ videoId, title }: { videoId: string; title: string }) {
       <div className="p-3">
         <p className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
           <Play className="h-3 w-3" />
-          Conferencia de referencia
+          Ver conferencia
         </p>
       </div>
     </motion.div>
   );
 }
 
-export function TimelineEvent({ event, index, side }: TimelineEventProps) {
+function RelatedVideoCard({
+  conference,
+}: {
+  conference: ConferenceItem | SourceConference;
+}) {
+  const videoId = getYouTubeId(conference.url ?? null);
+  const mediaType = getMediaType(conference.url ?? null);
+
+  return (
+    <div className="flex items-start gap-3 rounded-lg border border-border/60 bg-card/50 p-3 transition-colors hover:bg-card">
+      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+        <MediaIcon type={mediaType} />
+      </div>
+      <div className="min-w-0 flex-1">
+        <p className="text-sm font-medium leading-snug text-foreground">
+          {conference.title}
+        </p>
+        <p className="mt-0.5 text-xs text-muted-foreground">
+          {(conference as ConferenceItem).organization ?? (conference as SourceConference).organization}
+          {conference.date ? ` · ${conference.date}` : null}
+        </p>
+        {conference.url && (
+          <a
+            href={conference.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
+          >
+            {mediaType === "video" ? "Ver en YouTube" : "Ver recurso"}
+            <ExternalLink className="h-3 w-3" />
+          </a>
+        )}
+      </div>
+      {videoId && (
+        <div className="hidden shrink-0 sm:block">
+          <a
+            href={`https://www.youtube.com/watch?v=${videoId}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative block h-16 w-28 overflow-hidden rounded-md bg-muted"
+          >
+            <img
+              src={`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`}
+              alt={conference.title}
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+              <Play className="h-5 w-5 text-white drop-shadow" />
+            </div>
+          </a>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export function TimelineEvent({
+  event,
+  index,
+  side,
+  conferencesMap,
+}: TimelineEventProps) {
+  const [expanded, setExpanded] = useState(false);
   const isLeft = side === "left";
-  const videoId = getYouTubeId(event.sourceConference.url);
+
+  const sourceVideoId = getYouTubeId(event.sourceConference.url);
+
+  const relatedVideos = useMemo(() => {
+    const list: ConferenceItem[] = [];
+    if (sourceVideoId && conferencesMap?.has(event.sourceConference.title)) {
+      // La conferencia principal ya está en relatedConferences por id
+    }
+    event.relatedConferences?.forEach((id) => {
+      const conf = conferencesMap?.get(id);
+      if (conf && !list.find((c) => c.id === conf.id)) {
+        list.push(conf);
+      }
+    });
+    // Asegurar que la conferencia fuente aparezca primero si tiene video
+    if (
+      event.sourceConference.url &&
+      !list.find((c) => c.url === event.sourceConference.url)
+    ) {
+      list.unshift({
+        id: "source",
+        title: event.sourceConference.title,
+        organization: event.sourceConference.organization,
+        url: event.sourceConference.url,
+        date: event.sourceConference.date,
+        type: "conferencia",
+        description: "",
+        summary: "",
+        topics: [],
+        characters: [],
+        civilizations: [],
+        duration: null,
+        language: "es",
+        source: "",
+        mediaType: getMediaType(event.sourceConference.url),
+        year: null,
+      });
+    }
+    return list;
+  }, [event, conferencesMap]);
+
+  const videoCount = relatedVideos.filter((c) => c.mediaType === "video").length;
+  const hasAnyMedia = relatedVideos.length > 0;
 
   return (
     <motion.div
@@ -67,22 +181,32 @@ export function TimelineEvent({ event, index, side }: TimelineEventProps) {
         isLeft ? "md:flex-row-reverse" : ""
       }`}
     >
-      {/* Desktop opposite side: video or metadata label */}
+      {/* Desktop opposite side: featured video */}
       <div
         className={`hidden md:flex md:w-1/2 ${
           isLeft ? "justify-start" : "justify-end"
         }`}
       >
         <div className={`w-full max-w-md ${isLeft ? "md:pl-12" : "md:pr-12"}`}>
-          {videoId ? (
-            <VideoEmbed videoId={videoId} title={event.sourceConference.title} />
+          {sourceVideoId ? (
+            <VideoEmbed
+              videoId={sourceVideoId}
+              title={event.sourceConference.title}
+            />
+          ) : hasAnyMedia && relatedVideos[0].mediaType === "video" ? (
+            <VideoEmbed
+              videoId={getYouTubeId(relatedVideos[0].url) ?? ""}
+              title={relatedVideos[0].title}
+            />
           ) : (
             <div className="rounded-xl border border-dashed border-border/70 bg-muted/30 p-6 text-center">
               <span className="text-sm font-medium text-muted-foreground">
                 {event.period ? "Período histórico" : "Acontecimiento"}
               </span>
               <p className="mt-2 text-xs text-muted-foreground/80">
-                No hay video disponible para este evento.
+                {hasAnyMedia
+                  ? "Hay recursos relacionados disponibles."
+                  : "No hay video disponible para este evento."}
               </p>
             </div>
           )}
@@ -113,6 +237,15 @@ export function TimelineEvent({ event, index, side }: TimelineEventProps) {
                 <MapPin className="h-3 w-3" />
                 {event.location}
               </Badge>
+              {videoCount > 0 && (
+                <Badge
+                  variant="default"
+                  className="gap-1 bg-primary/90 font-medium text-primary-foreground"
+                >
+                  <Video className="h-3 w-3" />
+                  {videoCount} video{videoCount > 1 ? "s" : ""}
+                </Badge>
+              )}
             </div>
             <CardTitle className="text-xl font-semibold leading-tight tracking-tight md:text-2xl">
               {event.title}
@@ -124,125 +257,140 @@ export function TimelineEvent({ event, index, side }: TimelineEventProps) {
               {event.description}
             </p>
 
-            <div className="rounded-lg bg-muted/50 p-4">
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                {event.summary}
-              </p>
-            </div>
-
-            {event.consequences.length > 0 && (
-              <div className="space-y-2">
-                <h4 className="text-sm font-semibold uppercase tracking-wide text-foreground/80">
-                  Cambios y consecuencias
-                </h4>
-                <ul className="space-y-1.5">
-                  {event.consequences.map((consequence, idx) => (
-                    <li
-                      key={idx}
-                      className="flex gap-2 text-sm text-muted-foreground"
-                    >
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                      <span>{consequence}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            <Separator />
-
-            <div className="space-y-3">
-              {event.civilizations.length > 0 && (
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                    Civilizaciones
-                  </span>
-                  {event.civilizations.map((civilization) => (
-                    <Badge
-                      key={civilization}
-                      variant="outline"
-                      className="text-xs"
-                    >
-                      {civilization}
-                    </Badge>
-                  ))}
-                </div>
-              )}
-
-              {event.characters.length > 0 && (
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                    Personajes
-                  </span>
-                  {event.characters.map((character) => (
-                    <Badge
-                      key={character}
-                      variant="secondary"
-                      className="text-xs font-normal"
-                    >
-                      {character}
-                    </Badge>
-                  ))}
-                </div>
-              )}
-
-              {event.topics.length > 0 && (
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                    Temas
-                  </span>
-                  {event.topics.map((topic) => (
-                    <Badge
-                      key={topic}
-                      variant="outline"
-                      className="text-xs font-normal text-muted-foreground"
-                    >
-                      {topic}
-                    </Badge>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            <Separator />
-
-            <div className="space-y-2">
-              <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                <BookOpen className="h-3.5 w-3.5" />
-                <span>Conferencia de referencia</span>
-              </div>
-              <p className="text-sm font-medium text-foreground">
-                {event.sourceConference.title}
-              </p>
-              <p className="text-xs text-muted-foreground">
-                {event.sourceConference.organization}
-                {event.sourceConference.date
-                  ? ` · ${event.sourceConference.date}`
-                  : null}
-              </p>
-              {event.sourceConference.url ? (
-                <a
-                  href={event.sourceConference.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+            <AnimatePresence initial={false}>
+              {expanded && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
                 >
-                  Ver fuente
-                  <ExternalLink className="h-3.5 w-3.5" />
-                </a>
-              ) : (
-                <span className="text-xs italic text-muted-foreground">
-                  Registro sin enlace disponible
-                </span>
+                  <div className="space-y-5 pb-2">
+                    <div className="rounded-lg bg-muted/50 p-4">
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                        {event.summary}
+                      </p>
+                    </div>
+
+                    {event.consequences.length > 0 && (
+                      <div className="space-y-2">
+                        <h4 className="text-sm font-semibold uppercase tracking-wide text-foreground/80">
+                          Cambios y consecuencias
+                        </h4>
+                        <ul className="space-y-1.5">
+                          {event.consequences.map((consequence, idx) => (
+                            <li
+                              key={idx}
+                              className="flex gap-2 text-sm text-muted-foreground"
+                            >
+                              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                              <span>{consequence}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    <Separator />
+
+                    <div className="space-y-3">
+                      {event.civilizations.length > 0 && (
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                            Civilizaciones
+                          </span>
+                          {event.civilizations.map((civilization) => (
+                            <Badge
+                              key={civilization}
+                              variant="outline"
+                              className="text-xs"
+                            >
+                              {civilization}
+                            </Badge>
+                          ))}
+                        </div>
+                      )}
+
+                      {event.characters.length > 0 && (
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                            Personajes
+                          </span>
+                          {event.characters.map((character) => (
+                            <Badge
+                              key={character}
+                              variant="secondary"
+                              className="text-xs font-normal"
+                            >
+                              {character}
+                            </Badge>
+                          ))}
+                        </div>
+                      )}
+
+                      {event.topics.length > 0 && (
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                            Temas
+                          </span>
+                          {event.topics.map((topic) => (
+                            <Badge
+                              key={topic}
+                              variant="outline"
+                              className="text-xs font-normal text-muted-foreground"
+                            >
+                              {topic}
+                            </Badge>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
+                    {hasAnyMedia && (
+                      <>
+                        <Separator />
+                        <div className="space-y-3">
+                          <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                            <BookOpen className="h-3.5 w-3.5" />
+                            <span>Conferencias y recursos relacionados</span>
+                          </div>
+                          <div className="grid gap-3">
+                            {relatedVideos.map((conf) => (
+                              <RelatedVideoCard
+                                key={conf.id}
+                                conference={conf}
+                              />
+                            ))}
+                          </div>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                </motion.div>
               )}
-            </div>
+            </AnimatePresence>
+
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setExpanded((prev) => !prev)}
+              className="w-full justify-between text-xs font-medium text-muted-foreground hover:text-foreground"
+            >
+              <span>{expanded ? "Menos información" : "Más información y recursos"}</span>
+              {expanded ? (
+                <ChevronUp className="h-4 w-4" />
+              ) : (
+                <ChevronDown className="h-4 w-4" />
+              )}
+            </Button>
 
             {/* Mobile video embed */}
-            {videoId && (
+            {sourceVideoId && (
               <div className="md:hidden">
                 <Separator className="mb-5" />
                 <VideoEmbed
-                  videoId={videoId}
+                  videoId={sourceVideoId}
                   title={event.sourceConference.title}
                 />
               </div>

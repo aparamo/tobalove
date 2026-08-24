@@ -1,7 +1,13 @@
 import { Metadata } from "next";
-import { Timeline } from "@/app/components/Timeline";
+import { TimelineViewSelector } from "@/app/components/TimelineViewSelector";
 import timelineData from "@/data/linea-de-tiempo-eva-tobalina.json";
-import type { TimelineData } from "@/app/types/timeline";
+import conferencesData from "@/data/conferencias-eva-tobalina.json";
+import peoplesData from "@/data/pueblos-coexistientes.json";
+import type {
+  TimelineData,
+  ConferenceItem,
+  PeoplesData,
+} from "@/app/types/timeline";
 
 export const metadata: Metadata = {
   title: "Línea de tiempo | Eva Tobalina",
@@ -11,9 +17,17 @@ export const metadata: Metadata = {
 
 export default function TimelinePage() {
   const data = timelineData as TimelineData;
+  const conferences = conferencesData as { items: ConferenceItem[] };
+  const peoples = peoplesData as PeoplesData;
+
   const sortedEvents = [...data.items].sort(
     (a, b) => a.startYear - b.startYear
   );
+
+  const conferencesMap = new Map<string, ConferenceItem>();
+  for (const conf of conferences.items) {
+    conferencesMap.set(conf.id, conf);
+  }
 
   return (
     <main className="flex-1">
@@ -27,13 +41,19 @@ export default function TimelinePage() {
           </p>
           <p className="mt-2 text-sm text-muted-foreground/80">
             {data.meta.cobertura_cronologica} · {data.meta.total_eventos}{" "}
-            eventos
+            eventos · {peoples.meta.total_pueblos} pueblos
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <Timeline events={sortedEvents} />
+      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 md:py-20">
+        <TimelineViewSelector
+          events={sortedEvents}
+          peoples={peoples.items}
+          conferencesMap={conferencesMap}
+          eventsMeta={data.meta}
+          peoplesMeta={peoples.meta}
+        />
       </section>
     </main>
   );
