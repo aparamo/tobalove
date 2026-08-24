@@ -21,6 +21,9 @@ if (!isGenerate && !databaseUrl) {
 
 export default defineConfig({
   schema: "prisma/schema.prisma",
+  migrations: {
+    seed: "bun ./prisma/seed.ts",
+  },
   ...(databaseUrl && {
     datasource: {
       url: databaseUrl,
