@@ -27,8 +27,28 @@ export default async function TimelinePage() {
   const events = (await getTimelineEvents()) as unknown as TimelineEvent[];
   const conferences = (await getConferences()) as unknown as ConferenceItem[];
   const peoples = (await getPeoples()) as unknown as PeopleGroup[];
-  const eventsMeta = (await getTimelineMeta()) as unknown as TimelineMeta;
-  const peoplesMeta = (await getPeoplesMeta()) as unknown as PeoplesMeta;
+  const rawEventsMeta = (await getTimelineMeta()) as unknown as TimelineMeta | null;
+  const rawPeoplesMeta = (await getPeoplesMeta()) as unknown as PeoplesMeta | null;
+
+  const eventsMeta: TimelineMeta = rawEventsMeta ?? {
+    autorContenido: "",
+    enfoque:
+      "Recorrido cronológico por los hechos, civilizaciones y personajes de la Antigüedad.",
+    coberturaCronologica: "Cobertura amplia",
+    totalEventos: events.length,
+    fuentesPrincipales: [],
+    ultimaActualizacion: "",
+  };
+
+  const peoplesMeta: PeoplesMeta = rawPeoplesMeta ?? {
+    autorContenido: "",
+    enfoque: "",
+    coberturaCronologica: "Cobertura amplia",
+    totalPueblos: peoples.length,
+    unidadPoblacion: "",
+    fuentesPrincipales: [],
+    ultimaActualizacion: "",
+  };
 
   const sortedEvents = [...events].sort((a, b) => a.startYear - b.startYear);
 
@@ -45,11 +65,13 @@ export default async function TimelinePage() {
             Línea de tiempo
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            {eventsMeta.enfoque}
+            {eventsMeta?.enfoque ??
+              "Recorrido cronológico por los hechos, civilizaciones y personajes de la Antigüedad."}
           </p>
           <p className="mt-2 text-sm text-muted-foreground/80">
-            {eventsMeta.coberturaCronologica} · {eventsMeta.totalEventos}{" "}
-            eventos · {peoplesMeta.totalPueblos} pueblos
+            {eventsMeta?.coberturaCronologica ?? "Cobertura amplia"} ·{" "}
+            {eventsMeta?.totalEventos ?? sortedEvents.length} eventos ·{" "}
+            {peoplesMeta?.totalPueblos ?? peoples.length} pueblos
           </p>
         </div>
       </section>
