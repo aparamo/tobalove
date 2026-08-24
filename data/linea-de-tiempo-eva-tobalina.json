@@ -1,0 +1,817 @@
+{
+  "meta": {
+    "autor_contenido": "Eva Tobalina Oraá",
+    "enfoque": "Línea de tiempo histórica de los hechos, civilizaciones y personajes tratados en las conferencias y entrevistas de Eva Tobalina.",
+    "cobertura_cronologica": "desde c. 3500 a.C. hasta 1453 d.C.",
+    "total_eventos": 34,
+    "fuentes_principales": [
+      "https://evatobalina.com/conferencias/",
+      "https://www.youtube.com/@raicesdeeuropa",
+      "https://informacionmanu.es",
+      "https://portalcioranbr.wordpress.com/tag/eva-tobalina/"
+    ],
+    "ultima_actualizacion": "2026-08-24"
+  },
+  "items": [
+    {
+      "id": "sumer-origenes",
+      "title": "Aparición de Sumer y la primera civilización urbana",
+      "dateLabel": "c. 3500-3000 a.C.",
+      "startYear": -3500,
+      "endYear": -3000,
+      "period": true,
+      "location": "Sur de Mesopotamia",
+      "description": "En el sur de Mesopotamia surge la primera civilización urbana de la historia. Se desarrollan las primeras ciudades-estado, la escritura cuneiforme, la rueda, la división del tiempo y técnicas avanzadas de riego en el Creciente Fértil.",
+      "summary": "Sumer marca el paso de sociedades rurales a una red de ciudades-estado con administración, religión organizada y escritura.",
+      "consequences": [
+        "Invención de la escritura cuneiforme para la gestión económica y religiosa.",
+        "Desarrollo de instituciones políticas y religiosas complejas.",
+        "Base tecnológica que heredarán Babilonia, Asiria y Persia."
+      ],
+      "characters": ["Sacerdotes de Uruk", "gobernantes de las primeras dinastías"],
+      "civilizations": ["Sumeria"],
+      "topics": ["Mesopotamia", "Sumer", "escritura cuneiforme", "ciudades-estado", "Creciente Fértil"],
+      "sourceConference": {
+        "title": "Mesopotamia, Sumer y los sumerios: donde empezó la historia",
+        "organization": "Raíces de Europa",
+        "url": "https://www.youtube.com/watch?v=rIlh-EYWgoQ",
+        "date": "2021-04-23"
+      }
+    },
+    {
+      "id": "tumbas-reales-ur",
+      "title": "Las Tumbas Reales de Ur y el esplendor sumerio",
+      "dateLabel": "c. 2600-2500 a.C.",
+      "startYear": -2600,
+      "endYear": -2500,
+      "period": false,
+      "location": "Ur, Sumeria",
+      "description": "El arqueólogo Leonard Woolley descubre en Ur un conjunto de tumbas reales con ajuar funerario de oro, lapislázuli y piedras semipreciosas. Algunas tumbas evidencian sacrificio humano como ritual de poder.",
+      "summary": "El hallazgo revela la riqueza, jerarquía y prácticas religiosas de la élite sumeria en el III milenio a.C.",
+      "consequences": [
+        "Conocimiento directo de la orfebrería y organización social sumeria.",
+        "Debate historiográfico sobre el sacrificio humano en Mesopotamia.",
+        "Iconografía sumeria difundida en museos de todo el mundo."
+      ],
+      "characters": ["Leonard Woolley", "Puabi"],
+      "civilizations": ["Sumeria"],
+      "topics": ["Tumbas Reales de Ur", "arqueología", "orfebrería sumeria", "ritual funerario"],
+      "sourceConference": {
+        "title": "Sumer y las Tumbas Reales de Ur: historia y realidad fascinante",
+        "organization": "Raíces de Europa",
+        "url": "https://www.youtube.com/watch?v=lxOlS4hVeHE",
+        "date": "2021"
+      }
+    },
+    {
+      "id": "imperio-acad",
+      "title": "El Imperio de Acad y la unificación de Mesopotamia",
+      "dateLabel": "c. 2334-2154 a.C.",
+      "startYear": -2334,
+      "endYear": -2154,
+      "period": true,
+      "location": "Mesopotamia",
+      "description": "Sargón de Acad funda el primer imperio de la historia al unir bajo su dominio las ciudades de Sumer y Acad. Su hija Enheduanna es la primera autora conocida por nombre.",
+      "summary": "Acad transforma el mapa político mesopotámico, extendiendo el poder más allá de las ciudades-estado y creando un modelo imperial.",
+      "consequences": [
+        "Primera unificación política de Mesopotamia.",
+        "Difusión de la lengua acadia y de la escritura cuneiforme.",
+        "Colapso posterior que abre un período de fragmentación (guti)."
+      ],
+      "characters": ["Sargón de Acad", "Enheduanna", "Naram-Sin"],
+      "civilizations": ["Sumeria", "Acadia"],
+      "topics": ["Imperio de Acad", "Sargón", "unificación", "cuneiforme"],
+      "sourceConference": {
+        "title": "Sumer y Sumerios. Donde empezó la historia",
+        "organization": "Raíces de Europa",
+        "url": "https://www.youtube.com/watch?v=ZCmHGlLHpso",
+        "date": "2024-03-08"
+      }
+    },
+    {
+      "id": "imperio-hitita",
+      "title": "Auge y caída del Imperio Hitita",
+      "dateLabel": "c. 1650-1180 a.C.",
+      "startYear": -1650,
+      "endYear": -1180,
+      "period": true,
+      "location": "Anatolia (actual Turquía)",
+      "description": "Los hititas construyen en Hattusa uno de los grandes imperios de Anatolia. Destacan por su uso temprano del hierro, el tratado de Qadesh y su colapso durante las invasiones de los Pueblos del Mar.",
+      "summary": "El Imperio Hitita controla Anatolia y compite con Egipto por el control de Siria hasta su desaparición brusca.",
+      "consequences": [
+        "Difusión de la tecnología del hierro en el Mediterráneo oriental.",
+        "Primer tratado de paz escrito con Egipto tras Qadesh.",
+        "Su colapso altera el equilibrio geopolítico del Bronce Final."
+      ],
+      "characters": ["Mursili I", "Suppiluliuma I", "Muwatalli II", "Ramsés II"],
+      "civilizations": ["Hitita", "Egipto Nuevo"],
+      "topics": ["Imperio Hitita", "Hattusa", "batalla de Qadesh", "hierro", "Pueblos del Mar"],
+      "sourceConference": {
+        "title": "Los hititas",
+        "organization": "Raíces de Europa",
+        "url": null,
+        "date": null
+      }
+    },
+    {
+      "id": "batalla-qadesh",
+      "title": "Batalla de Qadesh entre hititas y egipcios",
+      "dateLabel": "1274 a.C.",
+      "startYear": -1274,
+      "endYear": -1274,
+      "period": false,
+      "location": "Qadesh, actual Siria",
+      "description": "Muwatalli II del Imperio Hitita y Ramsés II de Egipto se enfrentan en la mayor batalla de carros de la Antigüedad. El conflicto termina con un tratado de paz que estabiliza la frontera.",
+      "summary": "Qadesh es un ejemplo de guerra de propaganda y diplomacia en el Bronce Final; ambos bandos reivindican la victoria.",
+      "consequences": [
+        "Tratado de paz hitito-egipcio, uno de los más antiguos conservados.",
+        "Consolidación de la frontera en Canaán y Siria meridional.",
+        "Propaganda faraónica que ensalza a Ramsés II."
+      ],
+      "characters": ["Ramsés II", "Muwatalli II"],
+      "civilizations": ["Egipto Nuevo", "Hitita"],
+      "topics": ["batalla de Qadesh", "carros de guerra", "diplomacia antigua"],
+      "sourceConference": {
+        "title": "Los hititas",
+        "organization": "Raíces de Europa",
+        "url": null,
+        "date": null
+      }
+    },
+    {
+      "id": "pueblos-del-mar",
+      "title": "Invasiones de los Pueblos del Mar y colapso del Bronce Final",
+      "dateLabel": "c. 1200-1150 a.C.",
+      "startYear": -1200,
+      "endYear": -1150,
+      "period": true,
+      "location": "Mediterráneo oriental",
+      "description": "Una serie de migraciones y ataques de pueblos llamados colectivamente 'del Mar' contribuyen al colapso de palacios, ciudades e imperios en el Mediterráneo oriental.",
+      "summary": "El colapso del Bronce Final transforma el mapa político: desaparecen hititas y micénicos, Egipto se debilita y surge un nuevo paisaje de pueblos.",
+      "consequences": [
+        "Desaparición del Imperio Hitita.",
+        "Destrucción de palacios micénicos y crisis del mundo egeo.",
+        "Auge de los fenicios y de las primeras culturas del Hierro."
+      ],
+      "characters": ["Ramsés III"],
+      "civilizations": ["Hitita", "Micénica", "Egipto Nuevo", "Fenicia"],
+      "topics": ["Pueblos del Mar", "colapso del Bronce Final", "migraciones"],
+      "sourceConference": {
+        "title": "Los hititas",
+        "organization": "Raíces de Europa",
+        "url": null,
+        "date": null
+      }
+    },
+    {
+      "id": "imperio-asirio",
+      "title": "Expansión del Imperio Asirio",
+      "dateLabel": "911-609 a.C.",
+      "startYear": -911,
+      "endYear": -609,
+      "period": true,
+      "location": "Creciente Fértil y Oriente Próximo",
+      "description": "Durante el período neoasirio, Asiria se convierte en el imperio más poderoso del Cercano Oriente antiguo. Construye palacios monumentales en Nínive y funda la biblioteca de Asurbanipal.",
+      "summary": "Asiria combina terror militar, administración eficaz y una cultura palaciega que refleja su dominio sobre Mesopotamia y más allá.",
+      "consequences": [
+        "Unificación política del Creciente Fértil bajo un solo poder.",
+        "Creación de la biblioteca de Asurbanipal, clave para la transmisión de textos.",
+        "Dejan un modelo imperial que heredarán Babilonia y Persia."
+      ],
+      "characters": ["Asurbanipal", "Asarhaddón", "Sargón II", "Tiglatpileser III"],
+      "civilizations": ["Asiria"],
+      "topics": ["Imperio Asirio", "Nínive", "ejército asirio", "biblioteca de Asurbanipal"],
+      "sourceConference": {
+        "title": "Los asirios: poder, terror y fascinación",
+        "organization": "Raíces de Europa",
+        "url": null,
+        "date": null
+      }
+    },
+    {
+      "id": "caida-ninive",
+      "title": "Caída de Nínive y fin del Imperio Asirio",
+      "dateLabel": "612 a.C.",
+      "startYear": -612,
+      "endYear": -612,
+      "period": false,
+      "location": "Nínive, Mesopotamia",
+      "description": "Una coalición de medos, babilonios y escitas destruye Nínive, la capital asiria. El imperio que había dominado el Creciente Fértil durante siglos desaparece.",
+      "summary": "La caída de Nínive abre el paso a la hegemonía babilónica y persa en Mesopotamia.",
+      "consequences": [
+        "Fin del dominio asirio sobre Mesopotamia.",
+        "Ascenso del Imperio Neobabilónico.",
+        "Cambio geopolítico que facilita la posterior conquista persa."
+      ],
+      "characters": ["Nabopolasar", "Ciaxares"],
+      "civilizations": ["Asiria", "Babilonia", "Media"],
+      "topics": ["Nínive", "caída del Imperio Asirio", "coalición medo-babilónica"],
+      "sourceConference": {
+        "title": "Los asirios: poder, terror y fascinación",
+        "organization": "Raíces de Europa",
+        "url": null,
+        "date": null
+      }
+    },
+    {
+      "id": "codigo-hammurabi",
+      "title": "Código de Hammurabi",
+      "dateLabel": "c. 1754 a.C.",
+      "startYear": -1754,
+      "endYear": -1754,
+      "period": false,
+      "location": "Babilonia",
+      "description": "Hammurabi, rey de Babilonia, promulga uno de los códigos legales más antiguos y completos. La estela combina leyes civiles y penales con una justificación religiosa del poder real.",
+      "summary": "El Código de Hammurabi es una de las primeras grandes compilaciones legislativas de la historia, reflejando la sociedad babilónica del Antiguo Babilónico.",
+      "consequences": [
+        "Modelo de legislación escrita para Mesopotamia.",
+        "Reflejo de una sociedad jerarquizada con penas diferenciadas.",
+        "Influencia simbólica en la concepción posterior de la justicia."
+      ],
+      "characters": ["Hammurabi", "Shamash"],
+      "civilizations": ["Babilonia"],
+      "topics": ["Código de Hammurabi", "derecho", "Babilonia", "justicia"],
+      "sourceConference": {
+        "title": "Babilonia y sus imperios",
+        "organization": "Raíces de Europa",
+        "url": null,
+        "date": null
+      }
+    },
+    {
+      "id": "imperio-neobabilonico",
+      "title": "Esplendor del Imperio Neobabilónico",
+      "dateLabel": "626-539 a.C.",
+      "startYear": -626,
+      "endYear": -539,
+      "period": true,
+      "location": "Babilonia y Mesopotamia",
+      "description": "Tras la caída de Asiria, Babilonia vive su último gran esplendor bajo Nabopolasar y Nabucodonosor II. Se construyen la Puerta de Ishtar, el zigurat de Etemenanki y los Jardines Colgantes.",
+      "summary": "La Babilonia neobabilónica representa la culminación cultural y arquitectónica de Mesopotamia antes de la conqueda persa.",
+      "consequences": [
+        "Reconstrucción monumental de Babilonia como capital imperial.",
+        "Cautiverio babilónico de pueblos del Levante.",
+        "Caída ante Ciro el Grande en 539 a.C."
+      ],
+      "characters": ["Nabucodonosor II", "Nabopolasar", "Ciro el Grande"],
+      "civilizations": ["Imperio Neobabilónico", "Persia"],
+      "topics": ["Babilonia", "Nabucodonosor II", "Puerta de Ishtar", "Etemenanki", "Jardines Colgantes"],
+      "sourceConference": {
+        "title": "BABILONIA. De Hammurabi al esplendor Neobabilónico con Nabucodonosor",
+        "organization": "Raíces de Europa",
+        "url": null,
+        "date": null
+      }
+    },
+    {
+      "id": "caida-babilonia",
+      "title": "Conquista de Babilonia por Ciro el Grande",
+      "dateLabel": "539 a.C.",
+      "startYear": -539,
+      "endYear": -539,
+      "period": false,
+      "location": "Babilonia",
+      "description": "Ciro el Grande, rey de Persia, toma Babilonia con escasa resistencia. El Cilindro de Ciro presenta una imagen de liberador tolerante respecto a los pueblos sometidos.",
+      "summary": "La conquista persa pone fin al Imperio Neobabilónico y funda la hegemonía aqueménida en el Oriente Próximo.",
+      "consequences": [
+        "Fin del Imperio Neobabilónico.",
+        "Permiso de retorno a los exiliados judíos según la Biblia y el Cilindro de Ciro.",
+        "Inicio del dominio persa sobre Mesopotamia."
+      ],
+      "characters": ["Ciro el Grande", "Nabonido", "Belsasar"],
+      "civilizations": ["Imperio Persa Aqueménida", "Imperio Neobabilónico"],
+      "topics": ["Ciro el Grande", "conquista de Babilonia", "Cilindro de Ciro"],
+      "sourceConference": {
+        "title": "Babilonia y sus imperios",
+        "organization": "Raíces de Europa",
+        "url": null,
+        "date": null
+      }
+    },
+    {
+      "id": "imperio-persa-aquemenida",
+      "title": "El Imperio Persa Aqueménida: primer imperio mundial",
+      "dateLabel": "550-330 a.C.",
+      "startYear": -550,
+      "endYear": -330,
+      "period": true,
+      "location": "Oriente Próximo, Egipto, Asia Central y Asia Menor",
+      "description": "Ciro, Cambises, Darío I y Jerjes I construyen el mayor imperio conocido hasta entonces. Lo articulan con sátrapías, caminos reales, una moneda única y una política de tolerancia religiosa.",
+      "summary": "Los aqueménidas crean un modelo imperial multicultural que conecta Egipto, Grecia, Mesopotamia, Persia y Asia Central.",
+      "consequences": [
+        "Primera unificación geopolítica a escala continental.",
+        "Difusión del zoroastrismo y del modelo de sátrapías.",
+        "Contactos con Grecia que desembocan en las Guerras Médicas."
+      ],
+      "characters": ["Ciro el Grande", "Cambises II", "Darío I", "Jerjes I"],
+      "civilizations": ["Imperio Persa Aqueménida"],
+      "topics": ["Imperio Persa", "Aqueménidas", "Persépolis", "zoroastrismo", "sátrapías"],
+      "sourceConference": {
+        "title": "El Imperio Persa: el primer imperio 'mundial' de la historia",
+        "organization": "Raíces de Europa",
+        "url": "https://www.youtube.com/watch?v=r0iqgEKUbDE",
+        "date": "2022"
+      }
+    },
+    {
+      "id": "guerras-medicas",
+      "title": "Guerras Médicas: Grecia frente a Persia",
+      "dateLabel": "499-449 a.C.",
+      "startYear": -499,
+      "endYear": -449,
+      "period": true,
+      "location": "Grecia, Egeo y Asia Menor",
+      "description": "Las ciudades griegas de Jonia se rebelan contra Persia y Atenas y Esparta acaban enfrentándose a las invasiones de Darío I y Jerjes I. Las victorias griegas en Maratón, Salamina y Platea consolidan la identidad helena.",
+      "summary": "Las Guerras Médicas redefinen el equilibrio entre Oriente y Occidente y alimentan el mito de la libertad griega frente al despotismo persa.",
+      "consequences": [
+        "Auge de Atenas y creación de la Liga de Delos.",
+        "Florecimiento cultural del siglo V a.C. (Siglo de Pericles).",
+        "Ruptura definitiva entre el mundo griego y el persa."
+      ],
+      "characters": ["Darío I", "Jerjes I", "Temístocles", "Leónidas", "Miltíades"],
+      "civilizations": ["Imperio Persa Aqueménida", "Grecia clásica"],
+      "topics": ["Guerras Médicas", "batalla de Maratón", "batalla de Salamina", "batalla de Platea"],
+      "sourceConference": {
+        "title": "El Imperio Persa: el primer imperio 'mundial' de la historia",
+        "organization": "Raíces de Europa",
+        "url": "https://www.youtube.com/watch?v=r0iqgEKUbDE",
+        "date": "2022"
+      }
+    },
+    {
+      "id": "alejandro-magno",
+      "title": "Vida y conquistas de Alejandro Magno",
+      "dateLabel": "356-323 a.C.",
+      "startYear": -356,
+      "endYear": -323,
+      "period": true,
+      "location": "Macedonia, Persia, Egipto, Asia Central e India",
+      "description": "Alejandro Magno expande el poder macedonio desde Grecia hasta India. Derroca al Imperio Aqueménida, funda Alejandría y difunde la cultura helenística por Oriente.",
+      "summary": "Alejandro transforma el mapa político y cultural del mundo antiguo, iniciando la época helenística.",
+      "consequences": [
+        "Fin del Imperio Persa Aqueménida.",
+        "Fundación de ciudades helenísticas como Alejandría.",
+        "Mezcla cultural entre Grecia y Oriente que define el helenismo."
+      ],
+      "characters": ["Alejandro Magno", "Filipo II", "Aristóteles", "Darío III", "Poro", "Hefestión"],
+      "civilizations": ["Macedonia", "Imperio Persa Aqueménida", "Egipto Ptolemaico", "Imperio Seléucida"],
+      "topics": ["Alejandro Magno", "helenismo", "conquistas", "Alejandría"],
+      "sourceConference": {
+        "title": "Ciclo Alejandro Magno",
+        "organization": "Raíces de Europa",
+        "url": "https://www.youtube.com/watch?v=4qHAYtcd5IU",
+        "date": "2023"
+      }
+    },
+    {
+      "id": "batalla-hidaspes",
+      "title": "Batalla del Hidaspes y fin de la campaña india",
+      "dateLabel": "326 a.C.",
+      "startYear": -326,
+      "endYear": -326,
+      "period": false,
+      "location": "Río Hidaspes, actual Pakistán",
+      "description": "Alejandro derrota al rey Poro en la batalla del Hidaspes. El agotamiento del ejército le obliga a dar la vuelta, sellando el límite oriental de sus conquistas.",
+      "summary": "La victoria sobre Poro demuestra la capacidad macedonia, pero la negativa del ejército a avanzar marca el tope de la expansión de Alejandro.",
+      "consequences": [
+        "Incorporación temporal del Punjab al dominio macedonio.",
+        "Demostración de los límites logísticos de la conquista.",
+        "Muerte de Bucéfalo y posterior retirada hacia Babilonia."
+      ],
+      "characters": ["Alejandro Magno", "Poro", "Bucéfalo"],
+      "civilizations": ["Macedonia", "India"],
+      "topics": ["batalla del Hidaspes", "Poro", "India antigua"],
+      "sourceConference": {
+        "title": "Alejandro Magno (IV). La India, el fin del mundo y la muerte en Babilonia",
+        "organization": "Raíces de Europa",
+        "url": null,
+        "date": "2023"
+      }
+    },
+    {
+      "id": "muerte-alejandro",
+      "title": "Muerte de Alejandro y reparto del imperio entre los diádocos",
+      "dateLabel": "323 a.C.",
+      "startYear": -323,
+      "endYear": -323,
+      "period": false,
+      "location": "Babilonia",
+      "description": "Alejandro muere en Babilonia sin un sucesor claro. Sus generales (diádocos) se disputan el imperio, dando lugar a reinos helenísticos como el Ptolemaico y el Seléucida.",
+      "summary": "La muerte de Alejandro desencadena décadas de guerras que fragmentan su imperio y consolidan el mundo helenístico.",
+      "consequences": [
+        "Formación de los reinos helenísticos.",
+        "Ascenso de la dinastía ptolemaica en Egipto.",
+        "Cultura helenística dominante en el Mediterráneo oriental."
+      ],
+      "characters": ["Alejandro Magno", "Ptolomeo", "Seleuco", "Antígono", "Casandro"],
+      "civilizations": ["Macedonia", "Egipto Ptolemaico", "Imperio Seléucida"],
+      "topics": ["diádocos", "muerte de Alejandro", "reinos helenísticos"],
+      "sourceConference": {
+        "title": "Alejandro Magno (IV). La India, el fin del mundo y la muerte en Babilonia",
+        "organization": "Raíces de Europa",
+        "url": null,
+        "date": "2023"
+      }
+    },
+    {
+      "id": "imperio-sasanida",
+      "title": "Imperio Sasánida: el último gran imperio persa preislámico",
+      "dateLabel": "224-651 d.C.",
+      "startYear": 224,
+      "endYear": 651,
+      "period": true,
+      "location": "Irán, Mesopotamia y zonas limítrofes",
+      "description": "Ardashir I funda el Imperio Sasánida, heredero de la tradición persa y del zoroastrismo. Durante siglos, los sasánidas luchan con Roma y Bizancio hasta caer ante la expansión islámica.",
+      "summary": "El Imperio Sasánida actúa como puente entre la Antigüedad tardía y el mundo islámico medieval, preservando y transformando la cultura persa.",
+      "consequences": [
+        "Restauración del poder persa y del zoroastrismo como religión de Estado.",
+        "Largas guerras con Bizancio por el control de Mesopotamia.",
+        "Caída en 651 ante los ejércitos árabes musulmanes."
+      ],
+      "characters": ["Ardashir I", "Sapor I", "Cosroes I", "Yazdegerd III"],
+      "civilizations": ["Imperio Sasánida", "Imperio Romano", "Imperio Bizantino"],
+      "topics": ["Imperio Sasánida", "zoroastrismo", "Ctesifonte", "guerras romano-persas"],
+      "sourceConference": {
+        "title": "El Imperio Persa Sasánida. De la lucha con Roma, a la derrota frente al Islam",
+        "organization": "Raíces de Europa",
+        "url": null,
+        "date": "2017-03-22"
+      }
+    },
+    {
+      "id": "escitas",
+      "title": "Los Escitas: señores de la estepa",
+      "dateLabel": "c. 700-200 a.C.",
+      "startYear": -700,
+      "endYear": -200,
+      "period": true,
+      "location": "Estepa póntico-cáspica",
+      "description": "Los escitas son un pueblo nómada dominador del caballo que controla las estepas entre Europa oriental y Asia Central. Su arte animalista y sus kurganes son testimonio de una cultura adaptada al entorno estepario.",
+      "summary": "Los escitas representan la cultura nómada por excelencia, mediando entre estepa, Persia y Grecia durante siglos.",
+      "consequences": [
+        "Control de rutas comerciales entre estepa y mundo sedentario.",
+        "Influencia en las tácticas militares de caballería de Eurasia.",
+        "Transmisión de bienes e ideas entre Oriente y Occidente."
+      ],
+      "characters": ["Heródoto"],
+      "civilizations": ["Escitas", "Imperio Persa Aqueménida", "Grecia clásica"],
+      "topics": ["Escitas", "estepa", "pueblos nómadas", "kurganes", "arte animalista"],
+      "sourceConference": {
+        "title": "Los Escitas: Señores de la Estepa",
+        "organization": "Raíces de Europa",
+        "url": "https://www.youtube.com/watch?v=S739qWXZi60",
+        "date": "2024-11-10"
+      }
+    },
+    {
+      "id": "tracios",
+      "title": "Los Tracios entre Grecia y Roma",
+      "dateLabel": "c. 1000 a.C. - 46 d.C.",
+      "startYear": -1000,
+      "endYear": 46,
+      "period": true,
+      "location": "Balcanes orientales",
+      "description": "Los tracios habitan los Balcanes con una cultura rica en orfebrería y religión, a menudo eclipsada por sus vecinos griegos y romanos. Figuras como Espartaco muestran su protagonismo histórico.",
+      "summary": "Tracia es una civilización periférica pero influyente, absorbida finalmente por el Imperio Romano en el siglo I d.C.",
+      "consequences": [
+        "Aporte cultural y militar a Grecia y Roma.",
+        "Mito de Orfeo y culto de Dioniso de raíces tracias.",
+        "Romanización de los Balcanes orientales."
+      ],
+      "characters": ["Espartaco", "Orfeo", "Resos"],
+      "civilizations": ["Tracia", "Grecia", "Roma"],
+      "topics": ["Tracios", "Balcanes", "orfebrería tracia", "culto de Dioniso"],
+      "sourceConference": {
+        "title": "Los Tracios: historia y mito de una civilización fascinante",
+        "organization": "Raíces de Europa",
+        "url": null,
+        "date": "2014-02-17"
+      }
+    },
+    {
+      "id": "ruta-de-la-seda",
+      "title": "Origen y apogeo de la Ruta de la Seda",
+      "dateLabel": "c. 130 a.C. - 1453 d.C.",
+      "startYear": -130,
+      "endYear": 1453,
+      "period": true,
+      "location": "De China al Mediterráneo",
+      "description": "La Ruta de la Seda es una red de caminos que conecta China con Roma, Persia, Asia Central y más allá. Transporta seda, papel, especias, religiones, enfermedades e ideas durante más de mil quinientos años.",
+      "summary": "La Ruta de la Seda define la historia del encuentro entre Oriente y Occidente, transformando economías, culturas e imperios.",
+      "consequences": [
+        "Intercambio tecnológico: seda, papel, porcelana, brújula, pólvora.",
+        "Difusión del budismo, islam, cristianismo y zoroastrismo.",
+        "Conexión entre civilizadas que hace posible la economía global premoerna."
+      ],
+      "characters": ["Zhang Qian", "Emperador Wu de Han", "Harún al-Rashid", "Marco Polo"],
+      "civilizations": ["China Han", "Imperio Romano", "Imperio Persa", "Imperio Kushán", "Imperio Mongol"],
+      "topics": ["Ruta de la Seda", "comercio antiguo", "seda", "papel", "porcelana"],
+      "sourceConference": {
+        "title": "Ciclo La Ruta de la Seda",
+        "organization": "Raíces de Europa",
+        "url": null,
+        "date": null
+      }
+    },
+    {
+      "id": "pax-mongolica",
+      "title": "La Pax Mongolica revitaliza el comercio euroasiático",
+      "dateLabel": "1206-1368 d.C.",
+      "startYear": 1206,
+      "endYear": 1368,
+      "period": true,
+      "location": "Eurasia",
+      "description": "Gengis Kan y sus sucesores unifican gran parte de Eurasia bajo el Imperio Mongol. A pesar de su reputación destructiva, el imperio garantiza seguridad en las rutas y facilita el intercambio entre Oriente y Occidente.",
+      "summary": "La Pax Mongolica permite viajes como los de Marco Polo y el tránsito de tecnologías entre China y Europa.",
+      "consequences": [
+        "Seguridad en las rutas comerciales de Asia Central.",
+        "Intercambio de tecnologías, ideas y enfermedades.",
+        "Precedente de la globalización euroasiática."
+      ],
+      "characters": ["Gengis Kan", "Ögodei", "Möngke", "Kublai Kan"],
+      "civilizations": ["Imperio Mongol", "China Song", "Imperio Jin", "Imperio Abasí"],
+      "topics": ["Imperio Mongol", "Pax Mongolica", "Gengis Kan", "Ruta de la Seda"],
+      "sourceConference": {
+        "title": "El Imperio de Gengis Kan y la Ruta de la Seda",
+        "organization": "Raíces de Europa",
+        "url": null,
+        "date": null
+      }
+    },
+    {
+      "id": "tamerlan",
+      "title": "Tamerlán y el florecimiento de Samarcanda",
+      "dateLabel": "1370-1405 d.C.",
+      "startYear": 1370,
+      "endYear": 1405,
+      "period": true,
+      "location": "Asia Central",
+      "description": "Tamerlán funda el Imperio Timúrida desde Samarcanda. Conquistador brutal pero mecenas, transforma la ciudad en un centro artístico y científico de primer orden.",
+      "summary": "El imperio timúrida representa el último gran resurgir de la Ruta de la Seda antes de la expansión otomana y portuguesa.",
+      "consequences": [
+        "Esplendor arquitectónico de Samarcanda.",
+        "Patrocinio de Ulug Beg en astronomía y matemáticas.",
+        "Legado cultural que influye en el arte mogol y otomano."
+      ],
+      "characters": ["Tamerlán", "Ulug Beg"],
+      "civilizations": ["Imperio Timúrida", "Imperio Otomano", "Imperio Mameluco"],
+      "topics": ["Tamerlán", "Imperio Timúrida", "Samarcanda", "Ruta de la Seda"],
+      "sourceConference": {
+        "title": "Tamerlán: su vida e imperio. Su influencia en la Ruta de la Seda",
+        "organization": "Raíces de Europa",
+        "url": null,
+        "date": null
+      }
+    },
+    {
+      "id": "huno-atila",
+      "title": "Los Hunos y el reino de Atila",
+      "dateLabel": "c. 370-453 d.C.",
+      "startYear": 370,
+      "endYear": 453,
+      "period": true,
+      "location": "Estepa europea y Panonia",
+      "description": "Los hunos irrumpen en Europa desde la estepa y presionan a los pueblos germánicos. Bajo Atila, llegan a ser una potencia que amenaza a los dos Imperios romanos.",
+      "summary": "Los hunos aceleran las migraciones de pueblos y debilitan aún más al Imperio Romano de Occidente.",
+      "consequences": [
+        "Empuje de pueblos germánicos hacia el Imperio Romano.",
+        "Campañas hunas en los Balcanes, Galia e Italia.",
+        "Colapso del poder huno tras la muerte de Atila."
+      ],
+      "characters": ["Atila", "Bleda", "Valentiniano III", "Teodosio II"],
+      "civilizations": ["Hunos", "Imperio Romano de Occidente", "Imperio Romano de Oriente"],
+      "topics": ["Hunos", "Atila", "migraciones", "Imperio Romano tardío"],
+      "sourceConference": {
+        "title": "Los pueblos de la estepa: los Hunos, Atila, su muerte y el declive",
+        "organization": "Raíces de Europa",
+        "url": null,
+        "date": "2021-04-23"
+      }
+    },
+    {
+      "id": "augusto-principado",
+      "title": "Augusto y la fundación del Principado",
+      "dateLabel": "27 a.C. - 14 d.C.",
+      "startYear": -27,
+      "endYear": 14,
+      "period": true,
+      "location": "Imperio Romano",
+      "description": "Tras las guerras civiles, Octavio recibe el título de Augusto y transforma la República en un principado. Disimula la monarquía bajo las formas republicanas y establece la Pax Romana.",
+      "summary": "Augusto funda el Imperio Romano como régimen político estable, abriendo una era de paz, expansión y mecenazgo cultural.",
+      "consequences": [
+        "Fin de las guerras civiles romanas.",
+        "Reforma administrativa y militar del Imperio.",
+        "Edad dorada de la literatura latina (Virgilio, Horacio, Ovidio)."
+      ],
+      "characters": ["César Augusto", "Livia", "Marco Agripa", "Virgilio", "Horacio"],
+      "civilizations": ["Roma Imperial"],
+      "topics": ["Augusto", "principado", "Pax Romana", "guerras civiles romanas"],
+      "sourceConference": {
+        "title": "Augusto emperador: la construcción del Imperio y mecenas de las artes",
+        "organization": "Raíces de Europa",
+        "url": "https://www.youtube.com/watch?v=MASXM67aQlw",
+        "date": null
+      }
+    },
+    {
+      "id": "familia-imperial-augusto",
+      "title": "La familia imperial de Augusto y la sucesión julio-claudia",
+      "dateLabel": "27 a.C. - 68 d.C.",
+      "startYear": -27,
+      "endYear": 68,
+      "period": true,
+      "location": "Imperio Romano",
+      "description": "Augusto configura la primera dinastía imperial a través de alianzas matrimoniales, adopciones y sucesiones forzadas. De su linaje surgen Tiberio, Calígula, Claudio y Nerón.",
+      "summary": "La dinastía julio-claudia muestra las tensiones entre poder hereditario, adopción y ambición en la primera familia imperial.",
+      "consequences": [
+        "Institucionalización de la sucesión dinástica en Roma.",
+        "Ascenso y caída de emperadores con perfiles muy distintos.",
+        "Leyendas negras y rehabilitaciones historiográficas."
+      ],
+      "characters": ["Augusto", "Livia", "Tiberio", "Calígula", "Claudio", "Nerón", "Germánico"],
+      "civilizations": ["Roma Imperial"],
+      "topics": ["dinastía julio-claudia", "familia imperial", "sucesión", "Livia"],
+      "sourceConference": {
+        "title": "César Augusto y la familia imperial: Livia, Agripa, Tiberio, Germánico",
+        "organization": "Raíces de Europa",
+        "url": "https://www.youtube.com/watch?v=23ZQWhZsQKM",
+        "date": null
+      }
+    },
+    {
+      "id": "tiberio-reinado",
+      "title": "Reinado de Tiberio",
+      "dateLabel": "14-37 d.C.",
+      "startYear": 14,
+      "endYear": 37,
+      "period": true,
+      "location": "Imperio Romano",
+      "description": "Tiberio sucede a Augusto como segundo emperador. Su reinado combina una administración eficaz con un final solitario en Capri y una leyenda negra alimentada por fuentes hostiles.",
+      "summary": "Tiberio ilustra la soledad del poder imperial y la distorsión que las fuentes posteriores pueden introducir en una figura.",
+      "consequences": [
+        "Continuidad del principado augusteo.",
+        "Creciente papel de la Guardia Pretoriana.",
+        "Auge de Sejano y crisis de sucesión."
+      ],
+      "characters": ["Tiberio", "Livia", "Sejano", "Germánico", "Druso el Joven"],
+      "civilizations": ["Roma Imperial"],
+      "topics": ["Tiberio", "Imperio Romano", "Guardia Pretoriana", "Capri"],
+      "sourceConference": {
+        "title": "Tiberio, el precio amargo del poder",
+        "organization": "Raíces de Europa",
+        "url": null,
+        "date": null
+      }
+    },
+    {
+      "id": "caligula-reinado",
+      "title": "Calígula y el tiranicidio",
+      "dateLabel": "37-41 d.C.",
+      "startYear": 37,
+      "endYear": 41,
+      "period": true,
+      "location": "Imperio Romano",
+      "description": "Calígula reinó brevemente y fue asesinado por la Guardia Pretoriana. Su imagen de tirano loco responde en parte a la propaganda senatorial, aunque su reinado fue claramente conflictivo.",
+      "summary": "El caso de Calígula muestra cómo una figura imperial puede ser deformada por sus enemigos políticos.",
+      "consequences": [
+        "Asesinato del emperador por la Guardia Pretoriana.",
+        "Ascenso inesperado de Claudio.",
+        "Debate historiográfico sobre la realidad de su tirania."
+      ],
+      "characters": ["Calígula", "Claudio", "Cayo Silio"],
+      "civilizations": ["Roma Imperial"],
+      "topics": ["Calígula", "tiranicidio", "Guardia Pretoriana", "propaganda senatorial"],
+      "sourceConference": {
+        "title": "Calígula, paradigma del tirano loco",
+        "organization": "Raíces de Europa",
+        "url": "https://www.youtube.com/watch?v=dBe13BFBVa8",
+        "date": null
+      }
+    },
+    {
+      "id": "claudio-reinado",
+      "title": "Claudio: el emperador erudito",
+      "dateLabel": "41-54 d.C.",
+      "startYear": 41,
+      "endYear": 54,
+      "period": true,
+      "location": "Imperio Romano y Britania",
+      "description": "Claudio sube al trono de forma inesperada. Su reinado destaca por la conquista de Britania, la reforma administrativa y su perfil de erudito, frecuentemente ridiculizado por las fuentes antiguas.",
+      "summary": "Claudio demuestra que la imagen pública de un emperador no siempre refleja su eficacia política.",
+      "consequences": [
+        "Conquista e incorporación de Britania al Imperio Romano.",
+        "Reforma de la administración imperial.",
+        "Continuidad de la dinastía julio-claudia hasta Nerón."
+      ],
+      "characters": ["Claudio", "Mesalina", "Agripina la Menor", "Nerón", "Británico"],
+      "civilizations": ["Roma Imperial", "Britania"],
+      "topics": ["Claudio", "conquista de Britania", "dinastía julio-claudia"],
+      "sourceConference": {
+        "title": "Claudio, la apasionante historia del monarca erudito",
+        "organization": "Raíces de Europa",
+        "url": null,
+        "date": null
+      }
+    },
+    {
+      "id": "neron-reinado",
+      "title": "Nerón, el incendio de Roma y el fin de los Julio-Claudios",
+      "dateLabel": "54-68 d.C.",
+      "startYear": 54,
+      "endYear": 68,
+      "period": true,
+      "location": "Imperio Romano",
+      "description": "Nerón es el último emperador de la dinastía julio-claudia. Su reinado incluye el gran incendio de Roma, las primeras persecuciones de cristianos y un final en suicidio tras una revuelta.",
+      "summary": "Nerón encapsula la leyenda negra imperial, aunque también fue mecenas de las artes y constructor de una nueva Roma.",
+      "consequences": [
+        "Reconstrucción de Roma tras el incendio.",
+        "Primera persecución organizada de cristianos.",
+        "Fin de la dinastía julio-claudia y año de los cuatro emperadores."
+      ],
+      "characters": ["Nerón", "Agripina la Menor", "Séneca", "Burro", "Poppaea Sabina"],
+      "civilizations": ["Roma Imperial"],
+      "topics": ["Nerón", "gran incendio de Roma", "persecución de cristianos", "año de los cuatro emperadores"],
+      "sourceConference": {
+        "title": "Nerón, el emperador odiado",
+        "organization": "Raíces de Europa",
+        "url": null,
+        "date": null
+      }
+    },
+    {
+      "id": "juliano-apostata",
+      "title": "Juliano el Apóstata y el fracaso de la restauración pagana",
+      "dateLabel": "361-363 d.C.",
+      "startYear": 361,
+      "endYear": 363,
+      "period": true,
+      "location": "Imperio Romano y Persia",
+      "description": "Juliano intenta restaurar los cultos paganos tras la cristianización de Constantino. Su muerte en campaña contra Persia acaba con el último proyecto imperial pagano.",
+      "summary": "Juliano representa el último intento serio de frenar el avance del cristianismo en el Imperio Romano.",
+      "consequences": [
+        "Continuidad del cristianismo como religión dominante en Roma.",
+        "Fin de los intentos imperiales de restauración pagana.",
+        "Muerte del emperador en Mesopotamia."
+      ],
+      "characters": ["Juliano", "Constantino I", "Constantio II", "Libanio"],
+      "civilizations": ["Imperio Romano tardío", "Persia Sasánida"],
+      "topics": ["Juliano el Apóstata", "neoplatonismo", "cristianismo primitivo", "Persia"],
+      "sourceConference": {
+        "title": "Juliano el Apóstata: el último filósofo en el trono de los Césares",
+        "organization": "Raíces de Europa",
+        "url": null,
+        "date": null
+      }
+    },
+    {
+      "id": "expansion-arabe",
+      "title": "Expansión árabe y formación de los califatos",
+      "dateLabel": "632-750 d.C.",
+      "startYear": 632,
+      "endYear": 750,
+      "period": true,
+      "location": "Oriente Próximo, Norte de África y Península Ibérica",
+      "description": "Tras la muerte de Mahoma, los ejércitos musulmanes unifican Arabia y conquistan rápidamente Persia, gran parte del Imperio bizantino y el norte de África. Surgen los califatos omeya y abasí.",
+      "summary": "La expansión islámica transforma el mapa político y religioso de Eurasia y el Mediterráneo en menos de un siglo.",
+      "consequences": [
+        "Fin del Imperio Sasánida.",
+        "Pérdida bizantina de Siria, Egipto y el norte de África.",
+        "Bagdad como nuevo centro cultural y comercial de la Ruta de la Seda."
+      ],
+      "characters": ["Harún al-Rashid", "Abd al-Rahman I"],
+      "civilizations": ["Califato Omeya", "Califato Abasí", "Imperio Bizantino", "Persia Sasánida"],
+      "topics": ["expansión islámica", "califato omeya", "califato abasí", "Bagdad"],
+      "sourceConference": {
+        "title": "Los califatos de Damasco y Bagdad y la Ruta de la Seda",
+        "organization": "Raíces de Europa",
+        "url": null,
+        "date": null
+      }
+    },
+    {
+      "id": "odiseo-mito",
+      "title": "El viaje de Odiseo: mito y arquetipo del regreso",
+      "dateLabel": "Época micénica/arcaica (tradición mitológica)",
+      "startYear": -1200,
+      "endYear": -800,
+      "period": true,
+      "location": "Mundo egeo y Mediterráneo oriental",
+      "description": "La Odisea narra el regreso de Odiseo a Ítaca tras la guerra de Troya. A lo largo de la historia, el mito se ha leído como arquetipo del viaje, la astucia y la perseverancia.",
+      "summary": "Odiseo es uno de los grandes arquetipos de la cultura occidental: el héroe que debe superar pruebas para volver a casa.",
+      "consequences": [
+        "Modelo literario del viaje del héroe.",
+        "Reflejo de la geografía y mentalidad del mundo griego arcaico.",
+        "Influencia permanente en arte, literatura y psicología."
+      ],
+      "characters": ["Odiseo", "Penélope", "Telémaco", "Circe", "Calipso", "Polifemo"],
+      "civilizations": ["Grecia micénica", "Grecia arcaica"],
+      "topics": ["Odiseo", "Odisea", "Homero", "mitología griega", "viaje del héroe"],
+      "sourceConference": {
+        "title": "Odiseo, el viaje infinito",
+        "organization": "Raíces de Europa",
+        "url": "https://www.youtube.com/watch?v=iUogdS0Rw9o",
+        "date": null
+      }
+    }
+  ]
+}
