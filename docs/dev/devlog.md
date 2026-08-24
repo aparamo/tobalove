@@ -580,3 +580,94 @@ nueva visualización tipo "gráfica animada hacia abajo". Los requisitos fueron:
   (lineal vs raíz cuadrada).
 - Evaluar si el filtro "solo con videos" debe aplicarse también a la vista
   horizontal de pueblos existente.
+
+
+## 2026-08-24 (continuación) — Tooltip en las franjas verticales del eje central
+
+### Contexto
+El usuario pidió que las líneas verticales de color del eje central muestren un
+tooltip al hacer hover con el nombre de la civilización y las fechas de inicio/fin.
+
+### UI / UX
+- Se envolvió cada franja vertical de la línea central con el componente `Tooltip`
+  de shadcn/base-ui.
+- Al hacer hover se muestra un tooltip con:
+  - Nombre del pueblo/civilización.
+  - Periodo: `startYear` — `endYear`.
+  - Año de apogeo y región.
+- Se mantuvo el click en la franja para abrir el dialog con detalles y videos.
+- Se ajustó la animación `whileHover` para que la franja se ensanche desde el centro
+  sin romper el layout de carriles.
+
+### Verificación
+- `bun run lint` ✅ — sin errores (warnings preexistentes).
+- `bun run build` ✅ — prerenderizado estático correcto.
+
+
+## 2026-08-24 (continuación) — Mejoras visuales de color en la gráfica vertical
+
+### Contexto
+Tras revisar los últimos screenshots, se decidió pulir la apariencia de colores en
+la vista "Gráfica vertical" para dar más profundidad y legibilidad a las franjas
+de población y a las bandas del eje central.
+
+### UI / UX
+- Se añadió el helper `hexToRgba` para convertir los colores hex de cada pueblo en
+  valores rgba y poder aplicar degradados y sombras con opacidad.
+- Se mejoró la barra de población dentro de cada tarjeta:
+  - Degradado horizontal sutil (`90deg`, del color con opacidad al color sólido).
+  - Sombra del mismo color con baja opacidad para un leve efecto de brillo.
+  - Fondo de la pista con `shadow-inner` para dar sensación de profundidad.
+- Se mejoraron las bandas verticales del eje central:
+  - Ancho aumentado de 8 px a **10 px** y separación entre carriles de 2 px a **3 px**.
+  - Degradado vertical del color sólido a una versión con 75 % de opacidad.
+  - Sombra exterior del color para resaltar cada banda sobre el fondo.
+  - Reflejo sutil en la parte superior (`inset 0 1px 0 rgba(255,255,255,0.25)`).
+
+### Verificación
+- `bun run lint` ✅ — sin errores (warnings preexistentes).
+- `bun run build` ✅ — prerenderizado estático correcto.
+
+
+## 2026-08-24 (continuación) — Aumento de tamaño de texto en tooltip
+
+### Contexto
+El usuario pidió que el texto del tooltip de las franjas verticales del eje central
+fuera un poco más grande.
+
+### UI / UX
+- Se aumentó el tamaño de la tipografía dentro de `TooltipContent`:
+  - Nombre del pueblo: `text-sm` en móvil, `text-base` en desktop.
+  - Fechas y apogeo/región: `text-xs` en móvil, `text-sm` en desktop.
+  - Se añadió un poco más de padding interno (`px-3 py-2`).
+
+### Verificación
+- `bun run lint` ✅ — sin errores (warnings preexistentes).
+- `bun run build` ✅ — prerenderizado estático correcto.
+
+
+## 2026-08-24 (resumen de la sesión) — Nuevas interacciones y pulido visual
+
+### Contexto
+Durante esta sesión se continuó iterando sobre la vista "Gráfica vertical" de
+pueblos coexistientes que se había creado previamente. El foco estuvo en mejorar
+la usabilidad, la estética y la información disponible sin modificar el legacy.
+
+### Cambios adicionales de esta sesión
+- **Tooltips en el eje central**: cada franja vertical de color muestra un tooltip
+  al hacer hover con el nombre del pueblo, fechas de inicio/fin, año de apogeo y
+  región.
+- **Texto de tooltip más grande**: se aumentó la tipografía del tooltip para mejor
+  legibilidad (`text-base` para el nombre y `text-sm` para fechas en desktop).
+- **Pulido de colores**:
+  - Ancho de las franjas del eje central aumentado a 10 px.
+  - Degradado vertical y sombra exterior en las franjas del eje.
+  - Degradado horizontal y brillo sutil en las barras de población de las tarjetas.
+  - Helper `hexToRgba` para aplicar opacidades y sombras a partir de los colores
+    hex de cada pueblo.
+- **Click en franjas del eje**: se mantuvo y se integró con el tooltip; al hacer
+  click se abre el dialog con detalles y videos.
+
+### Verificación
+- `bun run lint` ✅ — sin errores (warnings preexistentes).
+- `bun run build` ✅ — prerenderizado estático correcto.

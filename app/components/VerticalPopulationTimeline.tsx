@@ -14,6 +14,12 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import {
   Users,
   Calendar,
   MapPin,
@@ -27,6 +33,7 @@ import {
 } from "lucide-react";
 import { getYouTubeId, getYouTubeUrl } from "@/lib/youtube";
 import { getMediaType, MediaIcon } from "@/lib/media";
+import { cn } from "@/lib/utils";
 import type { PeopleGroup, ConferenceItem } from "@/app/types/timeline";
 
 interface VerticalPopulationTimelineProps {
@@ -54,6 +61,14 @@ function formatPopulation(value: number): string {
 
 function yearToPercent(year: number): number {
   return ((year - MIN_YEAR) / YEAR_RANGE) * 100;
+}
+
+function hexToRgba(hex: string, alpha: number): string {
+  const clean = hex.replace("#", "");
+  const r = parseInt(clean.slice(0, 2), 16);
+  const g = parseInt(clean.slice(2, 4), 16);
+  const b = parseInt(clean.slice(4, 6), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
 
 function populationWidthPercent(
@@ -118,8 +133,8 @@ interface LaneBand {
   height: number;
 }
 
-const LANE_WIDTH = 8;
-const LANE_GAP = 2;
+const LANE_WIDTH = 10;
+const LANE_GAP = 3;
 
 function computeLaneBands(
   peoples: PeopleGroup[],
@@ -487,36 +502,86 @@ export function VerticalPopulationTimeline({
             {laneBands.map(({ people, lane, top, height }, index) => {
               const laneLeft = lane * (LANE_WIDTH + LANE_GAP);
               return (
-                <motion.div
-                  key={`band-${people.id}`}
-                  initial={{ scaleY: 0 }}
-                  animate={{ scaleY: 1 }}
-                  whileHover={{ scaleX: 1.4, zIndex: 10 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: (index % PAGE_SIZE) * 0.03,
-                    ease: [0.25, 0.46, 0.45, 0.94],
-                  }}
-                  className="absolute top-0 origin-top cursor-pointer rounded-full outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                  style={{
-                    top: `${top}px`,
-                    height: `${height}px`,
-                    width: `${LANE_WIDTH}px`,
-                    left: `${laneLeft}px`,
-                    backgroundColor: people.color,
-                  }}
-                  onClick={() => setSelectedPeople(people)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      setSelectedPeople(people);
-                    }
-                  }}
-                  aria-label={`${people.name}: ${formatYear(
-                    people.startYear
-                  )} — ${formatYear(people.endYear)}. Ver detalles y videos.`}
-                />
+                <TooltipProvider key={`band-${people.id}`} delay={100}>
+                  <Tooltip>
+                    <TooltipTrigger
+                      render={(triggerProps) => (
+                        <div
+                          {...triggerProps}
+                          className={cn(
+                            triggerProps.className,
+                            "absolute top-0 cursor-pointer rounded-full outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                          )}
+                          style={{
+                            ...triggerProps.style,
+                            top: `${top}px`,
+                            height: `${height}px`,
+                            width: `${LANE_WIDTH}px`,
+                            left: `${laneLeft}px`,
+                          }}
+                          onClick={() => setSelectedPeople(people)}
+                          role="button"
+                          tabIndex={0}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter" || e.key === " ") {
+                              setSelectedPeople(people);
+                            }
+                          }}
+                          aria-label={`${people.name}: ${formatYear(
+                            people.startYear
+                          )} — ${formatYear(
+                            people.endYear
+                          )}. Ver detalles y videos.`}
+                        >
+                          <motion.div
+                            initial={{ scaleY: 0 }}
+                            animate={{ scaleY: 1 }}
+                            whileHover={{ scaleX: 1.5 }}
+                            transition={{
+                              duration: 0.5,
+                              delay: (index % PAGE_SIZE) * 0.03,
+                              ease: [0.25, 0.46, 0.45, 0.94],
+                            }}
+                            className="h-full w-full origin-center rounded-full"
+                            style={{
+                              background: `linear-gradient(180deg, ${people.color} 0%, ${hexToRgba(
+                                people.color,
+                                0.75
+                              )} 100%)`,
+                              boxShadow: `0 0 10px ${hexToRgba(
+                                people.color,
+                                0.35
+                              )}, inset 0 1px 0 ${hexToRgba(
+                                "#ffffff",
+                                0.25
+                              )}`,
+                            }}
+                          />
+                        </div>
+                      )}
+                    />
+                    <TooltipContent
+                      side="top"
+                      align="center"
+                      sideOffset={8}
+                      className="max-w-xs bg-foreground px-3 py-2 text-background"
+                    >
+                      <div className="space-y-1">
+                        <p className="text-sm font-semibold sm:text-base">
+                          {people.name}
+                        </p>
+                        <p className="text-xs text-background/80 sm:text-sm">
+                          {formatYear(people.startYear)} —{" "}
+                          {formatYear(people.endYear)}
+                        </p>
+                        <p className="text-xs text-background/70 sm:text-sm">
+                          Apogeo: {formatYear(people.peakYear)} ·{" "}
+                          {people.region}
+                        </p>
+                      </div>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               );
             })}
           </div>
@@ -597,12 +662,19 @@ export function VerticalPopulationTimeline({
                   </CardHeader>
                   <CardContent className="space-y-3 pt-0">
                     {/* Population bar */}
-                    <div className="relative h-3 w-full overflow-hidden rounded-full bg-muted sm:h-4">
+                    <div className="relative h-3 w-full overflow-hidden rounded-full bg-muted shadow-inner sm:h-4">
                       <div
                         className="h-full rounded-full"
                         style={{
                           width: `${width}%`,
-                          backgroundColor: people.color,
+                          background: `linear-gradient(90deg, ${hexToRgba(
+                            people.color,
+                            0.85
+                          )} 0%, ${people.color} 60%, ${hexToRgba(
+                            people.color,
+                            0.9
+                          )} 100%)`,
+                          boxShadow: `0 0 8px ${hexToRgba(people.color, 0.35)}`,
                         }}
                       />
                     </div>
