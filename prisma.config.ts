@@ -1,5 +1,14 @@
-import "dotenv/config";
+import { config } from "dotenv";
+import { existsSync } from "fs";
+import { resolve } from "path";
 import { defineConfig } from "prisma/config";
+
+for (const file of [".env", ".env.local"]) {
+  const path = resolve(process.cwd(), file);
+  if (existsSync(path)) {
+    config({ path });
+  }
+}
 
 const isGenerate = process.argv.includes("generate");
 const databaseUrl = process.env.DATABASE_URL_UNPOOLED ?? process.env.DATABASE_URL;
