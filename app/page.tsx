@@ -14,7 +14,7 @@ export default function Home() {
           </div>
 
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
-            Línea de tiempo histórica
+            Tobalove
           </h1>
 
           <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">

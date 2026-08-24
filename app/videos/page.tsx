@@ -1,33 +1,44 @@
 import { Metadata } from "next";
 import { VideoCompanion } from "@/app/components/VideoCompanion";
-import conferencesData from "@/data/conferencias-eva-tobalina.json";
-import timelineData from "@/data/linea-de-tiempo-eva-tobalina.json";
-import peoplesData from "@/data/pueblos-coexistientes.json";
+import {
+  getConferences,
+  getPeoples,
+  getTimelineEvents,
+  getWatchedConferenceIds,
+} from "@/lib/data";
+import { auth } from "@/auth";
 import { getYouTubeUrl } from "@/lib/youtube";
 import type {
   ConferenceItem,
-  TimelineData,
-  PeoplesData,
+  TimelineEvent,
+  PeopleGroup,
 } from "@/app/types/timeline";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
-  title: "Videos | Eva Tobalina",
+  title: "Videos | Tobalove",
   description:
     "Acompañamiento a los videos de YouTube de Eva Tobalina: conferencias, personajes, civilizaciones y contexto histórico.",
 };
 
-export default function VideosPage() {
-  const conferences = conferencesData as unknown as { items: ConferenceItem[] };
-  const timeline = timelineData as TimelineData;
-  const peoples = peoplesData as PeoplesData;
+export default async function VideosPage() {
+  const session = await auth();
+  const conferences = (await getConferences()) as unknown as ConferenceItem[];
+  const events = (await getTimelineEvents()) as unknown as TimelineEvent[];
+  const peoples = (await getPeoples()) as unknown as PeopleGroup[];
 
-  const videos = conferences.items
+  const videos = conferences
     .filter((conf) => getYouTubeUrl(conf) !== null)
     .sort((a, b) => {
       const yearA = a.year ?? 0;
       const yearB = b.year ?? 0;
       return yearB - yearA;
     });
+
+  const watchedIds = session?.user?.id
+    ? await getWatchedConferenceIds(session.user.id)
+    : new Set<string>();
 
   return (
     <main className="flex-1">
@@ -50,8 +61,10 @@ export default function VideosPage() {
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 md:py-20">
         <VideoCompanion
           videos={videos}
-          events={timeline.items}
-          peoples={peoples.items}
+          events={events}
+          peoples={peoples}
+          watchedIds={watchedIds}
+          isAuthenticated={!!session?.user}
         />
       </section>
     </main>

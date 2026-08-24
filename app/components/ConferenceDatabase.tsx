@@ -13,6 +13,8 @@ import {
   ExternalLink,
   Database,
   Columns,
+  Eye,
+  EyeOff,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { getYouTubeUrl } from "@/lib/youtube";
@@ -52,6 +54,9 @@ type VisibleColumns = Record<SortKey, boolean>;
 
 interface ConferenceDatabaseProps {
   conferences: EnrichedConferenceItem[];
+  watchedIds?: Set<string>;
+  isAuthenticated?: boolean;
+  onToggleWatched?: (conferenceId: string) => void;
 }
 
 const sortLabels: Record<SortKey, string> = {
@@ -144,8 +149,15 @@ function SortButton({ sortKey, sort, onSort }: SortButtonProps) {
   );
 }
 
-export function ConferenceDatabase({ conferences }: ConferenceDatabaseProps) {
+export function ConferenceDatabase({
+  conferences,
+  watchedIds: initialWatchedIds = new Set(),
+  isAuthenticated = false,
+  onToggleWatched,
+}: ConferenceDatabaseProps) {
   const [search, setSearch] = useState("");
+  const [watchedIds, setWatchedIds] = useState<Set<string>>(initialWatchedIds);
+  const [togglingId, setTogglingId] = useState<string | null>(null);
   const [selectedPeriod, setSelectedPeriod] = useState<string | null>(null);
   const [selectedCivilization, setSelectedCivilization] = useState<string | null>(null);
   const [sort, setSort] = useState<SortConfig>({
@@ -212,6 +224,25 @@ export function ConferenceDatabase({ conferences }: ConferenceDatabaseProps) {
       }
       return { key, direction: "asc" };
     });
+  }
+
+  async function handleToggleWatched(conferenceId: string) {
+    if (!isAuthenticated || !onToggleWatched || togglingId) return;
+    setTogglingId(conferenceId);
+    try {
+      await onToggleWatched(conferenceId);
+      setWatchedIds((prev) => {
+        const next = new Set(prev);
+        if (next.has(conferenceId)) {
+          next.delete(conferenceId);
+        } else {
+          next.add(conferenceId);
+        }
+        return next;
+      });
+    } finally {
+      setTogglingId(null);
+    }
   }
 
   return (
@@ -424,6 +455,9 @@ export function ConferenceDatabase({ conferences }: ConferenceDatabaseProps) {
                     <SortButton sortKey="organization" sort={sort} onSort={toggleSort} />
                   </TableHead>
                 )}
+                {isAuthenticated && (
+                  <TableHead className="w-[80px]">Visto</TableHead>
+                )}
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -520,6 +554,27 @@ export function ConferenceDatabase({ conferences }: ConferenceDatabaseProps) {
                       <span className="text-sm text-foreground">
                         {conf.organization}
                       </span>
+                    </TableCell>
+                  )}
+                  {isAuthenticated && (
+                    <TableCell>
+                      <button
+                        type="button"
+                        onClick={() => handleToggleWatched(conf.id)}
+                        disabled={togglingId === conf.id}
+                        className="inline-flex items-center justify-center rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground disabled:opacity-50"
+                        title={
+                          watchedIds.has(conf.id)
+                            ? "Marcar como no visto"
+                            : "Marcar como visto"
+                        }
+                      >
+                        {watchedIds.has(conf.id) ? (
+                          <Eye className="h-4 w-4 text-primary" />
+                        ) : (
+                          <EyeOff className="h-4 w-4" />
+                        )}
+                      </button>
                     </TableCell>
                   )}
                 </TableRow>

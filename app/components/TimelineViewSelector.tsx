@@ -11,7 +11,6 @@ import type {
   TimelineEvent,
   ConferenceItem,
   PeopleGroup,
-  TimelineMeta,
   PeoplesMeta,
 } from "@/app/types/timeline";
 
@@ -19,7 +18,6 @@ interface TimelineViewSelectorProps {
   events: TimelineEvent[];
   peoples: PeopleGroup[];
   conferencesMap: Map<string, ConferenceItem>;
-  eventsMeta: TimelineMeta;
   peoplesMeta: PeoplesMeta;
 }
 
@@ -29,7 +27,6 @@ export function TimelineViewSelector({
   events,
   peoples,
   conferencesMap,
-  eventsMeta,
   peoplesMeta,
 }: TimelineViewSelectorProps) {
   const [view, setView] = useState<View>("events");
@@ -155,8 +152,8 @@ export function TimelineViewSelector({
                 población aproximada en el momento de mayor apogeo.
               </p>
               <p className="mt-2 text-sm text-muted-foreground/80">
-                {peoplesMeta.cobertura_cronologica} ·{" "}
-                {peoplesMeta.total_pueblos} pueblos
+                {peoplesMeta.coberturaCronologica} ·{" "}
+                {peoplesMeta.totalPueblos} pueblos
               </p>
             </div>
             <PopulationTimeline
@@ -183,8 +180,8 @@ export function TimelineViewSelector({
                 conferencias relacionadas.
               </p>
               <p className="mt-2 text-sm text-muted-foreground/80">
-                {peoplesMeta.cobertura_cronologica} ·{" "}
-                {peoplesMeta.total_pueblos} pueblos
+                {peoplesMeta.coberturaCronologica} ·{" "}
+                {peoplesMeta.totalPueblos} pueblos
               </p>
             </div>
             <VerticalPopulationTimeline

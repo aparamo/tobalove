@@ -1,18 +1,20 @@
 import { Metadata } from "next";
 import { ConferenceDatabase } from "@/app/components/ConferenceDatabase";
 import type { EnrichedConferenceItem } from "@/app/components/ConferenceDatabase";
-import conferencesData from "@/data/conferencias-eva-tobalina.json";
-import timelineData from "@/data/linea-de-tiempo-eva-tobalina.json";
-import peoplesData from "@/data/pueblos-coexistientes.json";
-import type {
-  ConferenceItem,
-  TimelineData,
-  PeoplesData,
-  TimelineEvent,
-} from "@/app/types/timeline";
+import {
+  getConferences,
+  getPeoples,
+  getTimelineEvents,
+  getWatchedConferenceIds,
+} from "@/lib/data";
+import { toggleWatchedConference } from "@/app/actions/watched";
+import { auth } from "@/auth";
+import type { ConferenceItem, TimelineEvent } from "@/app/types/timeline";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Base de datos | Eva Tobalina",
+  title: "Base de datos | Tobalove",
   description:
     "Catálogo completo de conferencias de Eva Tobalina ordenable por fecha histórica, período, civilización, título y organización.",
 };
@@ -35,14 +37,18 @@ function getHistoricalPeriod(year: number): string {
   return "Edad Contemporánea";
 }
 
-export default function DatabasePage() {
-  const conferences = conferencesData as unknown as { items: ConferenceItem[] };
-  const timeline = timelineData as TimelineData;
-  const peoples = peoplesData as PeoplesData;
+export default async function DatabasePage() {
+  const session = await auth();
+  const conferences = (await getConferences()) as unknown as ConferenceItem[];
+  const timelineEvents = (await getTimelineEvents()) as unknown as TimelineEvent[];
+  const peoples = await getPeoples();
+  const watchedIds = session?.user?.id
+    ? await getWatchedConferenceIds(session.user.id)
+    : new Set<string>();
 
   // Mapa inverso: conferencia -> eventos históricos relacionados
   const eventsByConference = new Map<string, TimelineEvent[]>();
-  for (const ev of timeline.items) {
+  for (const ev of timelineEvents) {
     for (const cid of ev.relatedConferences) {
       const list = eventsByConference.get(cid) ?? [];
       list.push(ev);
@@ -52,7 +58,7 @@ export default function DatabasePage() {
 
   // Mapa inverso: conferencia -> nombres de pueblos relacionados
   const peoplesByConference = new Map<string, string[]>();
-  for (const p of peoples.items) {
+  for (const p of peoples) {
     for (const cid of p.relatedConferences) {
       const list = peoplesByConference.get(cid) ?? [];
       list.push(p.name);
@@ -60,7 +66,7 @@ export default function DatabasePage() {
     }
   }
 
-  const enriched: EnrichedConferenceItem[] = conferences.items.map((conf) => {
+  const enriched: EnrichedConferenceItem[] = conferences.map((conf) => {
     const events = eventsByConference.get(conf.id) ?? [];
 
     const startYear =
@@ -113,7 +119,12 @@ export default function DatabasePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 md:py-20">
-        <ConferenceDatabase conferences={enriched} />
+        <ConferenceDatabase
+          conferences={enriched}
+          watchedIds={watchedIds}
+          isAuthenticated={!!session?.user}
+          onToggleWatched={toggleWatchedConference}
+        />
       </section>
     </main>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { Search, X, Play, Calendar, Building2, Clock, Users, MapPin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/sheet";
 import { VideoCard } from "./VideoCard";
 import { getYouTubeId, getYouTubeUrl } from "@/lib/media";
+import { toggleWatchedConference } from "@/app/actions/watched";
 import type {
   ConferenceItem,
   TimelineEvent,
@@ -24,13 +25,23 @@ interface VideoCompanionProps {
   videos: ConferenceItem[];
   events: TimelineEvent[];
   peoples: PeopleGroup[];
+  watchedIds: Set<string>;
+  isAuthenticated: boolean;
 }
 
-export function VideoCompanion({ videos, events, peoples }: VideoCompanionProps) {
+export function VideoCompanion({
+  videos,
+  events,
+  peoples,
+  watchedIds: initialWatchedIds,
+  isAuthenticated,
+}: VideoCompanionProps) {
   const [search, setSearch] = useState("");
   const [selectedCiv, setSelectedCiv] = useState<string | null>(null);
   const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
   const [selectedVideo, setSelectedVideo] = useState<ConferenceItem | null>(null);
+  const [watchedIds, setWatchedIds] = useState<Set<string>>(initialWatchedIds);
+  const [togglingId, setTogglingId] = useState<string | null>(null);
 
   const eventsByConf = useMemo(() => {
     const map = new Map<string, TimelineEvent[]>();
@@ -91,6 +102,25 @@ export function VideoCompanion({ videos, events, peoples }: VideoCompanionProps)
   const selectedVideoId = selectedVideo
     ? getYouTubeId(getYouTubeUrl(selectedVideo))
     : null;
+
+  async function handleToggleWatched(conferenceId: string) {
+    if (!isAuthenticated || togglingId) return;
+    setTogglingId(conferenceId);
+    try {
+      await toggleWatchedConference(conferenceId);
+      setWatchedIds((prev) => {
+        const next = new Set(prev);
+        if (next.has(conferenceId)) {
+          next.delete(conferenceId);
+        } else {
+          next.add(conferenceId);
+        }
+        return next;
+      });
+    } finally {
+      setTogglingId(null);
+    }
+  }
 
   return (
     <div className="space-y-8">
@@ -192,6 +222,9 @@ export function VideoCompanion({ videos, events, peoples }: VideoCompanionProps)
               }
               onSelect={setSelectedVideo}
               index={index}
+              isWatched={watchedIds.has(video.id)}
+              onToggleWatched={handleToggleWatched}
+              isAuthenticated={isAuthenticated}
             />
           ))}
         </AnimatePresence>

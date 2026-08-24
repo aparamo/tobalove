@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
@@ -211,11 +212,12 @@ function RelatedVideoCard({
             rel="noopener noreferrer"
             className="relative block h-16 w-28 overflow-hidden rounded-md bg-muted"
           >
-            <img
+            <Image
               src={`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`}
               alt={conference.title}
+              width={112}
+              height={64}
               className="h-full w-full object-cover"
-              loading="lazy"
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black/20">
               <Play className="h-5 w-5 text-white drop-shadow" />

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -106,11 +107,12 @@ function RelatedVideoCard({
             rel="noopener noreferrer"
             className="relative block h-16 w-28 overflow-hidden rounded-md bg-muted"
           >
-            <img
+            <Image
               src={`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`}
               alt={conference.title}
+              width={112}
+              height={64}
               className="h-full w-full object-cover"
-              loading="lazy"
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black/20">
               <Play className="h-5 w-5 text-white drop-shadow" />
@@ -166,12 +168,12 @@ export function TimelineEvent({
         title: event.sourceConference.title,
         organization: event.sourceConference.organization,
         url: event.sourceConference.url,
-        youtube_url:
-          sourceConfItem?.youtube_url ??
+        youtubeUrl:
+          sourceConfItem?.youtubeUrl ??
           (getYouTubeId(event.sourceConference.url)
             ? event.sourceConference.url
             : null),
-        info_adicional: sourceConfItem?.info_adicional ?? null,
+        infoAdicional: sourceConfItem?.infoAdicional ?? null,
         date: event.sourceConference.date,
         type: "conferencia",
         description: "",

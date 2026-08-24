@@ -1,0 +1,149 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Account {
+  id                String  @id @default(cuid(2))
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid(2))
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String                  @id @default(cuid(2))
+  name          String?
+  email         String                  @unique
+  emailVerified DateTime?
+  image         String?
+  role          Role                    @default(USER)
+  password      String? // hashed password for credentials provider
+  accounts      Account[]
+  sessions      Session[]
+  watched       UserWatchedConference[]
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Conference {
+  id            String                  @id
+  title         String
+  type          String
+  date          String?
+  year          Int?
+  organization  String
+  url           String?
+  youtubeUrl    String?
+  infoAdicional String?
+  description   String                  @db.Text
+  summary       String                  @db.Text
+  topics        String[]
+  characters    String[]
+  civilizations String[]
+  duration      String?
+  language      String
+  source        String
+  mediaType     String?
+  createdAt     DateTime                @default(now())
+  updatedAt     DateTime                @updatedAt
+  watchedBy     UserWatchedConference[]
+}
+
+model TimelineEvent {
+  id                 String   @id
+  title              String
+  dateLabel          String
+  startYear          Int
+  endYear            Int
+  period             String
+  location           String
+  description        String   @db.Text
+  summary            String   @db.Text
+  consequences       String[]
+  characters         String[]
+  civilizations      String[]
+  topics             String[]
+  sourceConference   Json?
+  relatedConferences String[]
+}
+
+model PeopleGroup {
+  id                 String   @id
+  name               String
+  startYear          Int
+  endYear            Int
+  peakYear           Int
+  peakPopulation     Int
+  color              String
+  region             String
+  description        String   @db.Text
+  civilizations      String[]
+  relatedConferences String[]
+}
+
+model TimelineMeta {
+  id                   String   @id @default("default")
+  autorContenido       String
+  enfoque              String
+  coberturaCronologica String
+  totalEventos         Int
+  fuentesPrincipales   String[]
+  ultimaActualizacion  String
+}
+
+model PeoplesMeta {
+  id                   String   @id @default("default")
+  autorContenido       String
+  enfoque              String
+  coberturaCronologica String
+  totalPueblos         Int
+  unidadPoblacion      String
+  fuentesPrincipales   String[]
+  ultimaActualizacion  String
+}
+
+model UserWatchedConference {
+  id           String     @id @default(cuid(2))
+  userId       String
+  conferenceId String
+  watchedAt    DateTime   @default(now())
+  user         User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  conference   Conference @relation(fields: [conferenceId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, conferenceId])
+}
+
+enum Role {
+  USER
+  ADMIN
+}

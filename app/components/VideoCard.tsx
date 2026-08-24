@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Play, Calendar, Building2, Clock } from "lucide-react";
+import Image from "next/image";
+import { Play, Calendar, Building2, Clock, Eye, EyeOff } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { getYouTubeId, getYouTubeUrl } from "@/lib/media";
 import type { ConferenceItem } from "@/app/types/timeline";
@@ -12,6 +13,9 @@ interface VideoCardProps {
   relatedPeoples: { id: string; name: string }[];
   onSelect: (conference: ConferenceItem) => void;
   index: number;
+  isWatched?: boolean;
+  onToggleWatched?: (conferenceId: string) => void;
+  isAuthenticated?: boolean;
 }
 
 export function VideoCard({
@@ -20,6 +24,9 @@ export function VideoCard({
   relatedPeoples,
   onSelect,
   index,
+  isWatched,
+  onToggleWatched,
+  isAuthenticated,
 }: VideoCardProps) {
   const youtubeUrl = getYouTubeUrl(conference);
   const videoId = getYouTubeId(youtubeUrl);
@@ -35,17 +42,35 @@ export function VideoCard({
       onClick={() => onSelect(conference)}
     >
       <div className="relative aspect-video w-full overflow-hidden bg-muted">
-        <img
+        <Image
           src={`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`}
           alt={conference.title}
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-          loading="lazy"
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
         />
         <div className="absolute inset-0 flex items-center justify-center bg-black/20 transition-colors group-hover:bg-black/30">
           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/90 text-primary-foreground shadow-lg transition-transform group-hover:scale-110">
             <Play className="h-5 w-5 fill-current" />
           </div>
         </div>
+        {isAuthenticated && onToggleWatched && (
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggleWatched(conference.id);
+            }}
+            className="absolute right-2 top-2 flex h-8 w-8 items-center justify-center rounded-full bg-background/90 text-foreground shadow-sm transition-colors hover:bg-background"
+            title={isWatched ? "Marcar como no visto" : "Marcar como visto"}
+          >
+            {isWatched ? (
+              <Eye className="h-4 w-4 text-primary" />
+            ) : (
+              <EyeOff className="h-4 w-4 text-muted-foreground" />
+            )}
+          </button>
+        )}
       </div>
 
       <div className="flex flex-1 flex-col p-4">

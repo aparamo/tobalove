@@ -21,7 +21,7 @@ export function isYouTubeUrl(url: string | null): boolean {
  * - Mantiene `url` como enlace a la fuente/evento original.
  */
 export function getYouTubeUrl(conf: ConferenceItem): string | null {
-  if (conf.youtube_url) return conf.youtube_url;
+  if (conf.youtubeUrl) return conf.youtubeUrl;
   if (isYouTubeUrl(conf.url)) return conf.url;
   return null;
 }

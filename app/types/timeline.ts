@@ -15,8 +15,8 @@ export interface ConferenceItem {
   year: number | null;
   organization: string;
   url: string | null;
-  youtube_url: string | null;
-  info_adicional: string | null;
+  youtubeUrl: string | null;
+  infoAdicional: string | null;
   description: string;
   summary: string;
   topics: string[];
@@ -47,12 +47,12 @@ export interface TimelineEvent {
 }
 
 export interface TimelineMeta {
-  autor_contenido: string;
+  autorContenido: string;
   enfoque: string;
-  cobertura_cronologica: string;
-  total_eventos: number;
-  fuentes_principales: string[];
-  ultima_actualizacion: string;
+  coberturaCronologica: string;
+  totalEventos: number;
+  fuentesPrincipales: string[];
+  ultimaActualizacion: string;
 }
 
 export interface TimelineData {
@@ -76,13 +76,13 @@ export interface PeopleGroup {
 }
 
 export interface PeoplesMeta {
-  autor_contenido: string;
+  autorContenido: string;
   enfoque: string;
-  cobertura_cronologica: string;
-  total_pueblos: number;
-  unidad_poblacion: string;
-  fuentes_principales: string[];
-  ultima_actualizacion: string;
+  coberturaCronologica: string;
+  totalPueblos: number;
+  unidadPoblacion: string;
+  fuentesPrincipales: string[];
+  ultimaActualizacion: string;
 }
 
 export interface PeoplesData {

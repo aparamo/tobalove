@@ -1,31 +1,39 @@
 import { Metadata } from "next";
 import { TimelineViewSelector } from "@/app/components/TimelineViewSelector";
-import timelineData from "@/data/linea-de-tiempo-eva-tobalina.json";
-import conferencesData from "@/data/conferencias-eva-tobalina.json";
-import peoplesData from "@/data/pueblos-coexistientes.json";
+import {
+  getConferences,
+  getPeoples,
+  getTimelineEvents,
+  getTimelineMeta,
+  getPeoplesMeta,
+} from "@/lib/data";
 import type {
-  TimelineData,
   ConferenceItem,
-  PeoplesData,
+  TimelineEvent,
+  PeopleGroup,
+  TimelineMeta,
+  PeoplesMeta,
 } from "@/app/types/timeline";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
-  title: "Línea de tiempo | Eva Tobalina",
+  title: "Línea de tiempo | Tobalove",
   description:
     "Recorrido cronológico por los hechos, civilizaciones y personajes de la Antigüedad tratados en las conferencias de Eva Tobalina.",
 };
 
-export default function TimelinePage() {
-  const data = timelineData as TimelineData;
-  const conferences = conferencesData as unknown as { items: ConferenceItem[] };
-  const peoples = peoplesData as PeoplesData;
+export default async function TimelinePage() {
+  const events = (await getTimelineEvents()) as unknown as TimelineEvent[];
+  const conferences = (await getConferences()) as unknown as ConferenceItem[];
+  const peoples = (await getPeoples()) as unknown as PeopleGroup[];
+  const eventsMeta = (await getTimelineMeta()) as unknown as TimelineMeta;
+  const peoplesMeta = (await getPeoplesMeta()) as unknown as PeoplesMeta;
 
-  const sortedEvents = [...data.items].sort(
-    (a, b) => a.startYear - b.startYear
-  );
+  const sortedEvents = [...events].sort((a, b) => a.startYear - b.startYear);
 
   const conferencesMap = new Map<string, ConferenceItem>();
-  for (const conf of conferences.items) {
+  for (const conf of conferences) {
     conferencesMap.set(conf.id, conf);
   }
 
@@ -37,11 +45,11 @@ export default function TimelinePage() {
             Línea de tiempo
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            {data.meta.enfoque}
+            {eventsMeta.enfoque}
           </p>
           <p className="mt-2 text-sm text-muted-foreground/80">
-            {data.meta.cobertura_cronologica} · {data.meta.total_eventos}{" "}
-            eventos · {peoples.meta.total_pueblos} pueblos
+            {eventsMeta.coberturaCronologica} · {eventsMeta.totalEventos}{" "}
+            eventos · {peoplesMeta.totalPueblos} pueblos
           </p>
         </div>
       </section>
@@ -49,10 +57,9 @@ export default function TimelinePage() {
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 md:py-20">
         <TimelineViewSelector
           events={sortedEvents}
-          peoples={peoples.items}
+          peoples={peoples}
           conferencesMap={conferencesMap}
-          eventsMeta={data.meta}
-          peoplesMeta={peoples.meta}
+          peoplesMeta={peoplesMeta}
         />
       </section>
     </main>

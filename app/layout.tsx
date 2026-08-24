@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Clock, Home, PlaySquare, Database } from "lucide-react";
+import { auth } from "@/auth";
+import { UserNav } from "@/app/components/UserNav";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,12 +19,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Eva Tobalina | Línea de tiempo histórica",
+  title: "Tobalove | Línea de tiempo histórica",
   description:
     "Recorrido interactivo por los hechos, civilizaciones y personajes de la Antigüedad explicados en las conferencias de Eva Tobalina.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
+  const session = await auth();
   return (
     <html
       lang="es"
@@ -36,7 +44,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 className="flex items-center gap-2 text-sm font-semibold tracking-tight"
               >
                 <Clock className="h-4 w-4" />
-                <span>Eva Tobalina</span>
+                <span>Tobalove</span>
               </Link>
               <div className="flex items-center gap-4">
                 <Link
@@ -68,14 +76,20 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                   <span className="hidden sm:inline">Base de datos</span>
                 </Link>
               </div>
+              <UserNav user={session?.user} />
             </nav>
           </header>
           {children}
           <footer className="border-t bg-muted/30 py-8">
-            <div className="mx-auto max-w-5xl px-4 text-center text-sm text-muted-foreground sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-5xl space-y-3 px-4 text-center text-sm text-muted-foreground sm:px-6 lg:px-8">
               <p>
                 Basado en las conferencias y entrevistas de{" "}
                 <strong className="text-foreground">Eva Tobalina</strong>.
+              </p>
+              <p className="text-xs leading-relaxed">
+                Este sitio es un proyecto de fans en reconocimiento a la labor
+                divulgativa de Eva Tobalina. No está afiliado, avalado ni
+                gestionado por ella.
               </p>
               <p className="mt-1">
                 Última actualización: {new Date().getFullYear()}
