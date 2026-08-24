@@ -34,7 +34,7 @@ export interface TimelineEvent {
   dateLabel: string;
   startYear: number;
   endYear: number;
-  period: boolean;
+  period: string;
   location: string;
   description: string;
   summary: string;

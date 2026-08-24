@@ -2,7 +2,7 @@
   "meta": {
     "autor": "Eva Tobalina Oraá",
     "biografia_corta": "Doctora en Historia Antigua, profesora universitaria y divulgadora especializada en la Antigüedad mediterránea y oriental. Combina su labor académica en la Universidad Internacional de La Rioja con conferencias para asociaciones como Raíces de Europa.",
-    "total_conferencias_estimadas": 100,
+    "total_conferencias_estimadas": 105,
     "fuentes_principales": [
       "https://espacio-tiempo.es",
       "https://www.youtube.com/@raicesdeeuropa",
@@ -3019,6 +3019,357 @@
       "mediaType": "video",
       "youtube_url": "https://www.youtube.com/watch?v=VAaxMaRZ-RE",
       "info_adicional": null
+    },
+    {
+      "id": "biblioteca-alejandria-2014",
+      "title": "La Biblioteca de Alejandría. El gran centro de difusión de la cultura de la Antigüedad",
+      "type": "conferencia",
+      "date": "2014-04-24",
+      "year": 2014,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=WGTDqqkRHw8",
+      "description": "Conferencia sobre la Biblioteca de Alejandría, el gran centro de difusión de la cultura en la Antigüedad.",
+      "summary": "Tobalina explora la historia de la Biblioteca de Alejandría, su fundación, su esplendor y su legado como el centro de conocimiento más importante del mundo antiguo.",
+      "topics": [
+        "Biblioteca de Alejandría",
+        "Alejandría",
+        "cultura antigua",
+        "Egipto Ptolemaico",
+        "helenismo"
+      ],
+      "characters": [
+        "Alejandro Magno",
+        "Ptolomeo I",
+        "Eratóstenes"
+      ],
+      "civilizations": [
+        "Egipto Ptolemaico",
+        "Grecia",
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=WGTDqqkRHw8",
+      "info_adicional": null
+    },
+    {
+      "id": "exodo-egipto",
+      "title": "Conferencia ¿Existió el Éxodo de Egipto?",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Conferencia sobre la historicidad del Éxodo de Egipto, analizando las fuentes bíblicas y arqueológicas.",
+      "summary": "Tobalina aborda una de las preguntas más fascinantes de la historia antigua: ¿existió realmente el Éxodo de Egipto? Analiza las fuentes bíblicas, la arqueología y las evidencias históricas para ofrecer una respuesta fundamentada.",
+      "topics": [
+        "Éxodo",
+        "Egipto",
+        "Antiguo Testamento",
+        "arqueología bíblica",
+        "Moisés",
+        "Ramses II"
+      ],
+      "characters": [
+        "Moisés",
+        "Ramses II"
+      ],
+      "civilizations": [
+        "Egipto Antiguo",
+        "Israel antiguo"
+      ],
+      "duration": "1:25:47",
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": "Más de 1.4M de visualizaciones; URL sugerida no verificada: https://www.youtube.com/watch?v=3w6KvE9_1s0"
+    },
+    {
+      "id": "petra-nabateos",
+      "title": "Petra y los Nabateos",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Conferencia sobre la ciudad nabatea de Petra, uno de los lugares más impresionantes del mundo antiguo.",
+      "summary": "Tobalina nos acerca a la civilización nabatea y su espectacular ciudad esculpida en la roca, Petra, explicando su historia, su arquitectura y su papel como centro comercial en la Antigüedad.",
+      "topics": [
+        "Petra",
+        "Nabateos",
+        "Arabia",
+        "arquitectura rupestre",
+        "comercio antiguo"
+      ],
+      "characters": [
+        "Aretas IV"
+      ],
+      "civilizations": [
+        "Nabateos",
+        "Imperio Romano"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://raicesdeeuropa.com",
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": "URL sugerida no verificada: https://www.youtube.com/watch?v=2XY6KqE3B6g"
+    },
+    {
+      "id": "libano-helenistico-romano",
+      "title": "El Líbano en la época helenística y romana",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Conferencia sobre la historia del Líbano durante los periodos helenístico y romano.",
+      "summary": "Tobalina aborda la historia del Líbano en la Antigüedad, desde la influencia helenística hasta la dominación romana, destacando su riqueza cultural y su papel en el Mediterráneo oriental.",
+      "topics": [
+        "Líbano",
+        "helenismo",
+        "Roma",
+        "Fenicia",
+        "Mediterráneo oriental"
+      ],
+      "characters": [
+        "Herodes el Grande"
+      ],
+      "civilizations": [
+        "Fenicia",
+        "Grecia",
+        "Roma"
+      ],
+      "duration": "1:09:50",
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": "URL sugerida no verificada: https://www.youtube.com/watch?v=YkGpYtN4kzM"
+    },
+    {
+      "id": "puerta-mileto-berlin",
+      "title": "La Puerta Monumental del Mercado de Mileto. De Asia Menor a Berlín",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Conferencia sobre la Puerta Monumental del Mercado de Mileto y su traslado a Berlín.",
+      "summary": "Tobalina narra la fascinante historia de la Puerta del Mercado de Mileto, un monumento de la Asia Menor romana que fue desmontado y reconstruido en el Museo de Pérgamo de Berlín.",
+      "topics": [
+        "Mileto",
+        "Asia Menor",
+        "arquitectura romana",
+        "Pérgamo",
+        "Berlín"
+      ],
+      "characters": [
+        "Augusto"
+      ],
+      "civilizations": [
+        "Roma",
+        "Grecia"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": "URL sugerida no verificada: https://www.youtube.com/watch?v=8z0R2s7nJEY"
+    },
+    {
+      "id": "oraculo-dioses-antiguedad",
+      "title": "El fenómeno del oráculo. La voz de los dioses en la Antigüedad",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Conferencia sobre el fenómeno de los oráculos en la Antigüedad, su significado y su influencia.",
+      "summary": "Tobalina analiza el fascinante mundo de los oráculos en Grecia y Roma, desde Delfos hasta los oráculos de Asia Menor, explicando su funcionamiento y su papel en la toma de decisiones políticas y personales.",
+      "topics": [
+        "oráculos",
+        "Delfos",
+        "religión griega",
+        "religión romana",
+        "adivinación"
+      ],
+      "characters": [
+        "Pitía",
+        "Alejandro Magno",
+        "Augusto"
+      ],
+      "civilizations": [
+        "Grecia",
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": "URL sugerida no verificada: https://www.youtube.com/watch?v=-Z5T8oE6FSA"
+    },
+    {
+      "id": "origen-mundo-creacion-hombre",
+      "title": "El origen del mundo y la creación del hombre",
+      "type": "conferencia",
+      "date": "2025-08-25",
+      "year": 2025,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Primera conferencia de un ciclo sobre el origen del mundo y la creación del hombre en las distintas culturas antiguas.",
+      "summary": "Tobalina inaugura un ciclo dedicado a los mitos de creación en las civilizaciones antiguas, explorando cómo diferentes culturas han explicado el origen del universo y de la humanidad.",
+      "topics": [
+        "mitos de creación",
+        "cosmogonía",
+        "religión antigua",
+        "Mesopotamia",
+        "Egipto",
+        "Grecia"
+      ],
+      "characters": [],
+      "civilizations": [
+        "Mesopotamia",
+        "Egipto",
+        "Grecia",
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": "URL sugerida no verificada: https://www.youtube.com/watch?v=rHees24LhSM"
+    },
+    {
+      "id": "historia-roma-i-fundacion",
+      "title": "Historia de Roma I (1). LA FUNDACIÓN DE ROMA, por EVA TOBALINA. Mito e Historia fascinante.",
+      "type": "conferencia",
+      "date": "2026-08-15",
+      "year": 2026,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=M4E3W36fvik",
+      "description": "Primera sesión de un ciclo sobre la historia de Roma, desde su nacimiento hasta el final de la II Guerra Púnica (753 – 201 a.C.).",
+      "summary": "Conferencia sobre los orígenes de Roma, la monarquía, el fin de la monarquía, el nacimiento y primer desarrollo de la República, sus crisis y conquistas.",
+      "topics": [
+        "Roma",
+        "fundación de Roma",
+        "monarquía romana",
+        "República romana",
+        "guerras púnicas"
+      ],
+      "characters": [
+        "Rómulo",
+        "Remo"
+      ],
+      "civilizations": [
+        "Roma"
+      ],
+      "duration": "1:20:05",
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=M4E3W36fvik",
+      "info_adicional": "70k visualizaciones, subido hace 8 días"
+    },
+    {
+      "id": "fenomeno-oraculos",
+      "title": "EL FENÓMENO DE LOS ORÁCULOS por EVA TOBALINA. La voz de los dioses en la Antigua Grecia.",
+      "type": "conferencia",
+      "date": "2026-05-16",
+      "year": 2026,
+      "organization": "Raíces de Europa",
+      "url": "https://youtu.be/L_i8zHiUG4A",
+      "description": "Conferencia sobre el fenómeno de los oráculos en la Antigua Grecia, su significado y su influencia en la sociedad.",
+      "summary": "Tobalina explora el mundo de los oráculos griegos, desde Delfos hasta Dodona, explicando su funcionamiento y su papel en la toma de decisiones.",
+      "topics": [
+        "oráculos",
+        "Delfos",
+        "religión griega",
+        "adivinación",
+        "Grecia clásica"
+      ],
+      "characters": [
+        "Pitía"
+      ],
+      "civilizations": [
+        "Grecia"
+      ],
+      "duration": "1:14:26",
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video",
+      "youtube_url": "https://youtu.be/L_i8zHiUG4A",
+      "info_adicional": "100k visualizaciones, subido hace 3 meses"
+    },
+    {
+      "id": "jordania-omeyas",
+      "title": "Jordania y los Omeyas. Historia y cultura",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Conferencia sobre la historia y cultura de Jordania durante el periodo Omeya.",
+      "summary": "Tobalina explora la historia de Jordania y su papel durante el Califato Omeya, analizando su legado cultural y arquitectónico.",
+      "topics": [
+        "Jordania",
+        "Omeyas",
+        "Califato Omeya",
+        "Islam medieval",
+        "Oriente Próximo"
+      ],
+      "characters": [
+        "Abd al-Malik",
+        "Al-Walid I"
+      ],
+      "civilizations": [
+        "Califato Omeya",
+        "Imperio Bizantino"
+      ],
+      "duration": "1:09:50",
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": "Enlace genérico al canal de Raíces de Europa; video exacto pendiente de identificación"
+    },
+    {
+      "id": "griegos-asia-alejandro",
+      "title": "Los Griegos de Asia: las ciudades de Alejandro Magno (II)",
+      "type": "conferencia",
+      "date": "2026-04-25",
+      "year": 2026,
+      "organization": "Raíces de Europa",
+      "url": null,
+      "description": "Segunda conferencia del ciclo 'Las ciudades de Alejandro Magno', dedicada a las ciudades fundadas por Alejandro en Asia.",
+      "summary": "Tobalina continúa el ciclo sobre las ciudades de Alejandro Magno, explorando las fundaciones del conquistador en Asia y su legado en el mundo helenístico.",
+      "topics": [
+        "Alejandro Magno",
+        "ciudades helenísticas",
+        "Asia",
+        "imperio seléucida",
+        "helenismo"
+      ],
+      "characters": [
+        "Alejandro Magno",
+        "Seleuco"
+      ],
+      "civilizations": [
+        "Macedonia",
+        "Imperio Seléucida"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": null,
+      "youtube_url": null,
+      "info_adicional": "Enlace genérico al canal de Raíces de Europa; video exacto pendiente de identificación"
     }
   ]
 }

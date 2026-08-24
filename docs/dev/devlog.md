@@ -198,3 +198,215 @@ en la visualización.
 - Crear una sección aparte para entrevistas y presentaciones de libro.
 - Añadir filtros por civilización/personaje/tema también en la vista de pueblos.
 - Explorar una vista combinada que muestre eventos y pueblos simultáneamente.
+
+## 2026-08-24 (continuación) — Pantalla "Base de datos", enfoque en videos de YouTube y completado de datos
+
+### Contexto
+El usuario pidió una nueva pantalla/tab "Base de datos" con una tabla completa de
+conferencias, ordenable por fecha histórica, período, civilización/pueblo, título,
+organización y año de conferencia. También solicitó ocultar/mostrar columnas por
+defecto, un filtro para mostrar solo videos de YouTube, y un enfoque general de la
+app como acompañante de las conferencias en video. Finalmente, se reportó
+información faltante en dos conferencias específicas y se pidió completarla sin
+modificar el resto.
+
+### Base de datos de conferencias
+- Se creó `/tob-app/app/database/page.tsx` como ruta independiente `/database`.
+- Se creó `/tob-app/app/components/ConferenceDatabase.tsx`:
+  - Tabla ordenable por todas las columnas principales.
+  - Búsqueda global por título, organización, temas, personajes y pueblos.
+  - Filtros por período histórico y civilización/pueblo.
+  - Selector de columnas visibles; por defecto ocultas: "Año conferencia" y
+    "Organización".
+  - Filtro **"Solo videos de YouTube"** con contador.
+- Se creó `/tob-app/components/ui/table.tsx` con componentes base `Table`,
+  `TableHeader`, `TableBody`, `TableRow`, `TableHead`, `TableCell`.
+- Se añadieron enlaces de navegación a "Base de datos" en:
+  - `/tob-app/app/layout.tsx` (header principal).
+  - `/tob-app/app/components/TimelineViewSelector.tsx` (tabs junto a Eventos,
+    Pueblos y Videos).
+
+### Enfoque en videos de YouTube
+- Se añadieron los campos `youtube_url` e `info_adicional` a `ConferenceItem` en
+  `/tob-app/app/types/timeline.ts`.
+- Se creó y ejecutó `scripts/migrate_youtube_urls.py`:
+  - 69 conferencias pasaron a tener `youtube_url` (URLs de YouTube existentes).
+  - 7 conferencias con otra URL conservan `url` como fuente original y
+    `youtube_url` vacío.
+  - 24 conferencias sin URL permanecen vacías, listas para completar manualmente.
+- Se actualizó `/tob-app/lib/youtube.ts` con `getYouTubeUrl()` y `isYouTubeUrl()`.
+- Se actualizó `/tob-app/lib/media.tsx` para reexportar `getYouTubeUrl`.
+- Se actualizaron todos los componentes de video para usar `getYouTubeUrl()`:
+  - `/tob-app/app/videos/page.tsx`
+  - `/tob-app/app/components/VideoCard.tsx`
+  - `/tob-app/app/components/VideoCompanion.tsx`
+  - `/tob-app/app/components/TimelineEvent.tsx`
+  - `/tob-app/app/components/PopulationTimeline.tsx`
+- En `/database`, el enlace del título y el icono de medio usan `youtube_url` como
+  prioridad, manteniendo `url` como enlace a la fuente original.
+
+### Completado de datos reportados
+- Se identificaron 12 conferencias sin evento relacionado en la línea de tiempo.
+- Se añadieron dos eventos nuevos en `/data/linea-de-tiempo-eva-tobalina.json`:
+  - **El Imperio Medio de Egipto: reunificación y esplendor** (2040-1786 a.C.),
+    vinculado a `egipto-imperio-medio`.
+  - **El Kanato Turco: pueblos nómadas de la estepa** (552-744 d.C.), vinculado
+    a `pueblos-estepa-turcos-ivoox`.
+- Se actualizó `meta.total_eventos` de 46 a 48.
+- Las 10 conferencias restantes sin evento (entrevistas, presentaciones de libro y
+  próximas actividades) se dejaron pendientes siguiendo la instrucción de no
+  modificar lo demás.
+
+### Scripts auxiliares
+- `scripts/migrate_youtube_urls.py`: migra URLs de YouTube al campo
+  `youtube_url`.
+- `scripts/add_missing_timeline_events.py`: añade eventos históricos faltantes
+  para conferencias reportadas.
+
+### Verificación
+- `bun run lint` ✅ — sin errores (warnings preexistentes no relacionados).
+- `bun run build` ✅ — prerenderizado estático de `/`, `/timeline`, `/videos` y
+  `/database`.
+
+### Pendientes posibles
+- Completar manualmente `youtube_url` o `info_adicional` para las 7 conferencias
+  con URL no-YouTube y las 24 sin URL.
+- Vincular las 10 conferencias restantes (entrevistas/presentaciones) a eventos
+  históricos si aplica.
+
+## 2026-08-24 (continuación) — Limpieza de duplicados, corrección de Alejandro Magno y ajustes históricos
+
+### Contexto
+El usuario pidió arreglar los 7 videos de YouTube duplicados detectados en la
+auditoría y aplicar las correcciones históricas señaladas en `docs/fb/1.md`.
+
+### Limpieza de duplicados de videos
+- Se creó y ejecutó `scripts/clean_duplicates.py`.
+- Se eliminaron 6 conferencias duplicadas, conservando la versión más completa:
+  - `ruta-seda-america-unab-2025` → `ruta-de-la-seda-america-unab`
+  - `cena-cultura-raices-ruta-seda` → `ruta-seda-fascinante`
+  - `pueblos-estepa-hunos-atila-ivoox` → `pueblos-estepa-hunos`
+  - `hititas` → `imperio-hitita-i`
+  - `livia-emperatriz` → `livia-mujer-augusto`
+  - `babilonia` → `babilonia-neobabilonico`
+- Se corrigió `alejandro-magno-iii`: tenía la misma URL que la parte I, lo cual
+  es un error de datos; se le quitó URL hasta encontrar la correcta.
+- Total de conferencias: de 100 a **94**.
+- Videos de YouTube: de 69 a **62** únicos, sin duplicados.
+
+### Actualización de referencias
+- Se reemplazaron los IDs eliminados en `relatedConferences` de:
+  - `/data/linea-de-tiempo-eva-tobalina.json`
+  - `/data/pueblos-coexistientes.json`
+- Se verificó que no quedaran referencias rotas.
+
+### Correcciones históricas en pueblos coexistientes
+Aplicadas siguiendo el feedback de `docs/fb/1.md`:
+- **Fenicia**: `endYear` de -800 a **-539** a.C.
+- **Grecia clásica**: renombrada a **Grecia antigua** (el rango -800 a -323
+  abarca Época Arcaica y Clásica).
+- **Imperio Mongol**: `endYear` de 1368 a **1260** d.C. (fase unificada).
+- **Asiria**: `startYear` de -2500 a **-911** a.C. (enfoque en el Imperio
+  Neoasirio, coherente con el año de apogeo -700).
+- **Babilonia**: descripción matizada para indicar que abarca los períodos
+  paleobabilónico, casita y neobabilónico.
+- **Hunos**: eliminado el bloque unificado y separado en dos entidades
+  históricamente distintas:
+  - **Xiongnu** (-209 a 93 d.C.)
+  - **Hunos europeos** (370 a 469 d.C.)
+- Total de pueblos: de 28 a **29**.
+
+### Sincronización
+- Se copiaron los JSON actualizados de `/data/` a `/tob-app/data/`.
+
+### Verificación
+- `bun run lint` ✅ — sin errores.
+- `bun run build` ✅ — prerenderizado estático correcto.
+- Auditoría interna: 0 referencias rotas, 0 URLs de YouTube duplicadas.
+
+### Pendientes posibles
+- Buscar las URLs correctas de `alejandro-magno-ii`, `alejandro-magno-iii` y
+  `alejandro-magno-iv` para completar la serie.
+- Revisar las 7 conferencias con URL no-YouTube y las sin URL para decidir si se
+  añaden `youtube_url` o `info_adicional`.
+
+
+## 2026-08-24 (continuación) — Integración de docs/fb/2.md y corrección del campo `period`
+
+### Contexto
+El usuario pidió integrar las conferencias adicionales documentadas en
+`docs/fb/2.md`, verificar cada enlace de YouTube y reemplazar los enlaces
+genéricos al canal por URLs exactas de video cuando fuera posible. También se
+reportó que la información histórica de algunas conferencias seguía sin verse,
+lo que llevó a detectar un bug en el campo `period` de la línea de tiempo.
+
+### Integración de `docs/fb/2.md`
+- Se creó `scripts/integrate_fb2.py` para:
+  - Extraer los dos bloques JSON del markdown (29 ítems en total).
+  - Normalizarlos al esquema `ConferenceItem` y calcular `mediaType`.
+  - Desduplicar por ID y por URL contra el catálogo existente y entre los dos
+    bloques internos.
+- Resultado de la deduplicación:
+  - **18 ítems descartados** por duplicidad interna o por existir ya en el
+    catálogo (por ejemplo `atila-ascenso-caida` comparte URL con
+    `pueblos-estepa-hunos`).
+  - **11 conferencias nuevas** candidatas a añadir.
+
+### Verificación de URLs con oEmbed de YouTube
+Se usó el endpoint `https://www.youtube.com/oembed?url=...&format=json` para
+validar existencia y coincidencia de título. Resultados:
+
+| ID | Título | Estado |
+|---|---|---|
+| `biblioteca-alejandria-2014` | La Biblioteca de Alejandría... | ✅ Verificado |
+| `historia-roma-i-fundacion` | Historia de Roma I (1). LA FUNDACIÓN DE ROMA... | ✅ Verificado |
+| `fenomeno-oraculos` | EL FENÓMENO DE LOS ORÁCULOS... | ✅ Verificado |
+| `exodo-egipto` | Conferencia ¿Existió el Éxodo de Egipto? | ❌ No verificado |
+| `petra-nabateos` | Petra y los Nabateos | ❌ No verificado |
+| `libano-helenistico-romano` | El Líbano en la época helenística y romana | ❌ No verificado |
+| `puerta-mileto-berlin` | La Puerta Monumental del Mercado de Mileto... | ❌ No verificado |
+| `oraculo-dioses-antiguedad` | El fenómeno del oráculo... | ❌ No verificado |
+| `origen-mundo-creacion-hombre` | El origen del mundo y la creación del hombre | ❌ No verificado (ID apunta a otro video) |
+| `jordania-omeyas` | Jordania y los Omeyas... | ❌ Placeholder del canal |
+| `griegos-asia-alejandro` | Los Griegos de Asia... | ❌ Placeholder del canal |
+
+- Las **3 conferencias verificadas** conservan `youtube_url` y `mediaType: "video"`.
+- Las **6 no verificadas** se añadieron al catálogo con `url`/`youtube_url` a
+  `null` y una nota en `info_adicional` indicando la URL original sugerida y su
+  estado pendiente.
+- Los **2 placeholders** (`7GXW4fPm4bI`, `BYzZ5t7HLR0`) se añadieron con URLs
+  vacías y `info_adicional` señalando que se trata de un enlace genérico al canal
+  de Raíces de Europa pendiente de identificación.
+- Total de conferencias: de **94 a 105**.
+- Videos de YouTube verificados: de **62 a 65**.
+
+### Corrección del campo `period` en la línea de tiempo
+- Se detectó que todos los eventos de `linea-de-tiempo-eva-tobalina.json` tenían
+  `period` como valor booleano (`true`/`false`) en lugar del período histórico.
+- Se creó un script puntual que asigna el período a partir de `startYear`:
+  - `< -3500`: Prehistoria
+  - `< 476`: Edad Antigua
+  - `< 1453`: Edad Media
+  - `< 1789`: Edad Moderna
+  - `>= 1789`: Edad Contemporánea
+- Se corrigieron **48 eventos**; los valores resultantes son `Edad Antigua` y
+  `Edad Media`, coherentes con la cobertura actual.
+- Se actualizó `app/types/timeline.ts`: `TimelineEvent.period` pasó de `boolean`
+  a `string`.
+- Se actualizó `meta.ultima_actualizacion`.
+
+### Sincronización
+- Se copiaron los tres JSON maestros (`conferencias`, `linea-de-tiempo`,
+  `pueblos-coexistientes`) a `/tob-app/data/`.
+
+### Verificación
+- `bun run lint` ✅ — sin errores (warnings preexistentes no relacionados).
+- `bun run build` ✅ — prerenderizado estático de `/`, `/timeline`, `/videos` y
+  `/database`.
+- Auditoría interna: 0 referencias rotas, 0 URLs de YouTube duplicadas.
+
+### Pendientes posibles
+- Localizar URLs exactas de las 6 conferencias verificadas como no disponibles y
+  de los 2 placeholders del canal de Raíces de Europa.
+- Revisar si alguna de las nuevas conferencias verificadas debe vincularse a un
+  evento histórico existente o a uno nuevo.
