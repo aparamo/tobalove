@@ -6,8 +6,14 @@ import {
   getPeoples,
   getTimelineEvents,
   getWatchedConferenceIds,
+  getFavoriteConferenceIds,
+  getWatchlistConferenceIds,
 } from "@/lib/data";
 import { toggleWatchedConference } from "@/app/actions/watched";
+import {
+  toggleFavoriteConference,
+  toggleWatchlistConference,
+} from "@/app/actions/videos";
 import { auth } from "@/auth";
 import type { ConferenceItem, TimelineEvent } from "@/app/types/timeline";
 
@@ -42,9 +48,14 @@ export default async function DatabasePage() {
   const conferences = (await getConferences()) as unknown as ConferenceItem[];
   const timelineEvents = (await getTimelineEvents()) as unknown as TimelineEvent[];
   const peoples = await getPeoples();
-  const watchedIds = session?.user?.id
-    ? await getWatchedConferenceIds(session.user.id)
-    : new Set<string>();
+  const userId = session?.user?.id;
+  const [watchedIds, favoriteIds, watchlistIds] = userId
+    ? await Promise.all([
+        getWatchedConferenceIds(userId),
+        getFavoriteConferenceIds(userId),
+        getWatchlistConferenceIds(userId),
+      ])
+    : [new Set<string>(), new Set<string>(), new Set<string>()];
 
   // Mapa inverso: conferencia -> eventos históricos relacionados
   const eventsByConference = new Map<string, TimelineEvent[]>();
@@ -129,8 +140,12 @@ export default async function DatabasePage() {
         <ConferenceDatabase
           conferences={enriched}
           watchedIds={watchedIds}
+          favoriteIds={favoriteIds}
+          watchlistIds={watchlistIds}
           isAuthenticated={!!session?.user}
           onToggleWatched={toggleWatchedConference}
+          onToggleFavorite={toggleFavoriteConference}
+          onToggleWatchlist={toggleWatchlistConference}
         />
       </section>
     </main>

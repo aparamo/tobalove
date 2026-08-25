@@ -46,6 +46,8 @@ model User {
   accounts      Account[]
   sessions      Session[]
   watched       UserWatchedConference[]
+  favorites     UserFavoriteConference[]
+  watchlist     UserWatchlistConference[]
 }
 
 model VerificationToken {
@@ -78,6 +80,8 @@ model Conference {
   createdAt     DateTime                @default(now())
   updatedAt     DateTime                @updatedAt
   watchedBy     UserWatchedConference[]
+  favoritedBy   UserFavoriteConference[]
+  inWatchlist   UserWatchlistConference[]
 }
 
 model TimelineEvent {
@@ -138,6 +142,28 @@ model UserWatchedConference {
   userId       String
   conferenceId String
   watchedAt    DateTime    @default(now())
+  user         User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  conference   Conference  @relation(fields: [conferenceId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, conferenceId])
+}
+
+model UserFavoriteConference {
+  id           String      @id @default(cuid(2))
+  userId       String
+  conferenceId String
+  createdAt    DateTime    @default(now())
+  user         User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  conference   Conference  @relation(fields: [conferenceId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, conferenceId])
+}
+
+model UserWatchlistConference {
+  id           String      @id @default(cuid(2))
+  userId       String
+  conferenceId String
+  createdAt    DateTime    @default(now())
   user         User        @relation(fields: [userId], references: [id], onDelete: Cascade)
   conference   Conference  @relation(fields: [conferenceId], references: [id], onDelete: Cascade)
 

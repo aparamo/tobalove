@@ -2,10 +2,25 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Play, Calendar, Building2, Clock, Eye, EyeOff } from "lucide-react";
+import {
+  Play,
+  Calendar,
+  Building2,
+  Clock,
+  Eye,
+  EyeOff,
+  Heart,
+  Bookmark,
+} from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { getYouTubeId, getYouTubeUrl } from "@/lib/media";
 import type { ConferenceItem } from "@/app/types/timeline";
+import { cn } from "@/lib/utils";
 
 interface VideoCardProps {
   conference: ConferenceItem;
@@ -15,7 +30,61 @@ interface VideoCardProps {
   index: number;
   isWatched?: boolean;
   onToggleWatched?: (conferenceId: string) => void;
+  isFavorite?: boolean;
+  onToggleFavorite?: (conferenceId: string) => void;
+  isWatchlist?: boolean;
+  onToggleWatchlist?: (conferenceId: string) => void;
   isAuthenticated?: boolean;
+}
+
+interface ActionButtonProps {
+  active: boolean;
+  activeIcon: React.ReactNode;
+  inactiveIcon: React.ReactNode;
+  activeTooltip: string;
+  inactiveTooltip: string;
+  activeClass?: string;
+  onClick: () => void;
+}
+
+function ActionButton({
+  active,
+  activeIcon,
+  inactiveIcon,
+  activeTooltip,
+  inactiveTooltip,
+  activeClass = "text-primary",
+  onClick,
+}: ActionButtonProps) {
+  return (
+    <Tooltip>
+      <TooltipTrigger
+        render={(triggerProps) => (
+          <button
+            {...triggerProps}
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              onClick();
+            }}
+            className="flex h-7 w-7 items-center justify-center rounded-full bg-background/90 text-foreground shadow-sm transition-colors hover:bg-background"
+          >
+            <span
+              className={cn(
+                "h-3.5 w-3.5",
+                active ? activeClass : "text-muted-foreground"
+              )}
+            >
+              {active ? activeIcon : inactiveIcon}
+            </span>
+          </button>
+        )}
+      />
+      <TooltipContent side="top">
+        <p>{active ? activeTooltip : inactiveTooltip}</p>
+      </TooltipContent>
+    </Tooltip>
+  );
 }
 
 export function VideoCard({
@@ -26,6 +95,10 @@ export function VideoCard({
   index,
   isWatched,
   onToggleWatched,
+  isFavorite,
+  onToggleFavorite,
+  isWatchlist,
+  onToggleWatchlist,
   isAuthenticated,
 }: VideoCardProps) {
   const youtubeUrl = getYouTubeUrl(conference);
@@ -54,22 +127,42 @@ export function VideoCard({
             <Play className="h-5 w-5 fill-current" />
           </div>
         </div>
-        {isAuthenticated && onToggleWatched && (
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              onToggleWatched(conference.id);
-            }}
-            className="absolute right-2 top-2 flex h-8 w-8 items-center justify-center rounded-full bg-background/90 text-foreground shadow-sm transition-colors hover:bg-background"
-            title={isWatched ? "Marcar como no visto" : "Marcar como visto"}
-          >
-            {isWatched ? (
-              <Eye className="h-4 w-4 text-primary" />
-            ) : (
-              <EyeOff className="h-4 w-4 text-muted-foreground" />
+        {isAuthenticated && (
+          <div className="absolute right-2 top-2 flex flex-col gap-1.5">
+            {onToggleFavorite && (
+              <ActionButton
+                active={!!isFavorite}
+                activeIcon={<Heart className="h-3.5 w-3.5 fill-current" />}
+                inactiveIcon={<Heart className="h-3.5 w-3.5" />}
+                activeTooltip="Quitar de favoritos"
+                inactiveTooltip="Añadir a favoritos"
+                activeClass="text-red-500"
+                onClick={() => onToggleFavorite(conference.id)}
+              />
             )}
-          </button>
+            {onToggleWatchlist && (
+              <ActionButton
+                active={!!isWatchlist}
+                activeIcon={<Bookmark className="h-3.5 w-3.5 fill-current" />}
+                inactiveIcon={<Bookmark className="h-3.5 w-3.5" />}
+                activeTooltip="Quitar de siguientes"
+                inactiveTooltip="Añadir a siguientes"
+                activeClass="text-amber-500"
+                onClick={() => onToggleWatchlist(conference.id)}
+              />
+            )}
+            {onToggleWatched && (
+              <ActionButton
+                active={!!isWatched}
+                activeIcon={<Eye className="h-3.5 w-3.5" />}
+                inactiveIcon={<EyeOff className="h-3.5 w-3.5" />}
+                activeTooltip="Marcar como no visto"
+                inactiveTooltip="Marcar como visto"
+                activeClass="text-primary"
+                onClick={() => onToggleWatched(conference.id)}
+              />
+            )}
+          </div>
         )}
       </div>
 

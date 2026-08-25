@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Clock, Home, PlaySquare, Database } from "lucide-react";
+import { Clock, Home, PlaySquare, Database, Heart } from "lucide-react";
 import { auth } from "@/auth";
 import type { Session } from "next-auth";
 import { UserNav } from "@/app/components/UserNav";
@@ -87,6 +87,15 @@ export default async function RootLayout({
                   <Database className="h-4 w-4" />
                   <span className="hidden sm:inline">Base de datos</span>
                 </Link>
+                {session?.user && (
+                  <Link
+                    href="/mis-videos"
+                    className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    <Heart className="h-4 w-4" />
+                    <span className="hidden sm:inline">Mis videos</span>
+                  </Link>
+                )}
               </div>
               <UserNav user={session?.user} />
             </nav>

@@ -46,6 +46,22 @@ export async function getWatchedConferenceIds(userId: string) {
   return new Set(rows.map((r) => r.conferenceId));
 }
 
+export async function getFavoriteConferenceIds(userId: string) {
+  const rows = await prisma.userFavoriteConference.findMany({
+    where: { userId },
+    select: { conferenceId: true },
+  });
+  return new Set(rows.map((r) => r.conferenceId));
+}
+
+export async function getWatchlistConferenceIds(userId: string) {
+  const rows = await prisma.userWatchlistConference.findMany({
+    where: { userId },
+    select: { conferenceId: true },
+  });
+  return new Set(rows.map((r) => r.conferenceId));
+}
+
 export async function getUsers() {
   return prisma.user.findMany({
     select: {

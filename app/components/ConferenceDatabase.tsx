@@ -15,6 +15,8 @@ import {
   Columns,
   Eye,
   EyeOff,
+  Heart,
+  Bookmark,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { getYouTubeUrl } from "@/lib/youtube";
@@ -26,6 +28,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import type { ConferenceItem } from "@/app/types/timeline";
 import { cn } from "@/lib/utils";
 
@@ -58,8 +65,12 @@ type VisibleColumns = Record<SortKey, boolean>;
 interface ConferenceDatabaseProps {
   conferences: EnrichedConferenceItem[];
   watchedIds?: Set<string>;
+  favoriteIds?: Set<string>;
+  watchlistIds?: Set<string>;
   isAuthenticated?: boolean;
   onToggleWatched?: (conferenceId: string) => void;
+  onToggleFavorite?: (conferenceId: string) => void;
+  onToggleWatchlist?: (conferenceId: string) => void;
 }
 
 const sortLabels: Record<SortKey, string> = {
@@ -169,11 +180,19 @@ function SortButton({ sortKey, sort, onSort }: SortButtonProps) {
 export function ConferenceDatabase({
   conferences,
   watchedIds: initialWatchedIds = new Set(),
+  favoriteIds: initialFavoriteIds = new Set(),
+  watchlistIds: initialWatchlistIds = new Set(),
   isAuthenticated = false,
   onToggleWatched,
+  onToggleFavorite,
+  onToggleWatchlist,
 }: ConferenceDatabaseProps) {
   const [search, setSearch] = useState("");
   const [watchedIds, setWatchedIds] = useState<Set<string>>(initialWatchedIds);
+  const [favoriteIds, setFavoriteIds] =
+    useState<Set<string>>(initialFavoriteIds);
+  const [watchlistIds, setWatchlistIds] =
+    useState<Set<string>>(initialWatchlistIds);
   const [togglingId, setTogglingId] = useState<string | null>(null);
   const [selectedPeriod, setSelectedPeriod] = useState<string | null>(null);
   const [selectedCivilization, setSelectedCivilization] = useState<string | null>(null);
@@ -251,6 +270,44 @@ export function ConferenceDatabase({
     try {
       await onToggleWatched(conferenceId);
       setWatchedIds((prev) => {
+        const next = new Set(prev);
+        if (next.has(conferenceId)) {
+          next.delete(conferenceId);
+        } else {
+          next.add(conferenceId);
+        }
+        return next;
+      });
+    } finally {
+      setTogglingId(null);
+    }
+  }
+
+  async function handleToggleFavorite(conferenceId: string) {
+    if (!isAuthenticated || !onToggleFavorite || togglingId) return;
+    setTogglingId(conferenceId);
+    try {
+      await onToggleFavorite(conferenceId);
+      setFavoriteIds((prev) => {
+        const next = new Set(prev);
+        if (next.has(conferenceId)) {
+          next.delete(conferenceId);
+        } else {
+          next.add(conferenceId);
+        }
+        return next;
+      });
+    } finally {
+      setTogglingId(null);
+    }
+  }
+
+  async function handleToggleWatchlist(conferenceId: string) {
+    if (!isAuthenticated || !onToggleWatchlist || togglingId) return;
+    setTogglingId(conferenceId);
+    try {
+      await onToggleWatchlist(conferenceId);
+      setWatchlistIds((prev) => {
         const next = new Set(prev);
         if (next.has(conferenceId)) {
           next.delete(conferenceId);
@@ -485,7 +542,7 @@ export function ConferenceDatabase({
                   </TableHead>
                 )}
                 {isAuthenticated && (
-                  <TableHead className="w-[80px]">Visto</TableHead>
+                  <TableHead className="w-[100px]">Acciones</TableHead>
                 )}
               </TableRow>
             </TableHeader>
@@ -630,23 +687,88 @@ export function ConferenceDatabase({
                   )}
                   {isAuthenticated && (
                     <TableCell>
-                      <button
-                        type="button"
-                        onClick={() => handleToggleWatched(conf.id)}
-                        disabled={togglingId === conf.id}
-                        className="inline-flex items-center justify-center rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground disabled:opacity-50"
-                        title={
-                          watchedIds.has(conf.id)
-                            ? "Marcar como no visto"
-                            : "Marcar como visto"
-                        }
-                      >
-                        {watchedIds.has(conf.id) ? (
-                          <Eye className="h-4 w-4 text-primary" />
-                        ) : (
-                          <EyeOff className="h-4 w-4" />
-                        )}
-                      </button>
+                      <div className="flex items-center gap-1">
+                        <Tooltip>
+                          <TooltipTrigger
+                            render={(triggerProps) => (
+                              <button
+                                {...triggerProps}
+                                type="button"
+                                onClick={() => handleToggleFavorite(conf.id)}
+                                disabled={togglingId === conf.id}
+                                className="inline-flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground disabled:opacity-50"
+                              >
+                                {favoriteIds.has(conf.id) ? (
+                                  <Heart className="h-3.5 w-3.5 fill-current text-red-500" />
+                                ) : (
+                                  <Heart className="h-3.5 w-3.5" />
+                                )}
+                              </button>
+                            )}
+                          />
+                          <TooltipContent side="top">
+                            <p>
+                              {favoriteIds.has(conf.id)
+                                ? "Quitar de favoritos"
+                                : "Añadir a favoritos"}
+                            </p>
+                          </TooltipContent>
+                        </Tooltip>
+
+                        <Tooltip>
+                          <TooltipTrigger
+                            render={(triggerProps) => (
+                              <button
+                                {...triggerProps}
+                                type="button"
+                                onClick={() => handleToggleWatchlist(conf.id)}
+                                disabled={togglingId === conf.id}
+                                className="inline-flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground disabled:opacity-50"
+                              >
+                                {watchlistIds.has(conf.id) ? (
+                                  <Bookmark className="h-3.5 w-3.5 fill-current text-amber-500" />
+                                ) : (
+                                  <Bookmark className="h-3.5 w-3.5" />
+                                )}
+                              </button>
+                            )}
+                          />
+                          <TooltipContent side="top">
+                            <p>
+                              {watchlistIds.has(conf.id)
+                                ? "Quitar de siguientes"
+                                : "Añadir a siguientes"}
+                            </p>
+                          </TooltipContent>
+                        </Tooltip>
+
+                        <Tooltip>
+                          <TooltipTrigger
+                            render={(triggerProps) => (
+                              <button
+                                {...triggerProps}
+                                type="button"
+                                onClick={() => handleToggleWatched(conf.id)}
+                                disabled={togglingId === conf.id}
+                                className="inline-flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground disabled:opacity-50"
+                              >
+                                {watchedIds.has(conf.id) ? (
+                                  <Eye className="h-3.5 w-3.5 text-primary" />
+                                ) : (
+                                  <EyeOff className="h-3.5 w-3.5" />
+                                )}
+                              </button>
+                            )}
+                          />
+                          <TooltipContent side="top">
+                            <p>
+                              {watchedIds.has(conf.id)
+                                ? "Marcar como no visto"
+                                : "Marcar como visto"}
+                            </p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </div>
                     </TableCell>
                   )}
                 </TableRow>

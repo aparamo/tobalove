@@ -80,7 +80,6 @@ export function layoutFloatingPeoples(
     const people = sorted[i];
     const baseTop = (yearToPercent(people.peakYear) / 100) * containerHeight;
 
-    const popRatio = Math.sqrt(people.peakPopulation) / Math.sqrt(maxPopulation);
     const widthPercent = Math.min(
       22,
       populationWidthPercent(people.peakPopulation, maxPopulation)

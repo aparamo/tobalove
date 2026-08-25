@@ -2,7 +2,7 @@
 
 import { useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Search, X, ChevronDown } from "lucide-react";
+import { Search, X, Heart, Eye, Bookmark, PlaySquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { VideoCard } from "./VideoCard";
 import { VideoPlayerSheet } from "./VideoPlayerSheet";
@@ -17,32 +17,51 @@ import type {
   PeopleGroup,
 } from "@/app/types/timeline";
 
-type SortOption = "date-asc" | "date-desc" | "title-asc" | "title-desc";
+type TabKey = "all" | "unwatched" | "watched" | "watchlist" | "favorites";
+
+interface TabConfig {
+  key: TabKey;
+  label: string;
+  icon: React.ReactNode;
+}
+
+const TABS: TabConfig[] = [
+  { key: "all", label: "Todos", icon: <PlaySquare className="h-4 w-4" /> },
+  { key: "unwatched", label: "No vistos", icon: <Eye className="h-4 w-4" /> },
+  { key: "watched", label: "Vistos", icon: <Eye className="h-4 w-4" /> },
+  {
+    key: "watchlist",
+    label: "Siguientes",
+    icon: <Bookmark className="h-4 w-4" />,
+  },
+  {
+    key: "favorites",
+    label: "Favoritos",
+    icon: <Heart className="h-4 w-4" />,
+  },
+];
 
 const PAGE_SIZE = 12;
 
-interface VideoCompanionProps {
+interface MyVideosCompanionProps {
   videos: ConferenceItem[];
   events: TimelineEvent[];
   peoples: PeopleGroup[];
   watchedIds: Set<string>;
   favoriteIds: Set<string>;
   watchlistIds: Set<string>;
-  isAuthenticated: boolean;
 }
 
-export function VideoCompanion({
+export function MyVideosCompanion({
   videos,
   events,
   peoples,
   watchedIds: initialWatchedIds,
   favoriteIds: initialFavoriteIds,
   watchlistIds: initialWatchlistIds,
-  isAuthenticated,
-}: VideoCompanionProps) {
+}: MyVideosCompanionProps) {
   const [search, setSearch] = useState("");
-  const [selectedCiv, setSelectedCiv] = useState<string | null>(null);
-  const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState<TabKey>("all");
   const [selectedVideo, setSelectedVideo] = useState<ConferenceItem | null>(null);
   const [watchedIds, setWatchedIds] = useState<Set<string>>(initialWatchedIds);
   const [favoriteIds, setFavoriteIds] =
@@ -50,7 +69,6 @@ export function VideoCompanion({
   const [watchlistIds, setWatchlistIds] =
     useState<Set<string>>(initialWatchlistIds);
   const [togglingId, setTogglingId] = useState<string | null>(null);
-  const [sortBy, setSortBy] = useState<SortOption>("date-asc");
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
   const loadingMoreRef = useRef(false);
@@ -79,70 +97,37 @@ export function VideoCompanion({
     return map;
   }, [peoples]);
 
-  const allCivilizations = useMemo(() => {
-    const set = new Set<string>();
-    for (const v of videos) {
-      for (const c of v.civilizations) set.add(c);
-    }
-    return Array.from(set).sort();
-  }, [videos]);
-
-  const allTopics = useMemo(() => {
-    const set = new Set<string>();
-    for (const v of videos) {
-      for (const t of v.topics) set.add(t);
-    }
-    return Array.from(set).sort();
-  }, [videos]);
-
   const filteredVideos = useMemo(() => {
     const term = search.toLowerCase().trim();
-    return videos.filter((v) => {
-      const matchesSearch =
-        !term ||
+    const byTab = (() => {
+      switch (activeTab) {
+        case "unwatched":
+          return videos.filter((v) => !watchedIds.has(v.id));
+        case "watched":
+          return videos.filter((v) => watchedIds.has(v.id));
+        case "watchlist":
+          return videos.filter((v) => watchlistIds.has(v.id));
+        case "favorites":
+          return videos.filter((v) => favoriteIds.has(v.id));
+        default:
+          return videos;
+      }
+    })();
+    return byTab.filter((v) => {
+      if (!term) return true;
+      return (
         v.title.toLowerCase().includes(term) ||
         v.description.toLowerCase().includes(term) ||
         v.summary.toLowerCase().includes(term) ||
         v.characters.some((c) => c.toLowerCase().includes(term)) ||
-        v.topics.some((t) => t.toLowerCase().includes(term));
-      const matchesCiv = !selectedCiv || v.civilizations.includes(selectedCiv);
-      const matchesTopic = !selectedTopic || v.topics.includes(selectedTopic);
-      return matchesSearch && matchesCiv && matchesTopic;
+        v.topics.some((t) => t.toLowerCase().includes(term)) ||
+        v.civilizations.some((c) => c.toLowerCase().includes(term))
+      );
     });
-  }, [videos, search, selectedCiv, selectedTopic]);
+  }, [videos, search, activeTab, watchedIds, favoriteIds, watchlistIds]);
 
-  const sortedVideos = useMemo(() => {
-    function getHistoricalStartYear(confId: string): number | null {
-      const relatedEvents = eventsByConf.get(confId) ?? [];
-      if (relatedEvents.length === 0) return null;
-      return Math.min(...relatedEvents.map((ev) => ev.startYear));
-    }
-
-    const sorted = [...filteredVideos];
-    switch (sortBy) {
-      case "date-asc":
-        return sorted.sort(
-          (a, b) =>
-            (getHistoricalStartYear(a.id) ?? Infinity) -
-            (getHistoricalStartYear(b.id) ?? Infinity)
-        );
-      case "date-desc":
-        return sorted.sort(
-          (a, b) =>
-            (getHistoricalStartYear(b.id) ?? -Infinity) -
-            (getHistoricalStartYear(a.id) ?? -Infinity)
-        );
-      case "title-asc":
-        return sorted.sort((a, b) => a.title.localeCompare(b.title));
-      case "title-desc":
-        return sorted.sort((a, b) => b.title.localeCompare(a.title));
-      default:
-        return sorted;
-    }
-  }, [filteredVideos, sortBy, eventsByConf]);
-
-  const visibleVideos = sortedVideos.slice(0, visibleCount);
-  const hasMore = visibleCount < sortedVideos.length;
+  const visibleVideos = filteredVideos.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredVideos.length;
 
   function resetPagination() {
     setVisibleCount(PAGE_SIZE);
@@ -153,40 +138,22 @@ export function VideoCompanion({
     resetPagination();
   }
 
-  function handleCivChange(civ: string) {
-    setSelectedCiv((prev) => (prev === civ ? null : civ));
-    resetPagination();
-  }
-
-  function handleTopicChange(topic: string) {
-    setSelectedTopic((prev) => (prev === topic ? null : topic));
-    resetPagination();
-  }
-
-  function handleSortChange(value: SortOption) {
-    setSortBy(value);
-    resetPagination();
-  }
-
-  function handleClearFilters() {
-    setSearch("");
-    setSelectedCiv(null);
-    setSelectedTopic(null);
-    setSortBy("date-asc");
+  function handleTabChange(tab: TabKey) {
+    setActiveTab(tab);
     resetPagination();
   }
 
   function handleLoadMore() {
     if (loadingMoreRef.current || !hasMore) return;
     loadingMoreRef.current = true;
-    setVisibleCount((prev) => Math.min(prev + PAGE_SIZE, sortedVideos.length));
+    setVisibleCount((prev) => Math.min(prev + PAGE_SIZE, filteredVideos.length));
     requestAnimationFrame(() => {
       loadingMoreRef.current = false;
     });
   }
 
   async function handleToggleWatched(conferenceId: string) {
-    if (!isAuthenticated || togglingId) return;
+    if (togglingId) return;
     setTogglingId(conferenceId);
     try {
       await toggleWatchedConference(conferenceId);
@@ -205,7 +172,7 @@ export function VideoCompanion({
   }
 
   async function handleToggleFavorite(conferenceId: string) {
-    if (!isAuthenticated || togglingId) return;
+    if (togglingId) return;
     setTogglingId(conferenceId);
     try {
       await toggleFavoriteConference(conferenceId);
@@ -224,7 +191,7 @@ export function VideoCompanion({
   }
 
   async function handleToggleWatchlist(conferenceId: string) {
-    if (!isAuthenticated || togglingId) return;
+    if (togglingId) return;
     setTogglingId(conferenceId);
     try {
       await toggleWatchlistConference(conferenceId);
@@ -242,9 +209,16 @@ export function VideoCompanion({
     }
   }
 
+  const emptyMessages: Record<TabKey, string> = {
+    all: "No hay videos disponibles.",
+    unwatched: "¡Felicidades! Has visto todos los videos.",
+    watched: "Aún no has marcado ningún video como visto.",
+    watchlist: "Aún no tienes videos en tu lista de siguientes.",
+    favorites: "Aún no tienes favoritos. Explora /videos para añadir algunos.",
+  };
+
   return (
     <div className="space-y-8">
-      {/* Header and filters */}
       <div className="space-y-4">
         <div className="relative">
           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
@@ -252,7 +226,7 @@ export function VideoCompanion({
             type="text"
             value={search}
             onChange={(e) => handleSearchChange(e.target.value)}
-            placeholder="Buscar por título, personaje, tema..."
+            placeholder="Buscar en mis videos..."
             className="w-full rounded-lg border border-border/60 bg-background py-2.5 pl-9 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
           />
           {search && (
@@ -265,82 +239,31 @@ export function VideoCompanion({
           )}
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          {allCivilizations.length > 0 && (
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                Civilizaciones
-              </span>
-              {allCivilizations.map((civ) => (
-                <button
-                  key={civ}
-                  onClick={() => handleCivChange(civ)}
-                  className={`rounded-full border px-2.5 py-1 text-xs transition-colors ${
-                    selectedCiv === civ
-                      ? "border-primary bg-primary text-primary-foreground"
-                      : "border-border/60 bg-background text-foreground hover:bg-muted"
-                  }`}
-                >
-                  {civ}
-                </button>
-              ))}
-            </div>
-          )}
-
-          <div className="flex items-center gap-2">
-            <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-              Ordenar
-            </span>
-            <div className="relative">
-              <select
-                value={sortBy}
-                onChange={(e) => handleSortChange(e.target.value as SortOption)}
-                aria-label="Ordenar videos"
-                className="appearance-none rounded-lg border border-border/60 bg-background py-2 pl-3 pr-8 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-              >
-                <option value="date-asc">Fecha: antiguas → recientes</option>
-                <option value="date-desc">Fecha: recientes → antiguas</option>
-                <option value="title-asc">Título: A-Z</option>
-                <option value="title-desc">Título: Z-A</option>
-              </select>
-              <ChevronDown className="pointer-events-none absolute right-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-            </div>
-          </div>
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+            Mis listas
+          </span>
+          {TABS.map((tab) => (
+            <button
+              key={tab.key}
+              onClick={() => handleTabChange(tab.key)}
+              className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs transition-colors ${
+                activeTab === tab.key
+                  ? "border-primary bg-primary text-primary-foreground"
+                  : "border-border/60 bg-background text-foreground hover:bg-muted"
+              }`}
+            >
+              {tab.icon}
+              {tab.label}
+            </button>
+          ))}
         </div>
-
-        {allTopics.length > 0 && (
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-              Temas
-            </span>
-            {allTopics.slice(0, 20).map((topic) => (
-              <button
-                key={topic}
-                onClick={() => handleTopicChange(topic)}
-                className={`rounded-full border px-2.5 py-1 text-xs transition-colors ${
-                  selectedTopic === topic
-                    ? "border-primary bg-primary text-primary-foreground"
-                    : "border-border/60 bg-background text-foreground hover:bg-muted"
-                }`}
-              >
-                {topic}
-              </button>
-            ))}
-            {allTopics.length > 20 && (
-              <span className="text-xs text-muted-foreground">
-                +{allTopics.length - 20} más
-              </span>
-            )}
-          </div>
-        )}
 
         <p className="text-sm text-muted-foreground">
           Mostrando {visibleVideos.length} de {filteredVideos.length} videos
-          {filteredVideos.length !== videos.length && ` (filtrados de ${videos.length})`}
         </p>
       </div>
 
-      {/* Grid */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <AnimatePresence>
           {visibleVideos.map((video, index) => (
@@ -365,7 +288,7 @@ export function VideoCompanion({
               onToggleFavorite={handleToggleFavorite}
               isWatchlist={watchlistIds.has(video.id)}
               onToggleWatchlist={handleToggleWatchlist}
-              isAuthenticated={isAuthenticated}
+              isAuthenticated
             />
           ))}
         </AnimatePresence>
@@ -384,17 +307,17 @@ export function VideoCompanion({
 
       {filteredVideos.length === 0 && (
         <div className="rounded-xl border border-dashed border-border py-16 text-center">
-          <p className="text-muted-foreground">
-            No se encontraron videos con los filtros actuales.
-          </p>
-          <Button
-            variant="outline"
-            size="sm"
-            className="mt-4"
-            onClick={handleClearFilters}
-          >
-            Limpiar filtros
-          </Button>
+          <p className="text-muted-foreground">{emptyMessages[activeTab]}</p>
+          {search && (
+            <Button
+              variant="outline"
+              size="sm"
+              className="mt-4"
+              onClick={() => handleSearchChange("")}
+            >
+              Limpiar búsqueda
+            </Button>
+          )}
         </div>
       )}
 

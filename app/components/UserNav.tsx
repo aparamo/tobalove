@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { logout } from "@/app/actions/auth";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Heart } from "lucide-react";
 import type { User } from "next-auth";
 
 interface UserNavProps {
@@ -49,6 +50,13 @@ export function UserNav({ user }: UserNavProps) {
         )}
       </div>
       <div className="flex items-center gap-2">
+        <Link
+          href="/mis-videos"
+          className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}
+        >
+          <Heart className="mr-1.5 h-4 w-4" />
+          Mis videos
+        </Link>
         {user.role === "ADMIN" && (
           <Link
             href="/admin"
