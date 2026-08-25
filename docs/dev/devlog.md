@@ -836,3 +836,79 @@ en texto pequeño, con el primer corazón (`<3`) enlazado a `www.lisalab.com.mx`
 ### Verificación
 - `bun run lint` ✅ — sin errores (solo el warning preexistente en `lib/timeline.ts`).
 - `bun run build` ✅ — prerenderizado estático correcto de todas las rutas.
+
+
+## 2026-08-24 (continuación) — Integración de conferencias de Hispania prerromana y Cartago
+
+### Contexto
+El usuario reportó que parecía faltar información de siete conferencias sobre
+Hispania prerromana y el Imperio Cartaginés. Al revisar el catálogo se descubrió
+que las conferencias ya existían en `/tob-app/data/conferencias-eva-tobalina.json`
+pero no en el maestro `/data/conferencias-eva-tobalina.json`, por lo que había una
+desincronización. Además, las conferencias no estaban vinculadas a eventos de la
+línea de tiempo, por lo que no mostraban fecha histórica ni aparecían en
+`/timeline` ni `/database`.
+
+### Conferencias integradas
+Las siete conferencias verificadas con oEmbed de YouTube son:
+
+| ID | Título | VideoId | Duración | Año estimado |
+|---|---|---|---|---|
+| `celtiberos-hispania-numancia` | LOS CELTÍBEROS y la Hispania Prerromana hasta NUMANCIA | `nau3bi4_0JQ` | 1:25:08 | 2024 |
+| `hispania-celtica` | La HISPANIA CÉLTICA, apasionante civilización prerromana | `og6PiPZpl7Q` | 1:23:10 | 2024 |
+| `numancia-frente-roma` | NUMANCIA FRENTE A ROMA: resistencia, asedio y destrucción | `nsFxha_4uYE` | 20:58 | 2025 |
+| `iberos-principes-iberia` | LOS IBEROS: Príncipes de Iberia | `yrW4dCCAZDk` | 1:22:24 | 2024 |
+| `tartessos-historia-mito` | TARTESSOS: historia, mito y NUEVOS DESCUBRIMIENTOS | `pHso75yhQj4` | 1:16:38 | 2024 |
+| `imperio-cartagines-i` | EL IMPERIO CARTAGINÉS (I). Nacimiento y esplendor... | `AAwIyN79NJc` | 1:00:42 | 2021 |
+| `imperio-cartagines-ii` | El Imperio Cartaginés (II). Aníbal, Escipión... | `oYlRl0Fiu0E` | 59:38 | 2021 |
+
+- Se usó la API de búsqueda de Invidious (`y.com.sb`) para localizar los IDs
+  exactos en el canal *Raices de Europa*.
+- Se verificó cada ID con el endpoint oEmbed de YouTube.
+- Se calcularon las duraciones a partir de `lengthSeconds` y se estimaron los años
+  de publicación a partir de `publishedText`.
+
+### Sincronización del catálogo
+- Se copió `/tob-app/data/conferencias-eva-tobalina.json` a
+  `/data/conferencias-eva-tobalina.json`.
+- Se actualizó `meta.total_conferencias_estimadas` a **111**.
+- Se completaron `year` y `duration` en las siete conferencias.
+
+### Eventos históricos creados
+Se añadieron cinco eventos en `/data/linea-de-tiempo-eva-tobalina.json` y su copia
+en `/tob-app/data/linea-de-tiempo-eva-tobalina.json`:
+
+1. **Tartessos: la civilización del Guadalquivir** (c. 1000-500 a.C.)
+   - Vinculado a `tartessos-historia-mito`.
+2. **Los íberos: príncipes y aristócratas de Iberia** (c. 600 a.C. - 20 d.C.)
+   - Vinculado a `iberos-principes-iberia`.
+3. **La Hispania Céltica: celtas y celtíberos** (c. 600 a.C. - 19 d.C.)
+   - Vinculado a `celtiberos-hispania-numancia` y `hispania-celtica`.
+4. **Numancia frente a Roma: resistencia y sacrificio** (c. 200-133 a.C.)
+   - Vinculado a `numancia-frente-roma`.
+5. **El Imperio Cartaginés: nacimiento, esplendor y caída** (814-146 a.C.)
+   - Vinculado a `imperio-cartagines-i` e `imperio-cartagines-ii`.
+
+- `meta.total_eventos` pasó de 54 a **59**.
+- Se actualizó `meta.ultimaActualizacion`.
+
+### Verificación de consistencia
+- Auditoría de referencias: **0 rotas** en timeline y pueblos.
+- Auditoría de URLs de YouTube: **0 duplicados** entre conferencias distintas.
+
+### Archivos modificados
+- `/data/conferencias-eva-tobalina.json`
+- `/data/linea-de-tiempo-eva-tobalina.json`
+- `/tob-app/data/conferencias-eva-tobalina.json`
+- `/tob-app/data/linea-de-tiempo-eva-tobalina.json`
+- `/tob-app/docs/dev/devlog.md`
+
+### Verificación
+- `bun run lint` ✅ — sin errores (solo el warning preexistente en `lib/timeline.ts`).
+- `bun run build` ✅ — prerenderizado estático correcto de todas las rutas.
+
+### Pendientes posibles
+- Añadir más conferencias huérfanas que aún no estén en el catálogo maestro.
+- Revisar si los pueblos de `pueblos-coexistientes.json` necesitan ajustar sus
+  `relatedConferences` para incluir también las nuevas conferencias (actualmente
+  ya las incluían, lo que indica que la copia de `/tob-app/data` estaba adelantada).

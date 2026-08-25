@@ -3,14 +3,15 @@
     "autor_contenido": "Eva Tobalina Oraá",
     "enfoque": "Línea de tiempo histórica de los hechos, civilizaciones y personajes tratados en las conferencias y entrevistas de Eva Tobalina.",
     "cobertura_cronologica": "desde c. 3500 a.C. hasta 1453 d.C.",
-    "total_eventos": 54,
+    "total_eventos": 59,
     "fuentes_principales": [
       "https://evatobalina.com/conferencias/",
       "https://www.youtube.com/@raicesdeeuropa",
       "https://informacionmanu.es",
       "https://portalcioranbr.wordpress.com/tag/eva-tobalina/"
     ],
-    "ultima_actualizacion": "2026-08-24"
+    "ultima_actualizacion": "2026-08-24",
+    "ultimaActualizacion": "2026-08-24"
   },
   "items": [
     {
@@ -2263,6 +2264,205 @@
       },
       "relatedConferences": [
         "ruta-de-la-seda-tamerlan"
+      ]
+    },
+    {
+      "id": "tartessos-civilizacion",
+      "title": "Tartessos: la civilización del Guadalquivir",
+      "dateLabel": "c. 1000-500 a.C.",
+      "startYear": -1000,
+      "endYear": -500,
+      "period": "Edad Antigua",
+      "location": "Península Ibérica (valle del Guadalquivir)",
+      "description": "Tartessos fue la primera gran civilización de la Península Ibérica, famosa por su riqueza en metales, su comercio con fenicios y griegos y la figura legendaria del rey Argantonio. Los últimos descubrimientos arqueológicos están transformando lo que sabemos sobre esta cultura.",
+      "summary": "Primera civilización urbana de Occidente, Tartessos controló el comercio de metales en el sur de la Península Ibérica entre los siglos X y VI a.C.",
+      "consequences": [
+        "Establecimiento de rutas comerciales entre el Atlántico y el Mediterráneo oriental.",
+        "Difusión de técnicas metalúrgicas y del alfabeto fenicio en el occidente peninsular.",
+        "Formación de un mito de riqueza que perduró en la historiografía grecorromana."
+      ],
+      "characters": [
+        "Argantonio"
+      ],
+      "civilizations": [
+        "Tartessos",
+        "Fenicia",
+        "Grecia"
+      ],
+      "topics": [
+        "Tartessos",
+        "arqueología",
+        "mito",
+        "Península Ibérica",
+        "comercio"
+      ],
+      "sourceConference": {
+        "title": "TARTESSOS: historia, mito y NUEVOS DESCUBRIMIENTOS",
+        "organization": "Raíces de Europa",
+        "url": "https://www.youtube.com/watch?v=pHso75yhQj4",
+        "date": "2024"
+      },
+      "relatedConferences": [
+        "tartessos-historia-mito"
+      ]
+    },
+    {
+      "id": "iberos-principes-iberia-evento",
+      "title": "Los íberos: príncipes y aristócratas de Iberia",
+      "dateLabel": "c. 600 a.C. - 20 d.C.",
+      "startYear": -600,
+      "endYear": -20,
+      "period": "Edad Antigua",
+      "location": "Península Ibérica oriental y meridional",
+      "description": "Los íberos fueron el principal pueblo prerromano de la mitad oriental y meridional de la Península Ibérica. Organizados en tribus y territorios regidos por élites aristocráticas, destacaron por su arte, su economía agrícola y minera y su contacto con fenicios, griegos y cartagineses.",
+      "summary": "Civilización prerromana de Iberia caracterizada por su arte zoomorfo, sus oppida y su organización aristocrática.",
+      "consequences": [
+        "Desarrollo de una cultura material original que combina influencias mediterráneas y locales.",
+        "Contacto comercial y cultural con fenicios, griegos y cartagineses.",
+        "Integración paulatina en el Imperio Romano a partir del siglo II a.C."
+      ],
+      "characters": [],
+      "civilizations": [
+        "Íberos"
+      ],
+      "topics": [
+        "íberos",
+        "Hispania",
+        "pueblos prerromanos",
+        "arte íbero",
+        "cultura íbera"
+      ],
+      "sourceConference": {
+        "title": "LOS IBEROS: Príncipes de Iberia",
+        "organization": "Raíces de Europa",
+        "url": "https://www.youtube.com/watch?v=yrW4dCCAZDk",
+        "date": "2024"
+      },
+      "relatedConferences": [
+        "iberos-principes-iberia"
+      ]
+    },
+    {
+      "id": "hispania-celtica-celtiberos",
+      "title": "La Hispania Céltica: celtas y celtíberos",
+      "dateLabel": "c. 600 a.C. - 19 d.C.",
+      "startYear": -600,
+      "endYear": 19,
+      "period": "Edad Antigua",
+      "location": "Península Ibérica septentrional, central y oriental",
+      "description": "La Hispania Céltica agrupaba a pueblos de cultura celta asentados en el norte, centro y este de la Península Ibérica. Entre ellos destacaron los celtíberos, cuya resistencia armada contra Roma convirtió a Numancia en símbolo de la lucha hispana por la libertad.",
+      "summary": "Pueblos de cultura celta en la Península Ibérica, con los celtíberos como exponente principal de la resistencia frente a Roma.",
+      "consequences": [
+        "Larga guerra de conquista que obligó a Roma a desplegar enormes recursos en Hispania.",
+        "Mito de Numancia como emblema de resistencia en la cultura hispana.",
+        "Fusión cultural celta-romana que daría lugar a la Hispania romana."
+      ],
+      "characters": [
+        "Viríato"
+      ],
+      "civilizations": [
+        "Celtas",
+        "Celtíberos",
+        "Roma"
+      ],
+      "topics": [
+        "Hispania Céltica",
+        "celtas",
+        "celtíberos",
+        "pueblos prerromanos",
+        "Numancia"
+      ],
+      "sourceConference": {
+        "title": "LOS CELTÍBEROS y la Hispania Prerromana hasta NUMANCIA",
+        "organization": "Raíces de Europa",
+        "url": "https://www.youtube.com/watch?v=nau3bi4_0JQ",
+        "date": "2024-05-19"
+      },
+      "relatedConferences": [
+        "celtiberos-hispania-numancia",
+        "hispania-celtica"
+      ]
+    },
+    {
+      "id": "numancia-roma",
+      "title": "Numancia frente a Roma: resistencia y sacrificio",
+      "dateLabel": "c. 200-133 a.C.",
+      "startYear": -200,
+      "endYear": -133,
+      "period": "Edad Antigua",
+      "location": "Meseta norte, Hispania",
+      "description": "Numancia fue una ciudad celtíbera que encabezó la resistencia contra la expansión romana en la Hispania interior. Su largo asedio y destrucción final en el año 133 a.C. por Escipión Emiliano se convirtieron en símbolo de la lucha por la libertad.",
+      "summary": "La resistencia numantina contra Roma y la destrucción de la ciudad en 133 a.C.",
+      "consequences": [
+        "Fin de la principal resistencia celtíbera organizada contra Roma.",
+        "Consolidación romana en la Meseta norte de Hispania.",
+        "Mito literario y patriótico de Numancia que ha perdurado hasta hoy."
+      ],
+      "characters": [
+        "Escipión Emiliano"
+      ],
+      "civilizations": [
+        "Celtíberos",
+        "Roma"
+      ],
+      "topics": [
+        "Numancia",
+        "Hispania",
+        "celtíberos",
+        "asedio",
+        "resistencia hispana"
+      ],
+      "sourceConference": {
+        "title": "NUMANCIA FRENTE A ROMA: resistencia, asedio y destrucción",
+        "organization": "Raíces de Europa",
+        "url": "https://www.youtube.com/watch?v=nsFxha_4uYE",
+        "date": "2025"
+      },
+      "relatedConferences": [
+        "numancia-frente-roma"
+      ]
+    },
+    {
+      "id": "imperio-cartagines",
+      "title": "El Imperio Cartaginés: nacimiento, esplendor y caída",
+      "dateLabel": "814-146 a.C.",
+      "startYear": -814,
+      "endYear": -146,
+      "period": "Edad Antigua",
+      "location": "Mediterráneo occidental y norte de África",
+      "description": "Cartago fue la mayor potencia comercial y naval del Mediterráneo occidental durante siglos. Heredera de la tradición fenicia, llegó a enfrentarse a Roma en las guerras púnicas, que definirían el destino del mundo antiguo.",
+      "summary": "Ascenso y caída de Cartago como potencia mediterránea, desde su fundación hasta su destrucción en 146 a.C.",
+      "consequences": [
+        "Control del comercio mediterráneo occidental durante siglos.",
+        "Guerras púnicas que transformaron el equilibrio de poder en el Mediterráneo.",
+        "Destrucción de Cartago y consolidación de la hegemonía romana en el Mediterráneo occidental."
+      ],
+      "characters": [
+        "Aníbal Barca",
+        "Escipión el Africano",
+        "Amílcar Barca"
+      ],
+      "civilizations": [
+        "Cartago",
+        "Fenicia",
+        "Roma"
+      ],
+      "topics": [
+        "Cartago",
+        "Imperio Cartaginés",
+        "guerras púnicas",
+        "Aníbal",
+        "Escipión"
+      ],
+      "sourceConference": {
+        "title": "EL IMPERIO CARTAGINÉS (I). Nacimiento y esplendor de una potencia formidable",
+        "organization": "Raíces de Europa",
+        "url": "https://www.youtube.com/watch?v=AAwIyN79NJc",
+        "date": "2021"
+      },
+      "relatedConferences": [
+        "imperio-cartagines-i",
+        "imperio-cartagines-ii"
       ]
     }
   ]
