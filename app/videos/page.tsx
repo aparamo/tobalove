@@ -31,9 +31,9 @@ export default async function VideosPage() {
   const videos = conferences
     .filter((conf) => getYouTubeUrl(conf) !== null)
     .sort((a, b) => {
-      const yearA = a.year ?? 0;
-      const yearB = b.year ?? 0;
-      return yearB - yearA;
+      const yearA = a.year ?? Infinity;
+      const yearB = b.year ?? Infinity;
+      return yearA - yearB;
     });
 
   const watchedIds = session?.user?.id

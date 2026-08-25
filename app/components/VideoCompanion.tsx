@@ -1,10 +1,21 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { AnimatePresence } from "framer-motion";
-import { Search, X, Play, Calendar, Building2, Clock, Users, MapPin } from "lucide-react";
+import { useMemo, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import {
+  Search,
+  X,
+  Play,
+  Calendar,
+  Building2,
+  Clock,
+  Users,
+  MapPin,
+  ChevronDown,
+} from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Sheet,
   SheetContent,
@@ -20,6 +31,10 @@ import type {
   TimelineEvent,
   PeopleGroup,
 } from "@/app/types/timeline";
+
+type SortOption = "epoch-asc" | "epoch-desc" | "title-asc" | "title-desc";
+
+const PAGE_SIZE = 12;
 
 interface VideoCompanionProps {
   videos: ConferenceItem[];
@@ -42,6 +57,10 @@ export function VideoCompanion({
   const [selectedVideo, setSelectedVideo] = useState<ConferenceItem | null>(null);
   const [watchedIds, setWatchedIds] = useState<Set<string>>(initialWatchedIds);
   const [togglingId, setTogglingId] = useState<string | null>(null);
+  const [sortBy, setSortBy] = useState<SortOption>("epoch-asc");
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+
+  const loadingMoreRef = useRef(false);
 
   const eventsByConf = useMemo(() => {
     const map = new Map<string, TimelineEvent[]>();
@@ -99,9 +118,69 @@ export function VideoCompanion({
     });
   }, [videos, search, selectedCiv, selectedTopic]);
 
+  const sortedVideos = useMemo(() => {
+    const sorted = [...filteredVideos];
+    switch (sortBy) {
+      case "epoch-asc":
+        return sorted.sort((a, b) => (a.year ?? Infinity) - (b.year ?? Infinity));
+      case "epoch-desc":
+        return sorted.sort((a, b) => (b.year ?? -Infinity) - (a.year ?? -Infinity));
+      case "title-asc":
+        return sorted.sort((a, b) => a.title.localeCompare(b.title));
+      case "title-desc":
+        return sorted.sort((a, b) => b.title.localeCompare(a.title));
+      default:
+        return sorted;
+    }
+  }, [filteredVideos, sortBy]);
+
+  const visibleVideos = sortedVideos.slice(0, visibleCount);
+  const hasMore = visibleCount < sortedVideos.length;
+
   const selectedVideoId = selectedVideo
     ? getYouTubeId(getYouTubeUrl(selectedVideo))
     : null;
+
+  function resetPagination() {
+    setVisibleCount(PAGE_SIZE);
+  }
+
+  function handleSearchChange(value: string) {
+    setSearch(value);
+    resetPagination();
+  }
+
+  function handleCivChange(civ: string) {
+    setSelectedCiv((prev) => (prev === civ ? null : civ));
+    resetPagination();
+  }
+
+  function handleTopicChange(topic: string) {
+    setSelectedTopic((prev) => (prev === topic ? null : topic));
+    resetPagination();
+  }
+
+  function handleSortChange(value: SortOption) {
+    setSortBy(value);
+    resetPagination();
+  }
+
+  function handleClearFilters() {
+    setSearch("");
+    setSelectedCiv(null);
+    setSelectedTopic(null);
+    setSortBy("epoch-asc");
+    resetPagination();
+  }
+
+  function handleLoadMore() {
+    if (loadingMoreRef.current || !hasMore) return;
+    loadingMoreRef.current = true;
+    setVisibleCount((prev) => Math.min(prev + PAGE_SIZE, sortedVideos.length));
+    requestAnimationFrame(() => {
+      loadingMoreRef.current = false;
+    });
+  }
 
   async function handleToggleWatched(conferenceId: string) {
     if (!isAuthenticated || togglingId) return;
@@ -131,13 +210,13 @@ export function VideoCompanion({
           <input
             type="text"
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => handleSearchChange(e.target.value)}
             placeholder="Buscar por título, personaje, tema..."
             className="w-full rounded-lg border border-border/60 bg-background py-2.5 pl-9 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
           />
           {search && (
             <button
-              onClick={() => setSearch("")}
+              onClick={() => handleSearchChange("")}
               className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
             >
               <X className="h-4 w-4" />
@@ -145,7 +224,7 @@ export function VideoCompanion({
           )}
         </div>
 
-        <div className="space-y-3">
+        <div className="flex flex-wrap items-center justify-between gap-3">
           {allCivilizations.length > 0 && (
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
@@ -154,9 +233,7 @@ export function VideoCompanion({
               {allCivilizations.map((civ) => (
                 <button
                   key={civ}
-                  onClick={() =>
-                    setSelectedCiv((prev) => (prev === civ ? null : civ))
-                  }
+                  onClick={() => handleCivChange(civ)}
                   className={`rounded-full border px-2.5 py-1 text-xs transition-colors ${
                     selectedCiv === civ
                       ? "border-primary bg-primary text-primary-foreground"
@@ -169,44 +246,63 @@ export function VideoCompanion({
             </div>
           )}
 
-          {allTopics.length > 0 && (
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                Temas
-              </span>
-              {allTopics.slice(0, 20).map((topic) => (
-                <button
-                  key={topic}
-                  onClick={() =>
-                    setSelectedTopic((prev) => (prev === topic ? null : topic))
-                  }
-                  className={`rounded-full border px-2.5 py-1 text-xs transition-colors ${
-                    selectedTopic === topic
-                      ? "border-primary bg-primary text-primary-foreground"
-                      : "border-border/60 bg-background text-foreground hover:bg-muted"
-                  }`}
-                >
-                  {topic}
-                </button>
-              ))}
-              {allTopics.length > 20 && (
-                <span className="text-xs text-muted-foreground">
-                  +{allTopics.length - 20} más
-                </span>
-              )}
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+              Ordenar
+            </span>
+            <div className="relative">
+              <select
+                value={sortBy}
+                onChange={(e) => handleSortChange(e.target.value as SortOption)}
+                aria-label="Ordenar videos"
+                className="appearance-none rounded-lg border border-border/60 bg-background py-2 pl-3 pr-8 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+              >
+                <option value="epoch-asc">Época: antiguas → recientes</option>
+                <option value="epoch-desc">Época: recientes → antiguas</option>
+                <option value="title-asc">Título: A-Z</option>
+                <option value="title-desc">Título: Z-A</option>
+              </select>
+              <ChevronDown className="pointer-events-none absolute right-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             </div>
-          )}
+          </div>
         </div>
 
+        {allTopics.length > 0 && (
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+              Temas
+            </span>
+            {allTopics.slice(0, 20).map((topic) => (
+              <button
+                key={topic}
+                onClick={() => handleTopicChange(topic)}
+                className={`rounded-full border px-2.5 py-1 text-xs transition-colors ${
+                  selectedTopic === topic
+                    ? "border-primary bg-primary text-primary-foreground"
+                    : "border-border/60 bg-background text-foreground hover:bg-muted"
+                }`}
+              >
+                {topic}
+              </button>
+            ))}
+            {allTopics.length > 20 && (
+              <span className="text-xs text-muted-foreground">
+                +{allTopics.length - 20} más
+              </span>
+            )}
+          </div>
+        )}
+
         <p className="text-sm text-muted-foreground">
-          Mostrando {filteredVideos.length} de {videos.length} videos
+          Mostrando {visibleVideos.length} de {filteredVideos.length} videos
+          {filteredVideos.length !== videos.length && ` (filtrados de ${videos.length})`}
         </p>
       </div>
 
       {/* Grid */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <AnimatePresence>
-          {filteredVideos.map((video, index) => (
+          {visibleVideos.map((video, index) => (
             <VideoCard
               key={video.id}
               conference={video}
@@ -230,6 +326,17 @@ export function VideoCompanion({
         </AnimatePresence>
       </div>
 
+      {hasMore && (
+        <motion.div
+          onViewportEnter={handleLoadMore}
+          viewport={{ once: false, amount: 0, margin: "200px" }}
+          className="flex items-center justify-center py-8"
+          aria-hidden="true"
+        >
+          <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" />
+        </motion.div>
+      )}
+
       {filteredVideos.length === 0 && (
         <div className="rounded-xl border border-dashed border-border py-16 text-center">
           <p className="text-muted-foreground">
@@ -239,11 +346,7 @@ export function VideoCompanion({
             variant="outline"
             size="sm"
             className="mt-4"
-            onClick={() => {
-              setSearch("");
-              setSelectedCiv(null);
-              setSelectedTopic(null);
-            }}
+            onClick={handleClearFilters}
           >
             Limpiar filtros
           </Button>
@@ -252,10 +355,10 @@ export function VideoCompanion({
 
       {/* Sheet player */}
       <Sheet open={!!selectedVideo} onOpenChange={() => setSelectedVideo(null)}>
-        <SheetContent side="right" className="w-full sm:max-w-xl">
+        <SheetContent side="right" className="w-full gap-0 p-0 sm:max-w-xl">
           {selectedVideo && selectedVideoId && (
             <>
-              <SheetHeader>
+              <SheetHeader className="p-4">
                 <SheetTitle className="line-clamp-2 pr-8">
                   {selectedVideo.title}
                 </SheetTitle>
@@ -283,90 +386,92 @@ export function VideoCompanion({
                 </SheetDescription>
               </SheetHeader>
 
-              <div className="space-y-5 px-4 pb-6">
-                <div className="aspect-video w-full overflow-hidden rounded-xl bg-muted">
-                  <iframe
-                    src={`https://www.youtube.com/embed/${selectedVideoId}`}
-                    title={selectedVideo.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="h-full w-full"
-                  />
+              <ScrollArea className="flex-1 px-4">
+                <div className="space-y-5 pb-6">
+                  <div className="aspect-video w-full overflow-hidden rounded-xl bg-muted">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${selectedVideoId}`}
+                      title={selectedVideo.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="h-full w-full"
+                    />
+                  </div>
+
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {selectedVideo.description}
+                  </p>
+
+                  {selectedVideo.summary && (
+                    <div className="rounded-lg bg-muted/50 p-4">
+                      <p className="text-sm leading-relaxed text-foreground/80">
+                        {selectedVideo.summary}
+                      </p>
+                    </div>
+                  )}
+
+                  {selectedVideo.characters.length > 0 && (
+                    <div className="space-y-2">
+                      <h4 className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                        <Users className="h-3.5 w-3.5" />
+                        Personajes
+                      </h4>
+                      <div className="flex flex-wrap gap-1.5">
+                        {selectedVideo.characters.map((c) => (
+                          <Badge key={c} variant="secondary" className="text-xs">
+                            {c}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedVideo.civilizations.length > 0 && (
+                    <div className="space-y-2">
+                      <h4 className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                        <MapPin className="h-3.5 w-3.5" />
+                        Civilizaciones
+                      </h4>
+                      <div className="flex flex-wrap gap-1.5">
+                        {selectedVideo.civilizations.map((c) => (
+                          <Badge key={c} variant="outline" className="text-xs">
+                            {c}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedVideo.topics.length > 0 && (
+                    <div className="space-y-2">
+                      <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                        Temas
+                      </h4>
+                      <div className="flex flex-wrap gap-1.5">
+                        {selectedVideo.topics.map((t) => (
+                          <Badge
+                            key={t}
+                            variant="outline"
+                            className="text-xs font-normal text-muted-foreground"
+                          >
+                            {t}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  <a
+                    href={getYouTubeUrl(selectedVideo) ?? undefined}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-8 w-full items-center justify-center gap-1.5 rounded-lg bg-primary px-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/80"
+                  >
+                    <Play className="h-4 w-4" />
+                    Ver en YouTube
+                  </a>
                 </div>
-
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  {selectedVideo.description}
-                </p>
-
-                {selectedVideo.summary && (
-                  <div className="rounded-lg bg-muted/50 p-4">
-                    <p className="text-sm leading-relaxed text-foreground/80">
-                      {selectedVideo.summary}
-                    </p>
-                  </div>
-                )}
-
-                {selectedVideo.characters.length > 0 && (
-                  <div className="space-y-2">
-                    <h4 className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                      <Users className="h-3.5 w-3.5" />
-                      Personajes
-                    </h4>
-                    <div className="flex flex-wrap gap-1.5">
-                      {selectedVideo.characters.map((c) => (
-                        <Badge key={c} variant="secondary" className="text-xs">
-                          {c}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {selectedVideo.civilizations.length > 0 && (
-                  <div className="space-y-2">
-                    <h4 className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                      <MapPin className="h-3.5 w-3.5" />
-                      Civilizaciones
-                    </h4>
-                    <div className="flex flex-wrap gap-1.5">
-                      {selectedVideo.civilizations.map((c) => (
-                        <Badge key={c} variant="outline" className="text-xs">
-                          {c}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {selectedVideo.topics.length > 0 && (
-                  <div className="space-y-2">
-                    <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                      Temas
-                    </h4>
-                    <div className="flex flex-wrap gap-1.5">
-                      {selectedVideo.topics.map((t) => (
-                        <Badge
-                          key={t}
-                          variant="outline"
-                          className="text-xs font-normal text-muted-foreground"
-                        >
-                          {t}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                <a
-                  href={getYouTubeUrl(selectedVideo) ?? undefined}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex h-8 w-full items-center justify-center gap-1.5 rounded-lg bg-primary px-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/80"
-                >
-                  <Play className="h-4 w-4" />
-                  Ver en YouTube
-                </a>
-              </div>
+              </ScrollArea>
             </>
           )}
         </SheetContent>

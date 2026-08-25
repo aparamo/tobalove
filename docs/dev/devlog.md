@@ -671,3 +671,81 @@ la usabilidad, la estética y la información disponible sin modificar el legacy
 ### Verificación
 - `bun run lint` ✅ — sin errores (warnings preexistentes).
 - `bun run build` ✅ — prerenderizado estático correcto.
+
+
+## 2026-08-24 (continuación) — Página `/videos`: ordenamiento, carga progresiva y scroll en panel lateral
+
+### Contexto
+El usuario pidió mejorar la página `/videos` con tres funcionalidades concretas:
+1. Añadir una opción para ordenar los videos, siendo el default **la época de las
+   civilizaciones más antiguas a las más recientes**.
+2. Implementar **carga progresiva** a medida que el usuario hace scroll, en lugar de
+   renderizar todo el catálogo de golpe.
+3. Hacer **scrollable el panel lateral** que se abre al hacer click en un video,
+   porque en contenidos largos se cortaban elementos como descripción, resumen,
+   personajes, civilizaciones, temas o el botón de YouTube.
+
+### Trabajo realizado
+
+#### Ordenamiento
+- Se definió el tipo `SortOption` con cuatro opciones:
+  - `epoch-asc`: Época antiguas → recientes (por `year` ascendente).
+  - `epoch-desc`: Época recientes → antiguas (por `year` descendente).
+  - `title-asc`: Título A-Z.
+  - `title-desc`: Título Z-A.
+- Se añadió el estado `sortBy` con default `epoch-asc` en
+  `/tob-app/app/components/VideoCompanion.tsx`.
+- Se implementó `sortedVideos` con `useMemo`, colocando los ítems sin `year` al final
+  tanto en orden ascendente (`Infinity`) como descendente (`-Infinity`).
+- Se añadió un selector `<select>` estilizado con Tailwind junto al filtro de
+  civilizaciones, incluyendo icono `ChevronDown` de lucide.
+- Se cambió el orden por defecto del servidor en `/tob-app/app/videos/page.tsx`:
+  el array de videos ahora se ordena por `year` ascendente, coherente con el nuevo
+  default de la UI.
+
+#### Carga progresiva (infinite scroll)
+- Se definió `PAGE_SIZE = 12`.
+- Se añadió el estado `visibleCount` y el cálculo `visibleVideos = sortedVideos.slice(0, visibleCount)`.
+- Se implementó un sentinel animado con `motion.div` y el evento `onViewportEntry` de
+  `framer-motion` para cargar 12 videos más cuando el usuario se acerca al final del
+  listado (`margin: "200px"`).
+- Se usó una ref `loadingMoreRef` para evitar cargas múltiples simultáneas.
+- Se añadieron handlers centralizados (`handleSearchChange`, `handleCivChange`,
+  `handleTopicChange`, `handleSortChange`, `handleClearFilters`) que resetean
+  `visibleCount` a `PAGE_SIZE` cada vez que cambian filtros, búsqueda u ordenamiento.
+- Se actualizó el contador inferior para mostrar cuántos videos se ven de los
+  filtrados, y si hay filtro activo, del total.
+
+#### Panel lateral scrollable
+- Se importó `ScrollArea` de shadcn/base-ui en `VideoCompanion.tsx`.
+- Se reestructuró `SheetContent` para que tenga `gap-0 p-0` y ocupe toda la altura.
+- El `SheetHeader` quedó fijo arriba con padding propio.
+- El contenido del panel (iframe de YouTube, descripción, resumen, personajes,
+  civilizaciones, temas, botón de YouTube) se envolvió en `ScrollArea` con
+  `flex-1 px-4`, permitiendo scroll independiente del header.
+- Se mantuvo el aspect-ratio del iframe con `aspect-video` y se conservó el padding
+  inferior del contenido (`pb-6`).
+
+#### Refactor de estado y accesibilidad
+- Se extrajeron helpers para no repetir la lógica de reset de paginación.
+- Se añadió `aria-label="Ordenar videos"` al selector.
+- Se mantuvo el comportamiento existente de marcar videos como vistos
+  (`toggleWatchedConference`) y el contador de filtros.
+
+### Archivos modificados
+- `/tob-app/app/components/VideoCompanion.tsx`
+- `/tob-app/app/videos/page.tsx`
+
+### Verificación
+- `bun run lint` ✅ — sin errores de ESLint (solo el warning preexistente en
+  `lib/timeline.ts` por la variable `popRatio` no utilizada).
+- `bun run build` ✅ — prerenderizado estático correcto de `/videos` y el resto de
+  rutas.
+
+### Pendientes posibles
+- Añadir más criterios de orden (por ejemplo, por fecha de publicación de la
+  conferencia o por duración) si se parsea el campo `date` o `duration`.
+- Evaluar si el tamaño de página `PAGE_SIZE = 12` es óptimo en móviles con pantallas
+  muy altas, donde el sentinel podría no salir del viewport inicial.
+- Considerar virtualización si el catálogo de videos crece varios órdenes de
+  magnitud.
