@@ -33,6 +33,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { toast } from "sonner";
 import type { ConferenceItem } from "@/app/types/timeline";
 import { cn } from "@/lib/utils";
 
@@ -266,6 +267,7 @@ export function ConferenceDatabase({
 
   async function handleToggleWatched(conferenceId: string) {
     if (!isAuthenticated || !onToggleWatched || togglingId) return;
+    const wasWatched = watchedIds.has(conferenceId);
     setTogglingId(conferenceId);
     try {
       await onToggleWatched(conferenceId);
@@ -278,6 +280,11 @@ export function ConferenceDatabase({
         }
         return next;
       });
+      toast.success(
+        wasWatched ? "Marcado como no visto" : "Marcado como visto"
+      );
+    } catch {
+      toast.error("No se pudo actualizar el estado de visto");
     } finally {
       setTogglingId(null);
     }
@@ -285,6 +292,7 @@ export function ConferenceDatabase({
 
   async function handleToggleFavorite(conferenceId: string) {
     if (!isAuthenticated || !onToggleFavorite || togglingId) return;
+    const wasFavorite = favoriteIds.has(conferenceId);
     setTogglingId(conferenceId);
     try {
       await onToggleFavorite(conferenceId);
@@ -297,6 +305,11 @@ export function ConferenceDatabase({
         }
         return next;
       });
+      toast.success(
+        wasFavorite ? "Eliminado de favoritos" : "Añadido a favoritos"
+      );
+    } catch {
+      toast.error("No se pudo actualizar favoritos");
     } finally {
       setTogglingId(null);
     }
@@ -304,6 +317,7 @@ export function ConferenceDatabase({
 
   async function handleToggleWatchlist(conferenceId: string) {
     if (!isAuthenticated || !onToggleWatchlist || togglingId) return;
+    const wasWatchlist = watchlistIds.has(conferenceId);
     setTogglingId(conferenceId);
     try {
       await onToggleWatchlist(conferenceId);
@@ -316,6 +330,13 @@ export function ConferenceDatabase({
         }
         return next;
       });
+      toast.success(
+        wasWatchlist
+          ? "Eliminado de la lista de siguientes"
+          : "Añadido a la lista de siguientes"
+      );
+    } catch {
+      toast.error("No se pudo actualizar la lista de siguientes");
     } finally {
       setTogglingId(null);
     }

@@ -3,6 +3,8 @@ import type { ReactNode } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { ThemeProvider } from "next-themes";
+import { Toaster } from "@/components/ui/sonner";
 import { Clock, Home, PlaySquare, Database, Heart } from "lucide-react";
 import { auth } from "@/auth";
 import type { Session } from "next-auth";
@@ -100,7 +102,10 @@ export default async function RootLayout({
               <UserNav user={session?.user} />
             </nav>
           </header>
-          {children}
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            {children}
+            <Toaster position="bottom-right" closeButton />
+          </ThemeProvider>
           <footer className="border-t bg-muted/30 py-8">
             <div className="mx-auto max-w-5xl space-y-3 px-4 text-center text-sm text-muted-foreground sm:px-6 lg:px-8">
               <p>
