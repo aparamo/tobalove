@@ -28,11 +28,28 @@ export default async function VideosPage() {
   const events = (await getTimelineEvents()) as unknown as TimelineEvent[];
   const peoples = (await getPeoples()) as unknown as PeopleGroup[];
 
+  // Se ordena por la fecha histórica más antigua de los eventos relacionados,
+  // de modo que Sumer (~3500 a.C.) aparezca antes que Roma o el Imperio Romano.
+  const eventsByConf = new Map<string, TimelineEvent[]>();
+  for (const ev of events) {
+    for (const cid of ev.relatedConferences) {
+      const list = eventsByConf.get(cid) ?? [];
+      list.push(ev);
+      eventsByConf.set(cid, list);
+    }
+  }
+
+  function getHistoricalStartYear(confId: string): number | null {
+    const relatedEvents = eventsByConf.get(confId) ?? [];
+    if (relatedEvents.length === 0) return null;
+    return Math.min(...relatedEvents.map((ev) => ev.startYear));
+  }
+
   const videos = conferences
     .filter((conf) => getYouTubeUrl(conf) !== null)
     .sort((a, b) => {
-      const yearA = a.year ?? Infinity;
-      const yearB = b.year ?? Infinity;
+      const yearA = getHistoricalStartYear(a.id) ?? Infinity;
+      const yearB = getHistoricalStartYear(b.id) ?? Infinity;
       return yearA - yearB;
     });
 

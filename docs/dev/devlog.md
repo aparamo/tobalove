@@ -749,3 +749,62 @@ El usuario pidió mejorar la página `/videos` con tres funcionalidades concreta
   muy altas, donde el sentinel podría no salir del viewport inicial.
 - Considerar virtualización si el catálogo de videos crece varios órdenes de
   magnitud.
+
+
+## 2026-08-24 (continuación) — Corrección en `/videos`: ordenar por fecha histórica y scroll lateral robusto
+
+### Contexto
+Tras la entrega anterior el usuario aclaró que el ordenamiento no debía basarse en
+el año de publicación de la conferencia (campo `year` de `Conference`), sino en la
+**fecha histórica del contenido**, de modo que Sumer (~3500 a.C.) aparezca el
+primero. También reportó que el panel lateral seguía cortando contenido, por lo que
+se reforzó la solución de scroll.
+
+### Corrección del ordenamiento
+- Se identificó que `Conference.year` almacena el año de publicación de la charla,
+  no el año histórico al que se refiere.
+- La fecha histórica real se obtiene del `startYear` más antiguo de los
+  `TimelineEvent` relacionados con cada conferencia (`relatedConferences`).
+- En `/tob-app/app/videos/page.tsx`:
+  - Se construye un mapa `eventsByConf` a partir de los eventos de la línea de
+    tiempo.
+  - Se añade `getHistoricalStartYear(confId)` que devuelve el `startYear` mínimo de
+    los eventos relacionados, o `null` si no tiene ninguno.
+  - Los videos se ordenan ascendentemente por esa fecha histórica, colocando los
+    sin eventos al final (`Infinity`).
+- En `/tob-app/app/components/VideoCompanion.tsx`:
+  - Las opciones de orden pasaron de `epoch-*` a `date-*`.
+  - Las etiquetas del selector ahora dicen **“Fecha: antiguas → recientes”** y
+    **“Fecha: recientes → antiguas”**.
+  - El default es `date-asc`, coherente con el orden del servidor.
+  - El helper `getHistoricalStartYear` se movió dentro del `useMemo` de
+    `sortedVideos` para evitar warnings de dependencias de hooks.
+
+### Resultado del orden
+Verificación manual con los datos actuales: los primeros videos ahora son Sumer
+(3500 a.C.), seguido del origen del mundo (3000 a.C.), Egipto Imperio Antiguo
+(2686 a.C.), Tumbas Reales de Ur (2600 a.C.), etc.
+
+### Refuerzo del scroll en el panel lateral
+- Se añadió `overflow-hidden` a `SheetContent` para forzar que el panel nunca
+  desborde la ventana.
+- Se añadió `shrink-0` al `SheetHeader` para que permanezca fijo y no se reduzca.
+- Se añadió `min-h-0` al `ScrollArea` para evitar que el contenido empuje y rompa
+  el layout flex.
+- Se mantuvo `ScrollArea` de shadcn/base-ui con `flex-1`, dejando el header fijo y
+  el contenido scrollable de forma independiente.
+
+### Archivos modificados
+- `/tob-app/app/components/VideoCompanion.tsx`
+- `/tob-app/app/videos/page.tsx`
+- `/tob-app/docs/dev/devlog.md`
+
+### Verificación
+- `bun run lint` ✅ — sin errores (solo el warning preexistente en `lib/timeline.ts`).
+- `bun run build` ✅ — prerenderizado estático correcto de todas las rutas.
+
+### Pendientes posibles
+- Añadir un indicador visual de la fecha histórica en cada `VideoCard` para que el
+  usuario entienda por qué un video aparece en cierta posición.
+- Permitir ordenar por fecha de publicación de la conferencia como opción adicional
+  (distinguiendo claramente “fecha histórica” vs “fecha de publicación”).

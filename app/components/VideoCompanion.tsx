@@ -32,7 +32,7 @@ import type {
   PeopleGroup,
 } from "@/app/types/timeline";
 
-type SortOption = "epoch-asc" | "epoch-desc" | "title-asc" | "title-desc";
+type SortOption = "date-asc" | "date-desc" | "title-asc" | "title-desc";
 
 const PAGE_SIZE = 12;
 
@@ -57,7 +57,7 @@ export function VideoCompanion({
   const [selectedVideo, setSelectedVideo] = useState<ConferenceItem | null>(null);
   const [watchedIds, setWatchedIds] = useState<Set<string>>(initialWatchedIds);
   const [togglingId, setTogglingId] = useState<string | null>(null);
-  const [sortBy, setSortBy] = useState<SortOption>("epoch-asc");
+  const [sortBy, setSortBy] = useState<SortOption>("date-asc");
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
   const loadingMoreRef = useRef(false);
@@ -119,12 +119,26 @@ export function VideoCompanion({
   }, [videos, search, selectedCiv, selectedTopic]);
 
   const sortedVideos = useMemo(() => {
+    function getHistoricalStartYear(confId: string): number | null {
+      const relatedEvents = eventsByConf.get(confId) ?? [];
+      if (relatedEvents.length === 0) return null;
+      return Math.min(...relatedEvents.map((ev) => ev.startYear));
+    }
+
     const sorted = [...filteredVideos];
     switch (sortBy) {
-      case "epoch-asc":
-        return sorted.sort((a, b) => (a.year ?? Infinity) - (b.year ?? Infinity));
-      case "epoch-desc":
-        return sorted.sort((a, b) => (b.year ?? -Infinity) - (a.year ?? -Infinity));
+      case "date-asc":
+        return sorted.sort(
+          (a, b) =>
+            (getHistoricalStartYear(a.id) ?? Infinity) -
+            (getHistoricalStartYear(b.id) ?? Infinity)
+        );
+      case "date-desc":
+        return sorted.sort(
+          (a, b) =>
+            (getHistoricalStartYear(b.id) ?? -Infinity) -
+            (getHistoricalStartYear(a.id) ?? -Infinity)
+        );
       case "title-asc":
         return sorted.sort((a, b) => a.title.localeCompare(b.title));
       case "title-desc":
@@ -132,7 +146,7 @@ export function VideoCompanion({
       default:
         return sorted;
     }
-  }, [filteredVideos, sortBy]);
+  }, [filteredVideos, sortBy, eventsByConf]);
 
   const visibleVideos = sortedVideos.slice(0, visibleCount);
   const hasMore = visibleCount < sortedVideos.length;
@@ -169,7 +183,7 @@ export function VideoCompanion({
     setSearch("");
     setSelectedCiv(null);
     setSelectedTopic(null);
-    setSortBy("epoch-asc");
+    setSortBy("date-asc");
     resetPagination();
   }
 
@@ -257,8 +271,8 @@ export function VideoCompanion({
                 aria-label="Ordenar videos"
                 className="appearance-none rounded-lg border border-border/60 bg-background py-2 pl-3 pr-8 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
               >
-                <option value="epoch-asc">Época: antiguas → recientes</option>
-                <option value="epoch-desc">Época: recientes → antiguas</option>
+                <option value="date-asc">Fecha: antiguas → recientes</option>
+                <option value="date-desc">Fecha: recientes → antiguas</option>
                 <option value="title-asc">Título: A-Z</option>
                 <option value="title-desc">Título: Z-A</option>
               </select>
@@ -355,10 +369,13 @@ export function VideoCompanion({
 
       {/* Sheet player */}
       <Sheet open={!!selectedVideo} onOpenChange={() => setSelectedVideo(null)}>
-        <SheetContent side="right" className="w-full gap-0 p-0 sm:max-w-xl">
+        <SheetContent
+          side="right"
+          className="w-full gap-0 overflow-hidden p-0 sm:max-w-xl"
+        >
           {selectedVideo && selectedVideoId && (
             <>
-              <SheetHeader className="p-4">
+              <SheetHeader className="shrink-0 p-4">
                 <SheetTitle className="line-clamp-2 pr-8">
                   {selectedVideo.title}
                 </SheetTitle>
@@ -386,7 +403,7 @@ export function VideoCompanion({
                 </SheetDescription>
               </SheetHeader>
 
-              <ScrollArea className="flex-1 px-4">
+              <ScrollArea className="min-h-0 flex-1 px-4">
                 <div className="space-y-5 pb-6">
                   <div className="aspect-video w-full overflow-hidden rounded-xl bg-muted">
                     <iframe
