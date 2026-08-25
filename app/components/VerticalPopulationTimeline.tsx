@@ -58,9 +58,17 @@ interface VerticalPopulationTimelineProps {
 }
 
 const PAGE_SIZE = 10;
-const CONTAINER_HEIGHT = 1600;
-const CARD_HEIGHT = 104;
-const MIN_GAP = 20;
+const CARD_HEIGHT = 96;
+const MIN_GAP = 16;
+const BOTTOM_PADDING = 320;
+
+type TimelineHeight = "normal" | "long" | "extra";
+
+const HEIGHT_PRESETS: Record<TimelineHeight, { base: number; multiplier: number }> = {
+  normal: { base: 3600, multiplier: 100 },
+  long: { base: 4800, multiplier: 120 },
+  extra: { base: 6000, multiplier: 140 },
+};
 
 function formatYear(year: number): string {
   return year < 0 ? `${Math.abs(year)} a.C.` : `${year} d.C.`;
@@ -105,7 +113,8 @@ interface LayoutItem {
 function layoutPeoples(
   peoples: PeopleGroup[],
   maxPopulation: number,
-  yearToPercent: (year: number) => number
+  yearToPercent: (year: number) => number,
+  containerHeight: number
 ): LayoutItem[] {
   const sorted = [...peoples].sort((a, b) => a.peakYear - b.peakYear);
   const items: LayoutItem[] = [];
@@ -116,7 +125,7 @@ function layoutPeoples(
 
   for (let i = 0; i < sorted.length; i++) {
     const people = sorted[i];
-    const baseTop = (yearToPercent(people.peakYear) / 100) * CONTAINER_HEIGHT;
+    const baseTop = (yearToPercent(people.peakYear) / 100) * containerHeight;
     const side = i % 2 === 0 ? "right" : "left";
 
     // Respetamos la posición real del año de apogeo. Solo empujamos hacia abajo
@@ -469,6 +478,7 @@ export function VerticalPopulationTimeline({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [scale, setScale] = useState<TimelineScale>("adapted");
   const [layoutMode, setLayoutMode] = useState<LayoutMode>("classic");
+  const [timelineHeight, setTimelineHeight] = useState<TimelineHeight>("normal");
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const expandedIndex = hoveredIndex ?? currentIndex;
@@ -502,20 +512,36 @@ export function VerticalPopulationTimeline({
     return filteredPeoples.slice(0, visibleCount);
   }, [filteredPeoples, visibleCount]);
 
+  // La altura del contenedor crece con la cantidad de pueblos visibles para
+  // evitar que las cards se amontonen en periodos densos de la línea de tiempo.
+  // El usuario puede elegir entre tres presets de altura.
+  const containerHeight = useMemo(() => {
+    const preset = HEIGHT_PRESETS[timelineHeight];
+    return Math.max(
+      preset.base,
+      filteredPeoples.length * preset.multiplier + CARD_HEIGHT * 2
+    );
+  }, [filteredPeoples.length, timelineHeight]);
+
   const layout = useMemo(() => {
-    return layoutPeoples(visiblePeoples, maxPopulation, yearToPercent);
-  }, [visiblePeoples, maxPopulation, yearToPercent]);
+    return layoutPeoples(
+      visiblePeoples,
+      maxPopulation,
+      yearToPercent,
+      containerHeight
+    );
+  }, [visiblePeoples, maxPopulation, yearToPercent, containerHeight]);
 
   const floatingLayout = useMemo(() => {
     return layoutFloatingPeoples(
       visiblePeoples,
       maxPopulation,
       yearToPercent,
-      CONTAINER_HEIGHT,
+      containerHeight,
       CARD_HEIGHT,
       MIN_GAP
     );
-  }, [visiblePeoples, maxPopulation, yearToPercent]);
+  }, [visiblePeoples, maxPopulation, yearToPercent, containerHeight]);
 
   const hasMore = visiblePeoples.length < filteredPeoples.length;
   const remainingCount = filteredPeoples.length - visiblePeoples.length;
@@ -631,11 +657,18 @@ export function VerticalPopulationTimeline({
     return list;
   }, []);
 
+  // El layout activo depende del modo: clásico usa el layout lateral,
+  // flotante/levitación usa el layout libre, que puede empujar cards más abajo.
+  const activeLayout = layoutMode === "classic" ? layout : floatingLayout;
+
   const totalHeight = useMemo(() => {
-    if (layout.length === 0) return CONTAINER_HEIGHT;
-    const last = layout[layout.length - 1];
-    return Math.max(CONTAINER_HEIGHT, last.top + CARD_HEIGHT + MIN_GAP);
-  }, [layout]);
+    if (activeLayout.length === 0) return containerHeight + BOTTOM_PADDING;
+    const last = activeLayout[activeLayout.length - 1];
+    return Math.max(
+      containerHeight,
+      last.top + CARD_HEIGHT + MIN_GAP + BOTTOM_PADDING
+    );
+  }, [activeLayout, containerHeight]);
 
   const { bands: laneBands, laneCount } = useMemo(() => {
     return computeLaneBands(visiblePeoples, totalHeight, yearToPercent);
@@ -645,8 +678,8 @@ export function VerticalPopulationTimeline({
 
   return (
     <div className="space-y-8">
-      <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-        <div>
+      <div className="flex flex-col gap-4">
+        <div className="w-full">
           <p className="text-base text-muted-foreground sm:text-lg">
             Línea del tiempo de pueblos y civilizaciones. Cada tarjeta se
             posiciona en su año de apogeo y el ancho de la franja de color
@@ -694,6 +727,28 @@ export function VerticalPopulationTimeline({
                 )}
               >
                 {mode.label}
+              </button>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-1 rounded-lg border border-border/60 bg-card/50 p-1">
+            {[
+              { value: "normal" as TimelineHeight, label: "Normal" },
+              { value: "long" as TimelineHeight, label: "Larga" },
+              { value: "extra" as TimelineHeight, label: "Muy larga" },
+            ].map((height) => (
+              <button
+                key={height.value}
+                type="button"
+                onClick={() => setTimelineHeight(height.value)}
+                className={cn(
+                  "rounded-md px-3 py-1.5 text-xs font-medium transition-colors sm:text-sm",
+                  timelineHeight === height.value
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                )}
+              >
+                {height.label}
               </button>
             ))}
           </div>
@@ -892,70 +947,27 @@ export function VerticalPopulationTimeline({
               );
             })}
 
-          {/* People cards — modo levitación */}
-          {layoutMode === "levitating" &&
-            layout.map(({ people, top, side, width }, index) => {
-              const isLeft = side === "left";
-              const isExpanded = index === expandedIndex;
-              const floatDuration = 2.8 + (index % 5) * 0.4;
-              return (
-                <motion.div
-                  key={people.id}
-                  ref={(el) => {
-                    itemRefs.current[index] = el;
-                  }}
-                  initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
-                  animate={{
-                    opacity: isExpanded ? 1 : 0.85,
-                    x: 0,
-                    y: [0, -10, 0],
-                  }}
-                  transition={{
-                    opacity: { duration: 0.3 },
-                    x: { duration: 0.5, delay: (index % PAGE_SIZE) * 0.04 },
-                    y: {
-                      repeat: Infinity,
-                      duration: floatDuration,
-                      ease: "easeInOut",
-                    },
-                  }}
-                  whileHover={{ scale: 1.04, zIndex: 50 }}
-                  onHoverStart={() => setHoveredIndex(index)}
-                  onHoverEnd={() => setHoveredIndex((prev) => (prev === index ? null : prev))}
-                  className="absolute w-[calc(50%-1.5rem)] origin-top sm:w-[calc(50%-2rem)]"
-                  style={{
-                    top: `${top}px`,
-                    left: isLeft ? 0 : "auto",
-                    right: isLeft ? "auto" : 0,
-                  }}
-                >
-                  <PeopleCard
-                    people={people}
-                    widthPercent={width}
-                    expanded={isExpanded}
-                    onClick={() => setSelectedPeople(people)}
-                    className={isExpanded ? "shadow-lg" : "shadow-sm"}
-                  />
-                </motion.div>
-              );
-            })}
-
-          {/* People cards — modo flotante */}
-          {layoutMode === "floating" &&
+          {/* People cards — modos flotante y levitación (layout libre) */}
+          {(layoutMode === "floating" || layoutMode === "levitating") &&
             floatingLayout.map(
               ({ people, top, leftPercent, widthPercent, floatPhase }, index) => {
                 const isExpanded = index === expandedIndex;
+                const isFloating = layoutMode === "floating";
+                const floatDuration = isFloating
+                  ? 3 + floatPhase * 2
+                  : 2.2 + floatPhase * 1.5;
                 return (
                   <motion.div
                     key={people.id}
                     ref={(el) => {
                       itemRefs.current[index] = el;
                     }}
-                    initial={{ opacity: 0, scale: 0.9 }}
+                    initial={{ opacity: 0, scale: 0.85 }}
                     animate={{
-                      opacity: isExpanded ? 1 : 0.85,
-                      scale: 1,
-                      y: [0, -12, 0],
+                      opacity: isExpanded ? 1 : 0.8,
+                      scale: isExpanded ? 1.02 : 1,
+                      y: isExpanded ? [0, -6, 0] : [0, -14, 0],
+                      rotate: isFloating ? 0 : [0, 0.8, -0.8, 0],
                     }}
                     transition={{
                       opacity: { duration: 0.3 },
@@ -965,22 +977,28 @@ export function VerticalPopulationTimeline({
                       },
                       y: {
                         repeat: Infinity,
-                        duration: 2.5 + floatPhase * 2,
+                        duration: floatDuration,
+                        ease: "easeInOut",
+                      },
+                      rotate: {
+                        repeat: Infinity,
+                        duration: floatDuration * 1.6,
                         ease: "easeInOut",
                       },
                     }}
                     whileHover={{ scale: 1.05, zIndex: 50 }}
                     whileDrag={{ scale: 1.05, zIndex: 50 }}
-                    drag
-                    dragConstraints={{
-                      left: -40,
-                      right: 40,
-                      top: -30,
-                      bottom: 30,
-                    }}
-                    dragElastic={0.25}
+                    drag={isFloating}
+                    dragConstraints={
+                      isFloating
+                        ? { left: -40, right: 40, top: -30, bottom: 30 }
+                        : undefined
+                    }
+                    dragElastic={isFloating ? 0.25 : 0}
                     onHoverStart={() => setHoveredIndex(index)}
-                    onHoverEnd={() => setHoveredIndex((prev) => (prev === index ? null : prev))}
+                    onHoverEnd={() => setHoveredIndex((prev) =>
+                      prev === index ? null : prev
+                    )}
                     className="absolute z-10 origin-top"
                     style={{
                       top: `${top}px`,

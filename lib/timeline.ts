@@ -40,11 +40,19 @@ function floatPhaseFromId(id: string): number {
   return (Math.abs(hash) % 1000) / 1000;
 }
 
+interface FloatingLane {
+  side: 1 | -1; // 1 = derecha, -1 = izquierda
+  offset: number; // % desde el centro
+  lastTop: number;
+}
+
 /**
- * Layout flotante 2D para la vista Gráfica vertical.
+ * Layout libre 2D para modos Flotante y Levitación.
  * - Eje Y: año de apogeo usando `yearToPercent`.
- * - Eje X: centrado con offset por población e importancia; se alterna el lado
- *   para evitar solapamientos verticales.
+ * - Eje X: carriles (lanes) a ambos lados del eje central. Cada card elige el
+ *   carril con más espacio vertical libre, permitiendo posicionamiento libre
+ *   sin quedar atado a estrictamente izquierda o derecha.
+ * - Se respeta el hueco central para que las líneas de color sigan visibles.
  */
 export function layoutFloatingPeoples(
   peoples: PeopleGroup[],
@@ -57,11 +65,16 @@ export function layoutFloatingPeoples(
   const sorted = [...peoples].sort((a, b) => a.peakYear - b.peakYear);
   const items: FloatingLayoutItem[] = [];
 
-  // Última posición vertical colocada en cada lado para evitar solapamientos.
-  const lastPlacedTops: { left: number; right: number } = {
-    left: -Infinity,
-    right: -Infinity,
-  };
+  // Múltiples carriles a cada lado del centro. Los offsets dejan un hueco
+  // central para las bandas de color del eje.
+  const lanes: FloatingLane[] = [
+    { side: 1, offset: 22, lastTop: -Infinity },
+    { side: -1, offset: 22, lastTop: -Infinity },
+    { side: 1, offset: 34, lastTop: -Infinity },
+    { side: -1, offset: 34, lastTop: -Infinity },
+    { side: 1, offset: 44, lastTop: -Infinity },
+    { side: -1, offset: 44, lastTop: -Infinity },
+  ];
 
   for (let i = 0; i < sorted.length; i++) {
     const people = sorted[i];
@@ -69,59 +82,41 @@ export function layoutFloatingPeoples(
 
     const popRatio = Math.sqrt(people.peakPopulation) / Math.sqrt(maxPopulation);
     const widthPercent = Math.min(
-      26,
+      22,
       populationWidthPercent(people.peakPopulation, maxPopulation)
     );
 
-    // Decidir lado priorizando el que tenga más espacio vertical libre.
-    const rightRoom = baseTop - lastPlacedTops.right;
-    const leftRoom = baseTop - lastPlacedTops.left;
-    const preferRight = rightRoom >= leftRoom;
+    // Elegir el carril con más espacio vertical libre respecto a la posición
+    // real del año de apogeo.
+    let bestLaneIndex = 0;
+    let bestRoom = -Infinity;
+    for (let j = 0; j < lanes.length; j++) {
+      const room = baseTop - lanes[j].lastTop;
+      if (room > bestRoom) {
+        bestRoom = room;
+        bestLaneIndex = j;
+      }
+    }
 
-    const side = preferRight ? ("right" as const) : ("left" as const);
-    const opposite: "left" | "right" = side === "right" ? "left" : "right";
+    const lane = lanes[bestLaneIndex];
 
-    // Si el lado preferido sigue solapando mucho, cambiamos al contrario.
-    const sideRoom = side === "right" ? rightRoom : leftRoom;
-    const finalSide: "left" | "right" =
-      sideRoom < cardHeight * 0.25 ? (side === "right" ? "left" : "right") : side;
-    const finalSign = finalSide === "right" ? 1 : -1;
-
-    // La posición vertical intenta respetar el año de apogeo. Solo se empuja
-    // hacia abajo si la card entraría por completo detrás de la anterior del
-    // mismo lado, conservando la sensación de línea del tiempo.
-    const lastTop = lastPlacedTops[finalSide];
-    const minPush = lastTop + cardHeight - minGap;
+    // La posición vertical respeta el año de apogeo. Solo se empuja hacia abajo
+    // si la card se solaparía demasiado con la última colocada en ese carril.
+    const minPush = lane.lastTop + cardHeight - minGap;
     const overlap = Math.max(0, minPush - baseTop);
-    const top = overlap > cardHeight * 0.5 ? minPush : baseTop;
+    const top = overlap > cardHeight * 0.55 ? minPush : baseTop;
 
-    // Offset horizontal proporcional a la población y al solapamiento. Cuanto
-    // más cerca están dos cards consecutivas del mismo lado, más se aleja la
-    // nueva del centro para evitar que tapen las líneas de color.
-    const minOffset = 22; // % mínimo desde el centro
-    const maxOffset = 42; // % máximo desde el centro
-    const overlapRatio = Math.min(1, overlap / cardHeight);
-    const offset =
-      finalSign *
-      (minOffset +
-        (popRatio * 0.6 + overlapRatio * 0.4) * (maxOffset - minOffset));
-    const leftPercent = 50 + offset - widthPercent / 2;
+    lane.lastTop = top;
+
+    const leftPercent = 50 + lane.side * lane.offset - widthPercent / 2;
 
     items.push({
       people,
       top,
-      leftPercent: Math.max(2, Math.min(leftPercent, 98 - widthPercent)),
+      leftPercent: Math.max(1, Math.min(leftPercent, 99 - widthPercent)),
       widthPercent,
       floatPhase: floatPhaseFromId(people.id),
     });
-
-    lastPlacedTops[finalSide] = top;
-    // También actualizamos el lado opuesto con una marca conservadora para que
-    // cards muy cercanas en años alternen aunque vengan del mismo lado.
-    lastPlacedTops[opposite] = Math.max(
-      lastPlacedTops[opposite],
-      top - cardHeight * 0.65
-    );
   }
 
   return items;
