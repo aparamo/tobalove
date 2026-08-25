@@ -89,3 +89,5 @@ export interface PeoplesData {
   meta: PeoplesMeta;
   items: PeopleGroup[];
 }
+
+export type LayoutMode = "classic" | "floating" | "levitating";

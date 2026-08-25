@@ -38,13 +38,19 @@ import {
   MAX_YEAR,
   yearToPercentLinear,
   yearToPercentAdapted,
+  populationWidthPercent,
+  layoutFloatingPeoples,
   type TimelineScale,
 } from "@/lib/timeline";
 import { cn } from "@/lib/utils";
 import { TimelineNavigation } from "./TimelineNavigation";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
-import type { PeopleGroup, ConferenceItem } from "@/app/types/timeline";
+import type {
+  PeopleGroup,
+  ConferenceItem,
+  LayoutMode,
+} from "@/app/types/timeline";
 
 interface VerticalPopulationTimelineProps {
   peoples: PeopleGroup[];
@@ -72,14 +78,6 @@ function hexToRgba(hex: string, alpha: number): string {
   const g = parseInt(clean.slice(2, 4), 16);
   const b = parseInt(clean.slice(4, 6), 16);
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-}
-
-function populationWidthPercent(
-  peakPopulation: number,
-  maxPopulation: number
-): number {
-  const ratio = Math.sqrt(peakPopulation) / Math.sqrt(maxPopulation);
-  return Math.max(30, Math.round(35 + ratio * 55));
 }
 
 function useRegionLegend(peoples: PeopleGroup[]) {
@@ -233,6 +231,68 @@ function RelatedVideoCard({
   );
 }
 
+interface PeopleCardProps {
+  people: PeopleGroup;
+  widthPercent: number;
+  onClick: () => void;
+  className?: string;
+}
+
+function PeopleCard({ people, widthPercent, onClick, className }: PeopleCardProps) {
+  return (
+    <Card
+      className={cn(
+        "cursor-pointer border-border/60 bg-card/80 shadow-sm transition-shadow hover:shadow-md",
+        className
+      )}
+      onClick={onClick}
+    >
+      <CardHeader className="space-y-2 pb-3">
+        <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+          <Badge variant="secondary" className="gap-1 text-xs sm:text-sm">
+            <Calendar className="h-3 w-3" />
+            {formatYear(people.startYear)} — {formatYear(people.endYear)}
+          </Badge>
+          <Badge variant="outline" className="gap-1 text-xs sm:text-sm">
+            <MapPin className="h-3 w-3" />
+            Apogeo: {formatYear(people.peakYear)}
+          </Badge>
+        </div>
+        <CardTitle className="text-base sm:text-lg">{people.name}</CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-3 pt-0">
+        {/* Population bar */}
+        <div className="relative h-3 w-full overflow-hidden rounded-full bg-muted shadow-inner sm:h-4">
+          <div
+            className="h-full rounded-full"
+            style={{
+              width: `${widthPercent}%`,
+              background: `linear-gradient(90deg, ${hexToRgba(
+                people.color,
+                0.85
+              )} 0%, ${people.color} 60%, ${hexToRgba(
+                people.color,
+                0.9
+              )} 100%)`,
+              boxShadow: `0 0 8px ${hexToRgba(people.color, 0.35)}`,
+            }}
+          />
+        </div>
+        <p className="line-clamp-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+          {people.description}
+        </p>
+        <div className="flex items-center justify-between text-xs text-muted-foreground sm:text-sm">
+          <span>{people.region}</span>
+          <span className="inline-flex items-center gap-1 font-medium">
+            <Users className="h-3 w-3" />
+            {formatPopulation(people.peakPopulation)}
+          </span>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
 function PeopleDetailDialog({
   people,
   conferencesMap,
@@ -360,6 +420,7 @@ export function VerticalPopulationTimeline({
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [scale, setScale] = useState<TimelineScale>("adapted");
+  const [layoutMode, setLayoutMode] = useState<LayoutMode>("classic");
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
   const sentinelRef = useRef<HTMLDivElement | null>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -391,6 +452,17 @@ export function VerticalPopulationTimeline({
 
   const layout = useMemo(() => {
     return layoutPeoples(visiblePeoples, maxPopulation, yearToPercent);
+  }, [visiblePeoples, maxPopulation, yearToPercent]);
+
+  const floatingLayout = useMemo(() => {
+    return layoutFloatingPeoples(
+      visiblePeoples,
+      maxPopulation,
+      yearToPercent,
+      CONTAINER_HEIGHT,
+      CARD_HEIGHT,
+      MIN_GAP
+    );
   }, [visiblePeoples, maxPopulation, yearToPercent]);
 
   const hasMore = visiblePeoples.length < filteredPeoples.length;
@@ -479,7 +551,7 @@ export function VerticalPopulationTimeline({
     });
 
     return () => activeObserverRef.current?.disconnect();
-  }, [visiblePeoples, scale]);
+  }, [visiblePeoples, scale, layoutMode]);
 
   const legend = useRegionLegend(filteredPeoples);
 
@@ -536,6 +608,28 @@ export function VerticalPopulationTimeline({
             </Label>
           </div>
 
+          <div className="flex items-center gap-1 rounded-lg border border-border/60 bg-card/50 p-1">
+            {[
+              { value: "classic" as LayoutMode, label: "Clásico" },
+              { value: "floating" as LayoutMode, label: "Flotante" },
+              { value: "levitating" as LayoutMode, label: "Levitación" },
+            ].map((mode) => (
+              <button
+                key={mode.value}
+                type="button"
+                onClick={() => setLayoutMode(mode.value)}
+                className={cn(
+                  "rounded-md px-3 py-1.5 text-xs font-medium transition-colors sm:text-sm",
+                  layoutMode === mode.value
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                )}
+              >
+                {mode.label}
+              </button>
+            ))}
+          </div>
+
           <Button
             variant="outline"
             size="sm"
@@ -570,7 +664,10 @@ export function VerticalPopulationTimeline({
 
           {/* Colored period bands on the central timeline */}
           <div
-            className="absolute left-1/2 top-0 bottom-0 z-0 -translate-x-1/2"
+            className={cn(
+              "absolute left-1/2 top-0 bottom-0 z-0 -translate-x-1/2 transition-opacity",
+              layoutMode === "floating" ? "opacity-20" : "opacity-100"
+            )}
             style={{ width: `${axisWidth}px` }}
           >
             {laneBands.map(({ people, lane, top, height }, index) => {
@@ -679,94 +776,156 @@ export function VerticalPopulationTimeline({
             })}
           </div>
 
-          {/* Center dots for each item */}
-          {layout.map(({ people, top }, index) => (
-            <motion.div
-              key={`dot-${people.id}`}
-              ref={(el) => {
-                itemRefs.current[index] = el;
-              }}
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.3, delay: (index % PAGE_SIZE) * 0.04 }}
-              className="absolute left-1/2 z-10 h-3 w-3 -translate-x-1/2 rounded-full border-2 border-background bg-primary shadow-sm"
-              style={{ top: `${top + CARD_HEIGHT / 2 - 6}px` }}
-            />
-          ))}
-
-          {/* People cards */}
-          {layout.map(({ people, top, side, width }, index) => {
-            const isLeft = side === "left";
-            return (
+          {/* Center dots for each item (clásico y levitación) */}
+          {layoutMode !== "floating" &&
+            layout.map(({ people, top }, index) => (
               <motion.div
-                key={people.id}
-                initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
-                animate={{ opacity: 1, x: 0 }}
+                key={`dot-${people.id}`}
+                ref={(el) => {
+                  itemRefs.current[index] = el;
+                }}
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
                 transition={{
-                  duration: 0.5,
+                  duration: 0.3,
                   delay: (index % PAGE_SIZE) * 0.04,
-                  ease: [0.25, 0.46, 0.45, 0.94],
                 }}
-                className="absolute w-[calc(50%-1.5rem)] sm:w-[calc(50%-2rem)]"
-                style={{
-                  top: `${top}px`,
-                  left: isLeft ? 0 : "auto",
-                  right: isLeft ? "auto" : 0,
-                }}
-              >
-                <Card
-                  className="cursor-pointer border-border/60 bg-card/80 shadow-sm transition-shadow hover:shadow-md"
-                  onClick={() => setSelectedPeople(people)}
+                className="absolute left-1/2 z-10 h-3 w-3 -translate-x-1/2 rounded-full border-2 border-background bg-primary shadow-sm"
+                style={{ top: `${top + CARD_HEIGHT / 2 - 6}px` }}
+              />
+            ))}
+
+          {/* People cards — modo clásico */}
+          {layoutMode === "classic" &&
+            layout.map(({ people, top, side, width }, index) => {
+              const isLeft = side === "left";
+              return (
+                <motion.div
+                  key={people.id}
+                  initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: (index % PAGE_SIZE) * 0.04,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                  }}
+                  whileHover={{ scale: 1.03, zIndex: 20 }}
+                  className="absolute w-[calc(50%-1.5rem)] sm:w-[calc(50%-2rem)]"
+                  style={{
+                    top: `${top}px`,
+                    left: isLeft ? 0 : "auto",
+                    right: isLeft ? "auto" : 0,
+                  }}
                 >
-                  <CardHeader className="space-y-2 pb-3">
-                    <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-                      <Badge variant="secondary" className="gap-1 text-xs sm:text-sm">
-                        <Calendar className="h-3 w-3" />
-                        {formatYear(people.startYear)} —{" "}
-                        {formatYear(people.endYear)}
-                      </Badge>
-                      <Badge variant="outline" className="gap-1 text-xs sm:text-sm">
-                        <MapPin className="h-3 w-3" />
-                        Apogeo: {formatYear(people.peakYear)}
-                      </Badge>
-                    </div>
-                    <CardTitle className="text-base sm:text-lg">
-                      {people.name}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-3 pt-0">
-                    {/* Population bar */}
-                    <div className="relative h-3 w-full overflow-hidden rounded-full bg-muted shadow-inner sm:h-4">
-                      <div
-                        className="h-full rounded-full"
-                        style={{
-                          width: `${width}%`,
-                          background: `linear-gradient(90deg, ${hexToRgba(
-                            people.color,
-                            0.85
-                          )} 0%, ${people.color} 60%, ${hexToRgba(
-                            people.color,
-                            0.9
-                          )} 100%)`,
-                          boxShadow: `0 0 8px ${hexToRgba(people.color, 0.35)}`,
-                        }}
-                      />
-                    </div>
-                    <p className="line-clamp-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">
-                      {people.description}
-                    </p>
-                    <div className="flex items-center justify-between text-xs text-muted-foreground sm:text-sm">
-                      <span>{people.region}</span>
-                      <span className="inline-flex items-center gap-1 font-medium">
-                        <Users className="h-3 w-3" />
-                        {formatPopulation(people.peakPopulation)}
-                      </span>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            );
-          })}
+                  <PeopleCard
+                    people={people}
+                    widthPercent={width}
+                    onClick={() => setSelectedPeople(people)}
+                  />
+                </motion.div>
+              );
+            })}
+
+          {/* People cards — modo levitación */}
+          {layoutMode === "levitating" &&
+            layout.map(({ people, top, side, width }, index) => {
+              const isLeft = side === "left";
+              const floatDuration = 3 + (index % 5) * 0.4;
+              return (
+                <motion.div
+                  key={people.id}
+                  ref={(el) => {
+                    itemRefs.current[index] = el;
+                  }}
+                  initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
+                  animate={{
+                    opacity: 1,
+                    x: 0,
+                    y: [0, -7, 0],
+                  }}
+                  transition={{
+                    opacity: { duration: 0.5, delay: (index % PAGE_SIZE) * 0.04 },
+                    x: { duration: 0.5, delay: (index % PAGE_SIZE) * 0.04 },
+                    y: {
+                      repeat: Infinity,
+                      duration: floatDuration,
+                      ease: "easeInOut",
+                    },
+                  }}
+                  whileHover={{ scale: 1.04, zIndex: 50 }}
+                  className="absolute w-[calc(50%-1.5rem)] sm:w-[calc(50%-2rem)]"
+                  style={{
+                    top: `${top}px`,
+                    left: isLeft ? 0 : "auto",
+                    right: isLeft ? "auto" : 0,
+                  }}
+                >
+                  <PeopleCard
+                    people={people}
+                    widthPercent={width}
+                    onClick={() => setSelectedPeople(people)}
+                    className="shadow-md"
+                  />
+                </motion.div>
+              );
+            })}
+
+          {/* People cards — modo flotante */}
+          {layoutMode === "floating" &&
+            floatingLayout.map(
+              ({ people, top, leftPercent, widthPercent, floatPhase }, index) => (
+                <motion.div
+                  key={people.id}
+                  ref={(el) => {
+                    itemRefs.current[index] = el;
+                  }}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{
+                    opacity: 1,
+                    scale: 1,
+                    y: [0, -10, 0],
+                  }}
+                  transition={{
+                    opacity: {
+                      duration: 0.5,
+                      delay: (index % PAGE_SIZE) * 0.04,
+                    },
+                    scale: {
+                      duration: 0.5,
+                      delay: (index % PAGE_SIZE) * 0.04,
+                    },
+                    y: {
+                      repeat: Infinity,
+                      duration: 3 + floatPhase * 2,
+                      ease: "easeInOut",
+                    },
+                  }}
+                  whileHover={{ scale: 1.05, zIndex: 50 }}
+                  whileDrag={{ scale: 1.05, zIndex: 50 }}
+                  drag
+                  dragConstraints={{
+                    left: -40,
+                    right: 40,
+                    top: -30,
+                    bottom: 30,
+                  }}
+                  dragElastic={0.25}
+                  className="absolute z-10"
+                  style={{
+                    top: `${top}px`,
+                    left: `${leftPercent}%`,
+                    width: `${widthPercent}%`,
+                  }}
+                >
+                  <PeopleCard
+                    people={people}
+                    widthPercent={widthPercent}
+                    onClick={() => setSelectedPeople(people)}
+                    className="shadow-md"
+                  />
+                </motion.div>
+              )
+            )}
 
           {/* Infinite scroll sentinel */}
           {hasMore && (
