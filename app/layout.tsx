@@ -5,6 +5,7 @@ import Link from "next/link";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Clock, Home, PlaySquare, Database } from "lucide-react";
 import { auth } from "@/auth";
+import type { Session } from "next-auth";
 import { UserNav } from "@/app/components/UserNav";
 import "./globals.css";
 
@@ -29,7 +30,18 @@ export default async function RootLayout({
 }: {
   children: ReactNode;
 }) {
-  const session = await auth();
+  let session: Session | null = null;
+  try {
+    // Cast temporal: en runtime auth() devuelve Session | null, pero la
+    // tipificación de next-auth v5 beta en este proyecto se resuelve como
+    // NextMiddleware. Se corrige explícitamente hasta que la librería
+    // estabilice los tipos.
+    session = (await auth()) as Session | null;
+  } catch {
+    // La cookie de sesión puede estar cifrada con un secreto anterior o ser
+    // inválida. Ignoramos el error para que la app siga renderizando; el
+    // usuario puede limpiar cookies y volver a iniciar sesión.
+  }
   return (
     <html
       lang="es"
