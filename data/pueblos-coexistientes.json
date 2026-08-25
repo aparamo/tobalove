@@ -3,7 +3,7 @@
     "autor_contenido": "Eva Tobalina Oraá",
     "enfoque": "Visualización de pueblos y civilizaciones que coexistieron a lo largo de la historia antigua, con franjas de población aproximada.",
     "cobertura_cronologica": "desde c. 3500 a.C. hasta 1500 d.C.",
-    "total_pueblos": 69,
+    "total_pueblos": 72,
     "unidad_poblacion": "habitantes (aproximados)",
     "fuentes_principales": [
       "Estimaciones demográficas históricas generales",
@@ -140,7 +140,60 @@
         "Tartessos"
       ],
       "relatedConferences": [
-        "cancho-roano-2026"
+        "cancho-roano-2026",
+        "tartessos-historia-mito"
+      ]
+    },
+    {
+      "id": "iberos",
+      "name": "Íberos",
+      "startYear": -600,
+      "endYear": -20,
+      "peakYear": -300,
+      "peakPopulation": 1000000,
+      "color": "#F59E0B",
+      "region": "Península Ibérica",
+      "description": "Civilización prerromana de la Península Ibérica, conocida por su arte rupestre y escultórico, sus ciudades fortificadas y su contacto comercial con fenicios, griegos y cartagineses.",
+      "civilizations": [
+        "Íberos"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "celtiberos",
+      "name": "Celtíberos",
+      "startYear": -600,
+      "endYear": 19,
+      "peakYear": -200,
+      "peakPopulation": 800000,
+      "color": "#D97706",
+      "region": "Península Ibérica",
+      "description": "Pueblos del interior de la Península Ibérica fruto del cruce entre celtas e íberos, célebres por su resistencia armada contra Roma y la gesta de Numancia.",
+      "civilizations": [
+        "Celtíberos"
+      ],
+      "relatedConferences": [
+        "celtiberos-hispania-numancia",
+        "numancia-frente-roma"
+      ]
+    },
+    {
+      "id": "numancia",
+      "name": "Numancia",
+      "startYear": -200,
+      "endYear": -133,
+      "peakYear": -133,
+      "peakPopulation": 10000,
+      "color": "#EF4444",
+      "region": "Península Ibérica",
+      "description": "Ciudad celtíbera del valle del Duero que se convirtió en símbolo de la resistencia hispana frente a Roma tras su heroico asedio y destrucción.",
+      "civilizations": [
+        "Numancia",
+        "Celtíberos"
+      ],
+      "relatedConferences": [
+        "celtiberos-hispania-numancia",
+        "numancia-frente-roma"
       ]
     },
     {
@@ -192,7 +245,9 @@
       ],
       "relatedConferences": [
         "fenicios-origen-desarrollo",
-        "historia-roma-i-fundacion"
+        "historia-roma-i-fundacion",
+        "imperio-cartagines-i",
+        "imperio-cartagines-ii"
       ]
     },
     {

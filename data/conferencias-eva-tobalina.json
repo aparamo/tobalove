@@ -2,7 +2,7 @@
   "meta": {
     "autor": "Eva Tobalina Oraá",
     "biografia_corta": "Doctora en Historia Antigua, profesora universitaria y divulgadora especializada en la Antigüedad mediterránea y oriental. Combina su labor académica en la Universidad Internacional de La Rioja con conferencias para asociaciones como Raíces de Europa.",
-    "total_conferencias_estimadas": 104,
+    "total_conferencias_estimadas": 109,
     "fuentes_principales": [
       "https://espacio-tiempo.es",
       "https://www.youtube.com/@raicesdeeuropa",
@@ -3337,6 +3337,164 @@
       "mediaType": "video",
       "youtube_url": "https://www.youtube.com/watch?v=ynflGu7FPfA",
       "info_adicional": "Enlace genérico al canal de Raíces de Europa; video exacto pendiente de identificación"
+    },
+    {
+      "id": "imperio-cartagines-i",
+      "title": "EL IMPERIO CARTAGINÉS (I). Nacimiento y esplendor de una potencia formidable",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=AAwIyN79NJc",
+      "description": "Primera conferencia del ciclo sobre el Imperio Cartaginés. Análisis del nacimiento, desarrollo y esplendor de Cartago como potencia mediterránea.",
+      "summary": "Tobalina aborda los orígenes de Cartago, su expansión por el Mediterráneo y su consolidación como el gran rival de Roma.",
+      "topics": [
+        "Cartago",
+        "Imperio Cartaginés",
+        "fenicios",
+        "Mediterráneo",
+        "Aníbal"
+      ],
+      "characters": [
+        "Aníbal Barca",
+        "Amílcar Barca",
+        "Dido"
+      ],
+      "civilizations": [
+        "Cartago",
+        "Fenicia"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=AAwIyN79NJc",
+      "info_adicional": "Parte de la playlist 'Cartago y el Imperio Cartaginés'"
+    },
+    {
+      "id": "imperio-cartagines-ii",
+      "title": "El Imperio Cartaginés (II). Aníbal, Escipión, destrucción y nuevo esplendor de Cartago",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=oYlRl0Fiu0E",
+      "description": "Segunda conferencia del ciclo sobre el Imperio Cartaginés. Desde Aníbal y las guerras púnicas hasta la destrucción de Cartago y su posterior reconstrucción.",
+      "summary": "Tobalina analiza la figura de Aníbal, su épica travesía de los Alpes, las guerras púnicas, la destrucción de Cartago por Escipión y el renacimiento de la ciudad bajo Roma.",
+      "topics": [
+        "Cartago",
+        "Aníbal",
+        "Escipión",
+        "guerras púnicas",
+        "destrucción de Cartago"
+      ],
+      "characters": [
+        "Aníbal Barca",
+        "Escipión el Africano",
+        "Aníbal"
+      ],
+      "civilizations": [
+        "Cartago",
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=oYlRl0Fiu0E",
+      "info_adicional": "Segunda parte del ciclo sobre el Imperio Cartaginés"
+    },
+    {
+      "id": "celtiberos-hispania-numancia",
+      "title": "LOS CELTÍBEROS y la Hispania Prerromana hasta NUMANCIA: misterio y fascinación",
+      "type": "conferencia",
+      "date": "2024-05-19",
+      "year": 2024,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=nau3bi4_0JQ",
+      "description": "Conferencia sobre los celtíberos, el pueblo prerromano más importante de la Península Ibérica junto con los íberos, y su resistencia hasta Numancia.",
+      "summary": "Tobalina nos introduce en el mundo de los celtíberos, su cultura, sus guerras contra Roma y el épico asedio de Numancia, símbolo de resistencia hispana.",
+      "topics": [
+        "celtíberos",
+        "Hispania",
+        "Numancia",
+        "pueblos prerromanos",
+        "resistencia hispana"
+      ],
+      "characters": [
+        "Viríato"
+      ],
+      "civilizations": [
+        "Celtíberos",
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=nau3bi4_0JQ",
+      "info_adicional": "130,298 visualizaciones"
+    },
+    {
+      "id": "tartessos-historia-mito",
+      "title": "TARTESSOS: historia, mito y NUEVOS DESCUBRIMIENTOS",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=pHso75yhQj4",
+      "description": "Conferencia sobre Tartessos, la enigmática civilización de la Península Ibérica, combinando mito, historia y los últimos hallazgos arqueológicos.",
+      "summary": "Tobalina nos acerca a Tartessos, una de las civilizaciones más misteriosas de la Antigüedad, a través de la historia, el mito y los descubrimientos arqueológicos más recientes.",
+      "topics": [
+        "Tartessos",
+        "Península Ibérica",
+        "arqueología",
+        "mito",
+        "civilización tartésica"
+      ],
+      "characters": [
+        "Argantonio"
+      ],
+      "civilizations": [
+        "Tartessos",
+        "Fenicia",
+        "Grecia"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=pHso75yhQj4",
+      "info_adicional": "324,338 visualizaciones"
+    },
+    {
+      "id": "numancia-frente-roma",
+      "title": "NUMANCIA FRENTE A ROMA: resistencia, asedio y destrucción",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=nsFxha_4uYE",
+      "description": "Conferencia sobre el asedio y destrucción de Numancia, símbolo de la resistencia hispana frente a Roma.",
+      "summary": "Tobalina analiza el épico asedio de Numancia, la resistencia de sus habitantes y su destrucción final por las legiones romanas.",
+      "topics": [
+        "Numancia",
+        "Hispania",
+        "celtíberos",
+        "asedio",
+        "resistencia hispana"
+      ],
+      "characters": [],
+      "civilizations": [
+        "Celtíberos",
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=nsFxha_4uYE",
+      "info_adicional": null
     }
   ]
 }
