@@ -3,7 +3,7 @@
     "autor_contenido": "Eva Tobalina Oraá",
     "enfoque": "Visualización de pueblos y civilizaciones que coexistieron a lo largo de la historia antigua, con franjas de población aproximada.",
     "cobertura_cronologica": "desde c. 3500 a.C. hasta 1500 d.C.",
-    "total_pueblos": 29,
+    "total_pueblos": 69,
     "unidad_poblacion": "habitantes (aproximados)",
     "fuentes_principales": [
       "Estimaciones demográficas históricas generales",
@@ -190,7 +190,10 @@
       "civilizations": [
         "Cartago"
       ],
-      "relatedConferences": []
+      "relatedConferences": [
+        "fenicios-origen-desarrollo",
+        "historia-roma-i-fundacion"
+      ]
     },
     {
       "id": "macedonia",
@@ -416,15 +419,15 @@
       ]
     },
     {
-      "id": "hunos-europeos",
-      "name": "Hunos europeos",
+      "id": "hunos",
+      "name": "Los pueblos de la estepa: los Hunos, Atila, su muerte y el declive",
       "startYear": 370,
       "endYear": 469,
       "peakYear": 450,
       "peakPopulation": 600000,
       "color": "#6B7280",
       "region": "Estepa póntica y Europa central",
-      "description": "Pueblo nómada que irrumpió en Europa en el siglo V d.C. bajo Atila y aceleró las migraciones de pueblos germánicos. Entidad política distinta de los Xiongnu de Asia Oriental.",
+      "description": "Confederación nómada de origen asiático que irrumpió en la estepa póntica y Europa central en el siglo V d.C. bajo Atila, transformando el mapa político del Imperio Romano tardío antes de su rápido declive tras su muerte.",
       "civilizations": [
         "Hunos"
       ],
@@ -540,6 +543,627 @@
       "relatedConferences": [
         "ruta-de-la-seda-tamerlan"
       ]
+    },
+    {
+      "id": "civilizacion-del-indo",
+      "name": "Civilización del Indo",
+      "startYear": -2500,
+      "endYear": -1900,
+      "peakYear": -2200,
+      "peakPopulation": 500000,
+      "color": "#F472B6",
+      "region": "Valle del Indo",
+      "description": "Cultura urbana de la Edad del Bronce en el noroeste del subcontinente indio, con ciudades planificadas como Mohenjo-Daro y Harappa.",
+      "civilizations": [
+        "Civilización del Indo"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "periodo-vedico",
+      "name": "Período védico",
+      "startYear": -1500,
+      "endYear": -500,
+      "peakYear": -1000,
+      "peakPopulation": 1000000,
+      "color": "#FB7185",
+      "region": "India norte",
+      "description": "Etapa de la historia india marcada por la composición de los Vedas, la formación de las primeras janapadas y el desarrollo de la sociedad casta.",
+      "civilizations": [
+        "Período védico"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "mahajanapadas",
+      "name": "Mahajanapadas",
+      "startYear": -600,
+      "endYear": -321,
+      "peakYear": -500,
+      "peakPopulation": 2500000,
+      "color": "#A3E635",
+      "region": "India norte",
+      "description": "Los dieciséis grandes reinos y oligarchías del norte de India que precedieron al Imperio Maurya y vieron el surgimiento del budismo y el jainismo.",
+      "civilizations": [
+        "Mahajanapadas"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "imperio-maurya",
+      "name": "Imperio Maurya",
+      "startYear": -321,
+      "endYear": -185,
+      "peakYear": -250,
+      "peakPopulation": 50000000,
+      "color": "#FBBF24",
+      "region": "Subcontinente indio",
+      "description": "Primer gran imperio unificado de la India, que alcanzó su máximo esplendor bajo Ashoka tras la conquista de Kalinga.",
+      "civilizations": [
+        "Imperio Maurya"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "olmecas",
+      "name": "Olmecas",
+      "startYear": -1500,
+      "endYear": -400,
+      "peakYear": -900,
+      "peakPopulation": 100000,
+      "color": "#10B981",
+      "region": "Mesoamérica",
+      "description": "Considerada la primera gran civilización de Mesoamérica, cuna de rasgos culturales como el juego de pelota y las cabezas colosales.",
+      "civilizations": [
+        "Olmecas"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "chavin",
+      "name": "Chavín",
+      "startYear": -900,
+      "endYear": -200,
+      "peakYear": -500,
+      "peakPopulation": 100000,
+      "color": "#06B6D4",
+      "region": "Andes centrales",
+      "description": "Cultura formativa de los Andes centrales, cuyo centro ceremonial de Chavín de Huántar ejerció influencia religiosa y artística en buena parte del Perú antiguo.",
+      "civilizations": [
+        "Chavín"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "cultura-norte-chico",
+      "name": "Cultura Norte Chico / Caral",
+      "startYear": -3500,
+      "endYear": -1800,
+      "peakYear": -2600,
+      "peakPopulation": 30000,
+      "color": "#8B5CF6",
+      "region": "Costa central de Perú",
+      "description": "Una de las civilizaciones más antiguas de América, con la ciudad sagrada de Caral como centro principal de una sociedad compleja precerámica.",
+      "civilizations": [
+        "Cultura Norte Chico"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "civilizacion-minoica",
+      "name": "Civilización minoica",
+      "startYear": -2700,
+      "endYear": -1450,
+      "peakYear": -1700,
+      "peakPopulation": 200000,
+      "color": "#E11D48",
+      "region": "Creta",
+      "description": "Primera gran civilización del Egeo, centrada en Creta, con palacios como Cnosos y Festos, y una extensa red comercial marítima antes de la llegada de los micénicos.",
+      "civilizations": [
+        "Civilización minoica"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "civilizacion-micenica",
+      "name": "Civilización micénica",
+      "startYear": -1600,
+      "endYear": -1100,
+      "peakYear": -1300,
+      "peakPopulation": 300000,
+      "color": "#F43F5E",
+      "region": "Grecia continental y Egeo",
+      "description": "Cultura del Bronce tardío en la Grecia continental, heredera de la influencia minoica y protagonista de la época homérica y la guerra de Troya.",
+      "civilizations": [
+        "Civilización micénica"
+      ],
+      "relatedConferences": [
+        "tragedia-griega-ii"
+      ]
+    },
+    {
+      "id": "etruscos",
+      "name": "Etruscos",
+      "startYear": -900,
+      "endYear": -27,
+      "peakYear": -500,
+      "peakPopulation": 500000,
+      "color": "#14B8A6",
+      "region": "Italia central",
+      "description": "Civilización itálica que floreció en Etruria antes de la expansión romana, influyente en religión, arquitectura y política de la Roma arcaica.",
+      "civilizations": [
+        "Etruscos"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "celtas",
+      "name": "Celtas",
+      "startYear": -1200,
+      "endYear": 400,
+      "peakYear": -300,
+      "peakPopulation": 5000000,
+      "color": "#22C55E",
+      "region": "Europa central y occidental",
+      "description": "Conjunto de pueblos indoeuropeos que se expandieron por buena parte de Europa entre la Edad del Bronce tardía y la Antigüedad tardía, conocidos por su cultura material y oral.",
+      "civilizations": [
+        "Celtas"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "germanicos",
+      "name": "Pueblos germánicos",
+      "startYear": -500,
+      "endYear": 500,
+      "peakYear": 200,
+      "peakPopulation": 2000000,
+      "color": "#64748B",
+      "region": "Europa del Norte y central",
+      "description": "Conjunto de pueblos del norte de Europa que interactuaron, combatieron y finalmente se integraron en el Imperio Romano durante la Antigüedad tardía.",
+      "civilizations": [
+        "Pueblos germánicos"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "judea-samaria-galilea",
+      "name": "Judea, Samaria y Galilea",
+      "startYear": -538,
+      "endYear": 135,
+      "peakYear": 30,
+      "peakPopulation": 500000,
+      "color": "#F59E0B",
+      "region": "Levante mediterráneo",
+      "description": "Tres regiones del Levante meridional en la Antigüedad tardía, escenario de las tradiciones bíblicas, la vida de Jesús y las interacciones entre comunidades judías, samaritanas y el Imperio Romano.",
+      "civilizations": [
+        "Judea",
+        "Samaria",
+        "Galilea",
+        "Israel antiguo"
+      ],
+      "relatedConferences": [
+        "judea-samaria-galilea-jesus"
+      ]
+    },
+    {
+      "id": "nubia-kush",
+      "name": "Nubia / Reino de Kush",
+      "startYear": -1070,
+      "endYear": 350,
+      "peakYear": -700,
+      "peakPopulation": 1000000,
+      "color": "#8B5CF6",
+      "region": "Valle del Nilo (Sudán)",
+      "description": "Civilización del alto Nilo, rival y aliada de Egipto, que llegó a gobernar como la dinastía XXV y conservó una rica tradición de pirámides y templos.",
+      "civilizations": [
+        "Nubia",
+        "Kush"
+      ],
+      "relatedConferences": [
+        "egipto-imperio-medio"
+      ]
+    },
+    {
+      "id": "pueblos-del-mar",
+      "name": "Pueblos del Mar",
+      "startYear": -1200,
+      "endYear": -1175,
+      "peakYear": -1177,
+      "peakPopulation": 200000,
+      "color": "#EF4444",
+      "region": "Mediterráneo oriental",
+      "description": "Coaliciones de pueblos nómadas y marítimos que asolaron el Mediterráneo oriental a finales del Bronce tardío, contribuyendo al colapso de varios reinos.",
+      "civilizations": [
+        "Pueblos del Mar"
+      ],
+      "relatedConferences": [
+        "egipto-pueblos-del-mar-faraones-griegos"
+      ]
+    },
+    {
+      "id": "hicsos",
+      "name": "Hicsos",
+      "startYear": -1650,
+      "endYear": -1550,
+      "peakYear": -1600,
+      "peakPopulation": 300000,
+      "color": "#06B6D4",
+      "region": "Egipto (Delta del Nilo)",
+      "description": "Pueblos de origen levantino que gobernaron el Bajo Egipto durante el Segundo Período Intermedio, introduciendo el carro de guerra y nuevas técnicas militares.",
+      "civilizations": [
+        "Hicsos"
+      ],
+      "relatedConferences": [
+        "egipto-hicsos-imperio-nuevo"
+      ]
+    },
+    {
+      "id": "lydia",
+      "name": "Lidia",
+      "startYear": -1200,
+      "endYear": -546,
+      "peakYear": -550,
+      "peakPopulation": 1000000,
+      "color": "#D946EF",
+      "region": "Anatolia occidental",
+      "description": "Reino de Anatolia occidental, célebre por sus riquezas minerales y por acuñar las primeras monedas de la historia antes de ser conquistado por Ciro el Grande.",
+      "civilizations": [
+        "Lidia"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "nabateos",
+      "name": "Nabateos",
+      "startYear": -400,
+      "endYear": 106,
+      "peakYear": -50,
+      "peakPopulation": 200000,
+      "color": "#F97316",
+      "region": "Arabia Petraea",
+      "description": "Pueblo arameo-arábigo que controló las rutas del incienso y dejó la ciudad rupestre de Petra, antes de su anexión por el Imperio Romano.",
+      "civilizations": [
+        "Nabateos"
+      ],
+      "relatedConferences": [
+        "petra-nabateos"
+      ]
+    },
+    {
+      "id": "aksum",
+      "name": "Reino de Aksum",
+      "startYear": -100,
+      "endYear": 940,
+      "peakYear": 350,
+      "peakPopulation": 2000000,
+      "color": "#84CC16",
+      "region": "Cuerno de África (Etiopía/Eritrea)",
+      "description": "Poderoso reino comercial del Cuerno de África, conexo con el mundo romano, persa e indio, y conocido por sus estelas monolíticas y adopción temprana del cristianismo.",
+      "civilizations": [
+        "Aksum"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "mayas",
+      "name": "Mayas",
+      "startYear": -2000,
+      "endYear": 900,
+      "peakYear": 250,
+      "peakPopulation": 2000000,
+      "color": "#10B981",
+      "region": "Mesoamérica",
+      "description": "Civilización mesoamericana con desarrollo urbano, escritura jeroglífica, matemáticas y astronomía avanzadas, especialmente durante su período clásico.",
+      "civilizations": [
+        "Mayas"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "numidia",
+      "name": "Numidia",
+      "startYear": -202,
+      "endYear": 40,
+      "peakYear": -100,
+      "peakPopulation": 500000,
+      "color": "#FBBF24",
+      "region": "África del Norte",
+      "description": "Reino bereber del norte de África, famoso por su caballería ligera y su papel junto a Roma y Cartago durante las Guerras Púnicas.",
+      "civilizations": [
+        "Numidia"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "mauritania-antigua",
+      "name": "Mauritania antigua",
+      "startYear": -300,
+      "endYear": 40,
+      "peakYear": -50,
+      "peakPopulation": 400000,
+      "color": "#D97706",
+      "region": "África del Norte",
+      "description": "Reino mauretano del Magreb antiguo, gobernado por la dinastía de Juba II antes de su anexión como provincias romanas.",
+      "civilizations": [
+        "Mauritania antigua"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "meroe",
+      "name": "Meroe",
+      "startYear": -800,
+      "endYear": 350,
+      "peakYear": 100,
+      "peakPopulation": 800000,
+      "color": "#A855F7",
+      "region": "Valle del Nilo (Sudán)",
+      "description": "Ciudad-estado y centro del reino de Kush tras el traslado desde Napata, célebre por sus pirámides, industria del hierro y escritura meroítica.",
+      "civilizations": [
+        "Meroe",
+        "Kush"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "libia-antigua",
+      "name": "Libia antigua",
+      "startYear": -1000,
+      "endYear": -146,
+      "peakYear": -500,
+      "peakPopulation": 300000,
+      "color": "#F59E0B",
+      "region": "África del Norte",
+      "description": "Conjunto de pueblos libios y regiones del norte de África que interactuaron con Egipto, Cartago y Grecia durante la Antigüedad.",
+      "civilizations": [
+        "Libia antigua"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "teotihuacan",
+      "name": "Teotihuacan",
+      "startYear": -100,
+      "endYear": 550,
+      "peakYear": 250,
+      "peakPopulation": 125000,
+      "color": "#EC4899",
+      "region": "Mesoamérica",
+      "description": "La ciudad más grande de la Mesoamérica prehispánica clásica, centro religioso y comercial cuyo legado influyó en culturas posteriores.",
+      "civilizations": [
+        "Teotihuacan"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "aztecas",
+      "name": "Aztecas / Imperio Mexica",
+      "startYear": 1325,
+      "endYear": 1500,
+      "peakYear": 1500,
+      "peakPopulation": 5000000,
+      "color": "#DC2626",
+      "region": "Mesoamérica",
+      "description": "Imperio mesoamericano tardío centrado en Tenochtitlan, con una sofisticada organización política, militar y religiosa.",
+      "civilizations": [
+        "Aztecas",
+        "Mexica"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "incas",
+      "name": "Imperio Inca",
+      "startYear": 1200,
+      "endYear": 1500,
+      "peakYear": 1500,
+      "peakPopulation": 12000000,
+      "color": "#F59E0B",
+      "region": "Andes centrales",
+      "description": "El mayor imperio prehispánico de América del Sur, articulado por un vasto sistema de caminos, quipus y una economía redistributiva.",
+      "civilizations": [
+        "Imperio Inca"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "moche",
+      "name": "Moche",
+      "startYear": -100,
+      "endYear": 800,
+      "peakYear": 300,
+      "peakPopulation": 500000,
+      "color": "#EF4444",
+      "region": "Andes centrales",
+      "description": "Cultura andina del período temprano intermedio, conocida por sus huacas, cerámica fina y complejas obras hidráulicas en la costa norte peruana.",
+      "civilizations": [
+        "Moche"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "nazca",
+      "name": "Nazca",
+      "startYear": -200,
+      "endYear": 800,
+      "peakYear": 300,
+      "peakPopulation": 200000,
+      "color": "#F97316",
+      "region": "Andes centrales",
+      "description": "Cultura del sur peruano célebre por sus geoglifos, textiles policromos y acueductos subterráneos en el desierto de Nazca.",
+      "civilizations": [
+        "Nazca"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "paracas",
+      "name": "Paracas",
+      "startYear": -800,
+      "endYear": -100,
+      "peakYear": -400,
+      "peakPopulation": 100000,
+      "color": "#FBBF24",
+      "region": "Andes centrales",
+      "description": "Cultura del sur peruano anterior a Nazca, destacada por sus textiles funerarios, trepanaciones y cerámica ceremonial.",
+      "civilizations": [
+        "Paracas"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "cultura-mississippi",
+      "name": "Cultura del Mississippi / Cahokia",
+      "startYear": 800,
+      "endYear": 1350,
+      "peakYear": 1200,
+      "peakPopulation": 50000,
+      "color": "#22C55E",
+      "region": "América del Norte",
+      "description": "La civilización urbana más compleja de la América del Norte precolombina, centrada en Cahokia con sus grandes terraplenes y plazas.",
+      "civilizations": [
+        "Cultura del Mississippi",
+        "Cahokia"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "dinastia-shang",
+      "name": "Dinastía Shang",
+      "startYear": -1600,
+      "endYear": -1046,
+      "peakYear": -1300,
+      "peakPopulation": 2000000,
+      "color": "#EF4444",
+      "region": "China oriental",
+      "description": "Primera dinastía china atestiguada arqueológicamente, célebre por sus huesos oraculares, bronces rituales y la ciudad de Yin.",
+      "civilizations": [
+        "Dinastía Shang"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "dinastia-zhou",
+      "name": "Dinastía Zhou",
+      "startYear": -1046,
+      "endYear": -256,
+      "peakYear": -500,
+      "peakPopulation": 10000000,
+      "color": "#B91C1C",
+      "region": "China oriental",
+      "description": "La dinastía más longeva de China, período de los filósofos confucianos y taoístas y de la fragmentación en reinos combatientes.",
+      "civilizations": [
+        "Dinastía Zhou"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "imperio-seleucida",
+      "name": "Imperio Seleúcida",
+      "startYear": -312,
+      "endYear": -63,
+      "peakYear": -200,
+      "peakPopulation": 8000000,
+      "color": "#8B5CF6",
+      "region": "Oriente Próximo y Asia Central",
+      "description": "Mayor de los reinos helenísticos surgidos tras la muerte de Alejandro Magno, puente cultural entre Grecia, Persia y Asia Central.",
+      "civilizations": [
+        "Imperio Seleúcida"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "imperio-kushan",
+      "name": "Imperio Kushán",
+      "startYear": -30,
+      "endYear": 375,
+      "peakYear": 200,
+      "peakPopulation": 3000000,
+      "color": "#F472B6",
+      "region": "Asia Central y norte de India",
+      "description": "Imperio nomada convertido en potencia sedentaria, clave en el comercio de la Ruta de la Seda y en la difusión del budismo por Asia Central.",
+      "civilizations": [
+        "Imperio Kushán"
+      ],
+      "relatedConferences": [
+        "ruta-de-la-seda-origen"
+      ]
+    },
+    {
+      "id": "gandhara",
+      "name": "Gandhara",
+      "startYear": -1000,
+      "endYear": 500,
+      "peakYear": 0,
+      "peakPopulation": 1000000,
+      "color": "#A78BFA",
+      "region": "Asia Central y norte de India",
+      "description": "Región histórica del noroeste del subcontinente indio, cuna del arte greco-budista y punto de encuentro entre India, Persia y Asia Central.",
+      "civilizations": [
+        "Gandhara"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "japon-antiguo",
+      "name": "Japón antiguo (Yayoi / Kofun)",
+      "startYear": -300,
+      "endYear": 538,
+      "peakYear": 300,
+      "peakPopulation": 500000,
+      "color": "#F43F5E",
+      "region": "Japón",
+      "description": "Períodos formativos del Japón antiguo marcados por la llegada de la agricultura del arroz, la metalurgia y los primeros estados centralizados.",
+      "civilizations": [
+        "Japón antiguo"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "polinesios",
+      "name": "Polinesios",
+      "startYear": -1500,
+      "endYear": 1000,
+      "peakYear": 0,
+      "peakPopulation": 1000000,
+      "color": "#06B6D4",
+      "region": "Oceanía",
+      "description": "Pueblos navegantes del Pacífico que colonizaron un vasto triángulo insular desde Hawái hasta Nueva Zelanda y la Isla de Pascua.",
+      "civilizations": [
+        "Polinesios"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "maories",
+      "name": "Maoríes",
+      "startYear": 1250,
+      "endYear": 1500,
+      "peakYear": 1500,
+      "peakPopulation": 200000,
+      "color": "#10B981",
+      "region": "Oceanía",
+      "description": "Pueblos polinesios que llegaron a Aotearoa (Nueva Zelanda) y desarrollaron una sociedad distintiva con elaboradas tradiciones orales y artísticas.",
+      "civilizations": [
+        "Maoríes"
+      ],
+      "relatedConferences": []
+    },
+    {
+      "id": "aborigenes-australianos",
+      "name": "Aborígenes australianos",
+      "startYear": -3500,
+      "endYear": 1500,
+      "peakYear": 0,
+      "peakPopulation": 1000000,
+      "color": "#84CC16",
+      "region": "Oceanía",
+      "description": "Pueblos originarios de Australia con una de las tradiciones culturales y espirituales más antiguas y continuas del mundo.",
+      "civilizations": [
+        "Aborígenes australianos"
+      ],
+      "relatedConferences": []
     }
   ]
 }

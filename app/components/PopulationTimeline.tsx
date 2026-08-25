@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import {
   Tooltip,
@@ -9,8 +9,10 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Badge } from "@/components/ui/badge";
-import { Users, Calendar, MapPin, ExternalLink, Video } from "lucide-react";
+import { Users, Calendar, MapPin, ExternalLink, Video, Filter } from "lucide-react";
 import { getYouTubeId, getMediaType, MediaIcon, getYouTubeUrl } from "@/lib/media";
+import { hasConferenceCoverage } from "@/lib/timeline";
+import { Button } from "@/components/ui/button";
 import type { PeopleGroup, ConferenceItem } from "@/app/types/timeline";
 
 interface PopulationTimelineProps {
@@ -112,15 +114,24 @@ export function PopulationTimeline({
   peoples,
   conferencesMap,
 }: PopulationTimelineProps) {
+  const [showAll, setShowAll] = useState(false);
+
   const sortedPeoples = useMemo(() => {
     return [...peoples].sort((a, b) => a.startYear - b.startYear);
   }, [peoples]);
 
-  const maxPopulation = useMemo(() => {
-    return Math.max(...sortedPeoples.map((p) => p.peakPopulation));
-  }, [sortedPeoples]);
+  const filteredPeoples = useMemo(() => {
+    if (showAll) return sortedPeoples;
+    const map = conferencesMap ?? new Map<string, ConferenceItem>();
+    return sortedPeoples.filter((people) => hasConferenceCoverage(people, map));
+  }, [sortedPeoples, conferencesMap, showAll]);
 
-  const legend = useRegionLegend(sortedPeoples);
+  const maxPopulation = useMemo(() => {
+    return Math.max(...filteredPeoples.map((p) => p.peakPopulation), 1);
+  }, [filteredPeoples]);
+
+  const legend = useRegionLegend(filteredPeoples);
+  const hiddenCount = sortedPeoples.length - filteredPeoples.length;
 
   const ticks = useMemo(() => {
     const list: number[] = [];
@@ -133,6 +144,31 @@ export function PopulationTimeline({
   return (
     <TooltipProvider delay={100}>
       <div className="space-y-6">
+        <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+          <div>
+            <p className="text-base text-muted-foreground sm:text-lg">
+              Visualización de civilizaciones y pueblos a lo largo del tiempo.
+              Por defecto se muestran solo los que tienen conferencias de Eva
+              Tobalina en video.
+            </p>
+            <p className="mt-1 text-sm text-muted-foreground/80">
+              {filteredPeoples.length} de {sortedPeoples.length} mostrados
+              {hiddenCount > 0 ? ` · ${hiddenCount} ocultos` : ""}
+            </p>
+          </div>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setShowAll((prev) => !prev)}
+            className="gap-2 text-sm"
+          >
+            <Filter className="h-4 w-4" />
+            {showAll
+              ? "Solo con conferencias de Eva"
+              : "Incluir pueblos sin conferencias"}
+          </Button>
+        </div>
+
         <div className="rounded-xl border border-border/60 bg-card/50 p-4 shadow-sm">
           <div className="mb-2 flex items-center justify-between">
             <span className="text-xs font-medium text-muted-foreground">
@@ -164,7 +200,7 @@ export function PopulationTimeline({
 
             {/* Rows */}
             <div className="relative pt-6">
-              {sortedPeoples.map((people, index) => {
+              {filteredPeoples.map((people, index) => {
                 const left = yearToPercent(people.startYear);
                 const width = yearToPercent(people.endYear) - left;
                 const height = populationHeight(people.peakPopulation, maxPopulation);

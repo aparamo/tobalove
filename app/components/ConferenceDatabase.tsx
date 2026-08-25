@@ -35,6 +35,7 @@ export interface EnrichedConferenceItem extends ConferenceItem {
   historicalDateLabel: string | null;
   historicalPeriod: string | null;
   relatedPeoples: string[];
+  relatedLocations: string[];
 }
 
 type SortKey =
@@ -42,6 +43,8 @@ type SortKey =
   | "historicalStartYear"
   | "historicalPeriod"
   | "civilizations"
+  | "location"
+  | "characters"
   | "year"
   | "organization";
 
@@ -64,6 +67,8 @@ const sortLabels: Record<SortKey, string> = {
   historicalStartYear: "Fecha histórica",
   historicalPeriod: "Período",
   civilizations: "Civilización / Pueblo",
+  location: "Lugar",
+  characters: "Actores",
   year: "Año conferencia",
   organization: "Organización",
 };
@@ -95,6 +100,18 @@ function sortConferences(
         const civA = a.civilizations[0] ?? "";
         const civB = b.civilizations[0] ?? "";
         comparison = civA.localeCompare(civB);
+        break;
+      }
+      case "location": {
+        const locA = a.relatedLocations[0] ?? "";
+        const locB = b.relatedLocations[0] ?? "";
+        comparison = locA.localeCompare(locB);
+        break;
+      }
+      case "characters": {
+        const charA = a.characters[0] ?? "";
+        const charB = b.characters[0] ?? "";
+        comparison = charA.localeCompare(charB);
         break;
       }
       case "year": {
@@ -167,8 +184,10 @@ export function ConferenceDatabase({
   const [visibleColumns, setVisibleColumns] = useState<VisibleColumns>({
     title: true,
     historicalStartYear: true,
-    historicalPeriod: true,
+    historicalPeriod: false,
     civilizations: true,
+    location: true,
+    characters: true,
     year: false,
     organization: false,
   });
@@ -445,6 +464,16 @@ export function ConferenceDatabase({
                     <SortButton sortKey="civilizations" sort={sort} onSort={toggleSort} />
                   </TableHead>
                 )}
+                {visibleColumns.location && (
+                  <TableHead className="min-w-[180px]">
+                    <SortButton sortKey="location" sort={sort} onSort={toggleSort} />
+                  </TableHead>
+                )}
+                {visibleColumns.characters && (
+                  <TableHead className="min-w-[180px]">
+                    <SortButton sortKey="characters" sort={sort} onSort={toggleSort} />
+                  </TableHead>
+                )}
                 {visibleColumns.year && (
                   <TableHead className="min-w-[120px]">
                     <SortButton sortKey="year" sort={sort} onSort={toggleSort} />
@@ -538,6 +567,49 @@ export function ConferenceDatabase({
                           ))
                         ) : (
                           <span className="text-sm text-muted-foreground">—</span>
+                        )}
+                      </div>
+                    </TableCell>
+                  )}
+                  {visibleColumns.location && (
+                    <TableCell>
+                      <div className="flex flex-wrap gap-1">
+                        {conf.relatedLocations.length > 0 ? (
+                          conf.relatedLocations.map((loc) => (
+                            <Badge
+                              key={loc}
+                              variant="outline"
+                              className="text-xs font-normal"
+                            >
+                              {loc}
+                            </Badge>
+                          ))
+                        ) : (
+                          <span className="text-sm text-muted-foreground">—</span>
+                        )}
+                      </div>
+                    </TableCell>
+                  )}
+                  {visibleColumns.characters && (
+                    <TableCell>
+                      <div className="flex flex-wrap gap-1">
+                        {conf.characters.length > 0 ? (
+                          conf.characters.slice(0, 5).map((char) => (
+                            <Badge
+                              key={char}
+                              variant="outline"
+                              className="text-xs font-normal text-muted-foreground"
+                            >
+                              {char}
+                            </Badge>
+                          ))
+                        ) : (
+                          <span className="text-sm text-muted-foreground">—</span>
+                        )}
+                        {conf.characters.length > 5 && (
+                          <span className="text-xs text-muted-foreground">
+                            +{conf.characters.length - 5}
+                          </span>
                         )}
                       </div>
                     </TableCell>

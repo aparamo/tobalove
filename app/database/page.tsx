@@ -91,6 +91,12 @@ export default async function DatabasePage() {
     const historicalPeriod =
       startYear !== null ? getHistoricalPeriod(startYear) : null;
 
+    const relatedLocations = Array.from(
+      new Set(
+        events.map((ev) => ev.location).filter((loc): loc is string => Boolean(loc))
+      )
+    );
+
     return {
       ...conf,
       historicalStartYear: startYear,
@@ -98,6 +104,7 @@ export default async function DatabasePage() {
       historicalDateLabel,
       historicalPeriod,
       relatedPeoples: peoplesByConference.get(conf.id) ?? [],
+      relatedLocations,
     };
   });
 

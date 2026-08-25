@@ -24,6 +24,8 @@ import type {
   ConferenceItem,
 } from "@/app/types/timeline";
 
+const PAGE_SIZE = 10;
+
 interface TimelineEventProps {
   event: TimelineEventType;
   index: number;
@@ -248,7 +250,7 @@ export function TimelineEvent({
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.3, delay: 0.2 + index * 0.05 }}
+          transition={{ duration: 0.3, delay: 0.2 + (index % PAGE_SIZE) * 0.05 }}
           className="h-4 w-4 rounded-full border-2 border-background bg-primary shadow-sm md:h-5 md:w-5"
         />
       </div>

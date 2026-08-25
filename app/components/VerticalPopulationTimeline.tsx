@@ -29,12 +29,12 @@ import {
   Video,
   Filter,
   Globe,
-  ChevronUp,
-  ChevronDown,
 } from "lucide-react";
 import { getYouTubeId, getYouTubeUrl } from "@/lib/youtube";
 import { getMediaType, MediaIcon } from "@/lib/media";
+import { hasConferenceCoverage } from "@/lib/timeline";
 import { cn } from "@/lib/utils";
+import { TimelineNavigation } from "./TimelineNavigation";
 import type { PeopleGroup, ConferenceItem } from "@/app/types/timeline";
 
 interface VerticalPopulationTimelineProps {
@@ -364,17 +364,13 @@ export function VerticalPopulationTimeline({
   }, [peoples]);
 
   const maxPopulation = useMemo(() => {
-    return Math.max(...sortedPeoples.map((p) => p.peakPopulation));
+    return Math.max(...sortedPeoples.map((p) => p.peakPopulation), 1);
   }, [sortedPeoples]);
 
   const filteredPeoples = useMemo(() => {
     if (showAll) return sortedPeoples;
-    return sortedPeoples.filter((people) =>
-      people.relatedConferences.some((id) => {
-        const conf = conferencesMap?.get(id);
-        return conf && getYouTubeUrl(conf);
-      })
-    );
+    const map = conferencesMap ?? new Map<string, ConferenceItem>();
+    return sortedPeoples.filter((people) => hasConferenceCoverage(people, map));
   }, [sortedPeoples, conferencesMap, showAll]);
 
   const visiblePeoples = useMemo(() => {
@@ -427,6 +423,8 @@ export function VerticalPopulationTimeline({
 
   const goNext = () => scrollToIndex(currentIndex + 1);
   const goPrev = () => scrollToIndex(currentIndex - 1);
+  const goStart = () => scrollToIndex(0);
+  const goEnd = () => scrollToIndex(visiblePeoples.length - 1);
 
   const legend = useRegionLegend(filteredPeoples);
 
@@ -477,8 +475,8 @@ export function VerticalPopulationTimeline({
         >
           <Filter className="h-4 w-4" />
           {showAll
-            ? `Solo con videos (${totalHiddenCount} ocultos)`
-            : `Mostrar todos (+${totalHiddenCount})`}
+            ? "Solo con conferencias de Eva"
+            : "Incluir pueblos sin conferencias"}
         </Button>
       </div>
 
@@ -715,7 +713,7 @@ export function VerticalPopulationTimeline({
               onClick={loadMore}
               className="gap-2 text-sm"
             >
-              Mostrar más
+              Ver más
               <span className="text-muted-foreground">
                 ({remainingCount} restantes)
               </span>
@@ -725,28 +723,14 @@ export function VerticalPopulationTimeline({
       </div>
 
       {/* Floating navigation */}
-      <div className="fixed bottom-6 left-6 z-50 flex flex-col gap-2">
-        <Button
-          variant="secondary"
-          size="icon"
-          onClick={goPrev}
-          disabled={currentIndex <= 0}
-          aria-label="Punto anterior"
-          className="h-11 w-11 rounded-full shadow-lg"
-        >
-          <ChevronUp className="h-5 w-5" />
-        </Button>
-        <Button
-          variant="secondary"
-          size="icon"
-          onClick={goNext}
-          disabled={currentIndex >= visiblePeoples.length - 1}
-          aria-label="Siguiente punto"
-          className="h-11 w-11 rounded-full shadow-lg"
-        >
-          <ChevronDown className="h-5 w-5" />
-        </Button>
-      </div>
+      <TimelineNavigation
+        currentIndex={currentIndex}
+        totalItems={visiblePeoples.length}
+        onGoStart={goStart}
+        onGoEnd={goEnd}
+        onGoPrev={goPrev}
+        onGoNext={goNext}
+      />
 
       {/* Legend */}
       {legend.length > 0 && (
