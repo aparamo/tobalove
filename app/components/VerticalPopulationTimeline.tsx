@@ -109,18 +109,29 @@ function layoutPeoples(
 ): LayoutItem[] {
   const sorted = [...peoples].sort((a, b) => a.peakYear - b.peakYear);
   const items: LayoutItem[] = [];
-  let lastBottom = -Infinity;
+  const lastTops: { left: number; right: number } = {
+    left: -Infinity,
+    right: -Infinity,
+  };
 
   for (let i = 0; i < sorted.length; i++) {
     const people = sorted[i];
     const baseTop = (yearToPercent(people.peakYear) / 100) * CONTAINER_HEIGHT;
-    const top = Math.max(baseTop, lastBottom + MIN_GAP);
-    lastBottom = top + CARD_HEIGHT;
+    const side = i % 2 === 0 ? "right" : "left";
+
+    // Respetamos la posición real del año de apogeo. Solo empujamos hacia abajo
+    // si la card se solaparía demasiado con la anterior del mismo lado.
+    const lastTop = lastTops[side];
+    const minPush = lastTop + CARD_HEIGHT - MIN_GAP;
+    const overlap = Math.max(0, minPush - baseTop);
+    const top = overlap > CARD_HEIGHT * 0.5 ? minPush : baseTop;
+
+    lastTops[side] = top;
 
     items.push({
       people,
       top,
-      side: i % 2 === 0 ? "right" : "left",
+      side,
       width: populationWidthPercent(people.peakPopulation, maxPopulation),
     });
   }
@@ -832,25 +843,6 @@ export function VerticalPopulationTimeline({
               );
             })}
           </div>
-
-          {/* Center dots for each item (clásico y levitación) */}
-          {layoutMode !== "floating" &&
-            layout.map(({ people, top }, index) => (
-              <motion.div
-                key={`dot-${people.id}`}
-                ref={(el) => {
-                  itemRefs.current[index] = el;
-                }}
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{
-                  duration: 0.3,
-                  delay: (index % PAGE_SIZE) * 0.04,
-                }}
-                className="absolute left-1/2 z-10 h-3 w-3 -translate-x-1/2 rounded-full border-2 border-background bg-primary shadow-sm"
-                style={{ top: `${top + CARD_HEIGHT / 2 - 6}px` }}
-              />
-            ))}
 
           {/* People cards — modo clásico */}
           {layoutMode === "classic" &&
