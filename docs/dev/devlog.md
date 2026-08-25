@@ -912,3 +912,38 @@ en `/tob-app/data/linea-de-tiempo-eva-tobalina.json`:
 - Revisar si los pueblos de `pueblos-coexistientes.json` necesitan ajustar sus
   `relatedConferences` para incluir también las nuevas conferencias (actualmente
   ya las incluían, lo que indica que la copia de `/tob-app/data` estaba adelantada).
+
+
+## 2026-08-24 (continuación) — Seed de Prisma para reflejar conferencias en `/database`
+
+### Contexto
+Tras integrar las siete conferencias de Hispania prerromana y Cartago, el usuario
+reportó que seguían faltando en `/database`. La razón era que `/database` lee de la
+base de datos PostgreSQL a través de Prisma, no directamente de los JSON. Los JSON
+estaban actualizados, pero la base de datos aún conservaba los datos anteriores.
+
+### Trabajo realizado
+- Se ejecutó `bun run db:seed` en `/tob-app`.
+- El seed actualizó la base de datos con:
+  - **111 conferencias**.
+  - **59 eventos de línea de tiempo**.
+  - **72 pueblos coexistientes**.
+- Se verificó que el seed finalizó sin errores.
+- Se limpió un campo duplicado `ultimaActualizacion` que se había añadido
+  accidentalmente en el `meta` de `/data/linea-de-tiempo-eva-tobalina.json` y su
+  copia en `/tob-app/data/`, dejando únicamente `ultima_actualizacion` en formato
+  snake_case para mantener la consistencia con el resto del JSON y con el seed.
+
+### Resultado
+Las siete conferencias ahora están disponibles en `/database` con su fecha histórica,
+período, civilizaciones y personajes correspondientes.
+
+### Archivos modificados
+- `/data/linea-de-tiempo-eva-tobalina.json`
+- `/tob-app/data/linea-de-tiempo-eva-tobalina.json`
+- `/tob-app/docs/dev/devlog.md`
+
+### Verificación
+- `bun run lint` ✅ — sin errores (solo el warning preexistente en `lib/timeline.ts`).
+- `bun run build` ✅ — prerenderizado estático correcto de todas las rutas.
+- Seed de Prisma ✅ — 111 conferencias, 59 eventos, 72 pueblos.
