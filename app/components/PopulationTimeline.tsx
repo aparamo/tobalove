@@ -11,8 +11,17 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Users, Calendar, MapPin, ExternalLink, Video, Filter } from "lucide-react";
 import { getYouTubeId, getMediaType, MediaIcon, getYouTubeUrl } from "@/lib/media";
-import { hasConferenceCoverage } from "@/lib/timeline";
+import {
+  hasConferenceCoverage,
+  MIN_YEAR,
+  MAX_YEAR,
+  yearToPercentLinear,
+  yearToPercentAdapted,
+  type TimelineScale,
+} from "@/lib/timeline";
 import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 import type { PeopleGroup, ConferenceItem } from "@/app/types/timeline";
 
 interface PopulationTimelineProps {
@@ -20,9 +29,6 @@ interface PopulationTimelineProps {
   conferencesMap?: Map<string, ConferenceItem>;
 }
 
-const MIN_YEAR = -3500;
-const MAX_YEAR = 1500;
-const YEAR_RANGE = MAX_YEAR - MIN_YEAR;
 const ROW_HEIGHT = 56;
 const MIN_BAR_HEIGHT = 8;
 const MAX_BAR_HEIGHT = 40;
@@ -40,10 +46,6 @@ function formatPopulation(value: number): string {
 function populationHeight(peakPopulation: number, maxPopulation: number): number {
   const ratio = Math.sqrt(peakPopulation) / Math.sqrt(maxPopulation);
   return Math.max(MIN_BAR_HEIGHT, Math.round(MIN_BAR_HEIGHT + ratio * (MAX_BAR_HEIGHT - MIN_BAR_HEIGHT)));
-}
-
-function yearToPercent(year: number): number {
-  return ((year - MIN_YEAR) / YEAR_RANGE) * 100;
 }
 
 function useRegionLegend(peoples: PeopleGroup[]) {
@@ -115,6 +117,13 @@ export function PopulationTimeline({
   conferencesMap,
 }: PopulationTimelineProps) {
   const [showAll, setShowAll] = useState(false);
+  const [scale, setScale] = useState<TimelineScale>("adapted");
+
+  const yearToPercent = useMemo(
+    () => (year: number) =>
+      scale === "linear" ? yearToPercentLinear(year) : yearToPercentAdapted(year),
+    [scale]
+  );
 
   const sortedPeoples = useMemo(() => {
     return [...peoples].sort((a, b) => a.startYear - b.startYear);
@@ -156,17 +165,36 @@ export function PopulationTimeline({
               {hiddenCount > 0 ? ` · ${hiddenCount} ocultos` : ""}
             </p>
           </div>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => setShowAll((prev) => !prev)}
-            className="gap-2 text-sm"
-          >
-            <Filter className="h-4 w-4" />
-            {showAll
-              ? "Solo con conferencias de Eva"
-              : "Incluir pueblos sin conferencias"}
-          </Button>
+          <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+            <div className="flex items-center gap-3 rounded-lg border border-border/60 bg-card/50 px-3 py-2">
+              <Switch
+                id="scale-toggle-horizontal"
+                checked={scale === "linear"}
+                onCheckedChange={(checked) =>
+                  setScale(checked ? "linear" : "adapted")
+                }
+                aria-label="Cambiar escala temporal"
+              />
+              <Label
+                htmlFor="scale-toggle-horizontal"
+                className="cursor-pointer text-sm text-muted-foreground"
+              >
+                {scale === "linear" ? "Escala lineal" : "Escala adaptada"}
+              </Label>
+            </div>
+
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setShowAll((prev) => !prev)}
+              className="gap-2 text-sm"
+            >
+              <Filter className="h-4 w-4" />
+              {showAll
+                ? "Solo con conferencias de Eva"
+                : "Incluir pueblos sin conferencias"}
+            </Button>
+          </div>
         </div>
 
         <div className="rounded-xl border border-border/60 bg-card/50 p-4 shadow-sm">

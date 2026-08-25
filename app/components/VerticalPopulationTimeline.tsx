@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo, useState, useRef, useCallback } from "react";
+import { useMemo, useState, useRef, useCallback, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -32,9 +32,18 @@ import {
 } from "lucide-react";
 import { getYouTubeId, getYouTubeUrl } from "@/lib/youtube";
 import { getMediaType, MediaIcon } from "@/lib/media";
-import { hasConferenceCoverage } from "@/lib/timeline";
+import {
+  hasConferenceCoverage,
+  MIN_YEAR,
+  MAX_YEAR,
+  yearToPercentLinear,
+  yearToPercentAdapted,
+  type TimelineScale,
+} from "@/lib/timeline";
 import { cn } from "@/lib/utils";
 import { TimelineNavigation } from "./TimelineNavigation";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 import type { PeopleGroup, ConferenceItem } from "@/app/types/timeline";
 
 interface VerticalPopulationTimelineProps {
@@ -43,9 +52,6 @@ interface VerticalPopulationTimelineProps {
 }
 
 const PAGE_SIZE = 10;
-const MIN_YEAR = -3500;
-const MAX_YEAR = 1500;
-const YEAR_RANGE = MAX_YEAR - MIN_YEAR;
 const CONTAINER_HEIGHT = 1600;
 const CARD_HEIGHT = 152;
 const MIN_GAP = 24;
@@ -58,10 +64,6 @@ function formatPopulation(value: number): string {
   if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(1)} M`;
   if (value >= 1_000) return `${(value / 1_000).toFixed(0)} k`;
   return value.toLocaleString("es-ES");
-}
-
-function yearToPercent(year: number): number {
-  return ((year - MIN_YEAR) / YEAR_RANGE) * 100;
 }
 
 function hexToRgba(hex: string, alpha: number): string {
@@ -104,7 +106,8 @@ interface LayoutItem {
 
 function layoutPeoples(
   peoples: PeopleGroup[],
-  maxPopulation: number
+  maxPopulation: number,
+  yearToPercent: (year: number) => number
 ): LayoutItem[] {
   const sorted = [...peoples].sort((a, b) => a.peakYear - b.peakYear);
   const items: LayoutItem[] = [];
@@ -139,7 +142,8 @@ const LANE_GAP = 3;
 
 function computeLaneBands(
   peoples: PeopleGroup[],
-  totalHeight: number
+  totalHeight: number,
+  yearToPercent: (year: number) => number
 ): { bands: LaneBand[]; laneCount: number } {
   const sorted = [...peoples].sort((a, b) => a.startYear - b.startYear);
   const lanesEnd: number[] = [];
@@ -355,9 +359,17 @@ export function VerticalPopulationTimeline({
   const [showAll, setShowAll] = useState(false);
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [scale, setScale] = useState<TimelineScale>("adapted");
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
   const sentinelRef = useRef<HTMLDivElement | null>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const activeObserverRef = useRef<IntersectionObserver | null>(null);
+
+  const yearToPercent = useCallback(
+    (year: number) =>
+      scale === "linear" ? yearToPercentLinear(year) : yearToPercentAdapted(year),
+    [scale]
+  );
 
   const sortedPeoples = useMemo(() => {
     return [...peoples].sort((a, b) => a.startYear - b.startYear);
@@ -378,8 +390,8 @@ export function VerticalPopulationTimeline({
   }, [filteredPeoples, visibleCount]);
 
   const layout = useMemo(() => {
-    return layoutPeoples(visiblePeoples, maxPopulation);
-  }, [visiblePeoples, maxPopulation]);
+    return layoutPeoples(visiblePeoples, maxPopulation, yearToPercent);
+  }, [visiblePeoples, maxPopulation, yearToPercent]);
 
   const hasMore = visiblePeoples.length < filteredPeoples.length;
   const remainingCount = filteredPeoples.length - visiblePeoples.length;
@@ -412,19 +424,62 @@ export function VerticalPopulationTimeline({
     [hasMore, loadMore]
   );
 
-  const scrollToIndex = (index: number) => {
-    const clamped = Math.max(0, Math.min(index, visiblePeoples.length - 1));
-    setCurrentIndex(clamped);
-    const element = itemRefs.current[clamped];
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-  };
+  const scrollToIndex = useCallback(
+    (index: number) => {
+      const clamped = Math.max(0, Math.min(index, itemRefs.current.length - 1));
+      setCurrentIndex(clamped);
+      const element = itemRefs.current[clamped];
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    },
+    []
+  );
 
-  const goNext = () => scrollToIndex(currentIndex + 1);
-  const goPrev = () => scrollToIndex(currentIndex - 1);
-  const goStart = () => scrollToIndex(0);
-  const goEnd = () => scrollToIndex(visiblePeoples.length - 1);
+  const goNext = useCallback(
+    () => scrollToIndex(currentIndex + 1),
+    [scrollToIndex, currentIndex]
+  );
+  const goPrev = useCallback(
+    () => scrollToIndex(currentIndex - 1),
+    [scrollToIndex, currentIndex]
+  );
+  const goStart = useCallback(() => scrollToIndex(0), [scrollToIndex]);
+  const goEnd = useCallback(() => {
+    setVisibleCount(filteredPeoples.length);
+    requestAnimationFrame(() => {
+      scrollToIndex(filteredPeoples.length - 1);
+    });
+  }, [filteredPeoples.length, scrollToIndex]);
+
+  useEffect(() => {
+    return () => {
+      if (observerRef.current) observerRef.current.disconnect();
+      if (activeObserverRef.current) activeObserverRef.current.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (activeObserverRef.current) activeObserverRef.current.disconnect();
+
+    activeObserverRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const idx = itemRefs.current.findIndex((el) => el === entry.target);
+            if (idx !== -1) setCurrentIndex(idx);
+          }
+        });
+      },
+      { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+    );
+
+    itemRefs.current.forEach((el) => {
+      if (el) activeObserverRef.current?.observe(el);
+    });
+
+    return () => activeObserverRef.current?.disconnect();
+  }, [visiblePeoples, scale]);
 
   const legend = useRegionLegend(filteredPeoples);
 
@@ -443,8 +498,8 @@ export function VerticalPopulationTimeline({
   }, [layout]);
 
   const { bands: laneBands, laneCount } = useMemo(() => {
-    return computeLaneBands(visiblePeoples, totalHeight);
-  }, [visiblePeoples, totalHeight]);
+    return computeLaneBands(visiblePeoples, totalHeight, yearToPercent);
+  }, [visiblePeoples, totalHeight, yearToPercent]);
 
   const axisWidth = Math.max(2, laneCount * LANE_WIDTH + (laneCount - 1) * LANE_GAP);
 
@@ -463,21 +518,40 @@ export function VerticalPopulationTimeline({
             {totalHiddenCount > 0 ? ` · ${totalHiddenCount} ocultos` : ""}
           </p>
         </div>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => {
-            setShowAll((prev) => !prev);
-            setVisibleCount(PAGE_SIZE);
-            setCurrentIndex(0);
-          }}
-          className="gap-2 text-sm"
-        >
-          <Filter className="h-4 w-4" />
-          {showAll
-            ? "Solo con conferencias de Eva"
-            : "Incluir pueblos sin conferencias"}
-        </Button>
+        <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+          <div className="flex items-center gap-3 rounded-lg border border-border/60 bg-card/50 px-3 py-2">
+            <Switch
+              id="scale-toggle"
+              checked={scale === "linear"}
+              onCheckedChange={(checked) =>
+                setScale(checked ? "linear" : "adapted")
+              }
+              aria-label="Cambiar escala temporal"
+            />
+            <Label
+              htmlFor="scale-toggle"
+              className="cursor-pointer text-sm text-muted-foreground"
+            >
+              {scale === "linear" ? "Escala lineal" : "Escala adaptada"}
+            </Label>
+          </div>
+
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => {
+              setShowAll((prev) => !prev);
+              setVisibleCount(PAGE_SIZE);
+              setCurrentIndex(0);
+            }}
+            className="gap-2 text-sm"
+          >
+            <Filter className="h-4 w-4" />
+            {showAll
+              ? "Solo con conferencias de Eva"
+              : "Incluir pueblos sin conferencias"}
+          </Button>
+        </div>
       </div>
 
       <div className="relative overflow-hidden rounded-xl border border-border/60 bg-card/50 p-4 shadow-sm sm:p-6">

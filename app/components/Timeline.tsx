@@ -23,6 +23,7 @@ export function Timeline({ events, conferencesMap }: TimelineProps) {
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
   const sentinelRef = useRef<HTMLDivElement | null>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const activeObserverRef = useRef<IntersectionObserver | null>(null);
 
   const visibleEvents = useMemo(
     () => events.slice(0, visibleCount),
@@ -67,10 +68,13 @@ export function Timeline({ events, conferencesMap }: TimelineProps) {
   }, []);
 
   const goStart = useCallback(() => scrollToIndex(0), [scrollToIndex]);
-  const goEnd = useCallback(
-    () => scrollToIndex(visibleEvents.length - 1),
-    [scrollToIndex, visibleEvents.length]
-  );
+  const goEnd = useCallback(() => {
+    setVisibleCount(events.length);
+    // Dejar un ciclo para que los refs se asignen antes de scrollear.
+    requestAnimationFrame(() => {
+      scrollToIndex(events.length - 1);
+    });
+  }, [events.length, scrollToIndex]);
   const goPrev = useCallback(
     () => scrollToIndex(currentIndex - 1),
     [scrollToIndex, currentIndex]
@@ -83,8 +87,31 @@ export function Timeline({ events, conferencesMap }: TimelineProps) {
   useEffect(() => {
     return () => {
       if (observerRef.current) observerRef.current.disconnect();
+      if (activeObserverRef.current) activeObserverRef.current.disconnect();
     };
   }, []);
+
+  useEffect(() => {
+    if (activeObserverRef.current) activeObserverRef.current.disconnect();
+
+    activeObserverRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const idx = itemRefs.current.findIndex((el) => el === entry.target);
+            if (idx !== -1) setCurrentIndex(idx);
+          }
+        });
+      },
+      { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+    );
+
+    itemRefs.current.forEach((el) => {
+      if (el) activeObserverRef.current?.observe(el);
+    });
+
+    return () => activeObserverRef.current?.disconnect();
+  }, [visibleEvents]);
 
   return (
     <section className="relative py-12 md:py-20">
