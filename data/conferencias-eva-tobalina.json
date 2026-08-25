@@ -2,7 +2,7 @@
   "meta": {
     "autor": "Eva Tobalina Oraá",
     "biografia_corta": "Doctora en Historia Antigua, profesora universitaria y divulgadora especializada en la Antigüedad mediterránea y oriental. Combina su labor académica en la Universidad Internacional de La Rioja con conferencias para asociaciones como Raíces de Europa.",
-    "total_conferencias_estimadas": 110,
+    "total_conferencias_estimadas": 111,
     "fuentes_principales": [
       "https://espacio-tiempo.es",
       "https://www.youtube.com/@raicesdeeuropa",
@@ -3523,6 +3523,34 @@
       "mediaType": "video",
       "youtube_url": "https://www.youtube.com/watch?v=yrW4dCCAZDk",
       "info_adicional": "246,000 visualizaciones"
+    },
+    {
+      "id": "hispania-celtica",
+      "title": "La HISPANIA CÉLTICA, apasionante civilización prerromana",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=og6PiPZpl7Q",
+      "description": "Conferencia sobre la Hispania Céltica, la presencia de los pueblos celtas en el interior de la Península Ibérica.",
+      "summary": "Tobalina nos acerca a los celtas en la Península Ibérica, especialmente del interior, y su fascinante civilización prerromana.",
+      "topics": [
+        "Hispania Céltica",
+        "celtas",
+        "pueblos prerromanos",
+        "Península Ibérica"
+      ],
+      "characters": [],
+      "civilizations": [
+        "Celtas",
+        "Celtíberos"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=og6PiPZpl7Q",
+      "info_adicional": null
     }
   ]
 }
