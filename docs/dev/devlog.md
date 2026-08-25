@@ -808,3 +808,31 @@ Verificación manual con los datos actuales: los primeros videos ahora son Sumer
   usuario entienda por qué un video aparece en cierta posición.
 - Permitir ordenar por fecha de publicación de la conferencia como opción adicional
   (distinguiendo claramente “fecha histórica” vs “fecha de publicación”).
+
+
+## 2026-08-24 (continuación) — Mensaje en el footer
+
+### Contexto
+El usuario pidió añadir al pie de página un mensaje de agradecimiento y dedicatoria
+en texto pequeño, con el primer corazón (`<3`) enlazado a `www.lisalab.com.mx`.
+
+### Trabajo realizado
+- Se editó `/tob-app/app/layout.tsx`.
+- Se añadió un nuevo párrafo dentro del `<footer>` con clase `text-xs` y color
+  `text-muted-foreground`.
+- El mensaje dice:
+  > Hecho con <3 para todxs lxs Tobalievers y Tobalovers. Y para Abril<3 y para
+  > nuestras madres.
+- El primer `<3` se convirtió en un enlace externo a `https://www.lisalab.com.mx`
+  con `target="_blank"` y `rel="noopener noreferrer"`, usando la clase
+  `text-primary hover:underline` para mantener el estilo de la app.
+- El segundo `<3` (después de Abril) se dejó como texto plano siguiendo la
+  instrucción original.
+
+### Archivos modificados
+- `/tob-app/app/layout.tsx`
+- `/tob-app/docs/dev/devlog.md`
+
+### Verificación
+- `bun run lint` ✅ — sin errores (solo el warning preexistente en `lib/timeline.ts`).
+- `bun run build` ✅ — prerenderizado estático correcto de todas las rutas.

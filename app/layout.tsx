@@ -106,6 +106,19 @@ export default async function RootLayout({
               <p className="mt-1">
                 Última actualización: {new Date().getFullYear()}
               </p>
+              <p className="text-xs text-muted-foreground">
+                Hecho con{" "}
+                <a
+                  href="https://www.lisalab.com.mx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  &lt;3
+                </a>{" "}
+                para todxs lxs Tobalievers y Tobalovers. Y para Abril&lt;3 y para
+                nuestras madres.
+              </p>
             </div>
           </footer>
         </TooltipProvider>
