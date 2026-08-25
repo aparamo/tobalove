@@ -59,8 +59,8 @@ interface VerticalPopulationTimelineProps {
 
 const PAGE_SIZE = 10;
 const CONTAINER_HEIGHT = 1600;
-const CARD_HEIGHT = 152;
-const MIN_GAP = 24;
+const CARD_HEIGHT = 104;
+const MIN_GAP = 20;
 
 function formatYear(year: number): string {
   return year < 0 ? `${Math.abs(year)} a.C.` : `${year} d.C.`;
@@ -234,35 +234,67 @@ function RelatedVideoCard({
 interface PeopleCardProps {
   people: PeopleGroup;
   widthPercent: number;
+  expanded: boolean;
   onClick: () => void;
   className?: string;
 }
 
-function PeopleCard({ people, widthPercent, onClick, className }: PeopleCardProps) {
+function PeopleCard({
+  people,
+  widthPercent,
+  expanded,
+  onClick,
+  className,
+}: PeopleCardProps) {
   return (
     <Card
       className={cn(
-        "cursor-pointer border-border/60 bg-card/80 shadow-sm transition-shadow hover:shadow-md",
+        "cursor-pointer overflow-hidden border-border/60 shadow-sm transition-all duration-300 hover:shadow-md",
+        expanded ? "bg-card/95" : "bg-card/75",
         className
       )}
       onClick={onClick}
     >
-      <CardHeader className="space-y-2 pb-3">
-        <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-          <Badge variant="secondary" className="gap-1 text-xs sm:text-sm">
-            <Calendar className="h-3 w-3" />
+      <CardHeader
+        className={cn(
+          "transition-all",
+          expanded ? "space-y-1.5 pb-2 pt-3" : "space-y-1 py-1.5"
+        )}
+      >
+        <div className="flex flex-wrap items-center gap-1">
+          <Badge
+            variant="secondary"
+            className="gap-1 text-[10px] sm:text-xs"
+          >
+            <Calendar className="h-2.5 w-2.5" />
             {formatYear(people.startYear)} — {formatYear(people.endYear)}
           </Badge>
-          <Badge variant="outline" className="gap-1 text-xs sm:text-sm">
-            <MapPin className="h-3 w-3" />
-            Apogeo: {formatYear(people.peakYear)}
+          <Badge variant="outline" className="gap-1 text-[10px] sm:text-xs">
+            <MapPin className="h-2.5 w-2.5" />
+            {formatYear(people.peakYear)}
           </Badge>
         </div>
-        <CardTitle className="text-base sm:text-lg">{people.name}</CardTitle>
+        <CardTitle
+          className={cn(
+            "font-semibold leading-tight transition-all",
+            expanded ? "text-sm sm:text-base" : "text-xs sm:text-sm"
+          )}
+        >
+          {people.name}
+        </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-3 pt-0">
-        {/* Population bar */}
-        <div className="relative h-3 w-full overflow-hidden rounded-full bg-muted shadow-inner sm:h-4">
+      <CardContent
+        className={cn(
+          "pt-0 transition-all",
+          expanded ? "space-y-2 pb-3" : "space-y-1 pb-1.5"
+        )}
+      >
+        <div
+          className={cn(
+            "relative w-full overflow-hidden rounded-full bg-muted",
+            expanded ? "h-2 sm:h-2.5" : "h-1 sm:h-1.5"
+          )}
+        >
           <div
             className="h-full rounded-full"
             style={{
@@ -274,20 +306,25 @@ function PeopleCard({ people, widthPercent, onClick, className }: PeopleCardProp
                 people.color,
                 0.9
               )} 100%)`,
-              boxShadow: `0 0 8px ${hexToRgba(people.color, 0.35)}`,
+              boxShadow: `0 0 6px ${hexToRgba(people.color, 0.35)}`,
             }}
           />
         </div>
-        <p className="line-clamp-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">
-          {people.description}
-        </p>
-        <div className="flex items-center justify-between text-xs text-muted-foreground sm:text-sm">
-          <span>{people.region}</span>
+        <div className="flex items-center justify-between text-[10px] text-muted-foreground sm:text-xs">
+          <span className="inline-flex items-center gap-1">
+            <Globe className="h-2.5 w-2.5" />
+            {people.region}
+          </span>
           <span className="inline-flex items-center gap-1 font-medium">
-            <Users className="h-3 w-3" />
+            <Users className="h-2.5 w-2.5" />
             {formatPopulation(people.peakPopulation)}
           </span>
         </div>
+        {expanded && (
+          <p className="line-clamp-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+            {people.description}
+          </p>
+        )}
       </CardContent>
     </Card>
   );
@@ -421,8 +458,12 @@ export function VerticalPopulationTimeline({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [scale, setScale] = useState<TimelineScale>("adapted");
   const [layoutMode, setLayoutMode] = useState<LayoutMode>("classic");
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  const expandedIndex = hoveredIndex ?? currentIndex;
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
   const sentinelRef = useRef<HTMLDivElement | null>(null);
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
   const activeObserverRef = useRef<IntersectionObserver | null>(null);
 
@@ -498,14 +539,30 @@ export function VerticalPopulationTimeline({
 
   const scrollToIndex = useCallback(
     (index: number) => {
-      const clamped = Math.max(0, Math.min(index, itemRefs.current.length - 1));
+      const clamped = Math.max(0, Math.min(index, visiblePeoples.length - 1));
       setCurrentIndex(clamped);
+
       const element = itemRefs.current[clamped];
       if (element) {
         element.scrollIntoView({ behavior: "smooth", block: "center" });
+        return;
       }
+
+      // Fallback: calculamos la posición desde el layout actual.
+      const layoutItem =
+        layoutMode === "floating"
+          ? floatingLayout[clamped]
+          : layout[clamped];
+      if (!layoutItem || !wrapperRef.current) return;
+
+      const wrapperTop =
+        wrapperRef.current.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: wrapperTop + layoutItem.top - window.innerHeight / 3,
+        behavior: "smooth",
+      });
     },
-    []
+    [floatingLayout, layout, layoutMode, visiblePeoples.length]
   );
 
   const goNext = useCallback(
@@ -519,9 +576,9 @@ export function VerticalPopulationTimeline({
   const goStart = useCallback(() => scrollToIndex(0), [scrollToIndex]);
   const goEnd = useCallback(() => {
     setVisibleCount(filteredPeoples.length);
-    requestAnimationFrame(() => {
+    setTimeout(() => {
       scrollToIndex(filteredPeoples.length - 1);
-    });
+    }, 50);
   }, [filteredPeoples.length, scrollToIndex]);
 
   useEffect(() => {
@@ -648,7 +705,10 @@ export function VerticalPopulationTimeline({
         </div>
       </div>
 
-      <div className="relative overflow-hidden rounded-xl border border-border/60 bg-card/50 p-4 shadow-sm sm:p-6">
+      <div
+        ref={wrapperRef}
+        className="relative overflow-hidden rounded-xl border border-border/60 bg-card/50 p-4 shadow-sm sm:p-6"
+      >
         {/* Year labels */}
         <div className="mb-4 flex justify-between text-sm font-medium text-muted-foreground sm:text-base">
           <span>{formatYear(MIN_YEAR)}</span>
@@ -664,10 +724,7 @@ export function VerticalPopulationTimeline({
 
           {/* Colored period bands on the central timeline */}
           <div
-            className={cn(
-              "absolute left-1/2 top-0 bottom-0 z-0 -translate-x-1/2 transition-opacity",
-              layoutMode === "floating" ? "opacity-20" : "opacity-100"
-            )}
+            className="absolute left-1/2 top-0 bottom-0 z-0 -translate-x-1/2 opacity-100"
             style={{ width: `${axisWidth}px` }}
           >
             {laneBands.map(({ people, lane, top, height }, index) => {
@@ -799,18 +856,33 @@ export function VerticalPopulationTimeline({
           {layoutMode === "classic" &&
             layout.map(({ people, top, side, width }, index) => {
               const isLeft = side === "left";
+              const isExpanded = index === expandedIndex;
+              const floatDuration = 3.5 + (index % 5) * 0.35;
               return (
                 <motion.div
                   key={people.id}
-                  initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: (index % PAGE_SIZE) * 0.04,
-                    ease: [0.25, 0.46, 0.45, 0.94],
+                  ref={(el) => {
+                    itemRefs.current[index] = el;
                   }}
-                  whileHover={{ scale: 1.03, zIndex: 20 }}
-                  className="absolute w-[calc(50%-1.5rem)] sm:w-[calc(50%-2rem)]"
+                  initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
+                  animate={{
+                    opacity: isExpanded ? 1 : 0.9,
+                    x: 0,
+                    y: [0, -4, 0],
+                  }}
+                  transition={{
+                    opacity: { duration: 0.3 },
+                    x: { duration: 0.5, delay: (index % PAGE_SIZE) * 0.04 },
+                    y: {
+                      repeat: Infinity,
+                      duration: floatDuration,
+                      ease: "easeInOut",
+                    },
+                  }}
+                  whileHover={{ scale: 1.03, zIndex: 30 }}
+                  onHoverStart={() => setHoveredIndex(index)}
+                  onHoverEnd={() => setHoveredIndex((prev) => (prev === index ? null : prev))}
+                  className="absolute w-[calc(50%-1.5rem)] origin-top sm:w-[calc(50%-2rem)]"
                   style={{
                     top: `${top}px`,
                     left: isLeft ? 0 : "auto",
@@ -820,7 +892,9 @@ export function VerticalPopulationTimeline({
                   <PeopleCard
                     people={people}
                     widthPercent={width}
+                    expanded={isExpanded}
                     onClick={() => setSelectedPeople(people)}
+                    className={isExpanded ? "shadow-lg" : "shadow-sm"}
                   />
                 </motion.div>
               );
@@ -830,7 +904,8 @@ export function VerticalPopulationTimeline({
           {layoutMode === "levitating" &&
             layout.map(({ people, top, side, width }, index) => {
               const isLeft = side === "left";
-              const floatDuration = 3 + (index % 5) * 0.4;
+              const isExpanded = index === expandedIndex;
+              const floatDuration = 2.8 + (index % 5) * 0.4;
               return (
                 <motion.div
                   key={people.id}
@@ -839,12 +914,12 @@ export function VerticalPopulationTimeline({
                   }}
                   initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
                   animate={{
-                    opacity: 1,
+                    opacity: isExpanded ? 1 : 0.85,
                     x: 0,
-                    y: [0, -7, 0],
+                    y: [0, -10, 0],
                   }}
                   transition={{
-                    opacity: { duration: 0.5, delay: (index % PAGE_SIZE) * 0.04 },
+                    opacity: { duration: 0.3 },
                     x: { duration: 0.5, delay: (index % PAGE_SIZE) * 0.04 },
                     y: {
                       repeat: Infinity,
@@ -853,7 +928,9 @@ export function VerticalPopulationTimeline({
                     },
                   }}
                   whileHover={{ scale: 1.04, zIndex: 50 }}
-                  className="absolute w-[calc(50%-1.5rem)] sm:w-[calc(50%-2rem)]"
+                  onHoverStart={() => setHoveredIndex(index)}
+                  onHoverEnd={() => setHoveredIndex((prev) => (prev === index ? null : prev))}
+                  className="absolute w-[calc(50%-1.5rem)] origin-top sm:w-[calc(50%-2rem)]"
                   style={{
                     top: `${top}px`,
                     left: isLeft ? 0 : "auto",
@@ -863,8 +940,9 @@ export function VerticalPopulationTimeline({
                   <PeopleCard
                     people={people}
                     widthPercent={width}
+                    expanded={isExpanded}
                     onClick={() => setSelectedPeople(people)}
-                    className="shadow-md"
+                    className={isExpanded ? "shadow-lg" : "shadow-sm"}
                   />
                 </motion.div>
               );
@@ -873,58 +951,61 @@ export function VerticalPopulationTimeline({
           {/* People cards — modo flotante */}
           {layoutMode === "floating" &&
             floatingLayout.map(
-              ({ people, top, leftPercent, widthPercent, floatPhase }, index) => (
-                <motion.div
-                  key={people.id}
-                  ref={(el) => {
-                    itemRefs.current[index] = el;
-                  }}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{
-                    opacity: 1,
-                    scale: 1,
-                    y: [0, -10, 0],
-                  }}
-                  transition={{
-                    opacity: {
-                      duration: 0.5,
-                      delay: (index % PAGE_SIZE) * 0.04,
-                    },
-                    scale: {
-                      duration: 0.5,
-                      delay: (index % PAGE_SIZE) * 0.04,
-                    },
-                    y: {
-                      repeat: Infinity,
-                      duration: 3 + floatPhase * 2,
-                      ease: "easeInOut",
-                    },
-                  }}
-                  whileHover={{ scale: 1.05, zIndex: 50 }}
-                  whileDrag={{ scale: 1.05, zIndex: 50 }}
-                  drag
-                  dragConstraints={{
-                    left: -40,
-                    right: 40,
-                    top: -30,
-                    bottom: 30,
-                  }}
-                  dragElastic={0.25}
-                  className="absolute z-10"
-                  style={{
-                    top: `${top}px`,
-                    left: `${leftPercent}%`,
-                    width: `${widthPercent}%`,
-                  }}
-                >
-                  <PeopleCard
-                    people={people}
-                    widthPercent={widthPercent}
-                    onClick={() => setSelectedPeople(people)}
-                    className="shadow-md"
-                  />
-                </motion.div>
-              )
+              ({ people, top, leftPercent, widthPercent, floatPhase }, index) => {
+                const isExpanded = index === expandedIndex;
+                return (
+                  <motion.div
+                    key={people.id}
+                    ref={(el) => {
+                      itemRefs.current[index] = el;
+                    }}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{
+                      opacity: isExpanded ? 1 : 0.85,
+                      scale: 1,
+                      y: [0, -12, 0],
+                    }}
+                    transition={{
+                      opacity: { duration: 0.3 },
+                      scale: {
+                        duration: 0.5,
+                        delay: (index % PAGE_SIZE) * 0.04,
+                      },
+                      y: {
+                        repeat: Infinity,
+                        duration: 2.5 + floatPhase * 2,
+                        ease: "easeInOut",
+                      },
+                    }}
+                    whileHover={{ scale: 1.05, zIndex: 50 }}
+                    whileDrag={{ scale: 1.05, zIndex: 50 }}
+                    drag
+                    dragConstraints={{
+                      left: -40,
+                      right: 40,
+                      top: -30,
+                      bottom: 30,
+                    }}
+                    dragElastic={0.25}
+                    onHoverStart={() => setHoveredIndex(index)}
+                    onHoverEnd={() => setHoveredIndex((prev) => (prev === index ? null : prev))}
+                    className="absolute z-10 origin-top"
+                    style={{
+                      top: `${top}px`,
+                      left: `${leftPercent}%`,
+                      width: `${widthPercent}%`,
+                    }}
+                  >
+                    <PeopleCard
+                      people={people}
+                      widthPercent={widthPercent}
+                      expanded={isExpanded}
+                      onClick={() => setSelectedPeople(people)}
+                      className={isExpanded ? "shadow-lg" : "shadow-sm"}
+                    />
+                  </motion.div>
+                );
+              }
             )}
 
           {/* Infinite scroll sentinel */}

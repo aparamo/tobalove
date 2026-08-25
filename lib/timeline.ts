@@ -56,20 +56,55 @@ export function layoutFloatingPeoples(
 ): FloatingLayoutItem[] {
   const sorted = [...peoples].sort((a, b) => a.peakYear - b.peakYear);
   const items: FloatingLayoutItem[] = [];
-  let lastBottom = -Infinity;
+
+  // Última posición vertical colocada en cada lado para evitar solapamientos.
+  const lastPlacedTops: { left: number; right: number } = {
+    left: -Infinity,
+    right: -Infinity,
+  };
 
   for (let i = 0; i < sorted.length; i++) {
     const people = sorted[i];
     const baseTop = (yearToPercent(people.peakYear) / 100) * containerHeight;
-    const top = Math.max(baseTop, lastBottom + minGap);
-    lastBottom = top + cardHeight;
 
     const popRatio = Math.sqrt(people.peakPopulation) / Math.sqrt(maxPopulation);
-    // Offset horizontal proporcional a la población, alternando lado.
-    const side = i % 2 === 0 ? 1 : -1;
-    const maxOffset = 30; // % del ancho a cada lado del centro
-    const offset = side * (0.15 + popRatio * maxOffset);
-    const widthPercent = populationWidthPercent(people.peakPopulation, maxPopulation);
+    const widthPercent = Math.min(
+      26,
+      populationWidthPercent(people.peakPopulation, maxPopulation)
+    );
+
+    // Decidir lado priorizando el que tenga más espacio vertical libre.
+    const rightRoom = baseTop - lastPlacedTops.right;
+    const leftRoom = baseTop - lastPlacedTops.left;
+    const preferRight = rightRoom >= leftRoom;
+
+    const side = preferRight ? ("right" as const) : ("left" as const);
+    const opposite: "left" | "right" = side === "right" ? "left" : "right";
+
+    // Si el lado preferido sigue solapando mucho, cambiamos al contrario.
+    const sideRoom = side === "right" ? rightRoom : leftRoom;
+    const finalSide: "left" | "right" =
+      sideRoom < cardHeight * 0.25 ? (side === "right" ? "left" : "right") : side;
+    const finalSign = finalSide === "right" ? 1 : -1;
+
+    // La posición vertical intenta respetar el año de apogeo. Solo se empuja
+    // hacia abajo si la card entraría por completo detrás de la anterior del
+    // mismo lado, conservando la sensación de línea del tiempo.
+    const lastTop = lastPlacedTops[finalSide];
+    const minPush = lastTop + cardHeight - minGap;
+    const overlap = Math.max(0, minPush - baseTop);
+    const top = overlap > cardHeight * 0.5 ? minPush : baseTop;
+
+    // Offset horizontal proporcional a la población y al solapamiento. Cuanto
+    // más cerca están dos cards consecutivas del mismo lado, más se aleja la
+    // nueva del centro para evitar que tapen las líneas de color.
+    const minOffset = 22; // % mínimo desde el centro
+    const maxOffset = 42; // % máximo desde el centro
+    const overlapRatio = Math.min(1, overlap / cardHeight);
+    const offset =
+      finalSign *
+      (minOffset +
+        (popRatio * 0.6 + overlapRatio * 0.4) * (maxOffset - minOffset));
     const leftPercent = 50 + offset - widthPercent / 2;
 
     items.push({
@@ -79,6 +114,14 @@ export function layoutFloatingPeoples(
       widthPercent,
       floatPhase: floatPhaseFromId(people.id),
     });
+
+    lastPlacedTops[finalSide] = top;
+    // También actualizamos el lado opuesto con una marca conservadora para que
+    // cards muy cercanas en años alternen aunque vengan del mismo lado.
+    lastPlacedTops[opposite] = Math.max(
+      lastPlacedTops[opposite],
+      top - cardHeight * 0.65
+    );
   }
 
   return items;
