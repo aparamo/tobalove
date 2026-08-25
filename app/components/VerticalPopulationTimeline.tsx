@@ -459,7 +459,7 @@ export function VerticalPopulationTimeline({
           </p>
           <p className="mt-1 text-sm text-muted-foreground/80">
             {visiblePeoples.length} de {filteredPeoples.length} mostrados ·{" "}
-            {filteredPeoples.length} con videos
+            {filteredPeoples.length} con conferencias
             {totalHiddenCount > 0 ? ` · ${totalHiddenCount} ocultos` : ""}
           </p>
         </div>

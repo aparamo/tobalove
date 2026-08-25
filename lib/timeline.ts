@@ -2,9 +2,13 @@ import { getYouTubeUrl } from "@/lib/youtube";
 import type { PeopleGroup, ConferenceItem } from "@/app/types/timeline";
 
 /**
- * Determina si un pueblo/civilización tiene cobertura en video de Eva Tobalina.
- * Se considera cubierto cuando al menos uno de sus `relatedConferences`
- * existe en el mapa de conferencias y tiene URL de YouTube disponible.
+ * Determina si un pueblo/civilización tiene cobertura en conferencia de video
+ * de Eva Tobalina. Se considera cubierto cuando al menos uno de sus
+ * `relatedConferences` existe en el mapa de conferencias, es de tipo
+ * "conferencia" y tiene URL de YouTube disponible.
+ *
+ * Nota: entrevistas, presentaciones, cursos y otros formatos no cuentan como
+ * cobertura por defecto, ya que el foco de la app son las conferencias en video.
  */
 export function hasConferenceCoverage(
   people: PeopleGroup,
@@ -12,7 +16,11 @@ export function hasConferenceCoverage(
 ): boolean {
   return people.relatedConferences.some((id) => {
     const conf = conferencesMap.get(id);
-    return conf !== undefined && getYouTubeUrl(conf) !== null;
+    return (
+      conf !== undefined &&
+      conf.type === "conferencia" &&
+      getYouTubeUrl(conf) !== null
+    );
   });
 }
 
