@@ -9,6 +9,7 @@ import { Clock, Home, PlaySquare, Database, Heart } from "lucide-react";
 import { auth } from "@/auth";
 import type { Session } from "next-auth";
 import { UserNav } from "@/app/components/UserNav";
+import { ThemeToggle } from "@/app/components/ThemeToggle";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -99,7 +100,10 @@ export default async function RootLayout({
                   </Link>
                 )}
               </div>
-              <UserNav user={session?.user} />
+              <div className="flex items-center gap-2">
+                <ThemeToggle />
+                <UserNav user={session?.user} />
+              </div>
             </nav>
           </header>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
