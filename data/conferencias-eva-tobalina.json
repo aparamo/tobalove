@@ -2,7 +2,7 @@
   "meta": {
     "autor": "Eva Tobalina Oraá",
     "biografia_corta": "Doctora en Historia Antigua, profesora universitaria y divulgadora especializada en la Antigüedad mediterránea y oriental. Combina su labor académica en la Universidad Internacional de La Rioja con conferencias para asociaciones como Raíces de Europa.",
-    "total_conferencias_estimadas": 109,
+    "total_conferencias_estimadas": 110,
     "fuentes_principales": [
       "https://espacio-tiempo.es",
       "https://www.youtube.com/@raicesdeeuropa",
@@ -3495,6 +3495,34 @@
       "mediaType": "video",
       "youtube_url": "https://www.youtube.com/watch?v=nsFxha_4uYE",
       "info_adicional": null
+    },
+    {
+      "id": "iberos-principes-iberia",
+      "title": "LOS IBEROS: Príncipes de Iberia. EVA TOBALINA nos acerca a esta apasionante civilización prerromana",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raíces de Europa",
+      "url": "https://www.youtube.com/watch?v=yrW4dCCAZDk",
+      "description": "Conferencia sobre la civilización íbera, uno de los pueblos prerromanos más fascinantes de la Península Ibérica.",
+      "summary": "Tobalina explora la cultura íbera, su arte, su sociedad, sus ciudades y su legado en la Península Ibérica antes de la llegada de Roma.",
+      "topics": [
+        "íberos",
+        "Hispania",
+        "pueblos prerromanos",
+        "arte íbero",
+        "cultura íbera"
+      ],
+      "characters": [],
+      "civilizations": [
+        "Íberos"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "https://www.youtube.com/@raicesdeeuropa",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=yrW4dCCAZDk",
+      "info_adicional": "246,000 visualizaciones"
     }
   ]
 }
