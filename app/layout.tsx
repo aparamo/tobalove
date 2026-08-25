@@ -48,98 +48,99 @@ export default async function RootLayout({
   return (
     <html
       lang="es"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <TooltipProvider>
-          <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <nav className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4 lg:max-w-7xl sm:px-6 lg:px-8">
-              <Link
-                href="/"
-                className="flex items-center gap-2 text-sm font-semibold tracking-tight"
-              >
-                <Clock className="h-4 w-4" />
-                <span>Tobalove</span>
-              </Link>
-              <div className="flex items-center gap-4 lg:gap-6">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <TooltipProvider>
+            <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+              <nav className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4 lg:max-w-7xl sm:px-6 lg:px-8">
                 <Link
                   href="/"
-                  className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  <Home className="h-4 w-4" />
-                  <span className="hidden sm:inline">Inicio</span>
-                </Link>
-                <Link
-                  href="/timeline"
-                  className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                  className="flex items-center gap-2 text-sm font-semibold tracking-tight"
                 >
                   <Clock className="h-4 w-4" />
-                  <span className="hidden sm:inline">Línea de tiempo</span>
+                  <span>Tobalove</span>
                 </Link>
-                <Link
-                  href="/videos"
-                  className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  <PlaySquare className="h-4 w-4" />
-                  <span className="hidden sm:inline">Videos</span>
-                </Link>
-                <Link
-                  href="/database"
-                  className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  <Database className="h-4 w-4" />
-                  <span className="hidden sm:inline">Base de datos</span>
-                </Link>
-                {session?.user && (
+                <div className="flex items-center gap-4 lg:gap-6">
                   <Link
-                    href="/mis-videos"
+                    href="/"
                     className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                   >
-                    <Heart className="h-4 w-4" />
-                    <span className="hidden sm:inline">Mis videos</span>
+                    <Home className="h-4 w-4" />
+                    <span className="hidden sm:inline">Inicio</span>
                   </Link>
-                )}
-              </div>
-              <div className="flex items-center gap-2">
-                <ThemeToggle />
-                <UserNav user={session?.user} />
-              </div>
-            </nav>
-          </header>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+                  <Link
+                    href="/timeline"
+                    className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    <Clock className="h-4 w-4" />
+                    <span className="hidden sm:inline">Línea de tiempo</span>
+                  </Link>
+                  <Link
+                    href="/videos"
+                    className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    <PlaySquare className="h-4 w-4" />
+                    <span className="hidden sm:inline">Videos</span>
+                  </Link>
+                  <Link
+                    href="/database"
+                    className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    <Database className="h-4 w-4" />
+                    <span className="hidden sm:inline">Base de datos</span>
+                  </Link>
+                  {session?.user && (
+                    <Link
+                      href="/mis-videos"
+                      className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                      <Heart className="h-4 w-4" />
+                      <span className="hidden sm:inline">Mis videos</span>
+                    </Link>
+                  )}
+                </div>
+                <div className="flex items-center gap-2">
+                  <ThemeToggle />
+                  <UserNav user={session?.user} />
+                </div>
+              </nav>
+            </header>
             {children}
             <Toaster position="bottom-right" closeButton />
-          </ThemeProvider>
-          <footer className="border-t bg-muted/30 py-8">
-            <div className="mx-auto max-w-5xl space-y-3 px-4 text-center text-sm text-muted-foreground lg:max-w-7xl sm:px-6 lg:px-8">
-              <p>
-                Basado en las conferencias y entrevistas de{" "}
-                <strong className="text-foreground">Eva Tobalina</strong>.
-              </p>
-              <p className="text-xs leading-relaxed">
-                Este sitio es un proyecto de fans en reconocimiento a la labor
-                divulgativa de Eva Tobalina. No está afiliado, avalado ni
-                gestionado por ella.
-              </p>
-              <p className="mt-1">
-                Última actualización: {new Date().getFullYear()}
-              </p>
-              <p className="text-xs text-muted-foreground">
-                Hecho con{" "}
-                <a
-                  href="https://www.lisalab.com.mx"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
-                >
-                  &lt;3
-                </a>{" "}
-                para todxs lxs Tobalievers y Tobalovers. Y para Abril&lt;3 y para
-                nuestras madres.
-              </p>
-            </div>
-          </footer>
-        </TooltipProvider>
+            <footer className="border-t bg-muted/30 py-8">
+              <div className="mx-auto max-w-5xl space-y-3 px-4 text-center text-sm text-muted-foreground lg:max-w-7xl sm:px-6 lg:px-8">
+                <p>
+                  Basado en las conferencias y entrevistas de{" "}
+                  <strong className="text-foreground">Eva Tobalina</strong>.
+                </p>
+                <p className="text-xs leading-relaxed">
+                  Este sitio es un proyecto de fans en reconocimiento a la labor
+                  divulgativa de Eva Tobalina. No está afiliado, avalado ni
+                  gestionado por ella.
+                </p>
+                <p className="mt-1">
+                  Última actualización: {new Date().getFullYear()}
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  Hecho con{" "}
+                  <a
+                    href="https://www.lisalab.com.mx"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    &lt;3
+                  </a>{" "}
+                  para todxs lxs Tobalievers y Tobalovers. Y para Abril&lt;3 y
+                  para nuestras madres.
+                </p>
+              </div>
+            </footer>
+          </TooltipProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
