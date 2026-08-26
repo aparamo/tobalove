@@ -6,7 +6,16 @@ import {
   getTimelineEvents,
   getTimelineMeta,
   getPeoplesMeta,
+  getWatchedConferenceIds,
+  getFavoriteConferenceIds,
+  getWatchlistConferenceIds,
 } from "@/lib/data";
+import { auth } from "@/auth";
+import { toggleWatchedConference } from "@/app/actions/watched";
+import {
+  toggleFavoriteConference,
+  toggleWatchlistConference,
+} from "@/app/actions/videos";
 import type {
   ConferenceItem,
   TimelineEvent,
@@ -24,6 +33,7 @@ export const metadata: Metadata = {
 };
 
 export default async function TimelinePage() {
+  const session = await auth();
   const events = (await getTimelineEvents()) as unknown as TimelineEvent[];
   const conferences = (await getConferences()) as unknown as ConferenceItem[];
   const peoples = (await getPeoples()) as unknown as PeopleGroup[];
@@ -57,6 +67,15 @@ export default async function TimelinePage() {
     conferencesMap.set(conf.id, conf);
   }
 
+  const userId = session?.user?.id;
+  const [watchedIds, favoriteIds, watchlistIds] = userId
+    ? await Promise.all([
+        getWatchedConferenceIds(userId),
+        getFavoriteConferenceIds(userId),
+        getWatchlistConferenceIds(userId),
+      ])
+    : [new Set<string>(), new Set<string>(), new Set<string>()];
+
   return (
     <main className="flex-1">
       <section className="border-b bg-muted/30 py-16 md:py-24">
@@ -82,6 +101,13 @@ export default async function TimelinePage() {
           peoples={peoples}
           conferencesMap={conferencesMap}
           peoplesMeta={peoplesMeta}
+          watchedIds={watchedIds}
+          favoriteIds={favoriteIds}
+          watchlistIds={watchlistIds}
+          isAuthenticated={!!session?.user}
+          onToggleWatched={toggleWatchedConference}
+          onToggleFavorite={toggleFavoriteConference}
+          onToggleWatchlist={toggleWatchlistConference}
         />
       </section>
     </main>

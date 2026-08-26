@@ -36,6 +36,7 @@ import {
 import { toast } from "sonner";
 import type { ConferenceItem } from "@/app/types/timeline";
 import { cn } from "@/lib/utils";
+import { VideoPlayerSheet } from "./VideoPlayerSheet";
 
 export interface EnrichedConferenceItem extends ConferenceItem {
   historicalStartYear: number | null;
@@ -213,6 +214,7 @@ export function ConferenceDatabase({
   });
   const [showColumnMenu, setShowColumnMenu] = useState(false);
   const [onlyYouTube, setOnlyYouTube] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState<EnrichedConferenceItem | null>(null);
 
   const allPeriods = useMemo(() => {
     const set = new Set<string>();
@@ -569,25 +571,41 @@ export function ConferenceDatabase({
             </TableHeader>
             <TableBody>
               {sorted.map((conf) => (
-                <TableRow key={conf.id}>
+                <TableRow
+                  key={conf.id}
+                  className={cn(
+                    watchedIds.has(conf.id) && "bg-primary/[0.04]"
+                  )}
+                >
                   {visibleColumns.title && (
                     <TableCell>
                       <div className="space-y-1">
-                        {getYouTubeUrl(conf) || conf.url ? (
-                          <a
-                            href={getYouTubeUrl(conf) ?? conf.url ?? undefined}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-start gap-1.5 font-medium text-foreground hover:text-primary hover:underline"
-                          >
-                            <span className="line-clamp-2">{conf.title}</span>
-                            <MediaIcon mediaType={conf.mediaType} url={getYouTubeUrl(conf) ?? conf.url} />
-                          </a>
-                        ) : (
-                          <span className="line-clamp-2 font-medium text-foreground">
-                            {conf.title}
-                          </span>
-                        )}
+                        <div className="flex items-start gap-1.5">
+                          {getYouTubeUrl(conf) ? (
+                            <button
+                              type="button"
+                              onClick={() => setSelectedVideo(conf)}
+                              className="inline-flex items-start gap-1.5 text-left font-medium text-foreground hover:text-primary hover:underline"
+                            >
+                              <span className="line-clamp-2">{conf.title}</span>
+                              <MediaIcon mediaType={conf.mediaType} url={getYouTubeUrl(conf) ?? conf.url} />
+                            </button>
+                          ) : conf.url ? (
+                            <a
+                              href={conf.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-start gap-1.5 font-medium text-foreground hover:text-primary hover:underline"
+                            >
+                              <span className="line-clamp-2">{conf.title}</span>
+                              <MediaIcon mediaType={conf.mediaType} url={conf.url} />
+                            </a>
+                          ) : (
+                            <span className="line-clamp-2 font-medium text-foreground">
+                              {conf.title}
+                            </span>
+                          )}
+                        </div>
                         {conf.topics.length > 0 && (
                           <p className="line-clamp-1 text-xs text-muted-foreground">
                             {conf.topics.slice(0, 4).join(" · ")}
@@ -817,6 +835,19 @@ export function ConferenceDatabase({
           </button>
         </div>
       )}
+
+      <VideoPlayerSheet
+        selectedVideo={selectedVideo}
+        onClose={() => setSelectedVideo(null)}
+        isWatched={selectedVideo ? watchedIds.has(selectedVideo.id) : false}
+        isFavorite={selectedVideo ? favoriteIds.has(selectedVideo.id) : false}
+        isWatchlist={selectedVideo ? watchlistIds.has(selectedVideo.id) : false}
+        isAuthenticated={isAuthenticated}
+        onToggleWatched={handleToggleWatched}
+        onToggleFavorite={handleToggleFavorite}
+        onToggleWatchlist={handleToggleWatchlist}
+        togglingId={togglingId}
+      />
     </div>
   );
 }

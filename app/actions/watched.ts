@@ -37,4 +37,5 @@ export async function toggleWatchedConference(conferenceId: string) {
   revalidatePath("/videos");
   revalidatePath("/database");
   revalidatePath("/mis-videos");
+  revalidatePath("/timeline");
 }

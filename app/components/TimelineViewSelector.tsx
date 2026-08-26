@@ -19,6 +19,13 @@ interface TimelineViewSelectorProps {
   peoples: PeopleGroup[];
   conferencesMap: Map<string, ConferenceItem>;
   peoplesMeta: PeoplesMeta;
+  watchedIds: Set<string>;
+  favoriteIds: Set<string>;
+  watchlistIds: Set<string>;
+  isAuthenticated: boolean;
+  onToggleWatched: (conferenceId: string) => void | Promise<void>;
+  onToggleFavorite: (conferenceId: string) => void | Promise<void>;
+  onToggleWatchlist: (conferenceId: string) => void | Promise<void>;
 }
 
 type View = "events" | "peoples" | "peoples-vertical";
@@ -28,6 +35,13 @@ export function TimelineViewSelector({
   peoples,
   conferencesMap,
   peoplesMeta,
+  watchedIds,
+  favoriteIds,
+  watchlistIds,
+  isAuthenticated,
+  onToggleWatched,
+  onToggleFavorite,
+  onToggleWatchlist,
 }: TimelineViewSelectorProps) {
   const [view, setView] = useState<View>("events");
 
@@ -131,7 +145,17 @@ export function TimelineViewSelector({
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.3 }}
           >
-            <Timeline events={events} conferencesMap={conferencesMap} />
+            <Timeline
+              events={events}
+              conferencesMap={conferencesMap}
+              watchedIds={watchedIds}
+              favoriteIds={favoriteIds}
+              watchlistIds={watchlistIds}
+              isAuthenticated={isAuthenticated}
+              onToggleWatched={onToggleWatched}
+              onToggleFavorite={onToggleFavorite}
+              onToggleWatchlist={onToggleWatchlist}
+            />
           </motion.div>
         )}
         {view === "peoples" && (
@@ -159,6 +183,13 @@ export function TimelineViewSelector({
             <PopulationTimeline
               peoples={peoples}
               conferencesMap={conferencesMap}
+              watchedIds={watchedIds}
+              favoriteIds={favoriteIds}
+              watchlistIds={watchlistIds}
+              isAuthenticated={isAuthenticated}
+              onToggleWatched={onToggleWatched}
+              onToggleFavorite={onToggleFavorite}
+              onToggleWatchlist={onToggleWatchlist}
             />
           </motion.div>
         )}
@@ -187,6 +218,13 @@ export function TimelineViewSelector({
             <VerticalPopulationTimeline
               peoples={peoples}
               conferencesMap={conferencesMap}
+              watchedIds={watchedIds}
+              favoriteIds={favoriteIds}
+              watchlistIds={watchlistIds}
+              isAuthenticated={isAuthenticated}
+              onToggleWatched={onToggleWatched}
+              onToggleFavorite={onToggleFavorite}
+              onToggleWatchlist={onToggleWatchlist}
             />
           </motion.div>
         )}

@@ -310,6 +310,7 @@ export function MyVideosCompanion({
               isWatchlist={watchlistIds.has(video.id)}
               onToggleWatchlist={handleToggleWatchlist}
               isAuthenticated
+              togglingId={togglingId}
             />
           ))}
         </AnimatePresence>
@@ -345,6 +346,14 @@ export function MyVideosCompanion({
       <VideoPlayerSheet
         selectedVideo={selectedVideo}
         onClose={() => setSelectedVideo(null)}
+        isWatched={selectedVideo ? watchedIds.has(selectedVideo.id) : false}
+        isFavorite={selectedVideo ? favoriteIds.has(selectedVideo.id) : false}
+        isWatchlist={selectedVideo ? watchlistIds.has(selectedVideo.id) : false}
+        isAuthenticated
+        onToggleWatched={handleToggleWatched}
+        onToggleFavorite={handleToggleFavorite}
+        onToggleWatchlist={handleToggleWatchlist}
+        togglingId={togglingId}
       />
     </div>
   );

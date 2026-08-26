@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useMemo, useState, useRef, useCallback, useEffect } from "react";
-import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
+import { motion, LayoutGroup } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -48,6 +48,9 @@ import { cn } from "@/lib/utils";
 import { TimelineNavigation } from "./TimelineNavigation";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
+import { VideoPlayerSheet } from "./VideoPlayerSheet";
+import { VideoActions } from "./VideoActions";
+import { useVideoActions } from "@/app/hooks/useVideoActions";
 import type {
   PeopleGroup,
   ConferenceItem,
@@ -57,6 +60,13 @@ import type {
 interface VerticalPopulationTimelineProps {
   peoples: PeopleGroup[];
   conferencesMap?: Map<string, ConferenceItem>;
+  watchedIds?: Set<string>;
+  favoriteIds?: Set<string>;
+  watchlistIds?: Set<string>;
+  isAuthenticated?: boolean;
+  onToggleWatched?: (conferenceId: string) => void | Promise<void>;
+  onToggleFavorite?: (conferenceId: string) => void | Promise<void>;
+  onToggleWatchlist?: (conferenceId: string) => void | Promise<void>;
 }
 
 const PAGE_SIZE = 10;
@@ -217,16 +227,61 @@ function computeLaneBands(
 
 function RelatedVideoCard({
   conference,
+  onSelect,
+  isAuthenticated,
+  isWatched,
+  isFavorite,
+  isWatchlist,
+  togglingId,
+  onToggleWatched,
+  onToggleFavorite,
+  onToggleWatchlist,
 }: {
   conference: ConferenceItem;
+  onSelect: (conference: ConferenceItem) => void;
+  isAuthenticated?: boolean;
+  isWatched?: boolean;
+  isFavorite?: boolean;
+  isWatchlist?: boolean;
+  togglingId?: string | null;
+  onToggleWatched?: (id: string) => void | Promise<void> | Promise<unknown>;
+  onToggleFavorite?: (id: string) => void | Promise<void> | Promise<unknown>;
+  onToggleWatchlist?: (id: string) => void | Promise<void> | Promise<unknown>;
 }) {
   const youtubeUrl = getYouTubeUrl(conference);
   const videoId = getYouTubeId(youtubeUrl);
   const resourceUrl = youtubeUrl ?? conference.url;
   const mediaType = getMediaType(resourceUrl);
+  const hasActions =
+    isAuthenticated &&
+    onToggleWatched !== undefined &&
+    onToggleFavorite !== undefined &&
+    onToggleWatchlist !== undefined;
+
+  function handleClick() {
+    if (videoId) {
+      onSelect(conference);
+    } else if (resourceUrl) {
+      window.open(resourceUrl, "_blank", "noopener,noreferrer");
+    }
+  }
 
   return (
-    <div className="flex items-start gap-3 rounded-lg border border-border/60 bg-card/50 p-3 transition-colors hover:bg-card">
+    <div
+      role="button"
+      tabIndex={0}
+      onClick={handleClick}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          handleClick();
+        }
+      }}
+      className={cn(
+        "flex w-full cursor-pointer items-start gap-3 rounded-lg border border-border/60 bg-card/50 p-3 text-left transition-colors hover:bg-card",
+        isWatched && "border-l-2 border-primary bg-primary/[0.03]"
+      )}
+    >
       <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
         <MediaIcon type={mediaType} />
       </div>
@@ -238,26 +293,35 @@ function RelatedVideoCard({
           {conference.organization}
           {conference.date ? ` · ${conference.date}` : null}
         </p>
-        {resourceUrl && (
-          <a
-            href={resourceUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
-          >
-            {videoId ? "Ver en YouTube" : "Ver recurso"}
-            <ExternalLink className="h-3.5 w-3.5" />
-          </a>
-        )}
+        <div className="mt-2 flex flex-wrap items-center gap-2">
+          {resourceUrl && (
+            <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
+              {videoId ? "Ver conferencia" : "Ver recurso"}
+              {videoId && <ExternalLink className="h-3.5 w-3.5" />}
+            </span>
+          )}
+          {hasActions && (
+            <span onClick={(e) => e.stopPropagation()} onKeyDown={(e) => e.stopPropagation()}>
+              <VideoActions
+                conferenceId={conference.id}
+                isWatched={!!isWatched}
+                isFavorite={!!isFavorite}
+                isWatchlist={!!isWatchlist}
+                isAuthenticated={isAuthenticated}
+                onToggleWatched={onToggleWatched}
+                onToggleFavorite={onToggleFavorite}
+                onToggleWatchlist={onToggleWatchlist}
+                togglingId={togglingId}
+                orientation="horizontal"
+                size="sm"
+              />
+            </span>
+          )}
+        </div>
       </div>
       {videoId && (
         <div className="hidden shrink-0 sm:block">
-          <a
-            href={`https://www.youtube.com/watch?v=${videoId}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative block h-16 w-28 overflow-hidden rounded-md bg-muted"
-          >
+          <div className="relative block h-16 w-28 overflow-hidden rounded-md bg-muted">
             <Image
               src={`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`}
               alt={conference.title}
@@ -268,7 +332,7 @@ function RelatedVideoCard({
             <div className="absolute inset-0 flex items-center justify-center bg-black/20">
               <Play className="h-5 w-5 text-white drop-shadow" />
             </div>
-          </a>
+          </div>
         </div>
       )}
     </div>
@@ -572,11 +636,29 @@ function PeopleDetailDialog({
   conferencesMap,
   open,
   onOpenChange,
+  onSelectVideo,
+  isAuthenticated,
+  togglingId,
+  onToggleWatched,
+  onToggleFavorite,
+  onToggleWatchlist,
+  isWatched,
+  isFavorite,
+  isWatchlist,
 }: {
   people: PeopleGroup | null;
   conferencesMap?: Map<string, ConferenceItem>;
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  onSelectVideo: (conference: ConferenceItem) => void;
+  isAuthenticated?: boolean;
+  togglingId?: string | null;
+  onToggleWatched?: (id: string) => void | Promise<void> | Promise<unknown>;
+  onToggleFavorite?: (id: string) => void | Promise<void> | Promise<unknown>;
+  onToggleWatchlist?: (id: string) => void | Promise<void> | Promise<unknown>;
+  isWatched: (id: string) => boolean;
+  isFavorite: (id: string) => boolean;
+  isWatchlist: (id: string) => boolean;
 }) {
   const relatedVideos = useMemo(() => {
     if (!people) return [];
@@ -664,7 +746,19 @@ function PeopleDetailDialog({
                   </div>
                   <div className="grid gap-3">
                     {relatedVideos.map((conf) => (
-                      <RelatedVideoCard key={conf.id} conference={conf} />
+                      <RelatedVideoCard
+                        key={conf.id}
+                        conference={conf}
+                        onSelect={onSelectVideo}
+                        isAuthenticated={isAuthenticated}
+                        togglingId={togglingId}
+                        onToggleWatched={onToggleWatched}
+                        onToggleFavorite={onToggleFavorite}
+                        onToggleWatchlist={onToggleWatchlist}
+                        isWatched={isWatched(conf.id)}
+                        isFavorite={isFavorite(conf.id)}
+                        isWatchlist={isWatchlist(conf.id)}
+                      />
                     ))}
                   </div>
                 </div>
@@ -688,9 +782,29 @@ function PeopleDetailDialog({
 export function VerticalPopulationTimeline({
   peoples,
   conferencesMap,
+  watchedIds: initialWatchedIds = new Set(),
+  favoriteIds: initialFavoriteIds = new Set(),
+  watchlistIds: initialWatchlistIds = new Set(),
+  isAuthenticated = false,
 }: VerticalPopulationTimelineProps) {
   const [selectedPeople, setSelectedPeople] = useState<PeopleGroup | null>(null);
+  const [selectedVideo, setSelectedVideo] = useState<ConferenceItem | null>(null);
   const [showAll, setShowAll] = useState(false);
+
+  const {
+    togglingId,
+    handleToggleWatched,
+    handleToggleFavorite,
+    handleToggleWatchlist,
+    isWatched,
+    isFavorite,
+    isWatchlist,
+  } = useVideoActions({
+    watchedIds: initialWatchedIds,
+    favoriteIds: initialFavoriteIds,
+    watchlistIds: initialWatchlistIds,
+    isAuthenticated,
+  });
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [scale, setScale] = useState<TimelineScale>("adapted");
@@ -705,6 +819,21 @@ export function VerticalPopulationTimeline({
   const [wrapperOffsetTop, setWrapperOffsetTop] = useState(0);
   const [wrapperClientHeight, setWrapperClientHeight] = useState(0);
   const [scrolledContainer, setScrolledContainer] = useState(false);
+
+  const handleSetScale = useCallback((value: TimelineScale) => {
+    setDraggedOffsets({});
+    setScale(value);
+  }, []);
+
+  const handleSetLayoutMode = useCallback((value: LayoutMode) => {
+    setDraggedOffsets({});
+    setLayoutMode(value);
+  }, []);
+
+  const handleSetTimelineHeight = useCallback((value: TimelineHeight) => {
+    setDraggedOffsets({});
+    setTimelineHeight(value);
+  }, []);
 
   const mamertinoDraggingMapRef = useRef<Map<string, boolean>>(new Map());
 
@@ -801,7 +930,7 @@ export function VerticalPopulationTimeline({
 
       observerRef.current.observe(node);
     },
-    [hasMore, loadMore]
+    [hasMore, loadMore, scrolledContainer]
   );
 
   useEffect(() => {
@@ -810,10 +939,6 @@ export function VerticalPopulationTimeline({
       if (activeObserverRef.current) activeObserverRef.current.disconnect();
     };
   }, []);
-
-  useEffect(() => {
-    setDraggedOffsets({});
-  }, [layoutMode, scale, timelineHeight]);
 
   useEffect(() => {
     const update = () => {
@@ -900,11 +1025,7 @@ export function VerticalPopulationTimeline({
   const axisWidth = Math.max(2, laneCount * LANE_WIDTH + (laneCount - 1) * LANE_GAP);
 
   const { visibleTop, visibleBottom } = useMemo(() => {
-    if (
-      !wrapperRef.current ||
-      wrapperHeight === 0 ||
-      wrapperClientHeight === 0
-    ) {
+    if (wrapperHeight === 0 || wrapperClientHeight === 0) {
       return { visibleTop: 0, visibleBottom: 0 };
     }
     if (scrolledContainer) {
@@ -1055,7 +1176,7 @@ export function VerticalPopulationTimeline({
               id="scale-toggle"
               checked={scale === "linear"}
               onCheckedChange={(checked) =>
-                setScale(checked ? "linear" : "adapted")
+                handleSetScale(checked ? "linear" : "adapted")
               }
               aria-label="Cambiar escala temporal"
             />
@@ -1091,7 +1212,7 @@ export function VerticalPopulationTimeline({
               <button
                 key={mode.value}
                 type="button"
-                onClick={() => setLayoutMode(mode.value)}
+                onClick={() => handleSetLayoutMode(mode.value)}
                 className={cn(
                   "rounded-md px-3 py-1.5 text-xs font-medium transition-colors sm:text-sm",
                   layoutMode === mode.value
@@ -1113,7 +1234,7 @@ export function VerticalPopulationTimeline({
               <button
                 key={height.value}
                 type="button"
-                onClick={() => setTimelineHeight(height.value)}
+                onClick={() => handleSetTimelineHeight(height.value)}
                 className={cn(
                   "rounded-md px-3 py-1.5 text-xs font-medium transition-colors sm:text-sm",
                   timelineHeight === height.value
@@ -1615,6 +1736,28 @@ export function VerticalPopulationTimeline({
         onOpenChange={(open) => {
           if (!open) setSelectedPeople(null);
         }}
+        onSelectVideo={setSelectedVideo}
+        isAuthenticated={isAuthenticated}
+        togglingId={togglingId}
+        onToggleWatched={handleToggleWatched}
+        onToggleFavorite={handleToggleFavorite}
+        onToggleWatchlist={handleToggleWatchlist}
+        isWatched={isWatched}
+        isFavorite={isFavorite}
+        isWatchlist={isWatchlist}
+      />
+
+      <VideoPlayerSheet
+        selectedVideo={selectedVideo}
+        onClose={() => setSelectedVideo(null)}
+        isWatched={selectedVideo ? isWatched(selectedVideo.id) : false}
+        isFavorite={selectedVideo ? isFavorite(selectedVideo.id) : false}
+        isWatchlist={selectedVideo ? isWatchlist(selectedVideo.id) : false}
+        isAuthenticated={isAuthenticated}
+        onToggleWatched={handleToggleWatched}
+        onToggleFavorite={handleToggleFavorite}
+        onToggleWatchlist={handleToggleWatchlist}
+        togglingId={togglingId}
       />
     </div>
   );

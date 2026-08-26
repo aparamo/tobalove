@@ -16,22 +16,46 @@ import {
   Clock,
   Users,
   MapPin,
+  ExternalLink,
 } from "lucide-react";
 import { getYouTubeId, getYouTubeUrl } from "@/lib/media";
+import { VideoActions } from "./VideoActions";
 import type { ConferenceItem } from "@/app/types/timeline";
 
 interface VideoPlayerSheetProps {
   selectedVideo: ConferenceItem | null;
   onClose: () => void;
+  isWatched?: boolean;
+  isFavorite?: boolean;
+  isWatchlist?: boolean;
+  isAuthenticated?: boolean;
+  onToggleWatched?: (id: string) => void | Promise<void> | Promise<unknown>;
+  onToggleFavorite?: (id: string) => void | Promise<void> | Promise<unknown>;
+  onToggleWatchlist?: (id: string) => void | Promise<void> | Promise<unknown>;
+  togglingId?: string | null;
 }
 
 export function VideoPlayerSheet({
   selectedVideo,
   onClose,
+  isWatched,
+  isFavorite,
+  isWatchlist,
+  isAuthenticated,
+  onToggleWatched,
+  onToggleFavorite,
+  onToggleWatchlist,
+  togglingId,
 }: VideoPlayerSheetProps) {
   const selectedVideoId = selectedVideo
     ? getYouTubeId(getYouTubeUrl(selectedVideo))
     : null;
+  const youtubeUrl = selectedVideo ? getYouTubeUrl(selectedVideo) : null;
+  const hasActions =
+    isAuthenticated &&
+    onToggleWatched !== undefined &&
+    onToggleFavorite !== undefined &&
+    onToggleWatchlist !== undefined;
 
   return (
     <Sheet open={!!selectedVideo} onOpenChange={onClose}>
@@ -42,9 +66,29 @@ export function VideoPlayerSheet({
         {selectedVideo && selectedVideoId && (
           <>
             <SheetHeader className="shrink-0 p-4">
-              <SheetTitle className="line-clamp-2 pr-8">
-                {selectedVideo.title}
-              </SheetTitle>
+              <div className="flex items-start justify-between gap-3">
+                <div className="min-w-0 flex-1">
+                  <SheetTitle className="line-clamp-2 pr-2">
+                    {selectedVideo.title}
+                  </SheetTitle>
+                </div>
+                {hasActions && (
+                  <VideoActions
+                    conferenceId={selectedVideo.id}
+                    isWatched={!!isWatched}
+                    isFavorite={!!isFavorite}
+                    isWatchlist={!!isWatchlist}
+                    isAuthenticated={isAuthenticated}
+                    onToggleWatched={onToggleWatched}
+                    onToggleFavorite={onToggleFavorite}
+                    onToggleWatchlist={onToggleWatchlist}
+                    togglingId={togglingId}
+                    orientation="horizontal"
+                    size="sm"
+                    className="shrink-0"
+                  />
+                )}
+              </div>
               <SheetDescription>
                 <span className="inline-flex flex-wrap items-center gap-2 text-xs">
                   {selectedVideo.year && (
@@ -80,6 +124,23 @@ export function VideoPlayerSheet({
                     className="h-full w-full"
                   />
                 </div>
+
+                {hasActions && (
+                  <VideoActions
+                    conferenceId={selectedVideo.id}
+                    isWatched={!!isWatched}
+                    isFavorite={!!isFavorite}
+                    isWatchlist={!!isWatchlist}
+                    isAuthenticated={isAuthenticated}
+                    onToggleWatched={onToggleWatched}
+                    onToggleFavorite={onToggleFavorite}
+                    onToggleWatchlist={onToggleWatchlist}
+                    togglingId={togglingId}
+                    variant="labeled"
+                    orientation="horizontal"
+                    className="justify-start"
+                  />
+                )}
 
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   {selectedVideo.description}
@@ -145,13 +206,14 @@ export function VideoPlayerSheet({
                 )}
 
                 <a
-                  href={getYouTubeUrl(selectedVideo) ?? undefined}
+                  href={youtubeUrl ?? undefined}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-8 w-full items-center justify-center gap-1.5 rounded-lg bg-primary px-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/80"
+                  className="inline-flex h-9 w-full items-center justify-center gap-1.5 rounded-lg bg-primary px-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/80"
                 >
                   <Play className="h-4 w-4" />
                   Ver en YouTube
+                  <ExternalLink className="h-3.5 w-3.5 opacity-70" />
                 </a>
               </div>
             </ScrollArea>

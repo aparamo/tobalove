@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
 import { Sun, Moon } from "lucide-react";
 import {
@@ -9,13 +9,17 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
+function useIsClient() {
+  return useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
+}
+
 export function ThemeToggle() {
   const { theme, setTheme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const isClient = useIsClient();
 
   function cycleTheme() {
     if (theme === "dark") {
@@ -27,7 +31,7 @@ export function ThemeToggle() {
     }
   }
 
-  const label = mounted
+  const label = isClient
     ? theme === "dark"
       ? "Modo oscuro"
       : theme === "light"
@@ -46,7 +50,7 @@ export function ThemeToggle() {
             aria-label={label}
             className="inline-flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
           >
-            {mounted && resolvedTheme === "dark" ? (
+            {isClient && resolvedTheme === "dark" ? (
               <Moon className="h-4 w-4" />
             ) : (
               <Sun className="h-4 w-4" />

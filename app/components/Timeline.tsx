@@ -13,11 +13,28 @@ import type {
 interface TimelineProps {
   events: TimelineEventType[];
   conferencesMap?: Map<string, ConferenceItem>;
+  watchedIds?: Set<string>;
+  favoriteIds?: Set<string>;
+  watchlistIds?: Set<string>;
+  isAuthenticated?: boolean;
+  onToggleWatched?: (conferenceId: string) => void | Promise<void>;
+  onToggleFavorite?: (conferenceId: string) => void | Promise<void>;
+  onToggleWatchlist?: (conferenceId: string) => void | Promise<void>;
 }
 
 const PAGE_SIZE = 10;
 
-export function Timeline({ events, conferencesMap }: TimelineProps) {
+export function Timeline({
+  events,
+  conferencesMap,
+  watchedIds,
+  favoriteIds,
+  watchlistIds,
+  isAuthenticated,
+  onToggleWatched,
+  onToggleFavorite,
+  onToggleWatchlist,
+}: TimelineProps) {
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -133,6 +150,13 @@ export function Timeline({ events, conferencesMap }: TimelineProps) {
                 index={index}
                 side={side}
                 conferencesMap={conferencesMap}
+                watchedIds={watchedIds}
+                favoriteIds={favoriteIds}
+                watchlistIds={watchlistIds}
+                isAuthenticated={isAuthenticated}
+                onToggleWatched={onToggleWatched}
+                onToggleFavorite={onToggleFavorite}
+                onToggleWatchlist={onToggleWatchlist}
               />
             </div>
           );

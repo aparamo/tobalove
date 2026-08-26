@@ -37,6 +37,7 @@ export async function toggleFavoriteConference(conferenceId: string) {
   revalidatePath("/videos");
   revalidatePath("/database");
   revalidatePath("/mis-videos");
+  revalidatePath("/timeline");
 }
 
 export async function toggleWatchlistConference(conferenceId: string) {
@@ -72,4 +73,5 @@ export async function toggleWatchlistConference(conferenceId: string) {
   revalidatePath("/videos");
   revalidatePath("/database");
   revalidatePath("/mis-videos");
+  revalidatePath("/timeline");
 }

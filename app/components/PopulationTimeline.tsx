@@ -9,8 +9,9 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Badge } from "@/components/ui/badge";
-import { Users, Calendar, MapPin, ExternalLink, Video, Filter } from "lucide-react";
+import { Users, Calendar, MapPin, Video, Filter } from "lucide-react";
 import { getYouTubeId, getMediaType, MediaIcon, getYouTubeUrl } from "@/lib/media";
+import { cn } from "@/lib/utils";
 import {
   hasConferenceCoverage,
   MIN_YEAR,
@@ -22,11 +23,21 @@ import {
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
+import { VideoPlayerSheet } from "./VideoPlayerSheet";
+import { VideoActions } from "./VideoActions";
+import { useVideoActions } from "@/app/hooks/useVideoActions";
 import type { PeopleGroup, ConferenceItem } from "@/app/types/timeline";
 
 interface PopulationTimelineProps {
   peoples: PeopleGroup[];
   conferencesMap?: Map<string, ConferenceItem>;
+  watchedIds?: Set<string>;
+  favoriteIds?: Set<string>;
+  watchlistIds?: Set<string>;
+  isAuthenticated?: boolean;
+  onToggleWatched?: (conferenceId: string) => void | Promise<void>;
+  onToggleFavorite?: (conferenceId: string) => void | Promise<void>;
+  onToggleWatchlist?: (conferenceId: string) => void | Promise<void>;
 }
 
 const ROW_HEIGHT = 56;
@@ -66,9 +77,27 @@ function useRegionLegend(peoples: PeopleGroup[]) {
 function RelatedConferenceLinks({
   relatedConferences,
   conferencesMap,
+  onSelect,
+  isAuthenticated,
+  togglingId,
+  onToggleWatched,
+  onToggleFavorite,
+  onToggleWatchlist,
+  isWatched,
+  isFavorite,
+  isWatchlist,
 }: {
   relatedConferences: string[];
   conferencesMap?: Map<string, ConferenceItem>;
+  onSelect: (conf: ConferenceItem) => void;
+  isAuthenticated?: boolean;
+  togglingId?: string | null;
+  onToggleWatched?: (id: string) => void | Promise<void> | Promise<unknown>;
+  onToggleFavorite?: (id: string) => void | Promise<void> | Promise<unknown>;
+  onToggleWatchlist?: (id: string) => void | Promise<void> | Promise<unknown>;
+  isWatched: (id: string) => boolean;
+  isFavorite: (id: string) => boolean;
+  isWatchlist: (id: string) => boolean;
 }) {
   const conferences = useMemo(() => {
     const list: ConferenceItem[] = [];
@@ -81,6 +110,12 @@ function RelatedConferenceLinks({
 
   if (conferences.length === 0) return null;
 
+  const hasActions =
+    isAuthenticated &&
+    onToggleWatched !== undefined &&
+    onToggleFavorite !== undefined &&
+    onToggleWatchlist !== undefined;
+
   return (
     <div className="mt-3 space-y-1.5">
       <p className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
@@ -92,19 +127,57 @@ function RelatedConferenceLinks({
           const resourceUrl = youtubeUrl ?? conf.url;
           const mediaType = getMediaType(resourceUrl);
           const videoId = getYouTubeId(youtubeUrl);
+
+          function handleClick() {
+            if (videoId) {
+              onSelect(conf);
+            } else if (resourceUrl) {
+              window.open(resourceUrl, "_blank", "noopener,noreferrer");
+            }
+          }
+
           return (
-            <a
+            <div
               key={conf.id}
-              href={resourceUrl ?? undefined}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded px-1.5 py-1 text-xs text-background/90 transition-colors hover:bg-background/10"
+              role="button"
+              tabIndex={0}
+              onClick={handleClick}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  handleClick();
+                }
+              }}
+              className={cn(
+                "flex w-full cursor-pointer items-center gap-2 rounded px-1.5 py-1 text-xs text-background/90 text-left transition-colors hover:bg-background/10",
+                isWatched(conf.id) && "border-l-2 border-primary"
+              )}
             >
               <MediaIcon type={mediaType} />
               <span className="line-clamp-1 flex-1">{conf.title}</span>
               {videoId && <Video className="h-3 w-3 opacity-70" />}
-              <ExternalLink className="h-3 w-3 opacity-70" />
-            </a>
+              {hasActions && (
+                <span
+                  className="shrink-0"
+                  onClick={(e) => e.stopPropagation()}
+                  onKeyDown={(e) => e.stopPropagation()}
+                >
+                  <VideoActions
+                    conferenceId={conf.id}
+                    isWatched={isWatched(conf.id)}
+                    isFavorite={isFavorite(conf.id)}
+                    isWatchlist={isWatchlist(conf.id)}
+                    isAuthenticated={isAuthenticated}
+                    onToggleWatched={onToggleWatched}
+                    onToggleFavorite={onToggleFavorite}
+                    onToggleWatchlist={onToggleWatchlist}
+                    togglingId={togglingId}
+                    orientation="horizontal"
+                    size="sm"
+                  />
+                </span>
+              )}
+            </div>
           );
         })}
       </div>
@@ -115,9 +188,29 @@ function RelatedConferenceLinks({
 export function PopulationTimeline({
   peoples,
   conferencesMap,
+  watchedIds: initialWatchedIds = new Set(),
+  favoriteIds: initialFavoriteIds = new Set(),
+  watchlistIds: initialWatchlistIds = new Set(),
+  isAuthenticated = false,
 }: PopulationTimelineProps) {
   const [showAll, setShowAll] = useState(false);
   const [scale, setScale] = useState<TimelineScale>("adapted");
+  const [selectedVideo, setSelectedVideo] = useState<ConferenceItem | null>(null);
+
+  const {
+    togglingId,
+    handleToggleWatched,
+    handleToggleFavorite,
+    handleToggleWatchlist,
+    isWatched,
+    isFavorite,
+    isWatchlist,
+  } = useVideoActions({
+    watchedIds: initialWatchedIds,
+    favoriteIds: initialFavoriteIds,
+    watchlistIds: initialWatchlistIds,
+    isAuthenticated,
+  });
 
   const yearToPercent = useMemo(
     () => (year: number) =>
@@ -339,6 +432,15 @@ export function PopulationTimeline({
                             <RelatedConferenceLinks
                               relatedConferences={people.relatedConferences}
                               conferencesMap={conferencesMap}
+                              onSelect={setSelectedVideo}
+                              isAuthenticated={isAuthenticated}
+                              togglingId={togglingId}
+                              onToggleWatched={handleToggleWatched}
+                              onToggleFavorite={handleToggleFavorite}
+                              onToggleWatchlist={handleToggleWatchlist}
+                              isWatched={isWatched}
+                              isFavorite={isFavorite}
+                              isWatchlist={isWatchlist}
                             />
                           </div>
                         </TooltipContent>
@@ -387,6 +489,19 @@ export function PopulationTimeline({
           </p>
         </div>
       </div>
+
+      <VideoPlayerSheet
+        selectedVideo={selectedVideo}
+        onClose={() => setSelectedVideo(null)}
+        isWatched={selectedVideo ? isWatched(selectedVideo.id) : false}
+        isFavorite={selectedVideo ? isFavorite(selectedVideo.id) : false}
+        isWatchlist={selectedVideo ? isWatchlist(selectedVideo.id) : false}
+        isAuthenticated={isAuthenticated}
+        onToggleWatched={handleToggleWatched}
+        onToggleFavorite={handleToggleFavorite}
+        onToggleWatchlist={handleToggleWatchlist}
+        togglingId={togglingId}
+      />
     </TooltipProvider>
   );
 }
