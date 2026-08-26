@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useMemo, useState, useRef, useCallback, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -41,6 +41,7 @@ import {
   populationWidthPercent,
   layoutFloatingPeoples,
   type TimelineScale,
+  type FloatingLayoutItem,
 } from "@/lib/timeline";
 import { cn } from "@/lib/utils";
 import { TimelineNavigation } from "./TimelineNavigation";
@@ -255,8 +256,9 @@ interface PeopleCardProps {
   people: PeopleGroup;
   widthPercent: number;
   expanded: boolean;
-  onClick: () => void;
+  onClick?: () => void;
   className?: string;
+  variant?: "default" | "mamertino";
 }
 
 function PeopleCard({
@@ -265,14 +267,30 @@ function PeopleCard({
   expanded,
   onClick,
   className,
+  variant = "default",
 }: PeopleCardProps) {
+  const isMamertino = variant === "mamertino";
   return (
     <Card
       className={cn(
-        "cursor-pointer overflow-hidden border-border/60 shadow-sm transition-all duration-300 hover:shadow-md",
-        expanded ? "bg-card/95" : "bg-card/75",
+        "cursor-pointer overflow-hidden border shadow-sm transition-all duration-300 hover:shadow-md",
+        isMamertino
+          ? "border-transparent text-foreground"
+          : "border-border/60 bg-card/75 text-foreground",
         className
       )}
+      style={
+        isMamertino
+          ? {
+              backgroundColor: hexToRgba(
+                people.color,
+                expanded ? 0.22 : 0.14
+              ),
+              borderColor: hexToRgba(people.color, 0.45),
+              boxShadow: `0 0 12px ${hexToRgba(people.color, 0.15)}`,
+            }
+          : undefined
+      }
       onClick={onClick}
     >
       <CardHeader
@@ -348,6 +366,153 @@ function PeopleCard({
       </CardContent>
     </Card>
   );
+}
+
+interface PeopleCardCompactProps {
+  people: PeopleGroup;
+  leftPercent: number;
+  widthPercent: number;
+  onSelect: (people: PeopleGroup) => void;
+}
+
+function PeopleCardCompact({
+  people,
+  leftPercent,
+  widthPercent,
+  onSelect,
+}: PeopleCardCompactProps) {
+  return (
+    <motion.button
+      initial={{ opacity: 0, scale: 0.92 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.92 }}
+      transition={{ duration: 0.25 }}
+      type="button"
+      onClick={() => onSelect(people)}
+      className="pointer-events-auto relative flex w-full flex-col items-start overflow-hidden rounded-md border px-2 py-1 text-left shadow-sm backdrop-blur-sm transition-opacity hover:opacity-100"
+      style={{
+        marginLeft: `${leftPercent}%`,
+        width: `${widthPercent}%`,
+        backgroundColor: hexToRgba(people.color, 0.22),
+        borderColor: hexToRgba(people.color, 0.5),
+      }}
+    >
+      <span className="w-full truncate text-[10px] font-semibold leading-tight text-foreground sm:text-xs">
+        {people.name}
+      </span>
+      <span className="w-full truncate text-[9px] text-foreground/80 sm:text-[10px]">
+        {formatYear(people.startYear)} — {formatYear(people.endYear)}
+      </span>
+    </motion.button>
+  );
+}
+
+const MAX_MAMERTINO_EXPANDED_CARDS = 4;
+
+interface MamertinoCard {
+  people: PeopleGroup;
+  leftPercent: number;
+  widthPercent: number;
+  displayTop: number;
+  progress: number;
+  peakCloseness: number;
+  visibilityFactor: number;
+  isFull: boolean;
+}
+
+function computeMamertinoCards(
+  items: FloatingLayoutItem[],
+  visibleTop: number,
+  visibleBottom: number,
+  totalHeight: number,
+  yearToPercent: (year: number) => number
+): MamertinoCard[] {
+  if (visibleBottom <= visibleTop || items.length === 0) return [];
+
+  const viewportHeight = visibleBottom - visibleTop;
+  const viewportCenter = (visibleTop + visibleBottom) / 2;
+  const usableHeight = Math.max(1, viewportHeight - CARD_HEIGHT);
+
+  const scored = items
+    .map((item) => {
+      const bandTop =
+        (yearToPercent(item.people.startYear) / 100) * totalHeight;
+      const bandBottom =
+        (yearToPercent(item.people.endYear) / 100) * totalHeight;
+
+      // Margen para animar entrada/salida suave de una altura de card.
+      const margin = CARD_HEIGHT;
+      if (bandBottom < visibleTop - margin || bandTop > visibleBottom + margin) {
+        return null;
+      }
+
+      const peakPos =
+        (yearToPercent(item.people.peakYear) / 100) * totalHeight;
+      const bandSpan = Math.max(1, bandBottom - bandTop);
+
+      // Progreso continuo de la línea a través del viewport:
+      // 0 cuando el inicio de la línea está abajo del todo,
+      // 1 cuando el final de la línea está arriba del todo.
+      // Valores < 0 o > 1 permiten la animación de entrada/salida.
+      const progress = (viewportCenter - bandTop) / bandSpan;
+
+      // Proximidad al apogeo: 1 cuando el apogeo está en el centro del viewport.
+      const peakDistance = Math.abs(peakPos - viewportCenter);
+      const peakCloseness = Math.max(
+        0,
+        1 - peakDistance / (viewportHeight * 0.6)
+      );
+
+      // La card viaja de abajo (inicio de línea) a arriba (final de línea)
+      // y continúa subiendo para salir por arriba cuando la línea desaparece.
+      const displayTop = visibleBottom - CARD_HEIGHT - progress * usableHeight;
+
+      // Factor de visibilidad: fade in al entrar por abajo, fade out al salir por arriba.
+      const visibilityFactor =
+        Math.max(0, Math.min(1, progress + 0.35)) *
+        Math.max(0, Math.min(1, 1.35 - progress));
+
+      const score =
+        peakCloseness * 10_000_000 +
+        visibilityFactor * 100_000 +
+        item.people.peakPopulation;
+      return {
+        item,
+        progress,
+        peakCloseness,
+        displayTop,
+        visibilityFactor,
+        score,
+      };
+    })
+    .filter(
+      (entry): entry is NonNullable<typeof entry> => entry !== null
+    );
+
+  // Ordenamos por score para priorizar civilizaciones relevantes en el viewport.
+  scored.sort((a, b) => b.score - a.score);
+
+  // De esas, las 4 más cercanas a su apogeo se muestran expandidas.
+  // El resto de cards visibles se muestran compactas.
+  const sortedByPeak = [...scored].sort(
+    (a, b) => b.peakCloseness - a.peakCloseness
+  );
+  const expandedIds = new Set(
+    sortedByPeak
+      .slice(0, MAX_MAMERTINO_EXPANDED_CARDS)
+      .map((s) => s.item.people.id)
+  );
+
+  return scored.map((s) => ({
+    people: s.item.people,
+    leftPercent: s.item.leftPercent,
+    widthPercent: s.item.widthPercent,
+    displayTop: s.displayTop,
+    progress: s.progress,
+    peakCloseness: s.peakCloseness,
+    visibilityFactor: s.visibilityFactor,
+    isFull: expandedIds.has(s.item.people.id),
+  }));
 }
 
 function PeopleDetailDialog({
@@ -480,6 +645,16 @@ export function VerticalPopulationTimeline({
   const [layoutMode, setLayoutMode] = useState<LayoutMode>("classic");
   const [timelineHeight, setTimelineHeight] = useState<TimelineHeight>("normal");
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [draggedOffsets, setDraggedOffsets] = useState<
+    Record<string, { x: number; y: number }>
+  >({});
+  const [scrollTop, setScrollTop] = useState(0);
+  const [wrapperHeight, setWrapperHeight] = useState(0);
+  const [wrapperOffsetTop, setWrapperOffsetTop] = useState(0);
+  const [wrapperClientHeight, setWrapperClientHeight] = useState(0);
+  const [scrolledContainer, setScrolledContainer] = useState(false);
+
+  const mamertinoDraggingMapRef = useRef<Map<string, boolean>>(new Map());
 
   const expandedIndex = hoveredIndex ?? currentIndex;
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -566,7 +741,10 @@ export function VerticalPopulationTimeline({
             loadMore();
           }
         },
-        { rootMargin: "200px" }
+        {
+          root: scrolledContainer ? wrapperRef.current : null,
+          rootMargin: "200px",
+        }
       );
 
       observerRef.current.observe(node);
@@ -574,56 +752,45 @@ export function VerticalPopulationTimeline({
     [hasMore, loadMore]
   );
 
-  const scrollToIndex = useCallback(
-    (index: number) => {
-      const clamped = Math.max(0, Math.min(index, visiblePeoples.length - 1));
-      setCurrentIndex(clamped);
-
-      const element = itemRefs.current[clamped];
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "center" });
-        return;
-      }
-
-      // Fallback: calculamos la posición desde el layout actual.
-      const layoutItem =
-        layoutMode === "floating"
-          ? floatingLayout[clamped]
-          : layout[clamped];
-      if (!layoutItem || !wrapperRef.current) return;
-
-      const wrapperTop =
-        wrapperRef.current.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({
-        top: wrapperTop + layoutItem.top - window.innerHeight / 3,
-        behavior: "smooth",
-      });
-    },
-    [floatingLayout, layout, layoutMode, visiblePeoples.length]
-  );
-
-  const goNext = useCallback(
-    () => scrollToIndex(currentIndex + 1),
-    [scrollToIndex, currentIndex]
-  );
-  const goPrev = useCallback(
-    () => scrollToIndex(currentIndex - 1),
-    [scrollToIndex, currentIndex]
-  );
-  const goStart = useCallback(() => scrollToIndex(0), [scrollToIndex]);
-  const goEnd = useCallback(() => {
-    setVisibleCount(filteredPeoples.length);
-    setTimeout(() => {
-      scrollToIndex(filteredPeoples.length - 1);
-    }, 50);
-  }, [filteredPeoples.length, scrollToIndex]);
-
   useEffect(() => {
     return () => {
       if (observerRef.current) observerRef.current.disconnect();
       if (activeObserverRef.current) activeObserverRef.current.disconnect();
     };
   }, []);
+
+  useEffect(() => {
+    setDraggedOffsets({});
+  }, [layoutMode, scale, timelineHeight]);
+
+  useEffect(() => {
+    const update = () => {
+      if (!wrapperRef.current) return;
+      if (scrolledContainer) {
+        setScrollTop(wrapperRef.current.scrollTop);
+        setWrapperHeight(wrapperRef.current.clientHeight);
+        setWrapperClientHeight(wrapperRef.current.clientHeight);
+        setWrapperOffsetTop(0);
+      } else {
+        const rect = wrapperRef.current.getBoundingClientRect();
+        setScrollTop(window.scrollY);
+        setWrapperHeight(window.innerHeight);
+        setWrapperClientHeight(wrapperRef.current.clientHeight);
+        setWrapperOffsetTop(rect.top + window.scrollY);
+      }
+    };
+
+    update();
+    const target = scrolledContainer ? wrapperRef.current : window;
+    if (!target) return;
+
+    target.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      target.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, [scrolledContainer]);
 
   useEffect(() => {
     if (activeObserverRef.current) activeObserverRef.current.disconnect();
@@ -637,7 +804,11 @@ export function VerticalPopulationTimeline({
           }
         });
       },
-      { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+      {
+        root: scrolledContainer ? wrapperRef.current : null,
+        rootMargin: "-40% 0px -40% 0px",
+        threshold: 0,
+      }
     );
 
     itemRefs.current.forEach((el) => {
@@ -645,7 +816,7 @@ export function VerticalPopulationTimeline({
     });
 
     return () => activeObserverRef.current?.disconnect();
-  }, [visiblePeoples, scale, layoutMode]);
+  }, [visiblePeoples, scale, layoutMode, scrolledContainer]);
 
   const legend = useRegionLegend(filteredPeoples);
 
@@ -675,6 +846,141 @@ export function VerticalPopulationTimeline({
   }, [visiblePeoples, totalHeight, yearToPercent]);
 
   const axisWidth = Math.max(2, laneCount * LANE_WIDTH + (laneCount - 1) * LANE_GAP);
+
+  const { visibleTop, visibleBottom } = useMemo(() => {
+    if (
+      !wrapperRef.current ||
+      wrapperHeight === 0 ||
+      wrapperClientHeight === 0
+    ) {
+      return { visibleTop: 0, visibleBottom: 0 };
+    }
+    if (scrolledContainer) {
+      // El wrapper mismo es el scroll container: las coordenadas ya son relativas
+      // al contenido scrolleable.
+      return {
+        visibleTop: scrollTop,
+        visibleBottom: scrollTop + wrapperHeight,
+      };
+    }
+    // En scroll libre, el viewport es la ventana. Convertimos a coordenadas
+    // relativas al contenido del wrapper para comparar con bandTop/bandBottom.
+    const scrollViewportTop = scrollTop;
+    const scrollViewportBottom = scrollTop + wrapperHeight;
+    return {
+      visibleTop: Math.max(0, scrollViewportTop - wrapperOffsetTop),
+      visibleBottom: Math.min(
+        wrapperClientHeight,
+        scrollViewportBottom - wrapperOffsetTop
+      ),
+    };
+  }, [
+    scrollTop,
+    wrapperHeight,
+    wrapperOffsetTop,
+    wrapperClientHeight,
+    scrolledContainer,
+  ]);
+
+  const mamertinoCards = useMemo<MamertinoCard[]>(() => {
+    if (layoutMode !== "levitating") return [];
+    return computeMamertinoCards(
+      floatingLayout,
+      visibleTop,
+      visibleBottom,
+      totalHeight,
+      yearToPercent
+    );
+  }, [
+    layoutMode,
+    floatingLayout,
+    visibleTop,
+    visibleBottom,
+    totalHeight,
+    yearToPercent,
+  ]);
+
+  const scrollToIndex = useCallback(
+    (index: number) => {
+      const clamped = Math.max(0, Math.min(index, visiblePeoples.length - 1));
+      setCurrentIndex(clamped);
+
+      const element = itemRefs.current[clamped];
+      if (element && wrapperRef.current) {
+        const wrapperRect = wrapperRef.current.getBoundingClientRect();
+        const elementRect = element.getBoundingClientRect();
+        const relativeTop =
+          elementRect.top -
+          wrapperRect.top +
+          (scrolledContainer ? wrapperRef.current.scrollTop : 0);
+        const viewportHeight = scrolledContainer
+          ? wrapperRect.height
+          : window.innerHeight;
+        const targetTop = relativeTop - viewportHeight / 2 + CARD_HEIGHT / 2;
+
+        if (scrolledContainer) {
+          wrapperRef.current.scrollTo({
+            top: targetTop,
+            behavior: "smooth",
+          });
+        } else {
+          window.scrollTo({
+            top: window.scrollY + targetTop,
+            behavior: "smooth",
+          });
+        }
+        return;
+      }
+
+      // Fallback: calculamos la posición desde el layout actual.
+      const layoutItem =
+        layoutMode === "levitating" || layoutMode === "floating"
+          ? floatingLayout[clamped]
+          : layout[clamped];
+      if (!layoutItem || !wrapperRef.current) return;
+
+      const viewportHeight = scrolledContainer
+        ? wrapperRef.current.clientHeight
+        : window.innerHeight;
+      const targetTop = layoutItem.top - viewportHeight / 2 + CARD_HEIGHT / 2;
+
+      if (scrolledContainer) {
+        wrapperRef.current.scrollTo({
+          top: targetTop,
+          behavior: "smooth",
+        });
+      } else {
+        window.scrollTo({
+          top: wrapperOffsetTop + targetTop,
+          behavior: "smooth",
+        });
+      }
+    },
+    [
+      floatingLayout,
+      layout,
+      layoutMode,
+      scrolledContainer,
+      visiblePeoples.length,
+      wrapperOffsetTop,
+    ]
+  );
+
+  const goNext = useCallback(
+    () => scrollToIndex(currentIndex + 1),
+    [scrollToIndex, currentIndex]
+  );
+  const goPrev = useCallback(
+    () => scrollToIndex(currentIndex - 1),
+    [scrollToIndex, currentIndex]
+  );
+  const goStart = useCallback(() => scrollToIndex(0), [scrollToIndex]);
+  const goEnd = useCallback(() => {
+    setVisibleCount(filteredPeoples.length);
+    setTimeout(() => {
+      scrollToIndex(filteredPeoples.length - 1);
+    }, 50);
+  }, [filteredPeoples.length, scrollToIndex]);
 
   return (
     <div className="space-y-8">
@@ -709,11 +1015,26 @@ export function VerticalPopulationTimeline({
             </Label>
           </div>
 
+          <div className="flex items-center gap-3 rounded-lg border border-border/60 bg-card/50 px-3 py-2">
+            <Switch
+              id="scroll-toggle"
+              checked={scrolledContainer}
+              onCheckedChange={setScrolledContainer}
+              aria-label="Usar contenedor scrolleable"
+            />
+            <Label
+              htmlFor="scroll-toggle"
+              className="cursor-pointer text-sm text-muted-foreground"
+            >
+              {scrolledContainer ? "Contenedor fijo" : "Scroll libre"}
+            </Label>
+          </div>
+
           <div className="flex items-center gap-1 rounded-lg border border-border/60 bg-card/50 p-1">
             {[
               { value: "classic" as LayoutMode, label: "Clásico" },
               { value: "floating" as LayoutMode, label: "Flotante" },
-              { value: "levitating" as LayoutMode, label: "Levitación" },
+              { value: "levitating" as LayoutMode, label: "Mamertino" },
             ].map((mode) => (
               <button
                 key={mode.value}
@@ -773,9 +1094,20 @@ export function VerticalPopulationTimeline({
 
       <div
         ref={wrapperRef}
-        className="relative overflow-hidden rounded-xl border border-border/60 bg-card/50 p-4 shadow-sm sm:p-6"
+        onScroll={() => {
+          if (!scrolledContainer || !wrapperRef.current) return;
+          setScrollTop(wrapperRef.current.scrollTop);
+          setWrapperHeight(wrapperRef.current.clientHeight);
+        }}
+        className={cn(
+          "relative rounded-xl border border-border/60 bg-card/50 p-4 shadow-sm sm:p-6",
+          scrolledContainer
+            ? "h-[75vh] overflow-y-auto overflow-x-hidden sm:h-[80vh]"
+            : "overflow-hidden"
+        )}
       >
-        {/* Year labels */}
+        <LayoutGroup id="population-timeline">
+          {/* Year labels */}
         <div className="mb-4 flex justify-between text-sm font-medium text-muted-foreground sm:text-base">
           <span>{formatYear(MIN_YEAR)}</span>
           <span>{formatYear(MAX_YEAR)}</span>
@@ -947,58 +1279,52 @@ export function VerticalPopulationTimeline({
               );
             })}
 
-          {/* People cards — modos flotante y levitación (layout libre) */}
-          {(layoutMode === "floating" || layoutMode === "levitating") &&
+          {/* People cards — modo flotante */}
+          {layoutMode === "floating" &&
             floatingLayout.map(
               ({ people, top, leftPercent, widthPercent, floatPhase }, index) => {
                 const isExpanded = index === expandedIndex;
-                const isFloating = layoutMode === "floating";
-                const floatDuration = isFloating
-                  ? 3 + floatPhase * 2
-                  : 2.2 + floatPhase * 1.5;
+                const floatDuration = 3 + floatPhase * 2;
+                const offset = draggedOffsets[people.id] ?? { x: 0, y: 0 };
                 return (
                   <motion.div
                     key={people.id}
                     ref={(el) => {
                       itemRefs.current[index] = el;
                     }}
-                    initial={{ opacity: 0, scale: 0.85 }}
-                    animate={{
-                      opacity: isExpanded ? 1 : 0.8,
-                      scale: isExpanded ? 1.02 : 1,
-                      y: isExpanded ? [0, -6, 0] : [0, -14, 0],
-                      rotate: isFloating ? 0 : [0, 0.8, -0.8, 0],
+                    drag
+                    dragConstraints={{
+                      left: -40,
+                      right: 40,
+                      top: -30,
+                      bottom: 30,
                     }}
-                    transition={{
-                      opacity: { duration: 0.3 },
-                      scale: {
-                        duration: 0.5,
-                        delay: (index % PAGE_SIZE) * 0.04,
-                      },
-                      y: {
-                        repeat: Infinity,
-                        duration: floatDuration,
-                        ease: "easeInOut",
-                      },
-                      rotate: {
-                        repeat: Infinity,
-                        duration: floatDuration * 1.6,
-                        ease: "easeInOut",
-                      },
-                    }}
-                    whileHover={{ scale: 1.05, zIndex: 50 }}
+                    dragElastic={0.25}
+                    dragMomentum={false}
                     whileDrag={{ scale: 1.05, zIndex: 50 }}
-                    drag={isFloating}
-                    dragConstraints={
-                      isFloating
-                        ? { left: -40, right: 40, top: -30, bottom: 30 }
-                        : undefined
-                    }
-                    dragElastic={isFloating ? 0.25 : 0}
+                    whileHover={{ zIndex: 50 }}
+                    animate={{
+                      x: offset.x,
+                      y: offset.y,
+                    }}
+                    onTap={() => setSelectedPeople(people)}
                     onHoverStart={() => setHoveredIndex(index)}
                     onHoverEnd={() => setHoveredIndex((prev) =>
                       prev === index ? null : prev
                     )}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`${people.name}: ${formatYear(
+                      people.startYear
+                    )} — ${formatYear(
+                      people.endYear
+                    )}. Ver detalles y videos.`}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        setSelectedPeople(people);
+                      }
+                    }}
                     className="absolute z-10 origin-top"
                     style={{
                       top: `${top}px`,
@@ -1006,13 +1332,152 @@ export function VerticalPopulationTimeline({
                       width: `${widthPercent}%`,
                     }}
                   >
-                    <PeopleCard
-                      people={people}
-                      widthPercent={widthPercent}
-                      expanded={isExpanded}
-                      onClick={() => setSelectedPeople(people)}
-                      className={isExpanded ? "shadow-lg" : "shadow-sm"}
-                    />
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.85 }}
+                      animate={{
+                        opacity: isExpanded ? 1 : 0.8,
+                        scale: isExpanded ? 1.02 : 1,
+                        y: isExpanded ? [0, -6, 0] : [0, -14, 0],
+                      }}
+                      transition={{
+                        opacity: { duration: 0.3 },
+                        scale: {
+                          duration: 0.5,
+                          delay: (index % PAGE_SIZE) * 0.04,
+                        },
+                        y: {
+                          repeat: Infinity,
+                          duration: floatDuration,
+                          ease: "easeInOut",
+                        },
+                      }}
+                      whileHover={{ scale: 1.05, zIndex: 50 }}
+                      className="h-full w-full"
+                    >
+                      <PeopleCard
+                        people={people}
+                        widthPercent={widthPercent}
+                        expanded={isExpanded}
+                        className={isExpanded ? "shadow-lg" : "shadow-sm"}
+                      />
+                    </motion.div>
+                  </motion.div>
+                );
+              }
+            )}
+
+          {/* People cards — modo Mamertino */}
+          {layoutMode === "levitating" &&
+            mamertinoCards.map(
+              ({ people, displayTop, leftPercent, widthPercent, peakCloseness, visibilityFactor, isFull }, index) => {
+                const isHovered = index === hoveredIndex;
+                const isExpanded = index === expandedIndex;
+                const shouldShowFull =
+                  isFull || isHovered || mamertinoCards.length < MAX_MAMERTINO_EXPANDED_CARDS;
+                const offset = draggedOffsets[people.id] ?? { x: 0, y: 0 };
+                return (
+                  <motion.div
+                    key={people.id}
+                    ref={(el) => {
+                      itemRefs.current[index] = el;
+                    }}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    drag
+                    dragConstraints={{
+                      left: -120,
+                      right: 120,
+                      top: -120,
+                      bottom: 120,
+                    }}
+                    dragElastic={0.2}
+                    dragMomentum={false}
+                    whileDrag={{ scale: 1.05, zIndex: 50 }}
+                    onDragStart={() => {
+                      mamertinoDraggingMapRef.current.set(people.id, true);
+                    }}
+                    onDragEnd={(_, info) => {
+                      setDraggedOffsets((prev) => ({
+                        ...prev,
+                        [people.id]: {
+                          x: (prev[people.id]?.x ?? 0) + info.offset.x,
+                          y: (prev[people.id]?.y ?? 0) + info.offset.y,
+                        },
+                      }));
+                      setTimeout(() => {
+                        mamertinoDraggingMapRef.current.set(people.id, false);
+                      }, 80);
+                    }}
+                    animate={{
+                      top: displayTop,
+                      x: offset.x,
+                      y: offset.y,
+                      opacity: visibilityFactor * (0.55 + peakCloseness * 0.45),
+                      scale: shouldShowFull ? 1 : 0.92 + peakCloseness * 0.08,
+                    }}
+                    transition={{
+                      top: { duration: 0.45, ease: "easeOut" },
+                      x: { duration: 0.2 },
+                      y: { duration: 0.2 },
+                      opacity: { duration: 0.35 },
+                      scale: { duration: 0.35 },
+                    }}
+                    onTap={() => {
+                      if (mamertinoDraggingMapRef.current.get(people.id)) return;
+                      setSelectedPeople(people);
+                    }}
+                    onHoverStart={() => setHoveredIndex(index)}
+                    onHoverEnd={() => setHoveredIndex((prev) =>
+                      prev === index ? null : prev
+                    )}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`${people.name}: ${formatYear(
+                      people.startYear
+                    )} — ${formatYear(
+                      people.endYear
+                    )}. Ver detalles y videos.`}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        setSelectedPeople(people);
+                      }
+                    }}
+                    className="absolute z-10 origin-top cursor-grab active:cursor-grabbing"
+                    style={{
+                      left: `${leftPercent}%`,
+                      width: `${widthPercent}%`,
+                    }}
+                  >
+                    <motion.div
+                      layout
+                      initial={{ opacity: 0, scale: 0.85 }}
+                      animate={{
+                        opacity: isExpanded ? 1 : 0.9,
+                      }}
+                      transition={{
+                        opacity: { duration: 0.3 },
+                        layout: { duration: 0.4, ease: "easeOut" },
+                      }}
+                      whileHover={{ scale: 1.03, zIndex: 50 }}
+                      className="h-full w-full"
+                    >
+                      {shouldShowFull ? (
+                        <PeopleCard
+                          people={people}
+                          widthPercent={widthPercent}
+                          expanded={isExpanded}
+                          className={isExpanded ? "shadow-lg" : "shadow-sm"}
+                          variant="mamertino"
+                        />
+                      ) : (
+                        <PeopleCardCompact
+                          people={people}
+                          leftPercent={0}
+                          widthPercent={100}
+                          onSelect={(people) => setSelectedPeople(people)}
+                        />
+                      )}
+                    </motion.div>
                   </motion.div>
                 );
               }
@@ -1044,6 +1509,8 @@ export function VerticalPopulationTimeline({
             </Button>
           </div>
         )}
+
+        </LayoutGroup>
       </div>
 
       {/* Floating navigation */}
