@@ -276,7 +276,7 @@ function PeopleCard({
         "cursor-pointer overflow-hidden border shadow-sm transition-all duration-300 hover:shadow-md",
         isMamertino
           ? "border-transparent text-foreground"
-          : "border-border/60 bg-card/75 text-foreground",
+          : "border-border/60 bg-card/75 text-foreground hover:bg-gray-100 dark:hover:bg-gray-800",
         className
       )}
       style={
@@ -1351,7 +1351,7 @@ export function VerticalPopulationTimeline({
                           ease: "easeInOut",
                         },
                       }}
-                      whileHover={{ scale: 1.05, zIndex: 50 }}
+                      whileHover={{ scale: 1.05, y: 0, zIndex: 50 }}
                       className="h-full w-full"
                     >
                       <PeopleCard
