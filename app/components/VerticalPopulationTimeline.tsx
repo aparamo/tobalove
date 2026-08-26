@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useTheme } from "next-themes";
 import { useMemo, useState, useRef, useCallback, useEffect } from "react";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
@@ -87,6 +88,28 @@ function hexToRgba(hex: string, alpha: number): string {
   const g = parseInt(clean.slice(2, 4), 16);
   const b = parseInt(clean.slice(4, 6), 16);
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
+function mixWithWhite(hex: string, colorRatio: number): string {
+  const clean = hex.replace("#", "");
+  const r = parseInt(clean.slice(0, 2), 16);
+  const g = parseInt(clean.slice(2, 4), 16);
+  const b = parseInt(clean.slice(4, 6), 16);
+  const mixedR = Math.round(r * colorRatio + 255 * (1 - colorRatio));
+  const mixedG = Math.round(g * colorRatio + 255 * (1 - colorRatio));
+  const mixedB = Math.round(b * colorRatio + 255 * (1 - colorRatio));
+  return `rgb(${mixedR}, ${mixedG}, ${mixedB})`;
+}
+
+function mixWithBlack(hex: string, colorRatio: number): string {
+  const clean = hex.replace("#", "");
+  const r = parseInt(clean.slice(0, 2), 16);
+  const g = parseInt(clean.slice(2, 4), 16);
+  const b = parseInt(clean.slice(4, 6), 16);
+  const mixedR = Math.round(r * colorRatio);
+  const mixedG = Math.round(g * colorRatio);
+  const mixedB = Math.round(b * colorRatio);
+  return `rgb(${mixedR}, ${mixedG}, ${mixedB})`;
 }
 
 function useRegionLegend(peoples: PeopleGroup[]) {
@@ -256,6 +279,7 @@ interface PeopleCardProps {
   people: PeopleGroup;
   widthPercent: number;
   expanded: boolean;
+  hovered?: boolean;
   onClick?: () => void;
   className?: string;
   variant?: "default" | "mamertino";
@@ -265,29 +289,47 @@ function PeopleCard({
   people,
   widthPercent,
   expanded,
+  hovered = false,
   onClick,
   className,
   variant = "default",
 }: PeopleCardProps) {
   const isMamertino = variant === "mamertino";
+  const { resolvedTheme } = useTheme();
+  const isLight = resolvedTheme === "light";
+  const mutedTextClass = isMamertino
+    ? isLight
+      ? "text-stone-900"
+      : "text-stone-100"
+    : "text-muted-foreground";
   return (
     <Card
       className={cn(
         "cursor-pointer overflow-hidden border shadow-sm transition-all duration-300 hover:shadow-md",
         isMamertino
-          ? "border-transparent text-foreground"
+          ? cn(
+              "border-transparent",
+              isLight ? "text-stone-950" : "text-white"
+            )
           : "border-border/60 bg-card/75 text-foreground hover:bg-gray-100 dark:hover:bg-gray-800",
         className
       )}
       style={
         isMamertino
           ? {
-              backgroundColor: hexToRgba(
-                people.color,
-                expanded ? 0.22 : 0.14
-              ),
-              borderColor: hexToRgba(people.color, 0.45),
-              boxShadow: `0 0 12px ${hexToRgba(people.color, 0.15)}`,
+              backgroundColor: isLight
+                ? mixWithWhite(
+                    people.color,
+                    hovered ? 0.55 : expanded ? 0.38 : 0.28
+                  )
+                : mixWithBlack(
+                    people.color,
+                    hovered ? 0.78 : expanded ? 0.62 : 0.48
+                  ),
+              borderColor: isLight
+                ? mixWithWhite(people.color, hovered ? 0.75 : 0.55)
+                : mixWithBlack(people.color, hovered ? 0.9 : 0.72),
+              boxShadow: `0 0 16px ${hexToRgba(people.color, hovered ? 0.35 : 0.2)}`,
             }
           : undefined
       }
@@ -348,7 +390,12 @@ function PeopleCard({
             }}
           />
         </div>
-        <div className="flex items-center justify-between text-[10px] text-muted-foreground sm:text-xs">
+        <div
+          className={cn(
+            "flex items-center justify-between text-[10px] sm:text-xs",
+            mutedTextClass
+          )}
+        >
           <span className="inline-flex items-center gap-1">
             <Globe className="h-2.5 w-2.5" />
             {people.region}
@@ -359,7 +406,12 @@ function PeopleCard({
           </span>
         </div>
         {expanded && (
-          <p className="line-clamp-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+          <p
+            className={cn(
+              "line-clamp-2 text-xs leading-relaxed sm:text-sm",
+              mutedTextClass
+            )}
+          >
             {people.description}
           </p>
         )}
@@ -1392,6 +1444,7 @@ export function VerticalPopulationTimeline({
                     dragElastic={0.2}
                     dragMomentum={false}
                     whileDrag={{ scale: 1.05, zIndex: 50 }}
+                    whileHover={{ zIndex: 100 }}
                     onDragStart={() => {
                       mamertinoDraggingMapRef.current.set(people.id, true);
                     }}
@@ -1411,7 +1464,9 @@ export function VerticalPopulationTimeline({
                       top: displayTop,
                       x: offset.x,
                       y: offset.y,
-                      opacity: visibilityFactor * (0.55 + peakCloseness * 0.45),
+                      opacity: isHovered
+                        ? 1
+                        : visibilityFactor * (0.55 + peakCloseness * 0.45),
                       scale: shouldShowFull ? 1 : 0.92 + peakCloseness * 0.08,
                     }}
                     transition={{
@@ -1466,6 +1521,7 @@ export function VerticalPopulationTimeline({
                           people={people}
                           widthPercent={widthPercent}
                           expanded={isExpanded}
+                          hovered={isHovered}
                           className={isExpanded ? "shadow-lg" : "shadow-sm"}
                           variant="mamertino"
                         />
