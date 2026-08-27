@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { TimelineViewSelector } from "@/app/components/TimelineViewSelector";
 import {
   getConferences,
@@ -9,6 +10,7 @@ import {
   getWatchedConferenceIds,
   getFavoriteConferenceIds,
   getWatchlistConferenceIds,
+  getUserPreferences,
 } from "@/lib/data";
 import { auth } from "@/auth";
 import { toggleWatchedConference } from "@/app/actions/watched";
@@ -16,6 +18,8 @@ import {
   toggleFavoriteConference,
   toggleWatchlistConference,
 } from "@/app/actions/videos";
+import { Button } from "@/components/ui/button";
+import { Settings } from "lucide-react";
 import type {
   ConferenceItem,
   TimelineEvent,
@@ -68,13 +72,27 @@ export default async function TimelinePage() {
   }
 
   const userId = session?.user?.id;
-  const [watchedIds, favoriteIds, watchlistIds] = userId
+  const [watchedIds, favoriteIds, watchlistIds, preferences] = userId
     ? await Promise.all([
         getWatchedConferenceIds(userId),
         getFavoriteConferenceIds(userId),
         getWatchlistConferenceIds(userId),
+        getUserPreferences(userId),
       ])
-    : [new Set<string>(), new Set<string>(), new Set<string>()];
+    : [
+        new Set<string>(),
+        new Set<string>(),
+        new Set<string>(),
+        null,
+      ];
+
+  const showNonYoutubeEvents = preferences?.showNonYoutubeEvents ?? false;
+  const showAllPeoples = preferences?.showAllPeoples ?? false;
+
+  const visibleEvents = showNonYoutubeEvents
+    ? sortedEvents
+    : sortedEvents.filter((e) => e.isYoutubeConference !== false);
+  const visibleEventsCount = visibleEvents.length;
 
   return (
     <main className="flex-1">
@@ -89,9 +107,22 @@ export default async function TimelinePage() {
           </p>
           <p className="mt-2 text-sm text-muted-foreground/80">
             {eventsMeta?.coberturaCronologica ?? "Cobertura amplia"} ·{" "}
-            {eventsMeta?.totalEventos ?? sortedEvents.length} eventos ·{" "}
-            {peoplesMeta?.totalPueblos ?? peoples.length} pueblos
+            {visibleEventsCount} eventos visibles
+            {visibleEventsCount !== sortedEvents.length &&
+              ` de ${sortedEvents.length}`}{" "}
+            · {peoplesMeta?.totalPueblos ?? peoples.length} pueblos
           </p>
+
+          {session?.user && (
+            <div className="mt-6">
+              <Link href="/profile/preferences">
+                <Button variant="outline" size="sm">
+                  <Settings className="mr-2 h-4 w-4" />
+                  Preferencias de visualización
+                </Button>
+              </Link>
+            </div>
+          )}
         </div>
       </section>
 
@@ -105,6 +136,8 @@ export default async function TimelinePage() {
           favoriteIds={favoriteIds}
           watchlistIds={watchlistIds}
           isAuthenticated={!!session?.user}
+          showNonYoutubeEvents={showNonYoutubeEvents}
+          showAllPeoples={showAllPeoples}
           onToggleWatched={toggleWatchedConference}
           onToggleFavorite={toggleFavoriteConference}
           onToggleWatchlist={toggleWatchlistConference}

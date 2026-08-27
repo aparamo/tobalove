@@ -62,6 +62,12 @@ export async function getWatchlistConferenceIds(userId: string) {
   return new Set(rows.map((r) => r.conferenceId));
 }
 
+export async function getUserPreferences(userId: string) {
+  return prisma.userPreferences.findUnique({
+    where: { userId },
+  });
+}
+
 export async function getUsers() {
   return prisma.user.findMany({
     select: {

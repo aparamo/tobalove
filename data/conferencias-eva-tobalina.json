@@ -2,7 +2,7 @@
   "meta": {
     "autor": "Eva Tobalina Oraá",
     "biografia_corta": "Doctora en Historia Antigua, profesora universitaria y divulgadora especializada en la Antigüedad mediterránea y oriental. Combina su labor académica en la Universidad Internacional de La Rioja con conferencias para asociaciones como Raíces de Europa.",
-    "total_conferencias_estimadas": 111,
+    "total_conferencias_estimadas": 150,
     "fuentes_principales": [
       "https://espacio-tiempo.es",
       "https://www.youtube.com/@raicesdeeuropa",
@@ -18,7 +18,7 @@
       "https://librujula.publico.es",
       "https://rua.ua.es"
     ],
-    "ultima_actualizacion": "2026-08-24"
+    "ultima_actualizacion": "2026-08-26"
   },
   "items": [
     {
@@ -1350,7 +1350,7 @@
       "date": "2023-03-26",
       "year": 2023,
       "organization": "Raíces de Europa",
-      "url": "https://www.youtube.com/watch?v=4qHAYtcd5IU",
+      "url": "https://www.youtube.com/watch?v=7K4S4i6HUcY",
       "description": "Primera entrega del ciclo sobre Alejandro Magno. Se aborda su nacimiento en Pela, la educación con Aristóteles, la relación con Filipo II y el inicio de su reinado.",
       "summary": "Tobalina reconstruye los primeros años de Alejandro, su formación intelectual y militar, y las circunstancias que lo llevaron al trono de Macedonia.",
       "topics": [
@@ -1376,7 +1376,7 @@
       "language": "es",
       "source": "https://informacionmanu.es/2024/10/alejandro-magno/",
       "mediaType": "video",
-      "youtube_url": "https://www.youtube.com/watch?v=4qHAYtcd5IU",
+      "youtube_url": "https://www.youtube.com/watch?v=7K4S4i6HUcY",
       "info_adicional": null
     },
     {
@@ -1421,7 +1421,7 @@
       "date": null,
       "year": 2023,
       "organization": "Raíces de Europa",
-      "url": null,
+      "url": "https://www.youtube.com/watch?v=4qHAYtcd5IU",
       "description": "Tercera entrega del ciclo. Conquista de Fenicia, el asedio de Tiro, la entrada en Egipto y la fundación de Alejandría.",
       "summary": "Tobalina explica cómo Alejandro se convirtió en faraón y fundó la ciudad que sería el gran centro cultural del helenismo.",
       "topics": [
@@ -1443,8 +1443,8 @@
       "duration": null,
       "language": "es",
       "source": "https://www.academia.edu/127789080/HISTORIA_DE_GRECIA",
-      "mediaType": null,
-      "youtube_url": null,
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=4qHAYtcd5IU",
       "info_adicional": null
     },
     {
@@ -3550,6 +3550,1137 @@
       "source": "https://www.youtube.com/@raicesdeeuropa",
       "mediaType": "video",
       "youtube_url": "https://www.youtube.com/watch?v=og6PiPZpl7Q",
+      "info_adicional": null
+    },
+    {
+      "id": "el-imperio-romano-modelo-de-integracion-crecimiento-y-seguri",
+      "title": "El Imperio Romano: modelo de integración, crecimiento y seguridad. Eva Tobalina",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=3_nhdhhF9c0",
+      "description": "Conferencia sobre un modelo de integración, crecimiento y seguridad, analizando factores históricos y políticos para la estabilidad y el desarrollo.",
+      "summary": "Análisis de los elementos clave que permiten la integración, el crecimiento y la seguridad en contextos históricos y actuales, con ejemplos de la antigüedad.",
+      "topics": [
+        "integración",
+        "crecimiento",
+        "seguridad",
+        "modelo político"
+      ],
+      "characters": [],
+      "civilizations": [],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=3_nhdhhF9c0",
+      "info_adicional": null
+    },
+    {
+      "id": "alejandro-magno-vii-el-arte-encontrado-en-siria-mesopotamia-",
+      "title": "Alejandro Magno (VII). El Arte encontrado en Siria, Mesopotamia y Persia. Jorge Latorre",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=VSTbzm63WA4",
+      "description": "Conferencia sobre el arte y los hallazgos culturales en Siria y Mesopotamia durante el período de Alejandro Magno.",
+      "summary": "Análisis de las manifestaciones artísticas y los descubrimientos arqueológicos en Siria y Mesopotamia, vinculados con la expansión de Alejandro Magno.",
+      "topics": [
+        "Alejandro Magno",
+        "arte",
+        "Siria",
+        "Mesopotamia",
+        "helenismo"
+      ],
+      "characters": [
+        "Alejandro Magno"
+      ],
+      "civilizations": [
+        "Mesopotamia",
+        "Siria",
+        "Macedonia"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=VSTbzm63WA4",
+      "info_adicional": null
+    },
+    {
+      "id": "alejandro-magno-y-el-imperio-persa-por-eva-tobalina",
+      "title": "ALEJANDRO MAGNO Y EL IMPERIO PERSA. Por EVA TOBALINA",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=8omLPAfPt60",
+      "description": "Conferencia en inglés sobre la relación y confrontación entre Alejandro Magno y el Imperio Persa.",
+      "summary": "Análisis de las campañas de Alejandro Magno contra el Imperio Persa, sus estrategias militares y el impacto de la conquista.",
+      "topics": [
+        "Alejandro Magno",
+        "Imperio Persa",
+        "conquista",
+        "guerra"
+      ],
+      "characters": [
+        "Alejandro Magno",
+        "Dario III"
+      ],
+      "civilizations": [
+        "Persia",
+        "Macedonia"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=8omLPAfPt60",
+      "info_adicional": null
+    },
+    {
+      "id": "biblia-cristianismo-evangelizacion-y-la-ruta-de-la-seda-dra-",
+      "title": "BIBLIA, CRISTIANISMO, EVANGELIZACIÓN Y LA RUTA DE LA SEDA | DRA.  EVA TOBALINA @raicesdeeuropa",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Investigando la Historia con Carla Díaz",
+      "url": "https://www.youtube.com/watch?v=TpZSP0Eybyo",
+      "description": "Conferencia que analiza la relación entre la Biblia, el cristianismo, la evangelización y la Ruta de la Seda.",
+      "summary": "Estudio de cómo el cristianismo se difundió a través de la Ruta de la Seda, y la influencia de la Biblia en las culturas de Asia.",
+      "topics": [
+        "Biblia",
+        "cristianismo",
+        "evangelización",
+        "Ruta de la Seda"
+      ],
+      "characters": [],
+      "civilizations": [
+        "Cristiandad",
+        "China",
+        "Imperio Romano"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=TpZSP0Eybyo",
+      "info_adicional": null
+    },
+    {
+      "id": "bizancio-vs-islam-siglo-vii-reformas-sociales-y-militares-bi",
+      "title": "BIZANCIO vs ISLAM, SIGLO VII:reformas sociales y militares*BIZANCIO EN GUERRA VI*Carlos Martínez",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "BELLUMARTIS HISTORIA MILITAR",
+      "url": "https://www.youtube.com/watch?v=nTRL6ytEZzs",
+      "description": "Conferencia sobre el enfrentamiento entre el Imperio Bizantino y el Islam en el siglo VII, y las reformas sociales de la época.",
+      "summary": "Análisis de los conflictos entre Bizancio y el Islam durante el siglo VII, y las reformas sociales y administrativas implementadas.",
+      "topics": [
+        "Bizancio",
+        "Islam",
+        "siglo VII",
+        "reformas",
+        "guerra"
+      ],
+      "characters": [
+        "Heraclio"
+      ],
+      "civilizations": [
+        "Bizancio",
+        "Califato Ortodoxo"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=nTRL6ytEZzs",
+      "info_adicional": null
+    },
+    {
+      "id": "breve-historia-de-bizancio-radiografia-de-la-capital",
+      "title": "Breve historia de Bizancio: radiografía de la capital(...)",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "UNED Radio",
+      "url": "https://www.youtube.com/watch?v=g0bUAaiqdzc",
+      "description": "Conferencia que ofrece un breve recorrido por la historia de Bizancio, con una radiografía de su capital, Constantinopla.",
+      "summary": "Visión general del Imperio Bizantino, centrada en su capital, Constantinopla, su estructura urbana, política y cultural.",
+      "topics": [
+        "Bizancio",
+        "Constantinopla",
+        "historia",
+        "imperio"
+      ],
+      "characters": [
+        "Constantino I"
+      ],
+      "civilizations": [
+        "Bizancio"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=g0bUAaiqdzc",
+      "info_adicional": null
+    },
+    {
+      "id": "bulgaria-y-su-apasionante-edad-media-eva-tobalina",
+      "title": "Bulgaria y su apasionante Edad Media. Eva Tobalina",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=XosNc14A2QE",
+      "description": "Conferencia sobre la historia de Bulgaria durante la Edad Media, destacando su cultura y su imperio.",
+      "summary": "Exploración del apogeo de Bulgaria en la Edad Media, su Primer y Segundo Imperio, y su influencia en los Balcanes.",
+      "topics": [
+        "Bulgaria",
+        "Edad Media",
+        "Imperio Búlgaro",
+        "Balcanes"
+      ],
+      "characters": [
+        "Simeón I"
+      ],
+      "civilizations": [
+        "Bulgaria",
+        "Bizancio"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=XosNc14A2QE",
+      "info_adicional": null
+    },
+    {
+      "id": "constantino-el-grande-la-renovacion-del-imperio-romano-eva-t",
+      "title": "CONSTANTINO EL GRANDE. La renovación del Imperio Romano. EVA TOBALINA",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=qmiQVQxI5Mk",
+      "description": "Conferencia en inglés sobre Constantino el Grande y la renovación del Imperio Romano.",
+      "summary": "Análisis del reinado de Constantino, su conversión al cristianismo, la fundación de Constantinopla y su impacto en el Imperio.",
+      "topics": [
+        "Constantino el Grande",
+        "Imperio Romano",
+        "cristianismo",
+        "Constantinopla"
+      ],
+      "characters": [
+        "Constantino I"
+      ],
+      "civilizations": [
+        "Roma",
+        "Bizancio"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=qmiQVQxI5Mk",
+      "info_adicional": null
+    },
+    {
+      "id": "creta-y-la-caida-del-mundo-minoico-eva-tobalina",
+      "title": "Creta y la caída del mundo Minoico. Eva Tobalina",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=K1UO84OaJSc",
+      "description": "Conferencia sobre la civilización minoica en Creta, su apogeo y su misteriosa caída.",
+      "summary": "Exploración de la cultura minoica, sus palacios, su arte, y las teorías sobre su desaparición.",
+      "topics": [
+        "Creta",
+        "civilización minoica",
+        "caída",
+        "arqueología"
+      ],
+      "characters": [],
+      "civilizations": [
+        "Minoica"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=K1UO84OaJSc",
+      "info_adicional": null
+    },
+    {
+      "id": "egipto-y-el-imperio-antiguo-los-grandes-faraones-y-las-piram",
+      "title": "Egipto y el Imperio Antiguo. Los grandes faraones y las Pirámides. Eva Tobalina",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=nZp4Ei9A-zQ",
+      "description": "Conferencia sobre el Imperio Antiguo de Egipto, los grandes faraones y la construcción de las pirámides.",
+      "summary": "Exploración de la época de las pirámides, con figuras como Keops, Kefrén y Micerino, y su legado monumental.",
+      "topics": [
+        "Egipto",
+        "Imperio Antiguo",
+        "pirámides",
+        "faraones"
+      ],
+      "characters": [
+        "Keops",
+        "Kefrén",
+        "Micerino"
+      ],
+      "civilizations": [
+        "Egipto"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=nZp4Ei9A-zQ",
+      "info_adicional": null
+    },
+    {
+      "id": "egipto-y-el-nacimiento-de-las-piramides-audacia-y-saber-en-b",
+      "title": "EGIPTO Y EL NACIMIENTO DE LAS PIRÁMIDES. Audacia y saber en busca de la perfección. EVA TOBALINA",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=_HwsIIcZjwc",
+      "description": "Conferencia en inglés sobre el nacimiento de las pirámides en Egipto, explorando el conocimiento y la audacia de su construcción.",
+      "summary": "Análisis de la evolución arquitectónica de las pirámides egipcias, desde las mastabas hasta la Gran Pirámide de Giza.",
+      "topics": [
+        "Egipto",
+        "pirámides",
+        "arquitectura",
+        "conocimiento"
+      ],
+      "characters": [
+        "Imhotep"
+      ],
+      "civilizations": [
+        "Egipto"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=_HwsIIcZjwc",
+      "info_adicional": null
+    },
+    {
+      "id": "el-coliseo-de-roma-su-apasionante-historia-y-creacion-eva-to",
+      "title": "El Coliseo de Roma: su apasionante historia y creación. Eva Tobalina",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=QLFbXtPQCUE",
+      "description": "Conferencia sobre la historia y creación del Coliseo de Roma, el anfiteatro más famoso del mundo.",
+      "summary": "Exploración de la construcción del Coliseo, su uso en la antigüedad y su legado como símbolo de Roma.",
+      "topics": [
+        "Coliseo",
+        "Roma",
+        "anfiteatro",
+        "espectáculos"
+      ],
+      "characters": [
+        "Vespasiano",
+        "Tito"
+      ],
+      "civilizations": [
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=QLFbXtPQCUE",
+      "info_adicional": null
+    },
+    {
+      "id": "el-imperio-hitita-ii-su-expansion-hasta-egipto-mesopotamia-y",
+      "title": "EL IMPERIO HITITA II. Su expansión hasta Egipto (Mesopotamia y su entorno 3). EVA TOBALINA",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=ApD82DTTV04",
+      "description": "Conferencia sobre la expansión del Imperio Hitita, incluyendo su conflicto con Egipto.",
+      "summary": "Estudio de la máxima expansión hitita, la Batalla de Kadesh y el tratado de paz con Egipto.",
+      "topics": [
+        "Hititas",
+        "expansión",
+        "Egipto",
+        "Kadesh"
+      ],
+      "characters": [
+        "Muwatalli II",
+        "Ramsés II"
+      ],
+      "civilizations": [
+        "Hitita",
+        "Egipto"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=ApD82DTTV04",
+      "info_adicional": null
+    },
+    {
+      "id": "el-imperio-romano-y-germania-treveris-la-roma-del-norte-eva-",
+      "title": "El Imperio Romano y Germania. Tréveris, la Roma del Norte. Eva Tobalina",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=s7gmEc12pOA",
+      "description": "Conferencia sobre la presencia romana en Germania y la ciudad de Tréveris, conocida como la Roma del Norte.",
+      "summary": "Análisis de la influencia romana en la región de Germania, con especial atención a los monumentos y la historia de Tréveris.",
+      "topics": [
+        "Imperio Romano",
+        "Germania",
+        "Tréveris",
+        "arqueología"
+      ],
+      "characters": [],
+      "civilizations": [
+        "Roma",
+        "Germana"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=s7gmEc12pOA",
+      "info_adicional": null
+    },
+    {
+      "id": "el-norte-occidental-de-africa-antes-de-la-llegada-de-roma-po",
+      "title": "El Norte Occidental de África antes de la llegada de Roma. Por EVA TOBALINA",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=pQfKjuqziBw",
+      "description": "Conferencia sobre el norte de África occidental antes de la conquista romana, abarcando culturas como la cartaginesa.",
+      "summary": "Estudio de las civilizaciones que habitaron el norte de África, como Cartago y los reinos númidas, antes del dominio romano.",
+      "topics": [
+        "África",
+        "Cartago",
+        "Numidia",
+        "fenicios"
+      ],
+      "characters": [
+        "Aníbal",
+        "Masinisa"
+      ],
+      "civilizations": [
+        "Cartago",
+        "Numidia"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=pQfKjuqziBw",
+      "info_adicional": null
+    },
+    {
+      "id": "grandes-yacimientos-i-la-garganta-de-olduvai-y-el-origen-del",
+      "title": "Grandes Yacimientos I. La Garganta de Olduvai y el origen del hombre. Eva Tobalina",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=QsOPuQGuto0",
+      "description": "Conferencia sobre el yacimiento de Olduvai en Tanzania, clave para el estudio del origen del hombre.",
+      "summary": "Exploración de los hallazgos en la Garganta de Olduvai y su importancia para la paleoantropología.",
+      "topics": [
+        "Olduvai",
+        "origen del hombre",
+        "paleoantropología",
+        "evolución"
+      ],
+      "characters": [
+        "Mary Leakey",
+        "Louis Leakey"
+      ],
+      "civilizations": [],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=QsOPuQGuto0",
+      "info_adicional": null
+    },
+    {
+      "id": "grandes-yacimientos-ii-las-cuevas-de-altamira-maravilla-del-",
+      "title": "Grandes Yacimientos II. Las Cuevas de Altamira: maravilla del arte paleolítico. Eva Tobalina",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=tKEt_d-TxNg",
+      "description": "Conferencia sobre las Cuevas de Altamira, obra maestra del arte paleolítico.",
+      "summary": "Análisis de las pinturas rupestres de Altamira, su descubrimiento y su significado en el arte prehistórico.",
+      "topics": [
+        "Altamira",
+        "arte rupestre",
+        "paleolítico",
+        "prehistoria"
+      ],
+      "characters": [],
+      "civilizations": [],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=tKEt_d-TxNg",
+      "info_adicional": null
+    },
+    {
+      "id": "grandes-yacimientos-v-micenas-la-mitica-e-imponente-ciudad-d",
+      "title": "Grandes Yacimientos V. MICENAS, la mítica e imponente ciudad de Agamenón. Eva Tobalina",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=__hdXy0Q3hM",
+      "description": "Conferencia sobre la ciudad de Micenas, vinculada a la figura de Agamenón y la civilización micénica.",
+      "summary": "Exploración de la arqueología y la mitología de Micenas, una de las ciudades más importantes de la Grecia antigua.",
+      "topics": [
+        "Micenas",
+        "Agamenón",
+        "civilización micénica",
+        "arqueología"
+      ],
+      "characters": [
+        "Agamenón"
+      ],
+      "civilizations": [
+        "Micénica"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=__hdXy0Q3hM",
+      "info_adicional": null
+    },
+    {
+      "id": "grandes-yacimientos-cnosos-y-festos-esplendor-de-la-civiliza",
+      "title": "Grandes yacimientos. Cnosos y Festos: esplendor de la civilización minoica. Eva Tobalina",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=OX_8E0NT0Vs",
+      "description": "Conferencia sobre los palacios minoicos de Cnosos y Festos, centros del esplendor cretense.",
+      "summary": "Análisis de los principales yacimientos de la civilización minoica en Creta, su arquitectura y su cultura.",
+      "topics": [
+        "Cnosos",
+        "Festos",
+        "civilización minoica",
+        "palacios"
+      ],
+      "characters": [
+        "Minos"
+      ],
+      "civilizations": [
+        "Minoica"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=OX_8E0NT0Vs",
+      "info_adicional": null
+    },
+    {
+      "id": "hathsepsut-amenofis-iii-akenaton-y-nefertiti-la-xviii-dinast",
+      "title": "Hathsepsut, Amenofis III, Akenatón y Nefertiti. La XVIII Dinastía (Imperio Nuevo). Eva Tobalina",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=UndhYOd7UuI",
+      "description": "Conferencia sobre la XVIII Dinastía egipcia, con figuras como Hatshepsut, Amenofis III, Akenatón y Nefertiti.",
+      "summary": "Análisis de uno de los períodos más fascinantes de Egipto, caracterizado por grandes faraones y la revolución religiosa de Akenatón.",
+      "topics": [
+        "XVIII Dinastía",
+        "Hatshepsut",
+        "Amenofis III",
+        "Akenatón",
+        "Nefertiti"
+      ],
+      "characters": [
+        "Hatshepsut",
+        "Amenofis III",
+        "Akenatón",
+        "Nefertiti"
+      ],
+      "civilizations": [
+        "Egipto"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=UndhYOd7UuI",
+      "info_adicional": null
+    },
+    {
+      "id": "historia-de-albania-la-incorporacion-al-imperio-romano-eva-t",
+      "title": "Historia de Albania. La incorporación al Imperio Romano. Eva Tobalina",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=2T7Z57vk1s8",
+      "description": "Conferencia sobre la historia de Albania y su incorporación al Imperio Romano.",
+      "summary": "Recorrido histórico por Albania, desde la antigüedad hasta su integración en el mundo romano.",
+      "topics": [
+        "Albania",
+        "Imperio Romano",
+        "historia",
+        "Balcanes"
+      ],
+      "characters": [],
+      "civilizations": [
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=2T7Z57vk1s8",
+      "info_adicional": null
+    },
+    {
+      "id": "italica-cuna-de-cesares-y-carmona-historia-y-belleza-de-la-a",
+      "title": "Itálica, cuna de césares, y Carmona. Historia y belleza de la Antigüedad. Eva Tobalina",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=QQwggI1pvA0",
+      "description": "Conferencia sobre las ciudades andaluzas de Itálica y Carmona, su historia y patrimonio.",
+      "summary": "Exploración de la ciudad romana de Itálica, cuna de los emperadores Trajano y Adriano, y la histórica Carmona.",
+      "topics": [
+        "Itálica",
+        "Carmona",
+        "Andalucía",
+        "Roma"
+      ],
+      "characters": [
+        "Trajano",
+        "Adriano"
+      ],
+      "civilizations": [
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=QQwggI1pvA0",
+      "info_adicional": null
+    },
+    {
+      "id": "de-antiguedad-tardia-a-la-alta-edad-media-la-caida-del-imper",
+      "title": "De Antigüedad Tardía a la Alta Edad Media: la caída del Imperio Romano de Occidente",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Onda UNED",
+      "url": "https://www.youtube.com/watch?v=bR2qNIcAe88",
+      "description": "Conferencia sobre la caída del Imperio Romano de Occidente y sus causas.",
+      "summary": "Análisis de los factores que llevaron al colapso del Imperio Romano de Occidente, desde las invasiones hasta la crisis interna.",
+      "topics": [
+        "Imperio Romano",
+        "caída",
+        "occidente",
+        "invasiones"
+      ],
+      "characters": [
+        "Rómulo Augústulo"
+      ],
+      "civilizations": [
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=bR2qNIcAe88",
+      "info_adicional": null
+    },
+    {
+      "id": "la-comedia-griega-ii-aristofanes-el-gran-genio-de-la-comedia",
+      "title": "LA COMEDIA GRIEGA II. Aristófanes, el gran genio de la comedia en la Antigua Grecia. EVA TOBALINA",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=hmVS3D-KEj8",
+      "description": "Conferencia sobre Aristófanes, el gran autor de la comedia griega antigua.",
+      "summary": "Análisis de la vida y obra de Aristófanes, sus comedias y su crítica a la sociedad ateniense.",
+      "topics": [
+        "Aristófanes",
+        "comedia griega",
+        "teatro",
+        "Atenas"
+      ],
+      "characters": [
+        "Aristófanes"
+      ],
+      "civilizations": [
+        "Grecia"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=hmVS3D-KEj8",
+      "info_adicional": null
+    },
+    {
+      "id": "la-comedia-griega-iii-menandro-genio-de-la-comedia-nueva-en-",
+      "title": "La Comedia Griega III. MENANDRO, genio de la Comedia Nueva en la Antigua Grecia. EVA TOBALINA",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=N-JJZy4mugI",
+      "description": "Conferencia sobre Menandro, el máximo representante de la Comedia Nueva griega.",
+      "summary": "Estudio de la obra de Menandro y su influencia en la comedia posterior, caracterizada por temas cotidianos.",
+      "topics": [
+        "Menandro",
+        "Comedia Nueva",
+        "teatro",
+        "Grecia"
+      ],
+      "characters": [
+        "Menandro"
+      ],
+      "civilizations": [
+        "Grecia"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=N-JJZy4mugI",
+      "info_adicional": null
+    },
+    {
+      "id": "la-magna-grecia-riaze-paestum-y-otras-maravillas-del-sur-de-",
+      "title": "LA MAGNA GRECIA. Riaze, Paestum y otras maravillas del sur de Italia. EVA TOBALINA",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=SR7XjBkYwpg",
+      "description": "Conferencia sobre la Magna Grecia, con enfoque en los yacimientos de Riace, Paestum y otros.",
+      "summary": "Exploración de las colonias griegas en el sur de Italia, sus restos arqueológicos y su legado cultural.",
+      "topics": [
+        "Magna Grecia",
+        "Riace",
+        "Paestum",
+        "colonización griega"
+      ],
+      "characters": [],
+      "civilizations": [
+        "Grecia",
+        "Magna Grecia"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=SR7XjBkYwpg",
+      "info_adicional": null
+    },
+    {
+      "id": "la-hegemonia-espartana-cap-2-la-paz-de-antalcidas-a-la-batal",
+      "title": "LA HEGEMONÍA ESPARTANA #Cap. 2: La Paz de Antálcidas a la batalla de Leuctra",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "BELLUMARTIS HISTORIA MILITAR",
+      "url": "https://www.youtube.com/watch?v=3UGIDb1jG_8",
+      "description": "Conferencia sobre el período de la historia griega desde la Paz de Antálcidas hasta la Batalla de Leuctra.",
+      "summary": "Análisis de las tensiones y conflictos en Grecia, incluyendo la hegemonía de Tebas y el declive de Esparta.",
+      "topics": [
+        "Paz de Antálcidas",
+        "Batalla de Leuctra",
+        "Grecia",
+        "Esparta",
+        "Tebas"
+      ],
+      "characters": [
+        "Epaminondas"
+      ],
+      "civilizations": [
+        "Grecia"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=3UGIDb1jG_8",
+      "info_adicional": null
+    },
+    {
+      "id": "los-pueblos-del-mar-el-gran-misterio-de-la-antiguedad-mesopo",
+      "title": "LOS PUEBLOS DEL MAR. El gran misterio de la Antigüedad (Mesopotamia y su entorno 4). EVA TOBALINA",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=0wl4ubC_ptk",
+      "description": "Conferencia sobre los Pueblos del Mar, un misterioso grupo que atacó el Mediterráneo en la Edad del Bronce.",
+      "summary": "Exploración de las evidencias sobre los Pueblos del Mar, sus orígenes y su impacto en las civilizaciones del Mediterráneo.",
+      "topics": [
+        "Pueblos del Mar",
+        "Edad del Bronce",
+        "Mediterráneo",
+        "misterio"
+      ],
+      "characters": [],
+      "civilizations": [
+        "Egipcia",
+        "Hitita",
+        "Micénica"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=0wl4ubC_ptk",
+      "info_adicional": null
+    },
+    {
+      "id": "los-secretos-ocultos-del-mundo-antiguo-eva-tobalina-aladetre",
+      "title": "Los SECRETOS OCULTOS del MUNDO ANTIGUO - Eva Tobalina | Aladetres 169",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Aladetres",
+      "url": "https://www.youtube.com/watch?v=TpJi4EinWpU",
+      "description": "Conferencia sobre los misterios y secretos del mundo antiguo.",
+      "summary": "Recorrido por algunos de los mayores enigmas de la antigüedad, desde construcciones hasta textos perdidos.",
+      "topics": [
+        "misterios",
+        "mundo antiguo",
+        "arqueología",
+        "enigmas"
+      ],
+      "characters": [],
+      "civilizations": [],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=TpJi4EinWpU",
+      "info_adicional": null
+    },
+    {
+      "id": "marco-aurelio-el-emperador-que-buscaba-la-sabiduaria-eva-tob",
+      "title": "MARCO AURELIO, el emperador que buscaba la sabiduaría. EVA TOBALINA",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=sLvlFcWo6ZE",
+      "description": "Conferencia en inglés sobre Marco Aurelio, el emperador filósofo estoico.",
+      "summary": "Análisis de la vida de Marco Aurelio, su obra 'Meditaciones' y su búsqueda de sabiduría en el gobierno del Imperio.",
+      "topics": [
+        "Marco Aurelio",
+        "estoicismo",
+        "filosofía",
+        "Imperio Romano"
+      ],
+      "characters": [
+        "Marco Aurelio"
+      ],
+      "civilizations": [
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=sLvlFcWo6ZE",
+      "info_adicional": null
+    },
+    {
+      "id": "mesopotamia-y-sus-leyendas-el-origen-del-hombre-y-la-creacio",
+      "title": "Mesopotamia y sus leyendas. El origen del hombre y la creación del mundo | Eva Tobalina",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Ateneo Mercantil de Valencia",
+      "url": "https://www.youtube.com/watch?v=6VOvfmzlbbU",
+      "description": "Conferencia en inglés sobre las leyendas de Mesopotamia, incluyendo la creación del mundo.",
+      "summary": "Exploración de los mitos mesopotámicos sobre el origen del hombre y la creación, como el Enuma Elish.",
+      "topics": [
+        "Mesopotamia",
+        "leyendas",
+        "creación",
+        "mitología"
+      ],
+      "characters": [],
+      "civilizations": [
+        "Mesopotamia"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=6VOvfmzlbbU",
+      "info_adicional": null
+    },
+    {
+      "id": "roma-y-las-invasiones-germanicas-eva-tobalina",
+      "title": "Roma y las invasiones germánicas. Eva Tobalina",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=2HhAhyKGGCs",
+      "description": "Conferencia sobre las invasiones germánicas y su impacto en el Imperio Romano.",
+      "summary": "Análisis de las migraciones germánicas, las guerras y la presión sobre las fronteras del Imperio Romano.",
+      "topics": [
+        "Invasiones germánicas",
+        "Imperio Romano",
+        "pueblos germánicos"
+      ],
+      "characters": [
+        "Arminio"
+      ],
+      "civilizations": [
+        "Roma",
+        "Germana"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=2HhAhyKGGCs",
+      "info_adicional": null
+    },
+    {
+      "id": "roma-y-el-imperio-claves-de-su-unidad-eva-tobalina-habla-de-",
+      "title": "Roma y el Imperio: claves de su unidad. Eva Tobalina habla de esta excepcional realidad política",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=fumxPYfRDcA",
+      "description": "Conferencia sobre los factores que permitieron la unidad del Imperio Romano.",
+      "summary": "Análisis de las claves políticas, militares y culturales que mantuvieron unido el vasto Imperio Romano.",
+      "topics": [
+        "Imperio Romano",
+        "unidad",
+        "administración",
+        "cultura"
+      ],
+      "characters": [],
+      "civilizations": [
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=fumxPYfRDcA",
+      "info_adicional": null
+    },
+    {
+      "id": "el-imperio-bizantino-i-nacimiento-y-esplendor-jose-ramon-god",
+      "title": "EL IMPERIO BIZANTINO I. Nacimiento y Esplendor. Jose Ramón Godino, profesor doctor de Historia",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=cmolej55dCE",
+      "description": "Conferencia en inglés sobre el nacimiento y el esplendor del Imperio Bizantino.",
+      "summary": "Análisis de los orígenes de Bizancio, su evolución y su momento de mayor esplendor.",
+      "topics": [
+        "Bizancio",
+        "imperio",
+        "nacimiento",
+        "esplendor"
+      ],
+      "characters": [
+        "Justiniano I"
+      ],
+      "civilizations": [
+        "Bizancio"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=cmolej55dCE",
+      "info_adicional": null
+    },
+    {
+      "id": "la-ciudad-perdida-de-alejandro-magno-por-eva-tobalina-oraa-l",
+      "title": "LA CIUDAD PERDIDA DE ALEJANDRO MAGNO por EVA TOBALINA ORAÁ (Las ciudades de Alejandro Magno -4-)",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=yu-nqME03mk",
+      "description": "Conferencia en inglés sobre las ciudades fundadas por Alejandro Magno, en particular la ciudad perdida.",
+      "summary": "Exploración de las ciudades helenísticas fundadas por Alejandro, y el misterio de alguna de ellas aún no encontrada.",
+      "topics": [
+        "Alejandro Magno",
+        "ciudades",
+        "helenismo",
+        "arqueología"
+      ],
+      "characters": [
+        "Alejandro Magno"
+      ],
+      "civilizations": [
+        "Macedonia",
+        "Helenística"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=yu-nqME03mk",
+      "info_adicional": null
+    },
+    {
+      "id": "atila-ascenso-y-caida-del-azote-de-dios-eva-tobalina",
+      "title": "ATILA: ascenso y caída del Azote de Dios. EVA TOBALINA",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=22gHZzPfkfI",
+      "description": "Conferencia en inglés sobre los pueblos de la estepa, con enfoque en Atila.",
+      "summary": "Análisis de los pueblos nómadas de la estepa, su cultura y el liderazgo de Atila.",
+      "topics": [
+        "Pueblos de la estepa",
+        "Atila",
+        "hunos"
+      ],
+      "characters": [
+        "Atila"
+      ],
+      "civilizations": [
+        "Huna"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=22gHZzPfkfI",
+      "info_adicional": null
+    },
+    {
+      "id": "teodosio-el-grande-el-emperador-con-quien-nacio-un-nuevo-imp",
+      "title": "TEODOSIO EL GRANDE. El emperador con quien nació un nuevo Imperio Romano. EVA TOBALINA",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=KtPCI_poOuE",
+      "description": "Conferencia en inglés sobre el emperador Teodosio el Grande y su papel en la creación de un nuevo Imperio Romano.",
+      "summary": "Estudio del reinado de Teodosio I, su política religiosa y la división final del Imperio.",
+      "topics": [
+        "Teodosio",
+        "Imperio Romano",
+        "cristianismo",
+        "división"
+      ],
+      "characters": [
+        "Teodosio I"
+      ],
+      "civilizations": [
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=KtPCI_poOuE",
+      "info_adicional": null
+    },
+    {
+      "id": "trajano-el-emperador-con-quien-roma-alcanzo-su-maxima-expans",
+      "title": "TRAJANO, el emperador con quien Roma alcanzó su máxima expansión. EVA TOBALINA",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=MshKhbd-t-s",
+      "description": "Conferencia sobre el emperador Trajano y la máxima expansión territorial del Imperio Romano.",
+      "summary": "Análisis de las campañas militares de Trajano y su legado como uno de los mejores emperadores de Roma.",
+      "topics": [
+        "Trajano",
+        "Imperio Romano",
+        "expansión",
+        "conquista"
+      ],
+      "characters": [
+        "Trajano"
+      ],
+      "civilizations": [
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=MshKhbd-t-s",
+      "info_adicional": null
+    },
+    {
+      "id": "vespasiano-emperador-la-dinastia-flavia-la-guerra-contra-los",
+      "title": "VESPASIANO EMPERADOR. La Dinastía Flavia, la Guerra contra los Judíos, el Coliseo... EVA TOBALINA",
+      "type": "conferencia",
+      "date": null,
+      "year": null,
+      "organization": "Raices de Europa",
+      "url": "https://www.youtube.com/watch?v=lfjw0Mt2Kjs",
+      "description": "Conferencia sobre el emperador Vespasiano, la dinastía Flavia y la guerra contra Judea.",
+      "summary": "Estudio del reinado de Vespasiano, su ascenso al poder, la guerra en Judea y la construcción del Coliseo.",
+      "topics": [
+        "Vespasiano",
+        "Dinastía Flavia",
+        "Judea",
+        "Coliseo"
+      ],
+      "characters": [
+        "Vespasiano",
+        "Tito"
+      ],
+      "civilizations": [
+        "Roma"
+      ],
+      "duration": null,
+      "language": "es",
+      "source": "docs/fb/4.md",
+      "mediaType": "video",
+      "youtube_url": "https://www.youtube.com/watch?v=lfjw0Mt2Kjs",
       "info_adicional": null
     }
   ]

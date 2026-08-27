@@ -9,7 +9,8 @@
       "Estimaciones demográficas históricas generales",
       "Conferencias de Eva Tobalina"
     ],
-    "ultima_actualizacion": "2026-08-24"
+    "ultima_actualizacion": "2026-08-27",
+    "totalPueblos": 79
   },
   "items": [
     {
@@ -29,7 +30,8 @@
         "sumer-rIlh-EYWgoQ",
         "sumer-zcmh",
         "tumbas-reales-ur"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "egipto-antiguo",
@@ -55,7 +57,8 @@
         "egipto-ptolemaico-cleopatra",
         "akhenaton-faraon-hereje-unab",
         "cleopatra-ultimo-faraon-unab"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "acadia",
@@ -72,7 +75,8 @@
       ],
       "relatedConferences": [
         "sumer-zcmh"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "babilonia",
@@ -90,7 +94,8 @@
       ],
       "relatedConferences": [
         "babilonia-neobabilonico"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "hititas",
@@ -107,7 +112,8 @@
       ],
       "relatedConferences": [
         "imperio-hitita-i"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "fenicia",
@@ -124,7 +130,8 @@
       ],
       "relatedConferences": [
         "fenicios-origen-desarrollo"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "tartessos",
@@ -142,7 +149,8 @@
       "relatedConferences": [
         "cancho-roano-2026",
         "tartessos-historia-mito"
-      ]
+      ],
+      "isSecondary": true
     },
     {
       "id": "iberos",
@@ -159,7 +167,8 @@
       ],
       "relatedConferences": [
         "iberos-principes-iberia"
-      ]
+      ],
+      "isSecondary": true
     },
     {
       "id": "celtiberos",
@@ -178,7 +187,8 @@
         "celtiberos-hispania-numancia",
         "numancia-frente-roma",
         "hispania-celtica"
-      ]
+      ],
+      "isSecondary": true
     },
     {
       "id": "numancia",
@@ -197,7 +207,8 @@
       "relatedConferences": [
         "celtiberos-hispania-numancia",
         "numancia-frente-roma"
-      ]
+      ],
+      "isSecondary": true
     },
     {
       "id": "tracios",
@@ -214,7 +225,8 @@
       ],
       "relatedConferences": [
         "tracios"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "asiria",
@@ -231,7 +243,8 @@
       ],
       "relatedConferences": [
         "asirios"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "cartago",
@@ -251,7 +264,8 @@
         "historia-roma-i-fundacion",
         "imperio-cartagines-i",
         "imperio-cartagines-ii"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "macedonia",
@@ -271,7 +285,8 @@
         "alejandro-magno-ii",
         "alejandro-magno-iii",
         "alejandro-magno-iv"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "grecia-clasica",
@@ -289,7 +304,8 @@
       "relatedConferences": [
         "imperio-persa",
         "odiseo"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "atenas",
@@ -313,7 +329,8 @@
         "tragedia-griega-iv",
         "tragedia-griega-v",
         "anabasis-jenofonte"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "escitas",
@@ -330,7 +347,8 @@
       ],
       "relatedConferences": [
         "escitas"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "persia-aquemenida",
@@ -347,11 +365,12 @@
       ],
       "relatedConferences": [
         "imperio-persa"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "partos",
-      "name": "Partos",
+      "name": "Imperio Parto",
       "startYear": -247,
       "endYear": 224,
       "peakYear": -100,
@@ -363,8 +382,10 @@
         "Partos"
       ],
       "relatedConferences": [
-        "curso-pueblos-estepa-2025"
-      ]
+        "curso-pueblos-estepa-2025",
+        "imperio-persa"
+      ],
+      "isSecondary": false
     },
     {
       "id": "china-qin",
@@ -381,7 +402,8 @@
       ],
       "relatedConferences": [
         "tumba-primer-emperador-china"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "xiongnu",
@@ -396,7 +418,8 @@
       "civilizations": [
         "Xiongnu"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "china-han",
@@ -413,7 +436,8 @@
       ],
       "relatedConferences": [
         "ruta-de-la-seda-origen"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "roma-imperial",
@@ -439,7 +463,8 @@
         "neron",
         "juliano-apostata",
         "judea-samaria-galilea-jesus"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "sasanida",
@@ -456,7 +481,8 @@
       ],
       "relatedConferences": [
         "persia-sasanida"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "bizancio",
@@ -473,8 +499,10 @@
       ],
       "relatedConferences": [
         "persia-sasanida",
-        "ruta-de-la-seda-califatos"
-      ]
+        "ruta-de-la-seda-califatos",
+        "breve-historia-de-bizancio-radiografia-de-la-capital"
+      ],
+      "isSecondary": false
     },
     {
       "id": "hunos",
@@ -492,7 +520,8 @@
       "relatedConferences": [
         "pueblos-estepa-hunos",
         "curso-pueblos-estepa-2025"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "turcos-estepa",
@@ -511,7 +540,8 @@
       "relatedConferences": [
         "curso-pueblos-estepa-2025",
         "pueblos-estepa-turcos-ivoox"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "china-tang",
@@ -529,7 +559,8 @@
       "relatedConferences": [
         "ruta-de-la-seda-califatos",
         "presentacion-libro-palma-xuanzang"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "califato-abasi",
@@ -546,7 +577,8 @@
       ],
       "relatedConferences": [
         "ruta-de-la-seda-califatos"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "imperio-jemer",
@@ -563,7 +595,8 @@
       ],
       "relatedConferences": [
         "angkor-wat-maravilla-sudeste-asiatico"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "imperio-mongol",
@@ -583,7 +616,8 @@
         "curso-pueblos-estepa-2025",
         "pueblos-estepa-genghis-kan-ivoox",
         "pueblos-estepa-hijos-genghis-khan-ivoox"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "imperio-timurida",
@@ -600,7 +634,8 @@
       ],
       "relatedConferences": [
         "ruta-de-la-seda-tamerlan"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "civilizacion-del-indo",
@@ -615,7 +650,8 @@
       "civilizations": [
         "Civilización del Indo"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "periodo-vedico",
@@ -630,7 +666,8 @@
       "civilizations": [
         "Período védico"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "mahajanapadas",
@@ -645,7 +682,8 @@
       "civilizations": [
         "Mahajanapadas"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "imperio-maurya",
@@ -660,7 +698,8 @@
       "civilizations": [
         "Imperio Maurya"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "olmecas",
@@ -675,7 +714,8 @@
       "civilizations": [
         "Olmecas"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "chavin",
@@ -690,7 +730,8 @@
       "civilizations": [
         "Chavín"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "cultura-norte-chico",
@@ -705,7 +746,8 @@
       "civilizations": [
         "Cultura Norte Chico"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "civilizacion-minoica",
@@ -720,7 +762,8 @@
       "civilizations": [
         "Civilización minoica"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "civilizacion-micenica",
@@ -737,7 +780,8 @@
       ],
       "relatedConferences": [
         "tragedia-griega-ii"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "etruscos",
@@ -752,7 +796,8 @@
       "civilizations": [
         "Etruscos"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "celtas",
@@ -767,7 +812,8 @@
       "civilizations": [
         "Celtas"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "germanicos",
@@ -782,7 +828,8 @@
       "civilizations": [
         "Pueblos germánicos"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "judea-samaria-galilea",
@@ -802,7 +849,8 @@
       ],
       "relatedConferences": [
         "judea-samaria-galilea-jesus"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "nubia-kush",
@@ -820,7 +868,8 @@
       ],
       "relatedConferences": [
         "egipto-imperio-medio"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "pueblos-del-mar",
@@ -837,7 +886,8 @@
       ],
       "relatedConferences": [
         "egipto-pueblos-del-mar-faraones-griegos"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "hicsos",
@@ -854,7 +904,8 @@
       ],
       "relatedConferences": [
         "egipto-hicsos-imperio-nuevo"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "lydia",
@@ -869,7 +920,8 @@
       "civilizations": [
         "Lidia"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "nabateos",
@@ -886,7 +938,8 @@
       ],
       "relatedConferences": [
         "petra-nabateos"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "aksum",
@@ -901,7 +954,8 @@
       "civilizations": [
         "Aksum"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "mayas",
@@ -916,7 +970,8 @@
       "civilizations": [
         "Mayas"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "numidia",
@@ -931,7 +986,8 @@
       "civilizations": [
         "Numidia"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "mauritania-antigua",
@@ -946,7 +1002,8 @@
       "civilizations": [
         "Mauritania antigua"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "meroe",
@@ -962,7 +1019,8 @@
         "Meroe",
         "Kush"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "libia-antigua",
@@ -977,7 +1035,8 @@
       "civilizations": [
         "Libia antigua"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "teotihuacan",
@@ -992,7 +1051,8 @@
       "civilizations": [
         "Teotihuacan"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "aztecas",
@@ -1008,7 +1068,8 @@
         "Aztecas",
         "Mexica"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "incas",
@@ -1023,7 +1084,8 @@
       "civilizations": [
         "Imperio Inca"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "moche",
@@ -1038,7 +1100,8 @@
       "civilizations": [
         "Moche"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "nazca",
@@ -1053,7 +1116,8 @@
       "civilizations": [
         "Nazca"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "paracas",
@@ -1068,7 +1132,8 @@
       "civilizations": [
         "Paracas"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "cultura-mississippi",
@@ -1084,7 +1149,8 @@
         "Cultura del Mississippi",
         "Cahokia"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "dinastia-shang",
@@ -1099,7 +1165,8 @@
       "civilizations": [
         "Dinastía Shang"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "dinastia-zhou",
@@ -1114,7 +1181,8 @@
       "civilizations": [
         "Dinastía Zhou"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "imperio-seleucida",
@@ -1129,7 +1197,8 @@
       "civilizations": [
         "Imperio Seleúcida"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "imperio-kushan",
@@ -1146,7 +1215,8 @@
       ],
       "relatedConferences": [
         "ruta-de-la-seda-origen"
-      ]
+      ],
+      "isSecondary": false
     },
     {
       "id": "gandhara",
@@ -1161,7 +1231,8 @@
       "civilizations": [
         "Gandhara"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "japon-antiguo",
@@ -1176,7 +1247,8 @@
       "civilizations": [
         "Japón antiguo"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "polinesios",
@@ -1191,7 +1263,8 @@
       "civilizations": [
         "Polinesios"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "maories",
@@ -1206,7 +1279,8 @@
       "civilizations": [
         "Maoríes"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
     },
     {
       "id": "aborigenes-australianos",
@@ -1221,7 +1295,150 @@
       "civilizations": [
         "Aborígenes australianos"
       ],
-      "relatedConferences": []
+      "relatedConferences": [],
+      "isSecondary": false
+    },
+    {
+      "id": "imperio-romano",
+      "name": "Imperio Romano",
+      "startYear": -27,
+      "endYear": 476,
+      "peakYear": 117,
+      "peakPopulation": 70000000,
+      "color": "#8B0000",
+      "region": "Cuenca del Mediterráneo",
+      "description": "Imperio político y cultural que dominó el Mediterráneo y gran parte de Europa, Oriente Próximo y Norte de África durante siglos.",
+      "civilizations": [
+        "Imperio Romano"
+      ],
+      "relatedConferences": [
+        "roma-la-urbe",
+        "historia-roma-i-fundacion",
+        "historia-roma-i-fundacion"
+      ],
+      "isSecondary": false
+    },
+    {
+      "id": "grecia",
+      "name": "Grecia",
+      "startYear": -800,
+      "endYear": -31,
+      "peakYear": -450,
+      "peakPopulation": 8000000,
+      "color": "#1E90FF",
+      "region": "Grecia continental y Egeo",
+      "description": "Conjunto de polis griegas que desarrollaron la democracia, la filosofía, el teatro y las artes clásicas, y expandieron su cultura por el Mediterráneo.",
+      "civilizations": [
+        "Grecia",
+        "Grecia arcaica",
+        "Grecia clásica",
+        "Helenística"
+      ],
+      "relatedConferences": [
+        "atenas-fidias-pericles",
+        "tragedia-griega-i"
+      ],
+      "isSecondary": false
+    },
+    {
+      "id": "persia",
+      "name": "Persia",
+      "startYear": -550,
+      "endYear": 651,
+      "peakYear": -490,
+      "peakPopulation": 50000000,
+      "color": "#D2691E",
+      "region": "Irán y Mesopotamia",
+      "description": "Imperios aqueménida, parto y sasánida que dominaron el espacio entre el Mediterráneo y la India, rivales de Grecia y Roma.",
+      "civilizations": [
+        "Persia",
+        "Imperio Persa",
+        "Persia Aqueménida",
+        "Persia Sasánida"
+      ],
+      "relatedConferences": [
+        "imperio-persa",
+        "persia-sasanida",
+        "alejandro-magno-y-el-imperio-persa-por-eva-tobalina"
+      ],
+      "isSecondary": false
+    },
+    {
+      "id": "imperio-selucida",
+      "name": "Imperio Seléucida",
+      "startYear": -312,
+      "endYear": -63,
+      "peakYear": -200,
+      "peakPopulation": 15000000,
+      "color": "#9932CC",
+      "region": "Oriente Próximo y Asia Central",
+      "description": "Imperio helenístico surgido tras la muerte de Alejandro Magno, que extendió la cultura griega por Mesopotamia, Persia y Asia Central.",
+      "civilizations": [
+        "Imperio Seléucida",
+        "Helenística"
+      ],
+      "relatedConferences": [
+        "alejandro-magno-y-el-imperio-persa-por-eva-tobalina"
+      ],
+      "isSecondary": false
+    },
+    {
+      "id": "india",
+      "name": "India",
+      "startYear": -1500,
+      "endYear": 550,
+      "peakYear": -250,
+      "peakPopulation": 30000000,
+      "color": "#FF8C00",
+      "region": "Subcontinente indio",
+      "description": "Civilizaciones del valle del Indo y del Ganges, con desarrollos religiosos, políticos y culturales que influyeron en toda Asia.",
+      "civilizations": [
+        "India"
+      ],
+      "relatedConferences": [
+        "alejandro-magno-iv"
+      ],
+      "isSecondary": false
+    },
+    {
+      "id": "china",
+      "name": "China",
+      "startYear": -2070,
+      "endYear": 1912,
+      "peakYear": 750,
+      "peakPopulation": 60000000,
+      "color": "#DC143C",
+      "region": "China",
+      "description": "Civilización milenaria que desarrolló dinastías, la Ruta de la Seda, inventos tecnológicos y sistemas filosóficos duraderos.",
+      "civilizations": [
+        "China",
+        "China Han",
+        "China Tang",
+        "China Song"
+      ],
+      "relatedConferences": [
+        "ruta-de-la-seda-intro",
+        "ruta-de-la-seda-origen"
+      ],
+      "isSecondary": false
+    },
+    {
+      "id": "imperio-otomano",
+      "name": "Imperio Otomano",
+      "startYear": 1299,
+      "endYear": 1922,
+      "peakYear": 1600,
+      "peakPopulation": 30000000,
+      "color": "#2F4F4F",
+      "region": "Anatolia, Balcanes y Oriente Próximo",
+      "description": "Imperio turco que sucedió a Bizancio y dominó el sureste de Europa, Oriente Próximo y Norte de África durante siglos.",
+      "civilizations": [
+        "Imperio Otomano"
+      ],
+      "relatedConferences": [
+        "bizancio-vs-islam-siglo-vii-reformas-sociales-y-militares-bi"
+      ],
+      "isSecondary": false
     }
   ]
 }

@@ -10,7 +10,8 @@
       "https://informacionmanu.es",
       "https://portalcioranbr.wordpress.com/tag/eva-tobalina/"
     ],
-    "ultima_actualizacion": "2026-08-24"
+    "ultima_actualizacion": "2026-08-27",
+    "totalEventos": 73
   },
   "items": [
     {
@@ -51,7 +52,9 @@
       "relatedConferences": [
         "sumer-rIlh-EYWgoQ",
         "sumer-zcmh"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "mitos-creacion-evento",
@@ -92,7 +95,9 @@
       },
       "relatedConferences": [
         "origen-mundo-creacion-hombre"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "egipto-imperio-antiguo-evento",
@@ -133,7 +138,9 @@
       },
       "relatedConferences": [
         "egipto-imperio-antiguo"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "tumbas-reales-ur",
@@ -172,7 +179,9 @@
       "relatedConferences": [
         "tumbas-reales-ur",
         "tumbas-reales-ur-man-2027"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "imperio-acad",
@@ -205,14 +214,14 @@
         "cuneiforme"
       ],
       "sourceConference": {
-        "title": "Sumer y Sumerios. Donde empezó la historia",
+        "title": "Mesopotamia y sus imperios: de Sumer a Babilonia",
         "organization": "Raíces de Europa",
-        "url": "https://www.youtube.com/watch?v=ZCmHGlLHpso",
-        "date": "2024-03-08"
+        "url": null,
+        "date": null
       },
-      "relatedConferences": [
-        "sumer-zcmh"
-      ]
+      "relatedConferences": [],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "egipto-imperio-medio-evento",
@@ -252,7 +261,9 @@
       },
       "relatedConferences": [
         "egipto-imperio-medio"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "codigo-hammurabi",
@@ -290,7 +301,9 @@
       },
       "relatedConferences": [
         "babilonia-neobabilonico"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": false
     },
     {
       "id": "imperio-hitita",
@@ -332,8 +345,10 @@
       },
       "relatedConferences": [
         "imperio-hitita-i",
-        "egipto-imperio-nuevo-ramses-ii"
-      ]
+        "el-imperio-hitita-ii-su-expansion-hasta-egipto-mesopotamia-y"
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": false
     },
     {
       "id": "egipto-imperio-nuevo-evento",
@@ -380,7 +395,9 @@
         "egipto-imperio-nuevo-ramses-ii",
         "egipto-hicsos-imperio-nuevo",
         "akhenaton-faraon-hereje-unab"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "batalla-qadesh",
@@ -417,9 +434,11 @@
         "date": null
       },
       "relatedConferences": [
-        "imperio-hitita-i",
+        "el-imperio-hitita-ii-su-expansion-hasta-egipto-mesopotamia-y",
         "egipto-imperio-nuevo-ramses-ii"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": false
     },
     {
       "id": "pueblos-del-mar",
@@ -451,16 +470,20 @@
         "migraciones"
       ],
       "sourceConference": {
-        "title": "Los hititas",
-        "organization": "Raíces de Europa",
-        "url": null,
-        "date": null
+        "title": "LOS PUEBLOS DEL MAR. El gran misterio de la Antigüedad (Mesopotamia y su entorno 4). EVA TOBALINA",
+        "organization": "Raices de Europa",
+        "url": "https://www.youtube.com/watch?v=0wl4ubC_ptk",
+        "date": "2021-04-23"
       },
       "relatedConferences": [
-        "imperio-hitita-i",
-        "pueblos-estepa-hunos",
-        "egipto-pueblos-del-mar-faraones-griegos"
-      ]
+        "los-pueblos-del-mar-el-gran-misterio-de-la-antiguedad-mesopo",
+        "egipto-pueblos-del-mar-faraones-griegos",
+        "el-imperio-hitita-ii-su-expansion-hasta-egipto-mesopotamia-y",
+        "grandes-yacimientos-v-micenas-la-mitica-e-imponente-ciudad-d",
+        "fenicios-origen-desarrollo"
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": false
     },
     {
       "id": "odiseo-mito",
@@ -504,7 +527,9 @@
       },
       "relatedConferences": [
         "odiseo"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "fenicios-evento",
@@ -545,7 +570,9 @@
       },
       "relatedConferences": [
         "fenicios-origen-desarrollo"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "tracios",
@@ -586,7 +613,9 @@
       },
       "relatedConferences": [
         "tracios"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "imperio-asirio",
@@ -626,7 +655,9 @@
       },
       "relatedConferences": [
         "asirios"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "oraculos-antiguedad-evento",
@@ -668,7 +699,9 @@
       },
       "relatedConferences": [
         "fenomeno-oraculos"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "roma-ciudad-eterna",
@@ -709,7 +742,9 @@
       "relatedConferences": [
         "roma-la-urbe",
         "historia-roma-i-fundacion"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "escitas",
@@ -749,7 +784,9 @@
       },
       "relatedConferences": [
         "escitas"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "imperio-neobabilonico",
@@ -783,14 +820,16 @@
         "Jardines Colgantes"
       ],
       "sourceConference": {
-        "title": "BABILONIA. De Hammurabi al esplendor Neobabilónico con Nabucodonosor",
-        "organization": "Raíces de Europa",
-        "url": null,
-        "date": null
+        "title": "BABILONIA. De Hammurabi al esplendor Neobabilónico con Nabucodonosor (Mesopotamia 4)",
+        "organization": "Raices de Europa",
+        "url": "https://www.youtube.com/watch?v=ALiwM44-Krw",
+        "date": "2021-04-23"
       },
       "relatedConferences": [
         "babilonia-neobabilonico"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": false
     },
     {
       "id": "caida-ninive",
@@ -829,7 +868,9 @@
       },
       "relatedConferences": [
         "asirios"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "imperio-persa-aquemenida",
@@ -871,7 +912,9 @@
       "relatedConferences": [
         "imperio-persa",
         "iran-aquemenida-sasanida-1000-anos"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "cancho-roano",
@@ -906,7 +949,9 @@
       },
       "relatedConferences": [
         "cancho-roano-2026"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "caida-babilonia",
@@ -938,14 +983,17 @@
         "Cilindro de Ciro"
       ],
       "sourceConference": {
-        "title": "Babilonia y sus imperios",
+        "title": "El Imperio Persa: el primer imperio 'mundial' de la historia",
         "organization": "Raíces de Europa",
-        "url": null,
-        "date": null
+        "url": "https://www.youtube.com/watch?v=r0iqgEKUbDE",
+        "date": "2021-04-23"
       },
       "relatedConferences": [
+        "imperio-persa",
         "babilonia-neobabilonico"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": false
     },
     {
       "id": "educacion-grecia-roma",
@@ -986,7 +1034,9 @@
       },
       "relatedConferences": [
         "educacion-ciudadano-grecia-roma-pucv"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "guerras-medicas",
@@ -1028,7 +1078,9 @@
       },
       "relatedConferences": [
         "imperio-persa"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "atenas-clasica",
@@ -1073,12 +1125,10 @@
       },
       "relatedConferences": [
         "atenas-fidias-pericles",
-        "tragedia-griega-i",
-        "tragedia-griega-ii",
-        "tragedia-griega-iii",
-        "tragedia-griega-iv",
-        "tragedia-griega-v"
-      ]
+        "tragedia-griega-i"
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "anabasis-diez-mil",
@@ -1118,7 +1168,9 @@
       },
       "relatedConferences": [
         "anabasis-jenofonte"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "nabateos-petra-evento",
@@ -1158,7 +1210,9 @@
       },
       "relatedConferences": [
         "petra-nabateos"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "alejandro-magno",
@@ -1207,7 +1261,9 @@
         "alejandro-magno-iii",
         "alejandro-magno-iv",
         "griegos-asia-alejandro"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": false
     },
     {
       "id": "libano-helenistico-romano-evento",
@@ -1248,7 +1304,9 @@
       },
       "relatedConferences": [
         "libano-helenistico-romano"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "egipto-ptolemaico-evento",
@@ -1295,7 +1353,9 @@
         "cleopatra-ultimo-faraon-unab",
         "alejandria-sueno-alejandro",
         "biblioteca-alejandria-2014"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "batalla-hidaspes",
@@ -1334,7 +1394,9 @@
       },
       "relatedConferences": [
         "alejandro-magno-iv"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "muerte-alejandro",
@@ -1376,7 +1438,9 @@
       },
       "relatedConferences": [
         "alejandro-magno-iv"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "primer-emperador-china",
@@ -1415,7 +1479,9 @@
       },
       "relatedConferences": [
         "tumba-primer-emperador-china"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "ruta-de-la-seda",
@@ -1460,34 +1526,19 @@
       },
       "relatedConferences": [
         "ruta-de-la-seda-intro",
-        "ruta-de-la-seda-productos",
         "ruta-de-la-seda-origen",
+        "ruta-de-la-seda-productos",
         "ruta-de-la-seda-califatos",
         "ruta-de-la-seda-gengis",
         "ruta-de-la-seda-tamerlan",
-        "presentacion-libro-raices",
-        "entrevista-rtve-espacio-en-blanco",
-        "entrevista-librujula",
-        "ruta-de-la-seda-encuentro-unab",
-        "ruta-de-la-seda-america-unab",
-        "ruta-seda-geografia-paisajes-2025",
-        "ruta-de-la-seda-aventura-valencia",
-        "ruta-seda-ateneo-valencia-2025",
-        "value-tree-china-plata-galeon-manila",
-        "oiasso-imperio-romano-seda-china",
         "ruta-seda-xuanzang-tang-2024",
-        "ruta-seda-escorial-2026",
-        "entrevista-ser-viajeros",
-        "entrevista-pedazos-de-historia",
-        "entrevista-bellumartis",
-        "entrevista-cultura-en-la-tierra",
-        "entrevista-desafio-viajero",
-        "entrevista-biblioteca-alejandria-ivan-blanquer",
-        "entrevista-nits-de-radio",
-        "entrevista-un-buen-dia-para-viajar-rtpa",
+        "oiasso-imperio-romano-seda-china",
+        "value-tree-china-plata-galeon-manila",
         "alejandria-ruta-seda-reyes-magos",
         "ruta-seda-fascinante"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": false
     },
     {
       "id": "roma-y-china",
@@ -1524,7 +1575,9 @@
       },
       "relatedConferences": [
         "oiasso-imperio-romano-seda-china"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "judea-samaria-galilea-evento",
@@ -1566,7 +1619,9 @@
       },
       "relatedConferences": [
         "judea-samaria-galilea-jesus"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "augusto-principado",
@@ -1607,7 +1662,9 @@
       },
       "relatedConferences": [
         "augusto-emperador"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "familia-imperial-augusto",
@@ -1651,7 +1708,9 @@
       "relatedConferences": [
         "augusto-familia-imperial",
         "livia-mujer-augusto"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "tiberio-reinado",
@@ -1693,7 +1752,9 @@
       "relatedConferences": [
         "tiberio",
         "tiberio-emperador"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "caligula-reinado",
@@ -1732,7 +1793,9 @@
       },
       "relatedConferences": [
         "caligula"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "claudio-reinado",
@@ -1773,7 +1836,9 @@
       },
       "relatedConferences": [
         "claudio"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "neron-reinado",
@@ -1814,7 +1879,9 @@
       },
       "relatedConferences": [
         "neron"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "puerta-mileto-berlin-evento",
@@ -1853,7 +1920,9 @@
       },
       "relatedConferences": [
         "puerta-mileto-berlin"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "heliogabalo-emperador",
@@ -1893,7 +1962,9 @@
       },
       "relatedConferences": [
         "heligabalo-poder-provocacion"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "imperio-sasanida",
@@ -1935,7 +2006,9 @@
       },
       "relatedConferences": [
         "persia-sasanida"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "juliano-apostata",
@@ -1976,7 +2049,9 @@
       },
       "relatedConferences": [
         "juliano-apostata"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "huno-atila",
@@ -2019,7 +2094,9 @@
       "relatedConferences": [
         "pueblos-estepa-hunos",
         "curso-pueblos-estepa-2025"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "kanato-turco-evento",
@@ -2057,7 +2134,9 @@
       },
       "relatedConferences": [
         "pueblos-estepa-turcos-ivoox"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "expansion-arabe",
@@ -2098,7 +2177,9 @@
       },
       "relatedConferences": [
         "ruta-de-la-seda-califatos"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "jordania-omeyas-evento",
@@ -2139,7 +2220,9 @@
       },
       "relatedConferences": [
         "jordania-omeyas"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "angkor-wat",
@@ -2177,7 +2260,9 @@
       },
       "relatedConferences": [
         "angkor-wat-maravilla-sudeste-asiatico"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "pax-mongolica",
@@ -2223,7 +2308,9 @@
         "curso-pueblos-estepa-2025",
         "pueblos-estepa-genghis-kan-ivoox",
         "pueblos-estepa-hijos-genghis-khan-ivoox"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "tamerlan",
@@ -2263,7 +2350,9 @@
       },
       "relatedConferences": [
         "ruta-de-la-seda-tamerlan"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "tartessos-civilizacion",
@@ -2303,7 +2392,9 @@
       },
       "relatedConferences": [
         "tartessos-historia-mito"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "iberos-principes-iberia-evento",
@@ -2339,7 +2430,9 @@
       },
       "relatedConferences": [
         "iberos-principes-iberia"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": false
     },
     {
       "id": "hispania-celtica-celtiberos",
@@ -2380,7 +2473,9 @@
       "relatedConferences": [
         "celtiberos-hispania-numancia",
         "hispania-celtica"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": false
     },
     {
       "id": "numancia-roma",
@@ -2419,7 +2514,9 @@
       },
       "relatedConferences": [
         "numancia-frente-roma"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
     },
     {
       "id": "imperio-cartagines",
@@ -2462,7 +2559,552 @@
       "relatedConferences": [
         "imperio-cartagines-i",
         "imperio-cartagines-ii"
-      ]
+      ],
+      "isSecondary": false,
+      "isYoutubeConference": true
+    },
+    {
+      "id": "coliseo-roma-construccion",
+      "title": "Construcción e inauguración del Coliseo de Roma",
+      "dateLabel": "72-80 d.C.",
+      "startYear": 72,
+      "endYear": 80,
+      "period": "Edad Antigua",
+      "location": "Roma, Italia",
+      "description": "Vespasiano y Tito impulsan la construcción del mayor anfiteatro romano, símbolo del poder imperial y de los espectáculos públicos.",
+      "summary": "El Coliseo se erige como centro de la vida social y política de Roma, albergando juegos, combates de gladiadores y naumaquias.",
+      "consequences": [
+        "Consolidación del anfiteatro como modelo arquitectónico romano.",
+        "Refuerzo de la imagen del emperador como benefactor del pueblo.",
+        "Legado monumental que pervive como icono de la Antigüedad."
+      ],
+      "characters": [
+        "Vespasiano",
+        "Tito"
+      ],
+      "civilizations": [
+        "Imperio Romano"
+      ],
+      "topics": [
+        "Coliseo",
+        "anfiteatro",
+        "espectáculos romanos",
+        "arquitectura romana"
+      ],
+      "relatedConferences": [
+        "el-coliseo-de-roma-su-apasionante-historia-y-creacion-eva-to"
+      ],
+      "sourceConference": {
+        "title": "El Coliseo de Roma: su apasionante historia y creación. Eva Tobalina",
+        "organization": "Raices de Europa",
+        "url": "https://www.youtube.com/watch?v=QLFbXtPQCUE"
+      },
+      "isSecondary": false,
+      "isYoutubeConference": true
+    },
+    {
+      "id": "edicto-milan-constantino",
+      "title": "Edicto de Milán y renovación imperial de Constantino",
+      "dateLabel": "313 d.C.",
+      "startYear": 313,
+      "endYear": 313,
+      "period": "Edad Antigua",
+      "location": "Imperio Romano",
+      "description": "Constantino promulga el Edicto de Milán, que concede libertad de culto a los cristianos, y posteriormente funda Constantinopla.",
+      "summary": "El reinado de Constantino transforma el Imperio Romano, favoreciendo al cristianismo y reorientando el centro político hacia Oriente.",
+      "consequences": [
+        "Legalización del cristianismo en el Imperio Romano.",
+        "Fundación de Constantinopla como nueva capital imperial.",
+        "Sentido precedente para la futura cristianización del Imperio."
+      ],
+      "characters": [
+        "Constantino el Grande"
+      ],
+      "civilizations": [
+        "Imperio Romano"
+      ],
+      "topics": [
+        "Constantino",
+        "Edicto de Milán",
+        "cristianismo",
+        "Constantinopla"
+      ],
+      "relatedConferences": [
+        "constantino-el-grande-la-renovacion-del-imperio-romano-eva-t"
+      ],
+      "sourceConference": {
+        "title": "CONSTANTINO EL GRANDE. La renovación del Imperio Romano. EVA TOBALINA",
+        "organization": "Raices de Europa",
+        "url": "https://www.youtube.com/watch?v=qmiQVQxI5Mk"
+      },
+      "isSecondary": false,
+      "isYoutubeConference": true
+    },
+    {
+      "id": "reinado-marco-aurelio",
+      "title": "Reinado de Marco Aurelio y el estoicismo imperial",
+      "dateLabel": "161-180 d.C.",
+      "startYear": 161,
+      "endYear": 180,
+      "period": "Edad Antigua",
+      "location": "Imperio Romano",
+      "description": "Marco Aurelio gobierna el Imperio Romano en uno de sus momentos de mayor esplendor, mientras cultiva el estoicismo en sus \"Meditaciones\".",
+      "summary": "El emperador filósofo encarna la conjunción de poder político y reflexión ética en la Roma imperial.",
+      "consequences": [
+        "Difusión del estoicismo como filosofía de vida imperial.",
+        "Defensa de las fronteras del Imperio frente a pueblos germánicos.",
+        "Legado literario y filosófico de las Meditaciones."
+      ],
+      "characters": [
+        "Marco Aurelio"
+      ],
+      "civilizations": [
+        "Imperio Romano"
+      ],
+      "topics": [
+        "Marco Aurelio",
+        "estoicismo",
+        "filosofía romana",
+        "Imperio Romano"
+      ],
+      "relatedConferences": [
+        "marco-aurelio-el-emperador-que-buscaba-la-sabiduaria-eva-tob"
+      ],
+      "sourceConference": {
+        "title": "MARCO AURELIO, el emperador que buscaba la sabiduaría. EVA TOBALINA",
+        "organization": "Raices de Europa",
+        "url": "https://www.youtube.com/watch?v=sLvlFcWo6ZE"
+      },
+      "isSecondary": false,
+      "isYoutubeConference": true
+    },
+    {
+      "id": "roma-maxima-expansion-trajano",
+      "title": "Roma alcanza su máxima expansión bajo Trajano",
+      "dateLabel": "98-117 d.C.",
+      "startYear": 98,
+      "endYear": 117,
+      "period": "Edad Antigua",
+      "location": "Imperio Romano",
+      "description": "Trajano extiende los límites del Imperio Romano hasta su máxima extensión territorial, desde Mesopotamia hasta Escocia.",
+      "summary": "El reinado de Trajano representa el apogeo territorial, militar y administrativo del Imperio Romano.",
+      "consequences": [
+        "Máxima extensión territorial del Imperio Romano.",
+        "Reformas administrativas y obras públicas destacadas.",
+        "Modelo de \"optimus princeps\" para gobernantes posteriores."
+      ],
+      "characters": [
+        "Trajano"
+      ],
+      "civilizations": [
+        "Imperio Romano"
+      ],
+      "topics": [
+        "Trajano",
+        "expansión romana",
+        "Imperio Romano",
+        "Dacia"
+      ],
+      "relatedConferences": [
+        "trajano-el-emperador-con-quien-roma-alcanzo-su-maxima-expans"
+      ],
+      "sourceConference": {
+        "title": "TRAJANO, el emperador con quien Roma alcanzó su máxima expansión. EVA TOBALINA",
+        "organization": "Raices de Europa",
+        "url": "https://www.youtube.com/watch?v=MshKhbd-t-s"
+      },
+      "isSecondary": false,
+      "isYoutubeConference": true
+    },
+    {
+      "id": "dinastia-flavia-vespasiano",
+      "title": "Vespasiano, la Dinastía Flavia y la Guerra de los Judíos",
+      "dateLabel": "69-79 d.C.",
+      "startYear": 69,
+      "endYear": 79,
+      "period": "Edad Antigua",
+      "location": "Imperio Romano",
+      "description": "Vespasiano funda la Dinastía Flavia tras el año de los cuatro emperadores, sofoca la rebelión judía e inicia la construcción del Coliseo.",
+      "summary": "El reinado de Vespasiano estabiliza el Imperio y deja una huella arquitectónica perdurable en Roma.",
+      "consequences": [
+        "Fin de la crisis sucesoria del año 69 d.C.",
+        "Destrucción del Segundo Templo de Jerusalén.",
+        "Inicio de la construcción del Coliseo."
+      ],
+      "characters": [
+        "Vespasiano",
+        "Tito"
+      ],
+      "civilizations": [
+        "Imperio Romano"
+      ],
+      "topics": [
+        "Vespasiano",
+        "Dinastía Flavia",
+        "Guerra de los Judíos",
+        "Coliseo"
+      ],
+      "relatedConferences": [
+        "vespasiano-emperador-la-dinastia-flavia-la-guerra-contra-los"
+      ],
+      "sourceConference": {
+        "title": "VESPASIANO EMPERADOR. La Dinastía Flavia, la Guerra contra los Judíos, el Coliseo... EVA TOBALINA",
+        "organization": "Raices de Europa",
+        "url": "https://www.youtube.com/watch?v=lfjw0Mt2Kjs"
+      },
+      "isSecondary": false,
+      "isYoutubeConference": true
+    },
+    {
+      "id": "auge-bizancio",
+      "title": "Auge de Bizancio como capital imperial",
+      "dateLabel": "330-565 d.C.",
+      "startYear": 330,
+      "endYear": 565,
+      "period": "Edad Antigua",
+      "location": "Bizancio / Constantinopla",
+      "description": "Constantinopla se consolida como capital de un Imperio Romano de Oriente que preserva y transforma la herencia clásica durante siglos.",
+      "summary": "Bizancio emerge como centro político, religioso y cultural entre Oriente y Occidente.",
+      "consequences": [
+        "Reorientación política y cultural del mundo mediterráneo.",
+        "Desarrollo del cristianismo oriental y el arte bizantino.",
+        "Supervivencia del Imperio Romano de Oriente hasta 1453."
+      ],
+      "characters": [
+        "Constantino el Grande",
+        "Justiniano"
+      ],
+      "civilizations": [
+        "Bizancio",
+        "Imperio Romano de Oriente"
+      ],
+      "topics": [
+        "Bizancio",
+        "Constantinopla",
+        "Imperio Romano de Oriente",
+        "Edad Media"
+      ],
+      "relatedConferences": [
+        "breve-historia-de-bizancio-radiografia-de-la-capital"
+      ],
+      "sourceConference": {
+        "title": "Breve historia de Bizancio: radiografía de la capital(...)",
+        "organization": "UNED Radio",
+        "url": "https://www.youtube.com/watch?v=g0bUAaiqdzc"
+      },
+      "isSecondary": false,
+      "isYoutubeConference": true
+    },
+    {
+      "id": "apogeo-magna-grecia",
+      "title": "Apogeo de la Magna Grecia en el sur de Italia",
+      "dateLabel": "siglos VIII-III a.C.",
+      "startYear": -800,
+      "endYear": -300,
+      "period": "Edad Antigua",
+      "location": "Sur de Italia y Sicilia",
+      "description": "Las colonias griegas en el sur de Italia alcanzan un esplendor cultural y urbano que transforma la región en un crisol de civilización helena.",
+      "summary": "La Magna Grecia difunde la lengua, el arte y la religión griegos en la península itálica.",
+      "consequences": [
+        "Difusión de la cultura griega en Italia.",
+        "Desarrollo urbano de ciudades como Paestum y Riaze.",
+        "Intercambio cultural entre griegos, itálicos y romanos."
+      ],
+      "characters": [],
+      "civilizations": [
+        "Magna Grecia",
+        "Grecia"
+      ],
+      "topics": [
+        "Magna Grecia",
+        "colonización griega",
+        "Paestum",
+        "Riaze"
+      ],
+      "relatedConferences": [
+        "la-magna-grecia-riaze-paestum-y-otras-maravillas-del-sur-de-"
+      ],
+      "sourceConference": {
+        "title": "LA MAGNA GRECIA. Riaze, Paestum y otras maravillas del sur de Italia. EVA TOBALINA",
+        "organization": "Raices de Europa",
+        "url": "https://www.youtube.com/watch?v=SR7XjBkYwpg"
+      },
+      "isSecondary": false,
+      "isYoutubeConference": true
+    },
+    {
+      "id": "esplendor-caida-minoico",
+      "title": "Esplendor y caída de la civilización minoica en Creta",
+      "dateLabel": "c. 2000-1450 a.C.",
+      "startYear": -2000,
+      "endYear": -1450,
+      "period": "Edad Antigua",
+      "location": "Creta",
+      "description": "La civilización minoica florece en Creta con palacios como Cnosos y Festos, hasta su declive tras invasiones y catástrofes naturales.",
+      "summary": "Creta alberga una de las primeras civilizaciones complejas del Egeo, predecesora de la cultura micénica.",
+      "consequences": [
+        "Desarrollo del arte, la escritura lineal A y el comercio marítimo.",
+        "Influencia en la cultura micénica continental.",
+        "Legado arqueológico descubierto por Arthur Evans."
+      ],
+      "characters": [
+        "Minos"
+      ],
+      "civilizations": [
+        "Creta",
+        "Minoica"
+      ],
+      "topics": [
+        "Creta",
+        "civilización minoica",
+        "Cnosos",
+        "Festos"
+      ],
+      "relatedConferences": [
+        "creta-y-la-caida-del-mundo-minoico-eva-tobalina"
+      ],
+      "sourceConference": {
+        "title": "Creta y la caída del mundo Minoico. Eva Tobalina",
+        "organization": "Raices de Europa",
+        "url": "https://www.youtube.com/watch?v=K1UO84OaJSc"
+      },
+      "isSecondary": false,
+      "isYoutubeConference": true
+    },
+    {
+      "id": "apogeo-micenas",
+      "title": "Apogeo de Micenas y la civilización micénica",
+      "dateLabel": "c. 1600-1100 a.C.",
+      "startYear": -1600,
+      "endYear": -1100,
+      "period": "Edad Antigua",
+      "location": "Grecia continental",
+      "description": "Micenas lidera una red de palacios fortificados que domina el Egeo, fundando la base cultural de la posterior Grecia clásica.",
+      "summary": "La civilización micénica representa la primera gran complejidad política y militar de la Grecia preclásica.",
+      "consequences": [
+        "Difusión de la cultura griega arcaica por el Egeo.",
+        "Desarrollo de la escritura lineal B.",
+        "Legado mítico de Agamenón y la guerra de Troya."
+      ],
+      "characters": [
+        "Agamenón"
+      ],
+      "civilizations": [
+        "Grecia micénica",
+        "Micenas"
+      ],
+      "topics": [
+        "Micenas",
+        "civilización micénica",
+        "Agamenón",
+        "Egeo"
+      ],
+      "relatedConferences": [
+        "grandes-yacimientos-v-micenas-la-mitica-e-imponente-ciudad-d"
+      ],
+      "sourceConference": {
+        "title": "Grandes Yacimientos V. MICENAS, la mítica e imponente ciudad de Agamenón. Eva Tobalina",
+        "organization": "Raices de Europa",
+        "url": "https://www.youtube.com/watch?v=__hdXy0Q3hM"
+      },
+      "isSecondary": false,
+      "isYoutubeConference": true
+    },
+    {
+      "id": "alejandro-contra-persia",
+      "title": "Alejandro Magno contra el Imperio Persa",
+      "dateLabel": "334-330 a.C.",
+      "startYear": -334,
+      "endYear": -330,
+      "period": "Edad Antigua",
+      "location": "Imperio Persa Aqueménida",
+      "description": "Alejandro Magno derrota a Darío III en una serie de campañas que destruyen el Imperio Persa Aqueménida y extienden el poder macedonio hasta Asia Central.",
+      "summary": "La confrontación entre Macedonia y Persia redefine el mapa político y cultural del mundo antiguo.",
+      "consequences": [
+        "Caída del Imperio Persa Aqueménida.",
+        "Difusión de la cultura helenística por Oriente.",
+        "Fundación de ciudades como Alejandría."
+      ],
+      "characters": [
+        "Alejandro Magno",
+        "Darío III"
+      ],
+      "civilizations": [
+        "Macedonia",
+        "Persia Aqueménida"
+      ],
+      "topics": [
+        "Alejandro Magno",
+        "Imperio Persa",
+        "Darío III",
+        "helenismo"
+      ],
+      "relatedConferences": [
+        "alejandro-magno-y-el-imperio-persa-por-eva-tobalina"
+      ],
+      "sourceConference": {
+        "title": "ALEJANDRO MAGNO Y EL IMPERIO PERSA. Por EVA TOBALINA",
+        "organization": "Raices de Europa",
+        "url": "https://www.youtube.com/watch?v=8omLPAfPt60"
+      },
+      "isSecondary": false,
+      "isYoutubeConference": true
+    },
+    {
+      "id": "invasiones-pueblos-del-mar",
+      "title": "Invasiones de los Pueblos del Mar y colapso del Bronce Final",
+      "dateLabel": "c. 1200-1150 a.C.",
+      "startYear": -1200,
+      "endYear": -1150,
+      "period": "Edad Antigua",
+      "location": "Mediterráneo oriental",
+      "description": "Coaliciones de pueblos nómadas y marítimos asolan las civilizaciones del Mediterráneo oriental, acelerando el colapso del Bronce Final.",
+      "summary": "Los Pueblos del Mar alteran el equilibrio político de Egipto, Anatolia y el Levante, destruyendo reinos y replanteando mapas.",
+      "consequences": [
+        "Crisis y colapso de varios reinos del Bronce Final.",
+        "Migraciones y cambios demográficos en el Mediterráneo.",
+        "Aparición de nuevas identidades culturales en la Edad del Hierro."
+      ],
+      "characters": [],
+      "civilizations": [
+        "Egipto Antiguo",
+        "Hititas"
+      ],
+      "topics": [
+        "Pueblos del Mar",
+        "Bronce Final",
+        "Mediterráneo oriental",
+        "invasiones"
+      ],
+      "relatedConferences": [
+        "los-pueblos-del-mar-el-gran-misterio-de-la-antiguedad-mesopo"
+      ],
+      "sourceConference": {
+        "title": "LOS PUEBLOS DEL MAR. El gran misterio de la Antigüedad (Mesopotamia y su entorno 4). EVA TOBALINA",
+        "organization": "Raices de Europa",
+        "url": "https://www.youtube.com/watch?v=0wl4ubC_ptk"
+      },
+      "isSecondary": false,
+      "isYoutubeConference": true
+    },
+    {
+      "id": "atila-hunos-apogeo",
+      "title": "Auge de Atila y los hunos en la estepa europea",
+      "dateLabel": "434-453 d.C.",
+      "startYear": 434,
+      "endYear": 453,
+      "period": "Edad Antigua",
+      "location": "Estepa europea",
+      "description": "Atila reúne a las hordas hunas y presiona a los Imperios Romanos de Oriente y Occidente, alcanzando una hegemonía efímera pero temida.",
+      "summary": "El llamado \"Azote de Dios\" encarna el poder nómada frente a los Estados sedentarios del final de la Antigüedad.",
+      "consequences": [
+        "Presión sobre las fronteras del Imperio Romano.",
+        "Movimientos de pueblos germánicos hacia el Imperio.",
+        "Mito histórico de Atila en la cultura europea."
+      ],
+      "characters": [
+        "Atila"
+      ],
+      "civilizations": [
+        "Huna"
+      ],
+      "topics": [
+        "Atila",
+        "hunos",
+        "Pueblos de la estepa",
+        "Imperio Romano"
+      ],
+      "relatedConferences": [
+        "atila-ascenso-y-caida-del-azote-de-dios-eva-tobalina"
+      ],
+      "sourceConference": {
+        "title": "ATILA: ascenso y caída del Azote de Dios. EVA TOBALINA",
+        "organization": "Raices de Europa",
+        "url": "https://www.youtube.com/watch?v=22gHZzPfkfI"
+      },
+      "isSecondary": false,
+      "isYoutubeConference": true
+    },
+    {
+      "id": "imperio-bulgaro-edad-media",
+      "title": "Apogeo del Imperio Búlgaro en la Edad Media",
+      "dateLabel": "siglos VII-XI d.C.",
+      "startYear": 681,
+      "endYear": 1018,
+      "period": "Edad Media",
+      "location": "Península Balcánica",
+      "description": "El Primer Imperio Búlgaro alcanza su máximo esplendor político y cultural, desarrollando una literatura y una Iglesia propias.",
+      "summary": "Bulgaria se consolida como potencia regional entre Bizancio y los pueblos de la estepa.",
+      "consequences": [
+        "Desarrollo de la literatura y alfabetos eslavos.",
+        "Conflictos y alianzas con el Imperio Bizantino.",
+        "Legado cultural de los eslavos meridionales."
+      ],
+      "characters": [
+        "Simeón I"
+      ],
+      "civilizations": [
+        "Imperio Búlgaro",
+        "Bulgaria"
+      ],
+      "topics": [
+        "Bulgaria",
+        "Imperio Búlgaro",
+        "Edad Media",
+        "Balcanes"
+      ],
+      "relatedConferences": [
+        "bulgaria-y-su-apasionante-edad-media-eva-tobalina"
+      ],
+      "sourceConference": {
+        "title": "Bulgaria y su apasionante Edad Media. Eva Tobalina",
+        "organization": "Raices de Europa",
+        "url": "https://www.youtube.com/watch?v=XosNc14A2QE"
+      },
+      "isSecondary": false,
+      "isYoutubeConference": true
+    },
+    {
+      "id": "fundacion-esplendor-alejandria",
+      "title": "Fundación y esplendor de Alejandría",
+      "dateLabel": "331 a.C. - 30 a.C.",
+      "startYear": -331,
+      "endYear": -30,
+      "period": "Edad Antigua",
+      "location": "Egipto",
+      "description": "Alejandro Magno funda Alejandría, que bajo los Ptolomeos se convierte en el gran centro cultural, científico y comercial del mundo helenístico.",
+      "summary": "Alejandría reúne bibliotecas, sabios y mercaderes de todo el Mediterráneo y Oriente.",
+      "consequences": [
+        "Centro de difusión del conocimiento helenístico.",
+        "Desarrollo de la Biblioteca y el Museo.",
+        "Puente cultural entre Oriente y Occidente."
+      ],
+      "characters": [
+        "Alejandro Magno",
+        "Ptolomeo I",
+        "Cleopatra VII"
+      ],
+      "civilizations": [
+        "Egipto Ptolemaico",
+        "Macedonia"
+      ],
+      "topics": [
+        "Alejandría",
+        "Alejandro Magno",
+        "Egipto Ptolemaico",
+        "helenismo"
+      ],
+      "relatedConferences": [
+        "alejandria-sueno-alejandro"
+      ],
+      "sourceConference": {
+        "title": "Alejandría: el sueño eterno de Alejandro Magno (Las ciudades de Alejandro I)",
+        "organization": "Raíces de Europa",
+        "url": "https://www.youtube.com/watch?v=q15zX5VeQxw",
+        "date": "2026-04-12"
+      },
+      "isSecondary": false,
+      "isYoutubeConference": true
     }
   ]
 }

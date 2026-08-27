@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CalendarDays, Users, PlaySquare, Database, BarChart3 } from "lucide-react";
 import { Timeline } from "./Timeline";
 import { PopulationTimeline } from "./PopulationTimeline";
 import { VerticalPopulationTimeline } from "./VerticalPopulationTimeline";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { filterPeoplesByCoverage } from "@/lib/timeline";
 import type {
   TimelineEvent,
   ConferenceItem,
@@ -23,6 +25,8 @@ interface TimelineViewSelectorProps {
   favoriteIds: Set<string>;
   watchlistIds: Set<string>;
   isAuthenticated: boolean;
+  showNonYoutubeEvents: boolean;
+  showAllPeoples: boolean;
   onToggleWatched: (conferenceId: string) => void | Promise<void>;
   onToggleFavorite: (conferenceId: string) => void | Promise<void>;
   onToggleWatchlist: (conferenceId: string) => void | Promise<void>;
@@ -39,11 +43,23 @@ export function TimelineViewSelector({
   favoriteIds,
   watchlistIds,
   isAuthenticated,
+  showNonYoutubeEvents,
+  showAllPeoples,
   onToggleWatched,
   onToggleFavorite,
   onToggleWatchlist,
 }: TimelineViewSelectorProps) {
   const [view, setView] = useState<View>("events");
+
+  const filteredEvents = useMemo(() => {
+    if (showNonYoutubeEvents) return events;
+    return events.filter((e) => e.isYoutubeConference !== false);
+  }, [events, showNonYoutubeEvents]);
+
+  const filteredPeoples = useMemo(
+    () => filterPeoplesByCoverage(peoples, conferencesMap, showAllPeoples),
+    [peoples, conferencesMap, showAllPeoples]
+  );
 
   return (
     <div className="space-y-8">
@@ -146,7 +162,7 @@ export function TimelineViewSelector({
             transition={{ duration: 0.3 }}
           >
             <Timeline
-              events={events}
+              events={filteredEvents}
               conferencesMap={conferencesMap}
               watchedIds={watchedIds}
               favoriteIds={favoriteIds}
@@ -177,11 +193,13 @@ export function TimelineViewSelector({
               </p>
               <p className="mt-2 text-sm text-muted-foreground/80">
                 {peoplesMeta.coberturaCronologica} ·{" "}
-                {peoplesMeta.totalPueblos} pueblos
+                {filteredPeoples.length} pueblos
+                {filteredPeoples.length !== peoplesMeta.totalPueblos &&
+                  ` de ${peoplesMeta.totalPueblos}`}
               </p>
             </div>
             <PopulationTimeline
-              peoples={peoples}
+              peoples={filteredPeoples}
               conferencesMap={conferencesMap}
               watchedIds={watchedIds}
               favoriteIds={favoriteIds}
@@ -212,11 +230,13 @@ export function TimelineViewSelector({
               </p>
               <p className="mt-2 text-sm text-muted-foreground/80">
                 {peoplesMeta.coberturaCronologica} ·{" "}
-                {peoplesMeta.totalPueblos} pueblos
+                {filteredPeoples.length} pueblos
+                {filteredPeoples.length !== peoplesMeta.totalPueblos &&
+                  ` de ${peoplesMeta.totalPueblos}`}
               </p>
             </div>
             <VerticalPopulationTimeline
-              peoples={peoples}
+              peoples={filteredPeoples}
               conferencesMap={conferencesMap}
               watchedIds={watchedIds}
               favoriteIds={favoriteIds}

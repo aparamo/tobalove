@@ -44,6 +44,8 @@ export interface TimelineEvent {
   topics: string[];
   sourceConference: SourceConference;
   relatedConferences: string[];
+  isSecondary?: boolean;
+  isYoutubeConference?: boolean;
 }
 
 export interface TimelineMeta {
@@ -73,6 +75,7 @@ export interface PeopleGroup {
   description: string;
   civilizations: string[];
   relatedConferences: string[];
+  isSecondary?: boolean;
 }
 
 export interface PeoplesMeta {

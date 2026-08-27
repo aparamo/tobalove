@@ -15,6 +15,7 @@ import {
   ChevronDown,
   ChevronUp,
   Video,
+  MonitorOff,
 } from "lucide-react";
 import { getYouTubeId, getMediaType, MediaIcon, getYouTubeUrl } from "@/lib/media";
 import { cn } from "@/lib/utils";
@@ -421,6 +422,15 @@ export function TimelineEvent({
                   >
                     <Video className="h-3 w-3 md:h-4 md:w-4" />
                     {videoCount} video{videoCount > 1 ? "s" : ""}
+                  </Badge>
+                )}
+                {event.isYoutubeConference === false && (
+                  <Badge
+                    variant="outline"
+                    className="gap-1.5 border-amber-500/50 text-amber-600 dark:text-amber-400 text-sm md:text-base"
+                  >
+                    <MonitorOff className="h-3 w-3 md:h-4 md:w-4" />
+                    No es conferencia en YouTube
                   </Badge>
                 )}
               </div>
